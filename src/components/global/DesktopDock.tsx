@@ -115,10 +115,10 @@ const DesktopDock = ({ onTerminalClick, onNotesClick, onGitHubClick }: DesktopDo
               onClick={onGitHubClick}
               onMouseEnter={() => setHoveredIcon('github')}
               onMouseLeave={() => setHoveredIcon(null)}
-              className="relative"
+              className="relative group"
             >
-              <div className='w-12 h-12 bg-gradient-to-t from-black to-black/60 rounded-xl flex items-center justify-center shadow-lg'>
-                <BsGithub size={37} className='text-gray-100' />
+              <div className='w-12 h-12 bg-gradient-to-t from-black to-black/60 rounded-xl flex items-center justify-center shadow-lg transition-transform duration-300 ease-out group-hover:scale-110 group-hover:animate-bounce'>
+                <BsGithub size={35} className='text-gray-100' />
               </div>
               {hoveredIcon === 'github' && <Tooltip text='My Projects' />}
             </button>
@@ -128,10 +128,10 @@ const DesktopDock = ({ onTerminalClick, onNotesClick, onGitHubClick }: DesktopDo
               onClick={onNotesClick}
               onMouseEnter={() => setHoveredIcon('notes')}
               onMouseLeave={() => setHoveredIcon(null)}
-              className="relative"
+              className="relative group"
             >
-              <div className='w-12 h-12 bg-gradient-to-t from-yellow-600 to-yellow-400 rounded-xl flex items-center justify-center shadow-lg'>
-                <BsStickyFill size={37} className='text-white' />
+              <div className='w-12 h-12 bg-gradient-to-t from-yellow-600 to-yellow-400 rounded-xl flex items-center justify-center shadow-lg transition-transform duration-300 ease-out group-hover:scale-110 group-hover:animate-bounce'>
+                <BsStickyFill size={35} className='text-white' />
               </div>
               {hoveredIcon === 'notes' && <Tooltip text='Resume Notes' />}
             </button>
@@ -141,10 +141,10 @@ const DesktopDock = ({ onTerminalClick, onNotesClick, onGitHubClick }: DesktopDo
               onClick={handleResumeClick}
               onMouseEnter={() => setHoveredIcon('resume')}
               onMouseLeave={() => setHoveredIcon(null)}
-              className="relative"
+              className="relative group"
             >
-              <div className='w-12 h-12 bg-gradient-to-t from-red-600 to-red-400 rounded-xl flex items-center justify-center shadow-lg'>
-                <BsFilePdf size={37} className='text-white' />
+              <div className='w-12 h-12 bg-gradient-to-t from-red-600 to-red-400 rounded-xl flex items-center justify-center shadow-lg transition-transform duration-300 ease-out group-hover:scale-110 group-hover:animate-bounce'>
+                <BsFilePdf size={35} className='text-white' />
               </div>
               {hoveredIcon === 'resume' && <Tooltip text='View Resume' />}
             </button>
@@ -156,8 +156,8 @@ const DesktopDock = ({ onTerminalClick, onNotesClick, onGitHubClick }: DesktopDo
               onMouseLeave={() => setHoveredIcon(null)}
               className="relative"
             >
-              <div className='w-12 h-12 bg-gradient-to-t from-blue-600 to-blue-400 rounded-xl flex items-center justify-center shadow-lg'>
-                <BsCalendar size={37} className='text-white' />
+              <div className='w-12 h-12 bg-gradient-to-t from-blue-600 to-blue-400 rounded-xl flex items-center justify-center shadow-lg transition-transform duration-300 ease-out group-hover:scale-110 group-hover:animate-bounce'>
+                <BsCalendar size={35} className='text-white' />
               </div>
               {hoveredIcon === 'calendar' && <Tooltip text='Schedule a Call' />}
             </button>
@@ -169,8 +169,8 @@ const DesktopDock = ({ onTerminalClick, onNotesClick, onGitHubClick }: DesktopDo
               onMouseLeave={() => setHoveredIcon(null)}
               className="relative"
             >
-              <div className='w-12 h-12 bg-gradient-to-t from-green-600 to-green-400 rounded-xl flex items-center justify-center shadow-lg'>
-                <BsSpotify size={37} className='text-white' />
+              <div className='w-12 h-12 bg-gradient-to-t from-green-600 to-green-400 rounded-xl flex items-center justify-center shadow-lg transition-transform duration-300 ease-out group-hover:scale-110 group-hover:animate-bounce'>
+                <BsSpotify size={35} className='text-white' />
               </div>
               {hoveredIcon === 'spotify' && <Tooltip text='Spotify Playlist' />}
             </button>
@@ -182,8 +182,8 @@ const DesktopDock = ({ onTerminalClick, onNotesClick, onGitHubClick }: DesktopDo
               onMouseLeave={() => setHoveredIcon(null)}
               className="relative"
             >
-              <div className='w-12 h-12 bg-gradient-to-t from-purple-600 to-purple-400 rounded-xl flex items-center justify-center shadow-lg'>
-                <FaLink size={37} className='text-white' />
+              <div className='w-12 h-12 bg-gradient-to-t from-purple-600 to-purple-400 rounded-xl flex items-center justify-center shadow-lg transition-transform duration-300 ease-out group-hover:scale-110 group-hover:animate-bounce'>
+                <FaLink size={35} className='text-white' />
               </div>
               {hoveredIcon === 'links' && <Tooltip text='Contact Links' />}
               {showLinksPopup && <LinksPopup />}
@@ -196,8 +196,8 @@ const DesktopDock = ({ onTerminalClick, onNotesClick, onGitHubClick }: DesktopDo
               onMouseLeave={() => setHoveredIcon(null)}
               className="relative"
             >
-              <div className='w-12 h-12 bg-gradient-to-t from-black to-black/60 rounded-xl flex items-center justify-center shadow-lg'>
-                <RiTerminalFill size={37} className='text-white' />
+              <div className='w-12 h-12 bg-gradient-to-t from-black to-black/60 rounded-xl flex items-center justify-center shadow-lg transition-transform duration-300 ease-out group-hover:scale-110 group-hover:animate-bounce'>
+                <RiTerminalFill size={35} className='text-white' />
               </div>
               {hoveredIcon === 'terminal' && <Tooltip text='Terminal' />}
             </button>

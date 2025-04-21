@@ -10,8 +10,8 @@ import foodies from './projects/foodies.json';
 export const userConfig = {
     // Personal Information
     name: 'Abdelrahman Saleh',
-    role: 'Software Developer',
-    location: 'Egypt',
+    role: 'Software Developer - Backend Developer',
+    location: 'Giza, Egypt',
     email: 'aabdoo2304@gmail.com',
     website: 'aabdoo23',
     roleFocus: 'Backend Development using .NET, C#, Entity Framework, SQL Server, and Bootstrap. Can also work with Angular, React, and Node.js.',
@@ -319,58 +319,6 @@ export const userConfig = {
             ]
         },
         {
-            title: "EOI",
-            description: "Egyptian Olympiad in Informatics",
-            achievement: "Rank 51 in Egypt",
-            year: "2015",
-            images: [
-                {
-                    url: "https://scontent.fcai19-7.fna.fbcdn.net/v/t39.30808-6/462316142_7913407118761100_685588124196353855_n.png?_nc_cat=101&ccb=1-7&_nc_sid=86c6b0&_nc_ohc=7cOAfEscTtUQ7kNvwHHXc59&_nc_oc=AdmZ1IgqnVQhS5ZJxSMlE7VO5h2GwBnOM_SaQ_mXEGhRayrAdbc7l7wIrObBPOGqo6k&_nc_zt=23&_nc_ht=scontent.fcai19-7.fna&_nc_gid=LBTKldq_gsmdhFQ--n6Q6g&oh=00_AfFvKYIPxae6llKl_VT17dG5zIDCLOkf2EigX7n6x00G-g&oe=680AC3F6",
-                    alt: "EOI",
-                    // description: "EOI Certificate"
-                }
-            ]
-        },
-        {
-            title: "RoboCup",
-            description: "RoboCup",
-            achievement: "Rank 10th in Egypt",
-            year: "2016",
-            images: [
-                {
-                    url: "https://scontent.fcai19-7.fna.fbcdn.net/v/t39.30808-6/462316142_7913407118761100_685588124196353855_n.png?_nc_cat=101&ccb=1-7&_nc_sid=86c6b0&_nc_ohc=7cOAfEscTtUQ7kNvwHHXc59&_nc_oc=AdmZ1IgqnVQhS5ZJxSMlE7VO5h2GwBnOM_SaQ_mXEGhRayrAdbc7l7wIrObBPOGqo6k&_nc_zt=23&_nc_ht=scontent.fcai19-7.fna&_nc_gid=LBTKldq_gsmdhFQ--n6Q6g&oh=00_AfFvKYIPxae6llKl_VT17dG5zIDCLOkf2EigX7n6x00G-g&oe=680AC3F6",
-                    alt: "RoboCup",
-                    // description: "RoboCup Certificate"
-                }
-            ]
-        },
-        {
-            title: "ECPC",
-            description: "Egyptian Collegiate Programming Contest",
-            achievement: "Rank 7th in my first year at NU",
-            year: "2022",
-            images: [
-                {
-                    url: "https://scontent.fcai19-7.fna.fbcdn.net/v/t39.30808-6/482277706_1065267045635726_1956241697864875127_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=86c6b0&_nc_ohc=1ylVvYBsad4Q7kNvwGOE6DO&_nc_oc=Adltzr1B7OJ92p1jCzivnB0WvixF4DyE-MwQ8qhS7qD8G9fxDmbN3X5qcvrYuUyQ87Q&_nc_zt=23&_nc_ht=scontent.fcai19-7.fna&_nc_gid=3tU8CVtPMYaAEAoV-DVUcQ&oh=00_AfFICX7UOYGbZ01o2DP1U4nOfR4p6P7RUv0AhILIPAql_g&oe=6806DF27",
-                    alt: "ECPC",
-                    // description: "ECPC Certificate"
-                }
-            ]
-        },
-        {
-            title: "ECPC",
-            description: "Egyptian Collegiate Programming Contest",
-            achievement: "Rank 5th in my second year at NU",
-            year: "2023",
-            images: [
-                {
-                    url: "https://scontent.fcai19-7.fna.fbcdn.net/v/t39.30808-6/482246774_1065269122302185_3150232388297078773_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=127cfc&_nc_ohc=uSkoOkyXlgoQ7kNvwF7dpvx&_nc_oc=AdlwvxORgxB2CpGKJ7oWdrvXvDJjV9sZaCxYfQak3b8PIutXe8oZoFqxb0Gqd4bjQZY&_nc_zt=23&_nc_ht=scontent.fcai19-7.fna&_nc_gid=0fQEIbG-WDz2VKt4Hf6-SA&oh=00_AfHqV1k-2n2xGo_HUDL_r1ed6sGi8l9u7ZenWHdbiqooHw&oe=680705EC",
-                    alt: "ECPC",
-                    // description: "ECPC Certificate"
-                }
-            ]
-        },
-        {
             title: "UGRF 17th Edition",
             description: "UGRF 17th Edition",
             achievement: "2nd place SWE for PregTracker- personalized pregnancy tracker ",
@@ -401,8 +349,58 @@ export const userConfig = {
                 }
             ]
         },
-        
-        
+        {
+            title: "ECPC",
+            description: "Egyptian Collegiate Programming Contest",
+            achievement: "Rank 7th in my first year at NU",
+            year: "2022",
+            images: [
+                {
+                    url: "https://scontent.fcai19-7.fna.fbcdn.net/v/t39.30808-6/482277706_1065267045635726_1956241697864875127_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=86c6b0&_nc_ohc=1ylVvYBsad4Q7kNvwGOE6DO&_nc_oc=Adltzr1B7OJ92p1jCzivnB0WvixF4DyE-MwQ8qhS7qD8G9fxDmbN3X5qcvrYuUyQ87Q&_nc_zt=23&_nc_ht=scontent.fcai19-7.fna&_nc_gid=3tU8CVtPMYaAEAoV-DVUcQ&oh=00_AfFICX7UOYGbZ01o2DP1U4nOfR4p6P7RUv0AhILIPAql_g&oe=6806DF27",
+                    alt: "ECPC",
+                    // description: "ECPC Certificate"
+                }
+            ]
+        },
+        {
+            title: "ECPC",
+            description: "Egyptian Collegiate Programming Contest",
+            achievement: "Rank 5th in my second year at NU",
+            year: "2023",
+            images: [
+                {
+                    url: "https://scontent.fcai19-7.fna.fbcdn.net/v/t39.30808-6/482246774_1065269122302185_3150232388297078773_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=127cfc&_nc_ohc=uSkoOkyXlgoQ7kNvwF7dpvx&_nc_oc=AdlwvxORgxB2CpGKJ7oWdrvXvDJjV9sZaCxYfQak3b8PIutXe8oZoFqxb0Gqd4bjQZY&_nc_zt=23&_nc_ht=scontent.fcai19-7.fna&_nc_gid=0fQEIbG-WDz2VKt4Hf6-SA&oh=00_AfHqV1k-2n2xGo_HUDL_r1ed6sGi8l9u7ZenWHdbiqooHw&oe=680705EC",
+                    alt: "ECPC",
+                    // description: "ECPC Certificate"
+                }
+            ]
+        },   
+        {
+            title: "EOI",
+            description: "Egyptian Olympiad in Informatics",
+            achievement: "Rank 51 in Egypt",
+            year: "2015",
+            images: [
+                {
+                    url: "https://scontent.fcai19-7.fna.fbcdn.net/v/t39.30808-6/462316142_7913407118761100_685588124196353855_n.png?_nc_cat=101&ccb=1-7&_nc_sid=86c6b0&_nc_ohc=7cOAfEscTtUQ7kNvwHHXc59&_nc_oc=AdmZ1IgqnVQhS5ZJxSMlE7VO5h2GwBnOM_SaQ_mXEGhRayrAdbc7l7wIrObBPOGqo6k&_nc_zt=23&_nc_ht=scontent.fcai19-7.fna&_nc_gid=LBTKldq_gsmdhFQ--n6Q6g&oh=00_AfFvKYIPxae6llKl_VT17dG5zIDCLOkf2EigX7n6x00G-g&oe=680AC3F6",
+                    alt: "EOI",
+                    // description: "EOI Certificate"
+                }
+            ]
+        },
+        {
+            title: "RoboCup",
+            description: "RoboCup",
+            achievement: "Rank 10th in Egypt",
+            year: "2016",
+            images: [
+                {
+                    url: "https://scontent.fcai19-7.fna.fbcdn.net/v/t39.30808-6/462316142_7913407118761100_685588124196353855_n.png?_nc_cat=101&ccb=1-7&_nc_sid=86c6b0&_nc_ohc=7cOAfEscTtUQ7kNvwHHXc59&_nc_oc=AdmZ1IgqnVQhS5ZJxSMlE7VO5h2GwBnOM_SaQ_mXEGhRayrAdbc7l7wIrObBPOGqo6k&_nc_zt=23&_nc_ht=scontent.fcai19-7.fna&_nc_gid=LBTKldq_gsmdhFQ--n6Q6g&oh=00_AfFvKYIPxae6llKl_VT17dG5zIDCLOkf2EigX7n6x00G-g&oe=680AC3F6",
+                    alt: "RoboCup",
+                    // description: "RoboCup Certificate"
+                }
+            ]
+        },
     ],
 
     // Professional Experience
@@ -413,7 +411,7 @@ export const userConfig = {
             location: "Cairo, Egypt",
             period: "July 2024 - October 2024",
             description: "Working on a full stack web application for a client using Angular, React, .NET, Entity Framework, SQL Server, Bootstrap, and jQuery.",
-            technologies: ["Angular", "React", ".NET", "Entity Framework", "SQL Server", "Bootstrap", "jQuery"],
+            technologies: [".NET", "Entity Framework", "SQL Server", "Angular", "React", "Bootstrap", "jQuery"],
             images: [
                 {
                     url: "https://scontent.fcai19-7.fna.fbcdn.net/v/t39.30808-6/277727078_119097457389244_7717309927402528390_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=rvNpB-9dCAoQ7kNvwHeda0X&_nc_oc=Adk8Qg0h-4iVQGhQc5-3sXR9TAe3QxNy92vyJ3G7dWl2r0Is9MhcHn2t3A7PDOe4Qvk&_nc_zt=23&_nc_ht=scontent.fcai19-7.fna&_nc_gid=oM0aNre6tagZivjrXfzsVA&oh=00_AfHRaHWXsIyHB16sr_Oi3DiU-tA--5cznxWLBv0Cwpg8rg&oe=6806F746",

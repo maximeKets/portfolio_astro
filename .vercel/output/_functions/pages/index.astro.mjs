@@ -10,7 +10,7 @@ import { FaApple, FaLink, FaTrophy, FaGraduationCap, FaBriefcase, FaUsers, FaPal
 import { IoCellular, IoBatteryHalfOutline, IoSearchSharp } from 'react-icons/io5';
 import { VscVscode } from 'react-icons/vsc';
 import { FaRegFolderClosed } from 'react-icons/fa6';
-import { BsGithub, BsSpotify, BsStickyFill, BsFilePdf, BsCalendar, BsLinkedin } from 'react-icons/bs';
+import { BsGithub, BsStickyFill, BsFilePdf, BsLinkedin, BsSpotify, BsCalendar } from 'react-icons/bs';
 import { IoIosCall, IoIosMail } from 'react-icons/io';
 import { RiTerminalFill } from 'react-icons/ri';
 export { renderers } from '../renderers.mjs';
@@ -593,8 +593,8 @@ const foodies = {
 const userConfig = {
   // Personal Information
   name: "Abdelrahman Saleh",
-  role: "Software Developer",
-  location: "Egypt",
+  role: "Software Developer - Backend Developer",
+  location: "Giza, Egypt",
   website: "aabdoo23",
   roleFocus: "Backend Development using .NET, C#, Entity Framework, SQL Server, and Bootstrap. Can also work with Angular, React, and Node.js.",
   age: 24,
@@ -891,28 +891,33 @@ const userConfig = {
       ]
     },
     {
-      title: "EOI",
-      description: "Egyptian Olympiad in Informatics",
-      achievement: "Rank 51 in Egypt",
-      year: "2015",
+      title: "UGRF 17th Edition",
+      description: "UGRF 17th Edition",
+      achievement: "2nd place SWE for PregTracker- personalized pregnancy tracker ",
+      year: "2024",
       images: [
         {
-          url: "https://scontent.fcai19-7.fna.fbcdn.net/v/t39.30808-6/462316142_7913407118761100_685588124196353855_n.png?_nc_cat=101&ccb=1-7&_nc_sid=86c6b0&_nc_ohc=7cOAfEscTtUQ7kNvwHHXc59&_nc_oc=AdmZ1IgqnVQhS5ZJxSMlE7VO5h2GwBnOM_SaQ_mXEGhRayrAdbc7l7wIrObBPOGqo6k&_nc_zt=23&_nc_ht=scontent.fcai19-7.fna&_nc_gid=LBTKldq_gsmdhFQ--n6Q6g&oh=00_AfFvKYIPxae6llKl_VT17dG5zIDCLOkf2EigX7n6x00G-g&oe=680AC3F6",
-          alt: "EOI"
-          // description: "EOI Certificate"
+          url: "https://i.ibb.co/N2qgnb92/1706802292377.jpg",
+          alt: "UGRF",
+          description: "UGRF Certificate"
         }
       ]
     },
     {
-      title: "RoboCup",
-      description: "RoboCup",
-      achievement: "Rank 10th in Egypt",
-      year: "2016",
+      title: "UGRF 17th Edition",
+      description: "UGRF 17th Edition",
+      achievement: " 2nd place Clinical informatics for Recover360- an advanced physiotherapy clinic management system",
+      year: "2024",
       images: [
         {
-          url: "https://scontent.fcai19-7.fna.fbcdn.net/v/t39.30808-6/462316142_7913407118761100_685588124196353855_n.png?_nc_cat=101&ccb=1-7&_nc_sid=86c6b0&_nc_ohc=7cOAfEscTtUQ7kNvwHHXc59&_nc_oc=AdmZ1IgqnVQhS5ZJxSMlE7VO5h2GwBnOM_SaQ_mXEGhRayrAdbc7l7wIrObBPOGqo6k&_nc_zt=23&_nc_ht=scontent.fcai19-7.fna&_nc_gid=LBTKldq_gsmdhFQ--n6Q6g&oh=00_AfFvKYIPxae6llKl_VT17dG5zIDCLOkf2EigX7n6x00G-g&oe=680AC3F6",
-          alt: "RoboCup"
-          // description: "RoboCup Certificate"
+          url: "https://i.ibb.co/N2qgnb92/1706802292377.jpg",
+          alt: "UGRF",
+          description: "UGRF Certificate"
+        },
+        {
+          url: "https://i.ibb.co/SkfYGDv/1706802293048.jpg",
+          alt: "UGRF",
+          description: "UGRF Certificate"
         }
       ]
     },
@@ -943,33 +948,28 @@ const userConfig = {
       ]
     },
     {
-      title: "UGRF 17th Edition",
-      description: "UGRF 17th Edition",
-      achievement: "2nd place SWE for PregTracker- personalized pregnancy tracker ",
-      year: "2024",
+      title: "EOI",
+      description: "Egyptian Olympiad in Informatics",
+      achievement: "Rank 51 in Egypt",
+      year: "2015",
       images: [
         {
-          url: "https://i.ibb.co/N2qgnb92/1706802292377.jpg",
-          alt: "UGRF",
-          description: "UGRF Certificate"
+          url: "https://scontent.fcai19-7.fna.fbcdn.net/v/t39.30808-6/462316142_7913407118761100_685588124196353855_n.png?_nc_cat=101&ccb=1-7&_nc_sid=86c6b0&_nc_ohc=7cOAfEscTtUQ7kNvwHHXc59&_nc_oc=AdmZ1IgqnVQhS5ZJxSMlE7VO5h2GwBnOM_SaQ_mXEGhRayrAdbc7l7wIrObBPOGqo6k&_nc_zt=23&_nc_ht=scontent.fcai19-7.fna&_nc_gid=LBTKldq_gsmdhFQ--n6Q6g&oh=00_AfFvKYIPxae6llKl_VT17dG5zIDCLOkf2EigX7n6x00G-g&oe=680AC3F6",
+          alt: "EOI"
+          // description: "EOI Certificate"
         }
       ]
     },
     {
-      title: "UGRF 17th Edition",
-      description: "UGRF 17th Edition",
-      achievement: " 2nd place Clinical informatics for Recover360- an advanced physiotherapy clinic management system",
-      year: "2024",
+      title: "RoboCup",
+      description: "RoboCup",
+      achievement: "Rank 10th in Egypt",
+      year: "2016",
       images: [
         {
-          url: "https://i.ibb.co/N2qgnb92/1706802292377.jpg",
-          alt: "UGRF",
-          description: "UGRF Certificate"
-        },
-        {
-          url: "https://i.ibb.co/SkfYGDv/1706802293048.jpg",
-          alt: "UGRF",
-          description: "UGRF Certificate"
+          url: "https://scontent.fcai19-7.fna.fbcdn.net/v/t39.30808-6/462316142_7913407118761100_685588124196353855_n.png?_nc_cat=101&ccb=1-7&_nc_sid=86c6b0&_nc_ohc=7cOAfEscTtUQ7kNvwHHXc59&_nc_oc=AdmZ1IgqnVQhS5ZJxSMlE7VO5h2GwBnOM_SaQ_mXEGhRayrAdbc7l7wIrObBPOGqo6k&_nc_zt=23&_nc_ht=scontent.fcai19-7.fna&_nc_gid=LBTKldq_gsmdhFQ--n6Q6g&oh=00_AfFvKYIPxae6llKl_VT17dG5zIDCLOkf2EigX7n6x00G-g&oe=680AC3F6",
+          alt: "RoboCup"
+          // description: "RoboCup Certificate"
         }
       ]
     }
@@ -982,7 +982,7 @@ const userConfig = {
       location: "Cairo, Egypt",
       period: "July 2024 - October 2024",
       description: "Working on a full stack web application for a client using Angular, React, .NET, Entity Framework, SQL Server, Bootstrap, and jQuery.",
-      technologies: ["Angular", "React", ".NET", "Entity Framework", "SQL Server", "Bootstrap", "jQuery"],
+      technologies: [".NET", "Entity Framework", "SQL Server", "Angular", "React", "Bootstrap", "jQuery"],
       images: [
         {
           url: "https://scontent.fcai19-7.fna.fbcdn.net/v/t39.30808-6/277727078_119097457389244_7717309927402528390_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=rvNpB-9dCAoQ7kNvwHeda0X&_nc_oc=Adk8Qg0h-4iVQGhQc5-3sXR9TAe3QxNy92vyJ3G7dWl2r0Is9MhcHn2t3A7PDOe4Qvk&_nc_zt=23&_nc_ht=scontent.fcai19-7.fna&_nc_gid=oM0aNre6tagZivjrXfzsVA&oh=00_AfHRaHWXsIyHB16sr_Oi3DiU-tA--5cznxWLBv0Cwpg8rg&oe=6806F746",
@@ -1355,7 +1355,8 @@ If a question is unrelated to my work or portfolio, say: "That's outside my area
         ] }) : /* @__PURE__ */ jsxs("div", { className: "flex items-start space-x-2", children: [
           /* @__PURE__ */ jsxs("span", { className: "text-green-400", children: [
             "$",
-            userConfig.website
+            userConfig.website,
+            ":"
           ] }),
           /* @__PURE__ */ jsx("pre", { className: "whitespace-pre-wrap", children: msg.content })
         ] }) }, index)),
@@ -1382,43 +1383,69 @@ If a question is unrelated to my work or portfolio, say: "That's outside my area
   ] });
 }
 
-function MobileDock() {
+function MobileDock({ onGitHubClick, onNotesClick, onResumeClick, onTerminalClick }) {
   const handleEmailClick = () => {
     window.location.href = `mailto:${userConfig.contact.email}`;
-  };
-  const handleGithubClick = () => {
-    window.open(userConfig.social.github, "_blank");
   };
   const handleSpotifyClick = () => {
     window.open(`https://open.spotify.com/playlist/${userConfig.spotify.playlistId}`, "_blank");
   };
-  return /* @__PURE__ */ jsx("div", { className: "fixed bottom-0 left-0 right-0 md:hidden", children: /* @__PURE__ */ jsxs("div", { className: "mx-4 mb-4 p-3 bg-gradient-to-t from-gray-700 to-gray-800 backdrop-blur-xl rounded-3xl flex justify-around items-center max-w-[400px] mx-auto", children: [
-    /* @__PURE__ */ jsx("a", { href: `tel:${userConfig.contact.phone}`, className: "flex flex-col items-center", children: /* @__PURE__ */ jsx("div", { className: "w-18 h-18 bg-gradient-to-t from-green-600 to-green-400 rounded-2xl flex items-center justify-center", children: /* @__PURE__ */ jsx(IoIosCall, { size: 60, className: "text-white" }) }) }),
-    /* @__PURE__ */ jsx(
-      "button",
-      {
-        onClick: handleEmailClick,
-        className: "flex flex-col items-center cursor-pointer",
-        children: /* @__PURE__ */ jsx("div", { className: "w-18 h-18 bg-gradient-to-t from-blue-600 to-blue-400 rounded-2xl flex items-center justify-center", children: /* @__PURE__ */ jsx(IoIosMail, { size: 60, className: "text-white" }) })
-      }
-    ),
-    /* @__PURE__ */ jsx(
-      "button",
-      {
-        onClick: handleGithubClick,
-        className: "flex flex-col items-center cursor-pointer",
-        children: /* @__PURE__ */ jsx("div", { className: "w-18 h-18 bg-gradient-to-t from-black to-black/60 rounded-2xl flex items-center justify-center", children: /* @__PURE__ */ jsx(BsGithub, { size: 55, className: "text-white" }) })
-      }
-    ),
-    /* @__PURE__ */ jsx(
-      "button",
-      {
-        onClick: handleSpotifyClick,
-        className: "flex flex-col items-center cursor-pointer",
-        children: /* @__PURE__ */ jsx("div", { className: "w-18 h-18 bg-gradient-to-t from-black to-black/60 rounded-2xl flex items-center justify-center", children: /* @__PURE__ */ jsx(BsSpotify, { size: 55, className: "text-[#1ED760]" }) })
-      }
-    )
-  ] }) });
+  return /* @__PURE__ */ jsxs("div", { className: "fixed bottom-0 left-0 right-0 md:hidden flex flex-col items-center z-50 space-y-2", children: [
+    /* @__PURE__ */ jsxs("div", { className: "mx-4 mb-4 p-3 rounded-3xl space-x-4 flex justify-around items-center max-w-[400px] mx-auto", children: [
+      /* @__PURE__ */ jsx(
+        "button",
+        {
+          onClick: onGitHubClick,
+          className: "flex flex-col items-center cursor-pointer",
+          children: /* @__PURE__ */ jsx("div", { className: "w-18 h-18 bg-black rounded-2xl flex items-center justify-center", children: /* @__PURE__ */ jsx(BsGithub, { size: 55, className: "text-white" }) })
+        }
+      ),
+      /* @__PURE__ */ jsx(
+        "button",
+        {
+          onClick: onNotesClick,
+          className: "flex flex-col items-center cursor-pointer",
+          children: /* @__PURE__ */ jsx("div", { className: "w-18 h-18 bg-gradient-to-t from-yellow-600 to-yellow-400 rounded-2xl flex items-center justify-center", children: /* @__PURE__ */ jsx(BsStickyFill, { size: 55, className: "text-white" }) })
+        }
+      ),
+      /* @__PURE__ */ jsx(
+        "button",
+        {
+          onClick: onResumeClick,
+          className: "flex flex-col items-center cursor-pointer",
+          children: /* @__PURE__ */ jsx("div", { className: "w-18 h-18 bg-gradient-to-t from-red-600 to-red-400 rounded-2xl flex items-center justify-center", children: /* @__PURE__ */ jsx(BsFilePdf, { size: 55, className: "text-white" }) })
+        }
+      ),
+      /* @__PURE__ */ jsx(
+        "button",
+        {
+          onClick: onTerminalClick,
+          className: "flex flex-col items-center cursor-pointer",
+          children: /* @__PURE__ */ jsx("div", { className: "w-18 h-18 bg-black rounded-2xl flex items-center justify-center", children: /* @__PURE__ */ jsx(RiTerminalFill, { size: 55, className: "text-white" }) })
+        }
+      )
+    ] }),
+    /* @__PURE__ */ jsxs("div", { className: "mx-4 mb-4 p-3 bg-gradient-to-t from-gray-700 to-gray-800 backdrop-blur-xl rounded-3xl space-x-4 flex justify-around items-center max-w-[400px] mx-auto", children: [
+      /* @__PURE__ */ jsx("a", { href: `tel:${userConfig.contact.phone}`, className: "flex flex-col items-center", children: /* @__PURE__ */ jsx("div", { className: "w-18 h-18 bg-gradient-to-t from-green-600 to-green-400 rounded-2xl flex items-center justify-center", children: /* @__PURE__ */ jsx(IoIosCall, { size: 55, className: "text-white" }) }) }),
+      /* @__PURE__ */ jsx(
+        "button",
+        {
+          onClick: handleEmailClick,
+          className: "flex flex-col items-center cursor-pointer",
+          children: /* @__PURE__ */ jsx("div", { className: "w-18 h-18 bg-gradient-to-t from-blue-600 to-blue-400 rounded-2xl flex items-center justify-center", children: /* @__PURE__ */ jsx(IoIosMail, { size: 55, className: "text-white" }) })
+        }
+      ),
+      /* @__PURE__ */ jsx("a", { href: userConfig.social.linkedin, className: "flex flex-col items-center", children: /* @__PURE__ */ jsx("div", { className: "w-18 h-18 bg-[#0a66c2] rounded-2xl flex items-center justify-center", children: /* @__PURE__ */ jsx(BsLinkedin, { size: 50, className: "text-white" }) }) }),
+      /* @__PURE__ */ jsx(
+        "button",
+        {
+          onClick: handleSpotifyClick,
+          className: "flex flex-col items-center cursor-pointer",
+          children: /* @__PURE__ */ jsx("div", { className: "w-18 h-18 bg-gradient-to-t from-black to-black/55 rounded-2xl flex items-center justify-center", children: /* @__PURE__ */ jsx(BsSpotify, { size: 55, className: "text-[#1ED760]" }) })
+        }
+      )
+    ] })
+  ] });
 }
 
 function ResumeViewer({ isOpen, onClose }) {
@@ -1605,9 +1632,9 @@ const DesktopDock = ({ onTerminalClick, onNotesClick, onGitHubClick }) => {
           onClick: onGitHubClick,
           onMouseEnter: () => setHoveredIcon("github"),
           onMouseLeave: () => setHoveredIcon(null),
-          className: "relative",
+          className: "relative group",
           children: [
-            /* @__PURE__ */ jsx("div", { className: "w-12 h-12 bg-gradient-to-t from-black to-black/60 rounded-xl flex items-center justify-center shadow-lg", children: /* @__PURE__ */ jsx(BsGithub, { size: 37, className: "text-gray-100" }) }),
+            /* @__PURE__ */ jsx("div", { className: "w-12 h-12 bg-gradient-to-t from-black to-black/60 rounded-xl flex items-center justify-center shadow-lg transition-transform duration-300 ease-out group-hover:scale-110 group-hover:animate-bounce", children: /* @__PURE__ */ jsx(BsGithub, { size: 35, className: "text-gray-100" }) }),
             hoveredIcon === "github" && /* @__PURE__ */ jsx(Tooltip, { text: "My Projects" })
           ]
         }
@@ -1618,9 +1645,9 @@ const DesktopDock = ({ onTerminalClick, onNotesClick, onGitHubClick }) => {
           onClick: onNotesClick,
           onMouseEnter: () => setHoveredIcon("notes"),
           onMouseLeave: () => setHoveredIcon(null),
-          className: "relative",
+          className: "relative group",
           children: [
-            /* @__PURE__ */ jsx("div", { className: "w-12 h-12 bg-gradient-to-t from-yellow-600 to-yellow-400 rounded-xl flex items-center justify-center shadow-lg", children: /* @__PURE__ */ jsx(BsStickyFill, { size: 37, className: "text-white" }) }),
+            /* @__PURE__ */ jsx("div", { className: "w-12 h-12 bg-gradient-to-t from-yellow-600 to-yellow-400 rounded-xl flex items-center justify-center shadow-lg transition-transform duration-300 ease-out group-hover:scale-110 group-hover:animate-bounce", children: /* @__PURE__ */ jsx(BsStickyFill, { size: 35, className: "text-white" }) }),
             hoveredIcon === "notes" && /* @__PURE__ */ jsx(Tooltip, { text: "Resume Notes" })
           ]
         }
@@ -1631,9 +1658,9 @@ const DesktopDock = ({ onTerminalClick, onNotesClick, onGitHubClick }) => {
           onClick: handleResumeClick,
           onMouseEnter: () => setHoveredIcon("resume"),
           onMouseLeave: () => setHoveredIcon(null),
-          className: "relative",
+          className: "relative group",
           children: [
-            /* @__PURE__ */ jsx("div", { className: "w-12 h-12 bg-gradient-to-t from-red-600 to-red-400 rounded-xl flex items-center justify-center shadow-lg", children: /* @__PURE__ */ jsx(BsFilePdf, { size: 37, className: "text-white" }) }),
+            /* @__PURE__ */ jsx("div", { className: "w-12 h-12 bg-gradient-to-t from-red-600 to-red-400 rounded-xl flex items-center justify-center shadow-lg transition-transform duration-300 ease-out group-hover:scale-110 group-hover:animate-bounce", children: /* @__PURE__ */ jsx(BsFilePdf, { size: 35, className: "text-white" }) }),
             hoveredIcon === "resume" && /* @__PURE__ */ jsx(Tooltip, { text: "View Resume" })
           ]
         }
@@ -1646,7 +1673,7 @@ const DesktopDock = ({ onTerminalClick, onNotesClick, onGitHubClick }) => {
           onMouseLeave: () => setHoveredIcon(null),
           className: "relative",
           children: [
-            /* @__PURE__ */ jsx("div", { className: "w-12 h-12 bg-gradient-to-t from-blue-600 to-blue-400 rounded-xl flex items-center justify-center shadow-lg", children: /* @__PURE__ */ jsx(BsCalendar, { size: 37, className: "text-white" }) }),
+            /* @__PURE__ */ jsx("div", { className: "w-12 h-12 bg-gradient-to-t from-blue-600 to-blue-400 rounded-xl flex items-center justify-center shadow-lg transition-transform duration-300 ease-out group-hover:scale-110 group-hover:animate-bounce", children: /* @__PURE__ */ jsx(BsCalendar, { size: 35, className: "text-white" }) }),
             hoveredIcon === "calendar" && /* @__PURE__ */ jsx(Tooltip, { text: "Schedule a Call" })
           ]
         }
@@ -1659,7 +1686,7 @@ const DesktopDock = ({ onTerminalClick, onNotesClick, onGitHubClick }) => {
           onMouseLeave: () => setHoveredIcon(null),
           className: "relative",
           children: [
-            /* @__PURE__ */ jsx("div", { className: "w-12 h-12 bg-gradient-to-t from-green-600 to-green-400 rounded-xl flex items-center justify-center shadow-lg", children: /* @__PURE__ */ jsx(BsSpotify, { size: 37, className: "text-white" }) }),
+            /* @__PURE__ */ jsx("div", { className: "w-12 h-12 bg-gradient-to-t from-green-600 to-green-400 rounded-xl flex items-center justify-center shadow-lg transition-transform duration-300 ease-out group-hover:scale-110 group-hover:animate-bounce", children: /* @__PURE__ */ jsx(BsSpotify, { size: 35, className: "text-white" }) }),
             hoveredIcon === "spotify" && /* @__PURE__ */ jsx(Tooltip, { text: "Spotify Playlist" })
           ]
         }
@@ -1672,7 +1699,7 @@ const DesktopDock = ({ onTerminalClick, onNotesClick, onGitHubClick }) => {
           onMouseLeave: () => setHoveredIcon(null),
           className: "relative",
           children: [
-            /* @__PURE__ */ jsx("div", { className: "w-12 h-12 bg-gradient-to-t from-purple-600 to-purple-400 rounded-xl flex items-center justify-center shadow-lg", children: /* @__PURE__ */ jsx(FaLink, { size: 37, className: "text-white" }) }),
+            /* @__PURE__ */ jsx("div", { className: "w-12 h-12 bg-gradient-to-t from-purple-600 to-purple-400 rounded-xl flex items-center justify-center shadow-lg transition-transform duration-300 ease-out group-hover:scale-110 group-hover:animate-bounce", children: /* @__PURE__ */ jsx(FaLink, { size: 35, className: "text-white" }) }),
             hoveredIcon === "links" && /* @__PURE__ */ jsx(Tooltip, { text: "Contact Links" }),
             showLinksPopup && /* @__PURE__ */ jsx(LinksPopup, {})
           ]
@@ -1686,7 +1713,7 @@ const DesktopDock = ({ onTerminalClick, onNotesClick, onGitHubClick }) => {
           onMouseLeave: () => setHoveredIcon(null),
           className: "relative",
           children: [
-            /* @__PURE__ */ jsx("div", { className: "w-12 h-12 bg-gradient-to-t from-black to-black/60 rounded-xl flex items-center justify-center shadow-lg", children: /* @__PURE__ */ jsx(RiTerminalFill, { size: 37, className: "text-white" }) }),
+            /* @__PURE__ */ jsx("div", { className: "w-12 h-12 bg-gradient-to-t from-black to-black/60 rounded-xl flex items-center justify-center shadow-lg transition-transform duration-300 ease-out group-hover:scale-110 group-hover:animate-bounce", children: /* @__PURE__ */ jsx(RiTerminalFill, { size: 35, className: "text-white" }) }),
             hoveredIcon === "terminal" && /* @__PURE__ */ jsx(Tooltip, { text: "Terminal" })
           ]
         }
@@ -2280,6 +2307,7 @@ function Desktop({ initialBg, backgroundMap }) {
   const [showTerminal, setShowTerminal] = useState(false);
   const [showNotes, setShowNotes] = useState(false);
   const [showGitHub, setShowGitHub] = useState(false);
+  const [showResume, setShowResume] = useState(false);
   const [currentTutorialStep, setCurrentTutorialStep] = useState(0);
   const [showTutorial, setShowTutorial] = useState(true);
   useEffect(() => {
@@ -2355,7 +2383,15 @@ function Desktop({ initialBg, backgroundMap }) {
     ),
     /* @__PURE__ */ jsx("div", { className: "relative z-10", children: /* @__PURE__ */ jsx(MacToolbar, {}) }),
     /* @__PURE__ */ jsx("div", { className: "relative z-0 flex items-center justify-center h-[calc(100vh-10rem)] md:h-[calc(100vh-1.5rem)] pt-6", children: showTerminal && /* @__PURE__ */ jsx(MacTerminal, { onClose: () => setShowTerminal(false) }) }),
-    /* @__PURE__ */ jsx(MobileDock, {}),
+    /* @__PURE__ */ jsx(
+      MobileDock,
+      {
+        onGitHubClick: () => setShowGitHub(true),
+        onNotesClick: () => setShowNotes(true),
+        onResumeClick: () => setShowResume(true),
+        onTerminalClick: () => setShowTerminal(true)
+      }
+    ),
     /* @__PURE__ */ jsx(
       DesktopDock,
       {
@@ -2366,6 +2402,7 @@ function Desktop({ initialBg, backgroundMap }) {
     ),
     /* @__PURE__ */ jsx(NotesApp, { isOpen: showNotes, onClose: () => setShowNotes(false) }),
     /* @__PURE__ */ jsx(GitHubViewer, { isOpen: showGitHub, onClose: () => setShowGitHub(false) }),
+    /* @__PURE__ */ jsx(ResumeViewer, { isOpen: showResume, onClose: () => setShowResume(false) }),
     showTutorial && /* @__PURE__ */ jsx("div", { className: "fixed right-4 top-1/2 transform -translate-y-1/2 z-50", children: /* @__PURE__ */ jsxs("div", { className: "bg-gray-800/90 backdrop-blur-sm text-white p-4 rounded-lg shadow-xl max-w-xs animate-fade-in", children: [
       /* @__PURE__ */ jsx("h3", { className: "text-lg font-semibold mb-2", children: tutorialSteps[currentTutorialStep].title }),
       /* @__PURE__ */ jsx("p", { className: "text-sm text-gray-300 mb-4", children: tutorialSteps[currentTutorialStep].content }),

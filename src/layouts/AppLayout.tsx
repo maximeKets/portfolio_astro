@@ -5,6 +5,7 @@ import MobileDock from '../components/global/MobileDock';
 import DesktopDock from '../components/global/DesktopDock';
 import NotesApp from '../components/global/NotesApp';
 import GitHubViewer from '../components/global/GitHubViewer';
+import ResumeViewer from '../components/global/ResumeViewer';
 
 interface AppLayoutProps {
   initialBg: string;
@@ -23,13 +24,14 @@ export default function Desktop({ initialBg, backgroundMap }: AppLayoutProps) {
   const [showTerminal, setShowTerminal] = useState(false);
   const [showNotes, setShowNotes] = useState(false);
   const [showGitHub, setShowGitHub] = useState(false);
+  const [showResume, setShowResume] = useState(false);
   const [currentTutorialStep, setCurrentTutorialStep] = useState(0);
   const [showTutorial, setShowTutorial] = useState(true);
 
   useEffect(() => {
     const lastBg = localStorage.getItem('lastBackground');
     setShowTutorial(true);
-    
+
     if (lastBg === initialBg) {
       const bgKeys = Object.keys(backgroundMap);
       const availableBgs = bgKeys.filter((bg) => bg !== lastBg);
@@ -111,7 +113,12 @@ export default function Desktop({ initialBg, backgroundMap }: AppLayoutProps) {
         {showTerminal && <MacTerminal onClose={() => setShowTerminal(false)} />}
       </div>
 
-      <MobileDock />
+      <MobileDock
+        onGitHubClick={() => setShowGitHub(true)}
+        onNotesClick={() => setShowNotes(true)}
+        onResumeClick={() => setShowResume(true)}
+        onTerminalClick={() => setShowTerminal(true)}
+      />
       <DesktopDock
         onTerminalClick={() => setShowTerminal(true)}
         onNotesClick={() => setShowNotes(true)}
@@ -120,7 +127,7 @@ export default function Desktop({ initialBg, backgroundMap }: AppLayoutProps) {
 
       <NotesApp isOpen={showNotes} onClose={() => setShowNotes(false)} />
       <GitHubViewer isOpen={showGitHub} onClose={() => setShowGitHub(false)} />
-
+      <ResumeViewer isOpen={showResume} onClose={() => setShowResume(false)} />
       {showTutorial && (
         <div className="fixed right-4 top-1/2 transform -translate-y-1/2 z-50">
           <div className="bg-gray-800/90 backdrop-blur-sm text-white p-4 rounded-lg shadow-xl max-w-xs animate-fade-in">

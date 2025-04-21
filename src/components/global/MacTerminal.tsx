@@ -230,7 +230,7 @@ If a question is unrelated to my work or portfolio, say: "That's outside my area
                 </div>
               ) : (
                 <div className='flex items-start space-x-2'>
-                  <span className='text-green-400'>${userConfig.website}</span>
+                  <span className='text-green-400'>${userConfig.website}:</span>
                   <pre className='whitespace-pre-wrap'>{msg.content}</pre>
                 </div>
               )}
