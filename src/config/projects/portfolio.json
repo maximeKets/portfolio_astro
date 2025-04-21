@@ -1,0 +1,232 @@
+{
+    "id": "Portfolio",
+    "title": "Portfolio",
+    "description": "My portfolio website built with Astro.js",
+    "repoUrl": "https://github.com/aabdoo23/portfolio",
+    "liveUrl": "https://aabdoo23.github.io/portfolio",
+    "techStack": [
+        "Astro.js",
+        "Tailwind CSS",
+        "TypeScript",
+        "React",
+        "Vercel"
+    ],
+    "structure": {
+        "root": "portfolio",
+        "children": [
+            {
+                "name": ".gitignore",
+                "type": "file"
+            },
+            {
+                "name": ".vscode",
+                "type": "directory",
+                "children": [
+                    {
+                        "name": "extensions.json",
+                        "type": "file"
+                    },
+                    {
+                        "name": "launch.json",
+                        "type": "file"
+                    }
+                ]
+            },
+            {
+                "name": "README.md",
+                "type": "file"
+            },
+            {
+                "name": "astro.config.mjs",
+                "type": "file"
+            },
+            {
+                "name": "package-lock.json",
+                "type": "file"
+            },
+            {
+                "name": "package.json",
+                "type": "file"
+            },
+            {
+                "name": "public",
+                "type": "directory",
+                "children": [
+                    {
+                        "name": "resume.pdf",
+                        "type": "file"
+                    },
+                    {
+                        "name": "robots.txt",
+                        "type": "file"
+                    }
+                ]
+            },
+            {
+                "name": "src",
+                "type": "directory",
+                "children": [
+                    {
+                        "name": "assets",
+                        "type": "directory",
+                        "children": [
+                            {
+                                "name": "images",
+                                "type": "directory",
+                                "children": [
+                                    {
+                                        "name": "mac-background1.jpg",
+                                        "type": "file"
+                                    },
+                                    {
+                                        "name": "mac-background2.jpg",
+                                        "type": "file"
+                                    },
+                                    {
+                                        "name": "mac-background3.jpg",
+                                        "type": "file"
+                                    },
+                                    {
+                                        "name": "projects",
+                                        "type": "directory",
+                                        "children": [
+                                            {
+                                                "name": "scheds",
+                                                "type": "directory",
+                                                "children": [
+                                                    {
+                                                        "name": "customizationsSection.png",
+                                                        "type": "file"
+                                                    },
+                                                    {
+                                                        "name": "generatedSchedules.png",
+                                                        "type": "file"
+                                                    },
+                                                    {
+                                                        "name": "landingPage.png",
+                                                        "type": "file"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "name": "components",
+                        "type": "directory",
+                        "children": [
+                            {
+                                "name": "LandingPage.astro",
+                                "type": "file"
+                            },
+                            {
+                                "name": "global",
+                                "type": "directory",
+                                "children": [
+                                    {
+                                        "name": "BaseHead.astro",
+                                        "type": "file"
+                                    },
+                                    {
+                                        "name": "DesktopDock.tsx",
+                                        "type": "file"
+                                    },
+                                    {
+                                        "name": "GitHubViewer.tsx",
+                                        "type": "file"
+                                    },
+                                    {
+                                        "name": "MacTerminal.tsx",
+                                        "type": "file"
+                                    },
+                                    {
+                                        "name": "MacToolbar.tsx",
+                                        "type": "file"
+                                    },
+                                    {
+                                        "name": "MobileDock.tsx",
+                                        "type": "file"
+                                    },
+                                    {
+                                        "name": "NotesApp.tsx",
+                                        "type": "file"
+                                    },
+                                    {
+                                        "name": "ResumeViewer.tsx",
+                                        "type": "file"
+                                    },
+                                    {
+                                        "name": "SpotifyPlayer.tsx",
+                                        "type": "file"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "name": "config",
+                        "type": "directory",
+                        "children": [
+                            {
+                                "name": "userConfig.ts",
+                                "type": "file"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "layouts",
+                        "type": "directory",
+                        "children": [
+                            {
+                                "name": "AppLayout.tsx",
+                                "type": "file"
+                            },
+                            {
+                                "name": "Layout.astro",
+                                "type": "file"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "pages",
+                        "type": "directory",
+                        "children": [
+                            {
+                                "name": "api",
+                                "type": "directory",
+                                "children": [
+                                    {
+                                        "name": "chat.ts",
+                                        "type": "file"
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "index.astro",
+                                "type": "file"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "styles",
+                        "type": "directory",
+                        "children": [
+                            {
+                                "name": "global.css",
+                                "type": "file"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "tsconfig.json",
+                "type": "file"
+            }
+        ]
+    },
+    "images": []
+}

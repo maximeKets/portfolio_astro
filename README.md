@@ -1,120 +1,109 @@
-# MacOS Terminal Portfolio - Astro Theme
+# macOS Terminal Portfolio
 
-![MacOS Terminal Portfolio](https://storage.googleapis.com/v-staff/theme-cover.png)
+A modern, interactive portfolio website built with Astro, React, and Tailwind CSS, featuring a macOS terminal-inspired interface.
 
-An interactive macOS-inspired portfolio theme for Astro, featuring an AI-powered terminal chat, dynamic backgrounds, and a responsive dock interface.
+## 🚀 Features
 
-## Features
+- **Modern Tech Stack**: Built with Astro, React, and Tailwind CSS
+- **Terminal Interface**: macOS terminal-inspired UI for a unique user experience
+- **Responsive Design**: Fully responsive layout that works on all devices
+- **SEO Optimized**: Built-in sitemap generation and SEO tools
+- **TypeScript Support**: Full TypeScript integration for better development experience
+- **Vercel Deployment**: Optimized for deployment on Vercel
 
-- OpenAI-powered terminal chat
-- Dynamic rotating wallpapers
-- Responsive macOS-style dock
-- Built-in SEO optimization
-- Automated sitemap generation
-- Customizable system prompts
-- Tailwind CSS styling
-- Mobile-friendly design
+## 🛠️ Tech Stack
 
-## Tech Stack
+- [Astro](https://astro.build/) - Modern static site builder
+- [React](https://reactjs.org/) - UI component library
+- [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS framework
+- [TypeScript](https://www.typescriptlang.org/) - Type-safe JavaScript
+- [Vercel](https://vercel.com/) - Deployment platform
 
-- [Astro](https://astro.build)
-- [React](https://reactjs.org)
-- [TypeScript](https://www.typescriptlang.org)
-- [Tailwind CSS](https://tailwindcss.com)
-- [OpenAI API](https://openai.com/api)
-
-## Integrations
-
-- @astrojs/react
-- @astrojs/vercel
-- @astrolib/seo
-- @astrojs/sitemap
-
-## Getting Started
-
-### Prerequisites
-
-- Node.js (v18 or higher)
-- OpenAI API key
-
-### Installation
+## 📦 Installation
 
 1. Clone the repository:
-   `git clone https://github.com/yourusername/macos-terminal-portfolio`
+```bash
+git clone https://github.com/yourusername/macos-terminal-portfolio.git
+cd macos-terminal-portfolio
+```
 
 2. Install dependencies:
-   `npm install`
+```bash
+npm install
+```
 
-3. Create a .env file in the root directory:
-   `cp .env.example .env`
+3. Create a `.env` file in the root directory and add your environment variables:
+```env
+GROQ_API_KEY = YOUR_GROQ_API_KEY
+```
 
-4. Add your OpenAI API key to the .env file:
-   `OPENAI_API_KEY=your_api_key_here`
+## 🚀 Development
 
-5. Start the development server:
-   `npm run dev`
+To start the development server:
 
-## Customization
+```bash
+npm run dev
+```
 
-### Personal Information
+This will start the development server at `http://localhost:4321`.
 
-Update the following files with your information:
+## 🏗️ Building for Production
 
-1. `src/components/global/MacTerminal.tsx`:
+To build the project for production:
 
-- Modify welcomeMessage and systemPrompt with your details
-- Customize placeholder messages
+```bash
+npm run build
+```
 
-2. `src/pages/index.astro`:
+To preview the production build:
 
-- Update SEO metadata
-- Add your website URL
+```bash
+npm run preview
+```
 
-3. `src/components/global/BaseHead.astro`:
+## 📁 Project Structure
 
-- Update meta tags
-- Add your favicon
+```
+├── src/
+│   ├── components/     # React components
+│   ├── layouts/        # Layout components
+│   ├── pages/          # Astro pages
+│   ├── styles/         # Global styles
+│   ├── config/         # Configuration files
+│   └── assets/         # Static assets
+├── public/             # Public assets
+├── .astro/             # Astro build files
+├── util/               # Utility functions
+└── astro.config.mjs    # Astro configuration
+```
 
-### Background Images
+## 🔧 Configuration
 
-Replace or add images in `src/assets/images/` directory.
+The project is configured through several key files:
 
-### Dock Icons
+- `astro.config.mjs`: Main Astro configuration
+- `tsconfig.json`: TypeScript configuration
+- `tailwind.config.js`: Tailwind CSS configuration
 
-Modify `src/components/global/DesktopDock.tsx` and MobileDock.tsx to customize your dock shortcuts.
+## 🚀 Deployment
 
-## Configuration
+The project is configured for deployment on Vercel. To deploy:
 
-### SEO
+1. Push your changes to your GitHub repository
+2. Connect your repository to Vercel
+3. Vercel will automatically deploy your site
 
-Update SEO metadata in:
+## 📝 License
 
-- `src/pages/index.astro`
-- `src/components/global/BaseHead.astro`
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-### Sitemap
+## 🙏 Acknowledgments
 
-The sitemap is automatically generated using @astrojs/sitemap. Configure in astro.config.mjs.
+- Inspired by macOS terminal interface
+- Built with modern web technologies
+- Thanks to all contributors and maintainers of the open-source tools used in this project
 
-## Deployment
-
-This theme is configured for deployment on Vercel. Update astro.config.mjs if you prefer a different platform.
-
-## License
-
-MIT License - feel free to use this theme for your portfolio!
-
-## Contributing
-
-Contributions, issues, and feature requests are welcome!
-
-## Acknowledgments
-
-- Inspired by macOS interface
-- Powered by OpenAI's API
-- Built with Astro
-
-## Contact
+## 📞 Contact
 
 For questions or support, please open an issue on GitHub.
 

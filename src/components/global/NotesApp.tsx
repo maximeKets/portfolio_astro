@@ -15,7 +15,6 @@ type Section =
     | 'education'
     | 'experience'
     | 'courses'
-    | 'certifications'
     | 'skills'
     | 'roles'
     | 'activities'
@@ -23,6 +22,12 @@ type Section =
 
 // Type for storing image indices per item
 type ImageIndicesState = Record<string, number>;
+
+interface Image {
+    url: string;
+    alt?: string;
+    description?: string;
+}
 
 const NotesApp = ({ isOpen, onClose }: NotesAppProps) => {
     const [activeSection, setActiveSection] = useState<Section>('menu');
@@ -40,7 +45,7 @@ const NotesApp = ({ isOpen, onClose }: NotesAppProps) => {
     };
 
     // Update image index for a specific item
-    const handleNextImage = (itemId: string, images: any[]) => {
+    const handleNextImage = (itemId: string, images: readonly Image[]) => {
         setActiveImageIndices(prevIndices => ({
             ...prevIndices,
             [itemId]: ((prevIndices[itemId] ?? -1) + 1) % images.length
@@ -48,7 +53,7 @@ const NotesApp = ({ isOpen, onClose }: NotesAppProps) => {
     };
 
     // Update image index for a specific item
-    const handlePrevImage = (itemId: string, images: any[]) => {
+    const handlePrevImage = (itemId: string, images: readonly Image[]) => {
         setActiveImageIndices(prevIndices => ({
             ...prevIndices,
             [itemId]: ((prevIndices[itemId] ?? 0) - 1 + images.length) % images.length
@@ -60,7 +65,6 @@ const NotesApp = ({ isOpen, onClose }: NotesAppProps) => {
     const education = userConfig.education || [];
     const experience = userConfig.experience || [];
     const courses = userConfig.courses || [];
-    const certifications = userConfig.certifications || [];
     const skills = userConfig.skills || [];
     const roles = userConfig.extraCurricularRoles || [];
     const activities = userConfig.extraCurricularActivities || [];
@@ -77,11 +81,10 @@ const NotesApp = ({ isOpen, onClose }: NotesAppProps) => {
     );
 
     // Accepts itemId to manage state correctly
-    const renderImageCarousel = (itemId: string, images: any[]) => {
+    const renderImageCarousel = (itemId: string, images: readonly Image[]) => {
         const currentIndex = activeImageIndices[itemId] ?? 0;
-        // Ensure currentIndex is valid if item has no images initially or state is somehow wrong
         if (!images || images.length === 0 || currentIndex >= images.length) {
-            return null; // Or render a placeholder/error
+            return null;
         }
         
         return (
@@ -90,7 +93,7 @@ const NotesApp = ({ isOpen, onClose }: NotesAppProps) => {
                     <img
                         src={images[currentIndex].url}
                         alt={images[currentIndex].alt}
-                        className="w-full object-cover rounded-lg"
+                        className="w-full h-48 object-contain bg-gray-900 rounded-lg"
                     />
                 </div>
                 
@@ -125,18 +128,20 @@ const NotesApp = ({ isOpen, onClose }: NotesAppProps) => {
         <div className="space-y-6">
             {renderBackButton()}
             <h2 className="text-2xl font-bold text-gray-200 mb-6">Education</h2>
-            {education.map((item, index) => {
-                const itemId = `education-${index}`; // Unique ID for the item
-                return (
-                    <div key={itemId} className="bg-gray-800/50 p-4 rounded-lg mb-4">
-                        <h3 className="text-xl font-semibold text-gray-200">{item.degree} {item.major && `- ${item.major}`}</h3>
-                        <div className="text-gray-300 mb-2">{item.institution}, {item.location}</div>
-                        <div className="text-gray-400 mb-3">{item.year}</div>
-                        <p className="text-gray-300 mb-4">{item.description}</p>
-                        {item.images && item.images.length > 0 && renderImageCarousel(itemId, item.images)}
-                    </div>
-                );
-            })}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {education.map((item, index) => {
+                    const itemId = `education-${index}`;
+                    return (
+                        <div key={itemId} className="bg-gray-800/50 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+                            <h3 className="text-xl font-semibold text-gray-200 mb-2">{item.degree} {item.major && `- ${item.major}`}</h3>
+                            <div className="text-gray-300 mb-2">{item.institution}, {item.location}</div>
+                            <div className="text-gray-400 mb-3">{item.year}</div>
+                            <p className="text-gray-300 mb-4">{item.description}</p>
+                            {item.images && item.images.length > 0 && renderImageCarousel(itemId, item.images)}
+                        </div>
+                    );
+                })}
+            </div>
         </div>
     );
 
@@ -144,27 +149,29 @@ const NotesApp = ({ isOpen, onClose }: NotesAppProps) => {
         <div className="space-y-6">
             {renderBackButton()}
             <h2 className="text-2xl font-bold text-gray-200 mb-6">Professional Experience</h2>
-            {experience.map((item, index) => {
-                const itemId = `experience-${index}`; // Unique ID
-                return (
-                    <div key={itemId} className="bg-gray-800/50 p-4 rounded-lg mb-4">
-                        <h3 className="text-xl font-semibold text-gray-200">{item.title}</h3>
-                        <div className="text-gray-300 mb-2">{item.company}, {item.location}</div>
-                        <div className="text-gray-400 mb-3">{item.period}</div>
-                        <p className="text-gray-300 mb-4">{item.description}</p>
-                        {item.technologies && (
-                            <div className="flex flex-wrap gap-2 mb-4">
-                                {item.technologies.map((tech, i) => (
-                                    <span key={i} className="px-2 py-1 bg-gray-700 rounded text-xs text-gray-300">
-                                        {tech}
-                                    </span>
-                                ))}
-                            </div>
-                        )}
-                        {item.images && item.images.length > 0 && renderImageCarousel(itemId, item.images)}
-                    </div>
-                );
-            })}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {experience.map((item, index) => {
+                    const itemId = `experience-${index}`;
+                    return (
+                        <div key={itemId} className="bg-gray-800/50 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+                            <h3 className="text-xl font-semibold text-gray-200 mb-2">{item.title}</h3>
+                            <div className="text-gray-300 mb-2">{item.company}, {item.location}</div>
+                            <div className="text-gray-400 mb-3">{item.period}</div>
+                            <p className="text-gray-300 mb-4">{item.description}</p>
+                            {item.technologies && (
+                                <div className="flex flex-wrap gap-2 mb-4">
+                                    {item.technologies.map((tech, i) => (
+                                        <span key={i} className="px-2 py-1 bg-gray-700 rounded text-xs text-gray-300">
+                                            {tech}
+                                        </span>
+                                    ))}
+                                </div>
+                            )}
+                            {item.images && item.images.length > 0 && renderImageCarousel(itemId, item.images)}
+                        </div>
+                    );
+                })}
+            </div>
         </div>
     );
 
@@ -172,37 +179,20 @@ const NotesApp = ({ isOpen, onClose }: NotesAppProps) => {
         <div className="space-y-6">
             {renderBackButton()}
             <h2 className="text-2xl font-bold text-gray-200 mb-6">Courses</h2>
-            {courses.map((item, index) => {
-                const itemId = `courses-${index}`; // Unique ID
-                return (
-                    <div key={itemId} className="bg-gray-800/50 p-4 rounded-lg mb-4">
-                        <h3 className="text-xl font-semibold text-gray-200">{item.title}</h3>
-                        <div className="text-gray-300 mb-2">{item.institution}, {item.location}</div>
-                        <div className="text-gray-400 mb-3">{item.year}</div>
-                        <p className="text-gray-300 mb-4">{item.description}</p>
-                        {item.images && item.images.length > 0 && renderImageCarousel(itemId, item.images)}
-                    </div>
-                );
-            })}
-        </div>
-    );
-
-    const renderCertifications = () => (
-        <div className="space-y-6">
-            {renderBackButton()}
-            <h2 className="text-2xl font-bold text-gray-200 mb-6">Certifications</h2>
-            {certifications.map((item, index) => {
-                const itemId = `certifications-${index}`; // Unique ID
-                return (
-                    <div key={itemId} className="bg-gray-800/50 p-4 rounded-lg mb-4">
-                        <h3 className="text-xl font-semibold text-gray-200">{item.title}</h3>
-                        <div className="text-gray-300 mb-2">{item.institution}, {item.location}</div>
-                        <div className="text-gray-400 mb-3">{item.year}</div>
-                        <p className="text-gray-300 mb-4">{item.description}</p>
-                        {item.images && item.images.length > 0 && renderImageCarousel(itemId, item.images)}
-                    </div>
-                );
-            })}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {courses.map((item, index) => {
+                    const itemId = `courses-${index}`;
+                    return (
+                        <div key={itemId} className="bg-gray-800/50 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+                            <h3 className="text-xl font-semibold text-gray-200 mb-2">{item.title}</h3>
+                            <div className="text-gray-300 mb-2">{item.institution}, {item.location}</div>
+                            <div className="text-gray-400 mb-3">{item.year}</div>
+                            <p className="text-gray-300 mb-4">{item.description}</p>
+                            {item.images && item.images.length > 0 && renderImageCarousel(itemId, item.images)}
+                        </div>
+                    );
+                })}
+            </div>
         </div>
     );
 
@@ -210,12 +200,14 @@ const NotesApp = ({ isOpen, onClose }: NotesAppProps) => {
         <div className="space-y-6">
             {renderBackButton()}
             <h2 className="text-2xl font-bold text-gray-200 mb-6">Skills</h2>
-            <div className="flex flex-wrap gap-2">
-                {skills.map((skill, index) => (
-                    <span key={index} className="px-3 py-1 bg-gray-700 rounded text-sm text-gray-300">
-                        {skill}
-                    </span>
-                ))}
+            <div className="bg-gray-800/50 p-6 rounded-xl shadow-lg">
+                <div className="flex flex-wrap gap-2">
+                    {skills.map((skill, index) => (
+                        <span key={index} className="px-3 py-1 bg-gray-700 rounded text-sm text-gray-300">
+                            {skill}
+                        </span>
+                    ))}
+                </div>
             </div>
         </div>
     );
@@ -224,17 +216,19 @@ const NotesApp = ({ isOpen, onClose }: NotesAppProps) => {
         <div className="space-y-6">
             {renderBackButton()}
             <h2 className="text-2xl font-bold text-gray-200 mb-6">Extracurricular Roles</h2>
-            {roles.map((item, index) => {
-                const itemId = `roles-${index}`; // Unique ID
-                return (
-                    <div key={itemId} className="bg-gray-800/50 p-4 rounded-lg mb-4">
-                        <h3 className="text-xl font-semibold text-gray-200">{item.role}</h3>
-                        <div className="text-gray-300 mb-2">{item.institution}, {item.location}</div>
-                        <div className="text-gray-400 mb-3">{item.year}</div>
-                        {item.images && item.images.length > 0 && renderImageCarousel(itemId, item.images)}
-                    </div>
-                );
-            })}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {roles.map((item, index) => {
+                    const itemId = `roles-${index}`;
+                    return (
+                        <div key={itemId} className="bg-gray-800/50 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+                            <h3 className="text-xl font-semibold text-gray-200 mb-2">{item.role}</h3>
+                            <div className="text-gray-300 mb-2">{item.institution}, {item.location}</div>
+                            <div className="text-gray-400 mb-3">{item.year}</div>
+                            {item.images && item.images.length > 0 && renderImageCarousel(itemId, item.images)}
+                        </div>
+                    );
+                })}
+            </div>
         </div>
     );
 
@@ -242,17 +236,19 @@ const NotesApp = ({ isOpen, onClose }: NotesAppProps) => {
         <div className="space-y-6">
             {renderBackButton()}
             <h2 className="text-2xl font-bold text-gray-200 mb-6">Extracurricular Activities</h2>
-            {activities.map((item, index) => {
-                const itemId = `activities-${index}`; // Unique ID
-                return (
-                    <div key={itemId} className="bg-gray-800/50 p-4 rounded-lg mb-4">
-                        <h3 className="text-xl font-semibold text-gray-200">{item.title}</h3>
-                        <div className="text-gray-300 mb-2">{item.institution}, {item.location}</div>
-                        <div className="text-gray-400 mb-3">{item.year}</div>
-                        {item.images && item.images.length > 0 && renderImageCarousel(itemId, item.images)}
-                    </div>
-                );
-            })}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {activities.map((item, index) => {
+                    const itemId = `activities-${index}`;
+                    return (
+                        <div key={itemId} className="bg-gray-800/50 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+                            <h3 className="text-xl font-semibold text-gray-200 mb-2">{item.title}</h3>
+                            <div className="text-gray-300 mb-2">{item.institution}, {item.location}</div>
+                            <div className="text-gray-400 mb-3">{item.year}</div>
+                            {item.images && item.images.length > 0 && renderImageCarousel(itemId, item.images)}
+                        </div>
+                    );
+                })}
+            </div>
         </div>
     );
 
@@ -260,17 +256,19 @@ const NotesApp = ({ isOpen, onClose }: NotesAppProps) => {
         <div className="space-y-6">
             {renderBackButton()}
             <h2 className="text-2xl font-bold text-gray-200 mb-6">Competitions</h2>
-            {competitions.map((item, index) => {
-                const itemId = `competitions-${index}`; // Unique ID
-                return (
-                    <div key={itemId} className="bg-gray-800/50 p-4 rounded-lg mb-4">
-                        <h3 className="text-xl font-semibold text-gray-200">{item.title}</h3>
-                        <div className="text-gray-300 mb-2">{item.description}</div>
-                        <div className="text-gray-400 mb-3">Achievement: {item.achievement} ({item.year})</div>
-                        {item.images && item.images.length > 0 && renderImageCarousel(itemId, item.images)}
-                    </div>
-                );
-            })}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {competitions.map((item, index) => {
+                    const itemId = `competitions-${index}`;
+                    return (
+                        <div key={itemId} className="bg-gray-800/50 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+                            <h3 className="text-xl font-semibold text-gray-200 mb-2">{item.title}</h3>
+                            <div className="text-gray-300 mb-2">{item.description}</div>
+                            <div className="text-gray-400 mb-3">Achievement: {item.achievement} ({item.year})</div>
+                            {item.images && item.images.length > 0 && renderImageCarousel(itemId, item.images)}
+                        </div>
+                    );
+                })}
+            </div>
         </div>
     );
 
@@ -347,20 +345,6 @@ const NotesApp = ({ isOpen, onClose }: NotesAppProps) => {
                     <p className="text-gray-400">Check out courses I have completed</p>
                 </div>
 
-                {/* Certifications */}
-                <div
-                    className="bg-gray-800/50 p-4 rounded-lg cursor-pointer hover:bg-gray-700/50 transition-colors"
-                    onClick={() => handleSectionClick('certifications')}
-                >
-                    <div className="flex items-center gap-3 mb-2">
-                        <div className="w-12 h-12 bg-yellow-600 rounded-xl flex items-center justify-center">
-                            <FaCertificate size={28} className="text-white" />
-                        </div>
-                        <h3 className="text-xl font-semibold text-gray-200">Certifications</h3>
-                    </div>
-                    <p className="text-gray-400">View my professional certifications</p>
-                </div>
-
                 {/* Skills */}
                 <div
                     className="bg-gray-800/50 p-4 rounded-lg cursor-pointer hover:bg-gray-700/50 transition-colors"
@@ -398,7 +382,6 @@ const NotesApp = ({ isOpen, onClose }: NotesAppProps) => {
             case 'education': return 'Education Notes';
             case 'experience': return 'Experience Notes';
             case 'courses': return 'Courses Notes';
-            case 'certifications': return 'Certifications Notes';
             case 'skills': return 'Skills Notes';
             case 'roles': return 'Extracurricular Roles Notes';
             case 'activities': return 'Extracurricular Activities Notes';
@@ -427,7 +410,6 @@ const NotesApp = ({ isOpen, onClose }: NotesAppProps) => {
                     {activeSection === 'education' && renderEducation()}
                     {activeSection === 'experience' && renderExperience()}
                     {activeSection === 'courses' && renderCourses()}
-                    {activeSection === 'certifications' && renderCertifications()}
                     {activeSection === 'skills' && renderSkills()}
                     {activeSection === 'roles' && renderExtraCurricularRoles()}
                     {activeSection === 'activities' && renderExtraCurricularActivities()}

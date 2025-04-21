@@ -1,3 +1,12 @@
+import neurospeccompanionmerged from './projects/neurospeccompanionmerged.json';
+import scheds from './projects/scheds.json';
+import fadedTextRestoration from './projects/fadedTextRestoration.json';
+import clinicalmain from './projects/clinicalmain.json';
+import seatReservation from './projects/seatReservation.json';
+import nucpaBalloons from './projects/nucpa-balloons.json';
+import nucpaBalloonsApi from './projects/NucpaBalloonsApi.json';
+import portfolio from './projects/portfolio.json';
+import foodies from './projects/foodies.json';
 export const userConfig = {
     // Personal Information
     name: 'Abdelrahman Saleh',
@@ -83,23 +92,6 @@ export const userConfig = {
         }
     ],
 
-    certifications: [
-        {
-            title: "Data Structures",
-            description: "Data Structures course",
-            institution: "Nile University",
-            location: "Giza, Egypt",
-            year: "2021-2025",
-            images: [
-                {
-                    url: "https://www.nu.edu.eg/sites/default/files/2024-06/whatsapp_image_2024-06-25_at_1.33.17_pm.jpeg",
-                    alt: "Nile University",
-                    description: "Nile University Campus"
-                }
-            ]
-        }
-    ],
-
     skills: [
         "C#",
         "ASP.NET Core",
@@ -158,17 +150,17 @@ export const userConfig = {
                     // description: "NUICPC Campus"
                 },
                 {
-                    url:"https://scontent.fcai19-7.fna.fbcdn.net/v/t39.30808-6/486507182_1075334774628953_7774379668898780058_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=833d8c&_nc_ohc=ji9vikzmg0cQ7kNvwFz_1Zm&_nc_oc=AdnuoVlWjdOQHMx-8KcQOycVaUiJfQl9H47soE4FEtOPC30B4rPyx5kg_gvlffqmtLk&_nc_zt=23&_nc_ht=scontent.fcai19-7.fna&_nc_gid=xsJxnuJ-_EENzZsGG3LOfg&oh=00_AfEc0FMZaBH0XDVr5KpJFM9btMSyAaP9818471rqdWIhrQ&oe=680705A6",
+                    url: "https://scontent.fcai19-7.fna.fbcdn.net/v/t39.30808-6/486507182_1075334774628953_7774379668898780058_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=833d8c&_nc_ohc=ji9vikzmg0cQ7kNvwFz_1Zm&_nc_oc=AdnuoVlWjdOQHMx-8KcQOycVaUiJfQl9H47soE4FEtOPC30B4rPyx5kg_gvlffqmtLk&_nc_zt=23&_nc_ht=scontent.fcai19-7.fna&_nc_gid=xsJxnuJ-_EENzZsGG3LOfg&oh=00_AfEc0FMZaBH0XDVr5KpJFM9btMSyAaP9818471rqdWIhrQ&oe=680705A6",
                     alt: "NUICPC",
                     // description: "NUICPC Campus"
                 },
                 {
-                    url:"https://scontent.fcai19-7.fna.fbcdn.net/v/t39.30808-6/487493482_1081518997343864_4066413282342283933_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=127cfc&_nc_ohc=RXdT9NJjVf0Q7kNvwGEyAIN&_nc_oc=AdkresiErTCubV9WbJIB6EWQ_a1O55EeCITxDL824xZbMd8Yf6h-zoOnI25bZeERrCY&_nc_zt=23&_nc_ht=scontent.fcai19-7.fna&_nc_gid=xm8tcFVk4onChdL7gczyJw&oh=00_AfH9bTusfY6L-72iYBeajJNzWAy5kvmb20PqXY_PyaELig&oe=6806F6EC",
+                    url: "https://scontent.fcai19-7.fna.fbcdn.net/v/t39.30808-6/487493482_1081518997343864_4066413282342283933_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=127cfc&_nc_ohc=RXdT9NJjVf0Q7kNvwGEyAIN&_nc_oc=AdkresiErTCubV9WbJIB6EWQ_a1O55EeCITxDL824xZbMd8Yf6h-zoOnI25bZeERrCY&_nc_zt=23&_nc_ht=scontent.fcai19-7.fna&_nc_gid=xm8tcFVk4onChdL7gczyJw&oh=00_AfH9bTusfY6L-72iYBeajJNzWAy5kvmb20PqXY_PyaELig&oe=6806F6EC",
                     alt: "NUICPC",
                     // description: "NUICPC Campus"
                 },
                 {
-                    url:"https://scontent.fcai19-7.fna.fbcdn.net/v/t39.30808-6/480963441_1074286478067116_5784537412456976186_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=833d8c&_nc_ohc=P5Q28jPJ9nIQ7kNvwHhQXeM&_nc_oc=AdmFjIml6r6y7nyl7EzgA5A7pIcVMnUnj91WF702aBjt6qjyCNrSOtZ2x8unOdeZtko&_nc_zt=23&_nc_ht=scontent.fcai19-7.fna&_nc_gid=XOk3PbxzJfliIuS1JBV_JQ&oh=00_AfEN4eRN4moWd8EIS29aNBPrgJm8o01AnwKe27F_68W6Kw&oe=6806F993",
+                    url: "https://scontent.fcai19-7.fna.fbcdn.net/v/t39.30808-6/480963441_1074286478067116_5784537412456976186_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=833d8c&_nc_ohc=P5Q28jPJ9nIQ7kNvwHhQXeM&_nc_oc=AdmFjIml6r6y7nyl7EzgA5A7pIcVMnUnj91WF702aBjt6qjyCNrSOtZ2x8unOdeZtko&_nc_zt=23&_nc_ht=scontent.fcai19-7.fna&_nc_gid=XOk3PbxzJfliIuS1JBV_JQ&oh=00_AfEN4eRN4moWd8EIS29aNBPrgJm8o01AnwKe27F_68W6Kw&oe=6806F993",
                     alt: "NUICPC",
                     // description: "NUICPC Campus"
                 }
@@ -194,7 +186,7 @@ export const userConfig = {
             year: "2021-2024",
             images: [
                 {
-                    url:"https://scontent.fcai19-7.fna.fbcdn.net/v/t39.30808-6/484381461_1069479998547764_3349306911678016045_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=833d8c&_nc_ohc=ZLOYTjM-xXAQ7kNvwGNdhe-&_nc_oc=AdnbiiZQFf4nRWUCRzFiEux1FV_eZiIP8dKkwjewfQsN78rZssnvYq2lkK2PvjvujF4&_nc_zt=23&_nc_ht=scontent.fcai19-7.fna&_nc_gid=kbg-A_OYirwtcuwFxankwA&oh=00_AfFWHg144Xq2x0Z1F9sTqwJoEjbmMegODBNsLaXiY7sEsA&oe=6806E331",
+                    url: "https://scontent.fcai19-7.fna.fbcdn.net/v/t39.30808-6/484381461_1069479998547764_3349306911678016045_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=833d8c&_nc_ohc=ZLOYTjM-xXAQ7kNvwGNdhe-&_nc_oc=AdnbiiZQFf4nRWUCRzFiEux1FV_eZiIP8dKkwjewfQsN78rZssnvYq2lkK2PvjvujF4&_nc_zt=23&_nc_ht=scontent.fcai19-7.fna&_nc_gid=kbg-A_OYirwtcuwFxankwA&oh=00_AfFWHg144Xq2x0Z1F9sTqwJoEjbmMegODBNsLaXiY7sEsA&oe=6806E331",
                     alt: "NUICPC",
                 },
                 {
@@ -203,7 +195,7 @@ export const userConfig = {
                     // description: "Nile University Campus"
                 },
                 {
-                    url: "https://scontent.fcai19-7.fna.fbcdn.net/v/t39.30808-6/483525641_1070070571822040_3631060112169135578_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=833d8c&_nc_ohc=DqR3PHrPgWoQ7kNvwF1c4TX&_nc_oc=Admq-2OmYR1nCDaPVkaTiJlhut_7vivZ9meVdz88Dl1m4r3G4cY69MqBzyi71JB37mI&_nc_zt=23&_nc_ht=scontent.fcai19-7.fna&_nc_gid=90rrrJijScH4H0TevbA3Cw&oh=00_AfHTggq_0CwOL5CQ0BRwqXYQQhRtsXgl8nzwxFN5DadeNg&oe=6806CEDF", 
+                    url: "https://scontent.fcai19-7.fna.fbcdn.net/v/t39.30808-6/483525641_1070070571822040_3631060112169135578_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=833d8c&_nc_ohc=DqR3PHrPgWoQ7kNvwF1c4TX&_nc_oc=Admq-2OmYR1nCDaPVkaTiJlhut_7vivZ9meVdz88Dl1m4r3G4cY69MqBzyi71JB37mI&_nc_zt=23&_nc_ht=scontent.fcai19-7.fna&_nc_gid=90rrrJijScH4H0TevbA3Cw&oh=00_AfHTggq_0CwOL5CQ0BRwqXYQQhRtsXgl8nzwxFN5DadeNg&oe=6806CEDF",
                     alt: "Nile University",
                     // description: "Nile University Campus"
                 },
@@ -212,7 +204,7 @@ export const userConfig = {
                     alt: "NUICPC"
                 },
                 {
-                    url:"https://scontent.fcai19-7.fna.fbcdn.net/v/t39.30808-6/486627143_1081260057369758_4195012303656403802_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=833d8c&_nc_ohc=qsW4vGZfP0sQ7kNvwHySMfh&_nc_oc=Adlyz2BmQopTHD959nyiv-rbBawrPi6o1-KPz6ZnS5lvQPae7__2W3Sd8CHkFTYHZX8&_nc_zt=23&_nc_ht=scontent.fcai19-7.fna&_nc_gid=FB77Kf7kYt2BT42b5ZpZcA&oh=00_AfGC1HvMlR2suR_MjmcUZRlGG0EiQf-mOxcLzuftNuhfrg&oe=6806E581",
+                    url: "https://scontent.fcai19-7.fna.fbcdn.net/v/t39.30808-6/486627143_1081260057369758_4195012303656403802_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=833d8c&_nc_ohc=qsW4vGZfP0sQ7kNvwHySMfh&_nc_oc=Adlyz2BmQopTHD959nyiv-rbBawrPi6o1-KPz6ZnS5lvQPae7__2W3Sd8CHkFTYHZX8&_nc_zt=23&_nc_ht=scontent.fcai19-7.fna&_nc_gid=FB77Kf7kYt2BT42b5ZpZcA&oh=00_AfGC1HvMlR2suR_MjmcUZRlGG0EiQf-mOxcLzuftNuhfrg&oe=6806E581",
                 }
             ]
         },
@@ -279,9 +271,9 @@ export const userConfig = {
             year: "2015",
             images: [
                 {
-                    url: "https://drive.google.com/file/d/1dowYpSfYoc_lLmsWq3USol9zO1chGP8D",
+                    url: "https://scontent.fcai19-7.fna.fbcdn.net/v/t39.30808-6/462316142_7913407118761100_685588124196353855_n.png?_nc_cat=101&ccb=1-7&_nc_sid=86c6b0&_nc_ohc=7cOAfEscTtUQ7kNvwHHXc59&_nc_oc=AdmZ1IgqnVQhS5ZJxSMlE7VO5h2GwBnOM_SaQ_mXEGhRayrAdbc7l7wIrObBPOGqo6k&_nc_zt=23&_nc_ht=scontent.fcai19-7.fna&_nc_gid=LBTKldq_gsmdhFQ--n6Q6g&oh=00_AfFvKYIPxae6llKl_VT17dG5zIDCLOkf2EigX7n6x00G-g&oe=680AC3F6",
                     alt: "EOI",
-                    description: "EOI Certificate"
+                    // description: "EOI Certificate"
                 }
             ]
         },
@@ -292,9 +284,9 @@ export const userConfig = {
             year: "2016",
             images: [
                 {
-                    url: "https://drive.google.com/file/d/1dowYpSfYoc_lLmsWq3USol9zO1chGP8D",
+                    url: "https://scontent.fcai19-7.fna.fbcdn.net/v/t39.30808-6/462316142_7913407118761100_685588124196353855_n.png?_nc_cat=101&ccb=1-7&_nc_sid=86c6b0&_nc_ohc=7cOAfEscTtUQ7kNvwHHXc59&_nc_oc=AdmZ1IgqnVQhS5ZJxSMlE7VO5h2GwBnOM_SaQ_mXEGhRayrAdbc7l7wIrObBPOGqo6k&_nc_zt=23&_nc_ht=scontent.fcai19-7.fna&_nc_gid=LBTKldq_gsmdhFQ--n6Q6g&oh=00_AfFvKYIPxae6llKl_VT17dG5zIDCLOkf2EigX7n6x00G-g&oe=680AC3F6",
                     alt: "RoboCup",
-                    description: "RoboCup Certificate"
+                    // description: "RoboCup Certificate"
                 }
             ]
         },
@@ -307,7 +299,7 @@ export const userConfig = {
                 {
                     url: "https://scontent.fcai19-7.fna.fbcdn.net/v/t39.30808-6/482277706_1065267045635726_1956241697864875127_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=86c6b0&_nc_ohc=1ylVvYBsad4Q7kNvwGOE6DO&_nc_oc=Adltzr1B7OJ92p1jCzivnB0WvixF4DyE-MwQ8qhS7qD8G9fxDmbN3X5qcvrYuUyQ87Q&_nc_zt=23&_nc_ht=scontent.fcai19-7.fna&_nc_gid=3tU8CVtPMYaAEAoV-DVUcQ&oh=00_AfFICX7UOYGbZ01o2DP1U4nOfR4p6P7RUv0AhILIPAql_g&oe=6806DF27",
                     alt: "ECPC",
-                    description: "ECPC Certificate"
+                    // description: "ECPC Certificate"
                 }
             ]
         },
@@ -334,6 +326,58 @@ export const userConfig = {
                     url: "https://scontent.fcai19-7.fna.fbcdn.net/v/t39.30808-6/486719077_1079195597576204_1921460299948979682_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=833d8c&_nc_ohc=-RBEyRf5DsYQ7kNvwGAPX-S&_nc_oc=AdlMHxnis_S-Az0hXGBmTDw80t0XfK55XbZe34IEHiG--zxYVpokw67Y8od9tx1aMqc&_nc_zt=23&_nc_ht=scontent.fcai19-7.fna&_nc_gid=_GCzZ5neQVOXIjZRMixipw&oh=00_AfGzvQexmtZqvequQ5QoaDe2FTOGWr6htKxg61MhXLXfwQ&oe=6806F4EE",
                     alt: "ECPC",
                     description: "ECPC Certificate"
+                }
+            ]
+        },
+        {
+            title: "UGRF 17th Edition",
+            description: "UGRF 17th Edition",
+            achievement: "2nd place SWE for PregTracker- personalized pregnancy tracker ",
+            year: "2024",
+            images: [
+                {
+                    url: "https://media.licdn.com/dms/image/v2/D4D22AQGisyubNyQdDw/feedshare-shrink_1280/feedshare-shrink_1280/0/1706802292377?e=1747872000&v=beta&t=6j4vmESk1eqUq9OW8K6wLPYhghvxRTVsu0QNktT6LCk",
+                    alt: "UGRF",
+                    description: "UGRF Certificate"
+                }
+            ]
+        },
+        {
+            title: "UGRF 17th Edition",
+            description: "UGRF 17th Edition",
+            achievement: " 2nd place Clinical informatics for Recover360- an advanced physiotherapy clinic management system",
+            year: "2024",
+            images: [
+                {
+                    url: "https://media.licdn.com/dms/image/v2/D4D22AQGisyubNyQdDw/feedshare-shrink_1280/feedshare-shrink_1280/0/1706802292377?e=1747872000&v=beta&t=6j4vmESk1eqUq9OW8K6wLPYhghvxRTVsu0QNktT6LCk",
+                    alt: "UGRF",
+                    description: "UGRF Certificate"
+                }
+            ]
+        },
+        {
+            title: "Nile University Innovation Competition",
+            description: "Nile University Innovation Competition",
+            achievement: "Secured second place in the Nile University Innovation Competition hosted by Nile University - NilePreneurs and NU E-Club ! 🎉🏆",
+            year: "2025",
+            images: [
+                {
+                    url: "https://media.licdn.com/dms/image/v2/D4D22AQFWTxm61eMz2g/feedshare-shrink_2048_1536/feedshare-shrink_2048_1536/0/1723818852069?e=1747872000&v=beta&t=gMw4p1a6nx3aXx-8bTnuoKovTjpxepmu1nE1Se5iTyI",
+                    alt: "NUIC",
+                    // description: "NUIC Certificate"
+                }
+            ]
+        },
+        {
+            title: "UGRF 19th Edition",
+            description: "UGRF 19th Edition",
+            achievement: "1st Place at the 19th UGRF! 'Enhancing Readibility of Faded Text in Historical Documents Using Image Processing Techniques'",
+            year: "2025",
+            images: [
+                {
+                    url: "https://media.licdn.com/dms/image/v2/D4D22AQGisyubNyQdDw/feedshare-shrink_1280/feedshare-shrink_1280/0/1706802292377?e=1747872000&v=beta&t=6j4vmESk1eqUq9OW8K6wLPYhghvxRTVsu0QNktT6LCk",
+                    alt: "UGRF",
+                    description: "UGRF Certificate"
                 }
             ]
         }
@@ -404,417 +448,16 @@ export const userConfig = {
 
     // Projects Configuration
     projects: [
-        {
-            id: 'scheds',
-            title: 'Scheds - Course Schedule Generator',
-            description: 'A comprehensive course schedule generator application built with ASP.NET Core MVC, featuring real-time schedule generation, study room finder, and instructor management.',
-            repoUrl: 'https://github.com/aabdoo23/Scheds',
-            liveUrl: 'https://scheds.runasp.net', // Add your live URL if available
-            techStack: ['ASP.NET Core', 'C#', 'Entity Framework', 'SQL Server', 'Bootstrap', 'jQuery'],
-            structure: {
-                root: 'Scheds',
-                children: [
-                    {
-                        name: 'Scheds.Application',
-                        type: 'directory',
-                        children: [
-                            {
-                                name: 'Interfaces',
-                                type: 'directory',
-                                children: [
-                                    {
-                                        name: 'Repositories',
-                                        type: 'directory',
-                                        children: [
-                                            { name: 'Common', type: 'directory', children: [{ name: 'IBaseRepository.cs', type: 'file' }] },
-                                            { name: 'ICardItemRepository.cs', type: 'file' },
-                                            { name: 'ICourseBaseRepository.cs', type: 'file' },
-                                            { name: 'ICourseScheduleRepository.cs', type: 'file' },
-                                            { name: 'IInstructorRepository.cs', type: 'file' }
-                                        ]
-                                    },
-                                    {
-                                        name: 'Services',
-                                        type: 'directory',
-                                        children: [
-                                            { name: 'ICardItemService.cs', type: 'file' },
-                                            { name: 'IEmptyRoomsService.cs', type: 'file' },
-                                            { name: 'IParsingService.cs', type: 'file' },
-                                            { name: 'ISelfServiceLiveFetchService.cs', type: 'file' }
-                                        ]
-                                    }
-                                ]
-                            },
-                            { name: 'Scheds.Application.csproj', type: 'file' }
-                        ]
-                    },
-                    {
-                        name: 'Scheds.Domain',
-                        type: 'directory',
-                        children: [
-                            {
-                                name: 'DTOs',
-                                type: 'directory',
-                                children: [
-                                    { name: 'Common', type: 'directory', children: [{ name: 'PaginatedEntityDTO.cs', type: 'file' }] },
-                                    { name: 'CustomCourseBaseDTO.cs', type: 'file' },
-                                    { name: 'GenerateRequestDTO.cs', type: 'file' },
-                                    { name: 'ReturnedCardItemDTO.cs', type: 'file' },
-                                    {
-                                        name: 'SelfService',
-                                        type: 'directory',
-                                        children: [
-                                            { name: 'SearchRequest.cs', type: 'file' },
-                                            { name: 'SectionSearchParameters.cs', type: 'file' }
-                                        ]
-                                    }
-                                ]
-                            },
-                            {
-                                name: 'Entities',
-                                type: 'directory',
-                                children: [
-                                    { name: 'CardItem.cs', type: 'file' },
-                                    { name: 'Common', type: 'directory', children: [{ name: 'BaseEntity.cs', type: 'file' }] },
-                                    { name: 'CourseBase.cs', type: 'file' },
-                                    { name: 'CourseSchedule.cs', type: 'file' },
-                                    { name: 'Instructor.cs', type: 'file' }
-                                ]
-                            },
-                            { name: 'Scheds.Domain.csproj', type: 'file' },
-                            {
-                                name: 'ViewModels',
-                                type: 'directory',
-                                children: [
-                                    { name: 'ErrorViewModel.cs', type: 'file' },
-                                    { name: 'GenerateAndResultViewModel.cs', type: 'file' }
-                                ]
-                            }
-                        ]
-                    },
-                    {
-                        name: 'Scheds.Infrastructure',
-                        type: 'directory',
-                        children: [
-                            { name: 'Configurations', type: 'directory', children: [{ name: 'CourseScheduleConfiguration.cs', type: 'file' }] },
-                            { name: 'Contexts', type: 'directory', children: [{ name: 'SchedsDbContext.cs', type: 'file' }] },
-                            { name: 'InfrastructureServiceDI.cs', type: 'file' },
-                            {
-                                name: 'Migrations',
-                                type: 'directory',
-                                children: [
-                                    { name: '20250205215848_please.Designer.cs', type: 'file' },
-                                    { name: '20250205215848_please.cs', type: 'file' },
-                                    { name: '20250205221819_indexFix.Designer.cs', type: 'file' },
-                                    { name: '20250205221819_indexFix.cs', type: 'file' },
-                                    { name: '20250205225306_cache.Designer.cs', type: 'file' },
-                                    { name: '20250205225306_cache.cs', type: 'file' },
-                                    { name: 'SchedsDbContextModelSnapshot.cs', type: 'file' }
-                                ]
-                            },
-                            {
-                                name: 'Repositories',
-                                type: 'directory',
-                                children: [
-                                    { name: 'CardItemRepository.cs', type: 'file' },
-                                    { name: 'Common', type: 'directory', children: [{ name: 'BaseRepository.cs', type: 'file' }] },
-                                    { name: 'CourseBaseRepository.cs', type: 'file' },
-                                    { name: 'CourseScheduleRepository.cs', type: 'file' },
-                                    { name: 'InstructorRepository.cs', type: 'file' }
-                                ]
-                            },
-                            { name: 'Scheds.Infrastructure.csproj', type: 'file' },
-                            {
-                                name: 'Services',
-                                type: 'directory',
-                                children: [
-                                    { name: 'CardItemService.cs', type: 'file' },
-                                    { name: 'EmptyRoomsService.cs', type: 'file' },
-                                    { name: 'ParsingService.cs', type: 'file' },
-                                    { name: 'SelfServiceLiveFetchService.cs', type: 'file' }
-                                ]
-                            },
-                            {
-                                name: 'Util',
-                                type: 'directory',
-                                children: [
-                                    { name: 'GenerationUtil.cs', type: 'file' },
-                                    { name: 'GlobalTimeUtil.cs', type: 'file' },
-                                    { name: 'IdGenerationUtil.cs', type: 'file' }
-                                ]
-                            }
-                        ]
-                    },
-                    { name: 'Scheds.sln', type: 'file' },
-                    {
-                        name: 'Scheds',
-                        type: 'directory',
-                        children: [
-                            { name: '.config', type: 'directory', children: [{ name: 'dotnet-tools.json', type: 'file' }] },
-                            {
-                                name: 'Controllers',
-                                type: 'directory',
-                                children: [
-                                    { name: 'CardController.cs', type: 'file' },
-                                    { name: 'CartController.cs', type: 'file' },
-                                    { name: 'CourseBaseController.cs', type: 'file' },
-                                    { name: 'CourseScheduleController.cs', type: 'file' },
-                                    { name: 'CustomizationsController.cs', type: 'file' },
-                                    { name: 'FindStudyRoomsController.cs', type: 'file' },
-                                    { name: 'GenerateController.cs', type: 'file' },
-                                    { name: 'GenerateSchedulesController.cs', type: 'file' },
-                                    { name: 'HomeController.cs', type: 'file' },
-                                    { name: 'InstructorController.cs', type: 'file' },
-                                    { name: 'RoomController.cs', type: 'file' }
-                                ]
-                            },
-                            { name: 'Program.cs', type: 'file' },
-                            { name: 'Properties', type: 'directory', children: [{ name: 'launchSettings.json', type: 'file' }] },
-                            { name: 'Scheds.MVC.csproj', type: 'file' },
-                            { name: 'Scheds.sln', type: 'file' },
-                            {
-                                name: 'Views',
-                                type: 'directory',
-                                children: [
-                                    { name: 'FindStudyRooms', type: 'directory', children: [{ name: 'index.cshtml', type: 'file' }] },
-                                    { name: 'GenerateSchedules', type: 'directory', children: [{ name: 'Index.cshtml', type: 'file' }] },
-                                    {
-                                        name: 'Home',
-                                        type: 'directory',
-                                        children: [
-                                            { name: 'Index.cshtml', type: 'file' },
-                                            { name: 'Privacy.cshtml', type: 'file' }
-                                        ]
-                                    },
-                                    {
-                                        name: 'Shared',
-                                        type: 'directory',
-                                        children: [
-                                            {
-                                                name: 'Components',
-                                                type: 'directory',
-                                                children: [
-                                                    {
-                                                        name: 'AllSchedulesViewComponent',
-                                                        type: 'directory',
-                                                        children: [
-                                                            { name: 'AllSchedulesViewComponent.cs', type: 'file' },
-                                                            { name: 'Default.cshtml', type: 'file' }
-                                                        ]
-                                                    },
-                                                    {
-                                                        name: 'CardItemViewComponent',
-                                                        type: 'directory',
-                                                        children: [
-                                                            { name: 'CardItemViewComponent.cs', type: 'file' },
-                                                            { name: 'Default.cshtml', type: 'file' }
-                                                        ]
-                                                    },
-                                                    {
-                                                        name: 'OneHourCardItemViewComponent',
-                                                        type: 'directory',
-                                                        children: [
-                                                            { name: 'Default.cshtml', type: 'file' },
-                                                            { name: 'OneHourCardItemViewComponent.cs', type: 'file' }
-                                                        ]
-                                                    },
-                                                    {
-                                                        name: 'ScheduleViewComponent',
-                                                        type: 'directory',
-                                                        children: [
-                                                            { name: 'Default.cshtml', type: 'file' },
-                                                            { name: 'ScheduleViewComponent.cs', type: 'file' }
-                                                        ]
-                                                    }
-                                                ]
-                                            },
-                                            { name: 'Error.cshtml', type: 'file' },
-                                            { name: '_Layout.cshtml', type: 'file' },
-                                            { name: '_Layout.cshtml.css', type: 'file' },
-                                            { name: '_NavbarPartial.cshtml', type: 'file' },
-                                            { name: '_ValidationScriptsPartial.cshtml', type: 'file' }
-                                        ]
-                                    },
-                                    { name: '_ViewImports.cshtml', type: 'file' },
-                                    { name: '_ViewStart.cshtml', type: 'file' }
-                                ]
-                            },
-                            { name: 'appsettings.Development.json', type: 'file' },
-                            {
-                                name: 'wwwroot',
-                                type: 'directory',
-                                children: [
-                                    { name: 'css', type: 'directory', children: [{ name: 'styles.css', type: 'file' }] },
-                                    { name: 'favicon.ico', type: 'file' },
-                                    {
-                                        name: 'images',
-                                        type: 'directory',
-                                        children: [
-                                            { name: 'Calendar-pana.png', type: 'file' },
-                                            { name: 'Schedule-amico.png', type: 'file' },
-                                            { name: 'Time management-cuate.png', type: 'file' },
-                                            { name: 'abdo.png', type: 'file' },
-                                            { name: 'hero-bg.jpg', type: 'file' },
-                                            { name: 'ideas.png', type: 'file' },
-                                            { name: 'image-removebg-preview (1).png', type: 'file' },
-                                            { name: 'image-removebg-preview (2).png', type: 'file' },
-                                            { name: 'image-removebg-preview.png', type: 'file' },
-                                            { name: 'logo-new.png', type: 'file' },
-                                            { name: 'new-bg-final.png', type: 'file' },
-                                            { name: 'new-bg.png', type: 'file' },
-                                            { name: 'questions.png', type: 'file' },
-                                            { name: 'register.png', type: 'file' },
-                                            { name: 'schedules.png', type: 'file' },
-                                            { name: 'study.png', type: 'file' },
-                                            { name: 'studyRooms.png', type: 'file' }
-                                        ]
-                                    },
-                                    {
-                                        name: 'js',
-                                        type: 'directory',
-                                        children: [
-                                            { name: 'find-study-rooms.js', type: 'file' },
-                                            { name: 'generate-schedules.js', type: 'file' },
-                                            { name: 'script.js', type: 'file' }
-                                        ]
-                                    },
-                                    {
-                                        name: 'lib',
-                                        type: 'directory',
-                                        children: [
-                                            {
-                                                name: 'bootstrap',
-                                                type: 'directory',
-                                                children: [
-                                                    { name: 'LICENSE', type: 'file' },
-                                                    {
-                                                        name: 'dist',
-                                                        type: 'directory',
-                                                        children: [
-                                                            {
-                                                                name: 'css',
-                                                                type: 'directory',
-                                                                children: [
-                                                                    { name: 'bootstrap-grid.css', type: 'file' },
-                                                                    { name: 'bootstrap-grid.css.map', type: 'file' },
-                                                                    { name: 'bootstrap-grid.min.css', type: 'file' },
-                                                                    { name: 'bootstrap-grid.min.css.map', type: 'file' },
-                                                                    { name: 'bootstrap-grid.rtl.css', type: 'file' },
-                                                                    { name: 'bootstrap-grid.rtl.css.map', type: 'file' },
-                                                                    { name: 'bootstrap-grid.rtl.min.css', type: 'file' },
-                                                                    { name: 'bootstrap-grid.rtl.min.css.map', type: 'file' },
-                                                                    { name: 'bootstrap-reboot.css', type: 'file' },
-                                                                    { name: 'bootstrap-reboot.css.map', type: 'file' },
-                                                                    { name: 'bootstrap-reboot.min.css', type: 'file' },
-                                                                    { name: 'bootstrap-reboot.min.css.map', type: 'file' },
-                                                                    { name: 'bootstrap-reboot.rtl.css', type: 'file' },
-                                                                    { name: 'bootstrap-reboot.rtl.css.map', type: 'file' },
-                                                                    { name: 'bootstrap-utilities.css', type: 'file' },
-                                                                    { name: 'bootstrap-utilities.css.map', type: 'file' },
-                                                                    { name: 'bootstrap-utilities.min.css', type: 'file' },
-                                                                    { name: 'bootstrap-utilities.min.css.map', type: 'file' },
-                                                                    { name: 'bootstrap-utilities.rtl.css', type: 'file' },
-                                                                    { name: 'bootstrap-utilities.rtl.css.map', type: 'file' },
-                                                                    { name: 'bootstrap.css', type: 'file' },
-                                                                    { name: 'bootstrap.css.map', type: 'file' },
-                                                                    { name: 'bootstrap.min.css', type: 'file' },
-                                                                    { name: 'bootstrap.min.css.map', type: 'file' },
-                                                                    { name: 'bootstrap.rtl.css', type: 'file' },
-                                                                    { name: 'bootstrap.rtl.css.map', type: 'file' },
-                                                                    { name: 'bootstrap.rtl.min.css', type: 'file' },
-                                                                    { name: 'bootstrap.rtl.min.css.map', type: 'file' }
-                                                                ]
-                                                            },
-                                                            {
-                                                                name: 'js',
-                                                                type: 'directory',
-                                                                children: [
-                                                                    { name: 'bootstrap.bundle.js', type: 'file' },
-                                                                    { name: 'bootstrap.bundle.js.map', type: 'file' },
-                                                                    { name: 'bootstrap.bundle.min.js', type: 'file' },
-                                                                    { name: 'bootstrap.bundle.min.js.map', type: 'file' },
-                                                                    { name: 'bootstrap.esm.js', type: 'file' },
-                                                                    { name: 'bootstrap.esm.js.map', type: 'file' },
-                                                                    { name: 'bootstrap.esm.min.js', type: 'file' },
-                                                                    { name: 'bootstrap.esm.min.js.map', type: 'file' },
-                                                                    { name: 'bootstrap.js', type: 'file' },
-                                                                    { name: 'bootstrap.js.map', type: 'file' },
-                                                                    { name: 'bootstrap.min.js', type: 'file' },
-                                                                    { name: 'bootstrap.min.js.map', type: 'file' }
-                                                                ]
-                                                            }
-                                                        ]
-                                                    }
-                                                ]
-                                            },
-                                            {
-                                                name: 'jquery-validation-unobtrusive',
-                                                type: 'directory',
-                                                children: [
-                                                    { name: 'LICENSE.txt', type: 'file' },
-                                                    { name: 'jquery.validate.unobtrusive.js', type: 'file' },
-                                                    { name: 'jquery.validate.unobtrusive.min.js', type: 'file' }
-                                                ]
-                                            },
-                                            {
-                                                name: 'jquery-validation',
-                                                type: 'directory',
-                                                children: [
-                                                    { name: 'LICENSE.md', type: 'file' },
-                                                    {
-                                                        name: 'dist',
-                                                        type: 'directory',
-                                                        children: [
-                                                            { name: 'additional-methods.js', type: 'file' },
-                                                            { name: 'additional-methods.min.js', type: 'file' },
-                                                            { name: 'jquery.validate.js', type: 'file' },
-                                                            { name: 'jquery.validate.min.js', type: 'file' }
-                                                        ]
-                                                    }
-                                                ]
-                                            },
-                                            {
-                                                name: 'jquery',
-                                                type: 'directory',
-                                                children: [
-                                                    { name: 'LICENSE.txt', type: 'file' },
-                                                    {
-                                                        name: 'dist',
-                                                        type: 'directory',
-                                                        children: [
-                                                            { name: 'jquery.js', type: 'file' },
-                                                            { name: 'jquery.min.js', type: 'file' },
-                                                            { name: 'jquery.min.map', type: 'file' }
-                                                        ]
-                                                    }
-                                                ]
-                                            }
-                                        ]
-                                    }
-                                ]
-                            }
-                        ]
-                    }
-                ]
-            },
-            images: [
-                {
-                    url: 'src/assets/images/projects/scheds/landingPage.png',
-                    alt: 'Scheds Landing Page',
-                    description: 'Scheds Landing Page'
-                },
-                {
-                    url: 'src/assets/images/projects/scheds/customizationsSection.png',
-                    alt: 'Customizations Section',
-                    description: 'Customizations Section'
-                },
-                {
-                    url: 'src/assets/images/projects/scheds/generatedSchedules.png',
-                    alt: 'Generated Schedules',
-                    description: 'Generated Schedules'
-                }
-            ]
-        }
+        scheds,
+        portfolio,
+        foodies,
+        fadedTextRestoration,
+        nucpaBalloons,
+        nucpaBalloonsApi,
+        neurospeccompanionmerged,
+        clinicalmain,
+        seatReservation,
+        
         // Add more projects here
     ]
 } as const; 

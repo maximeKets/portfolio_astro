@@ -235,7 +235,19 @@ const GitHubViewer = ({ isOpen, onClose }: GitHubViewerProps) => {
                         </div>
                       )}
                     </div>
-                    
+                    {selectedProject.repoUrl && (
+                      <div className="mt-4">
+                        <a
+                          href={selectedProject.repoUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-2 text-sm hover:text-blue-400 text-gray-300 bg-gray-700/50 p-2 rounded-lg"
+                        >
+                          <FaGithub />
+                          <span>Visit GitHub Repository</span>
+                        </a>
+                      </div>
+                    )}
                     {selectedProject.liveUrl && (
                       <div className="mt-4">
                         <a
