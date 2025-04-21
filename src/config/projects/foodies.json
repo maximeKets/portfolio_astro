@@ -1,7 +1,7 @@
 {
     "id": "foodies",
     "title": "Foodies",
-    "description": "A project that uses image processing and OCR to restore faded English text from historical documents. It applies multiple enhancement steps, uses Tesseract OCR, and refines results via Gemini LLM.",
+    "description": "A web application for managing a restaurant's menu, orders, and customer information.",
     "repoUrl": "https://github.com/aabdoo23/foodies",
     "techStack": [
         "C#",
@@ -1232,7 +1232,7 @@
     },
     "images": [
         {
-            "url": "https://private-user-images.githubusercontent.com/92692198/381748439-2bb2b8cf-4288-4cb6-97ec-094c88633e41.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDUxODQ3MzgsIm5iZiI6MTc0NTE4NDQzOCwicGF0aCI6Ii85MjY5MjE5OC8zODE3NDg0MzktMmJiMmI4Y2YtNDI4OC00Y2I2LTk3ZWMtMDk0Yzg4NjMzZTQxLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTA0MjAlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwNDIwVDIxMjcxOFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTdlZTgyMjIwNTQwN2IxZTllNjQzOGI1Y2NjN2E1ODliMDViNjEyMDc3NTc0ZjBhNGZlMDZjOGZiNTVmMDM4MzYmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.pbU3d-CpjnIPwZq6WojaDN7vIWJ1uxOo3kdB2Hgjmww",
+            "url": "https://i.ibb.co/8ns386XR/381748439-2bb2b8cf-4288-4cb6-97ec-094c88633e41.png",
             "alt": "Foodies Landing Page"
         }
     ]
