@@ -108,8 +108,8 @@ const GitHubViewer = ({ isOpen, onClose }: GitHubViewerProps) => {
 
   return (
     <div className="fixed inset-0 bg-black/75 flex items-center justify-center z-50">
-      <div className="bg-[#1d1d1f] rounded-lg shadow-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto p-6 relative">
-        <div className="bg-gray-800 h-6 flex items-center space-x-2 px-4 rounded-t-lg absolute top-0 left-0 right-0">
+      <div className="bg-[#1d1d1f] rounded-lg shadow-xl max-w-4xl w-full max-h-[90vh] overflow-hidden p-0 relative">
+        <div className="bg-gray-800 h-6 flex items-center space-x-2 px-4 rounded-t-lg sticky top-0 left-0 right-0 z-10">
           <button
             onClick={onClose}
             className="w-3 h-3 rounded-full bg-red-500 hover:bg-red-600 transition-colors"
@@ -121,7 +121,7 @@ const GitHubViewer = ({ isOpen, onClose }: GitHubViewerProps) => {
           </span>
         </div>
         
-        <div className="mt-8">
+        <div className="overflow-y-auto p-6" style={{ maxHeight: 'calc(90vh - 1.5rem)' }}>
           {!showStructure ? (
             <>
               <h2 className="text-2xl font-bold mb-4 text-gray-200">My Projects</h2>

@@ -197,7 +197,7 @@ If a question is unrelated to my work or portfolio, say: "That's outside my area
 
   return (
     <div className='bg-black/85 w-[700px] h-[500px] rounded-lg overflow-hidden shadow-lg mx-4 sm:mx-0'>
-      <div className='bg-gray-800 h-6 flex items-center space-x-2 px-4'>
+      <div className='bg-gray-800 h-6 flex items-center space-x-2 px-4 sticky top-0 left-0 right-0 z-10'>
         <button
           onClick={onClose}
           className='w-3 h-3 rounded-full bg-red-500 hover:bg-red-600 transition-colors'
@@ -209,7 +209,7 @@ If a question is unrelated to my work or portfolio, say: "That's outside my area
           {userConfig.website.replace('https://', '')} ⸺ zsh
         </span>
       </div>
-      <div className='p-4 text-gray-200 font-mono text-s h-[calc(500px-1.5rem)] flex flex-col'>
+      <div className='p-4 text-gray-200 font-mono text-s h-[calc(500px-1.5rem)] flex flex-col overflow-hidden'>
         <div className='flex-1 overflow-y-auto'>
           {chatHistory.messages.map((msg, index) => (
             <div key={index} className='mb-2'>
