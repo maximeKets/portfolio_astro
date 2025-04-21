@@ -1,4 +1,4 @@
-# macOS Terminal Portfolio
+# macOS User-friendly Portfolio
 
 A modern, interactive portfolio website built with Astro, React, and Tailwind CSS, featuring a macOS-inspired interface.
 
