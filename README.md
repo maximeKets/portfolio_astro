@@ -1,11 +1,14 @@
 # macOS Terminal Portfolio
 
-A modern, interactive portfolio website built with Astro, React, and Tailwind CSS, featuring a macOS terminal-inspired interface.
+A modern, interactive portfolio website built with Astro, React, and Tailwind CSS, featuring a macOS-inspired interface.
 
 ## 🚀 Features
 
 - **Modern Tech Stack**: Built with Astro, React, and Tailwind CSS
-- **Terminal Interface**: macOS terminal-inspired UI for a unique user experience
+- **Terminal Interface**: macOS terminal-inspired UI integrating a chatbot for a unique user experience
+- **Easily customizable user data**: The user can easily create their own version by editing the data in the `userconfig.ts` file.
+- **Projects' Summary**: The user can add all their project for a project structure preview, in addition to the screenshots and github links.
+- **Notes App**: The user can add all their related data in user-friendly story-telling way.
 - **Responsive Design**: Fully responsive layout that works on all devices
 - **SEO Optimized**: Built-in sitemap generation and SEO tools
 - **TypeScript Support**: Full TypeScript integration for better development experience
