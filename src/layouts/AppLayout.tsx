@@ -14,8 +14,8 @@ interface AppLayoutProps {
 export default function Desktop({ initialBg, backgroundMap }: AppLayoutProps) {
   const [currentBg, setCurrentBg] = useState<string>(initialBg);
   const [showTerminal, setShowTerminal] = useState(false);
-  const [showNotes, setShowNotes] = useState(true);
-  const [showGitHub, setShowGitHub] = useState(true);
+  const [showNotes, setShowNotes] = useState(false);
+  const [showGitHub, setShowGitHub] = useState(false);
 
   useEffect(() => {
     const lastBg = localStorage.getItem('lastBackground');
@@ -43,7 +43,7 @@ export default function Desktop({ initialBg, backgroundMap }: AppLayoutProps) {
       </div>
 
       <div className='relative z-0 flex items-center justify-center h-[calc(100vh-10rem)] md:h-[calc(100vh-1.5rem)] pt-6'>
-        {showTerminal && <MacTerminal />}
+        {showTerminal && <MacTerminal onClose={() => setShowTerminal(false)} />}
       </div>
 
       <MobileDock />

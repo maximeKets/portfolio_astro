@@ -1,5 +1,4 @@
 import { useEffect, useRef } from 'react';
-import { IoClose } from 'react-icons/io5';
 import { userConfig } from '../../config/userConfig';
 
 interface ResumeViewerProps {

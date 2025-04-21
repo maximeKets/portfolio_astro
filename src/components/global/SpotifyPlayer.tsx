@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { IoClose } from 'react-icons/io5';
 
 interface SpotifyPlayerProps {
   isOpen: boolean;

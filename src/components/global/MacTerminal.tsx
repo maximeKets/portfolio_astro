@@ -12,6 +12,10 @@ type ChatHistory = {
   input: string;
 };
 
+interface MacTerminalProps {
+  onClose: () => void;
+}
+
 // Customize these placeholder messages for the input field
 const PLACEHOLDER_MESSAGES = [
   'Type your question...',
@@ -20,7 +24,7 @@ const PLACEHOLDER_MESSAGES = [
   'What projects have you worked on?',
 ];
 
-export default function MacTerminal() {
+export default function MacTerminal({ onClose }: MacTerminalProps) {
   const [chatHistory, setChatHistory] = useState<ChatHistory>({
     messages: [],
     input: '',
@@ -194,7 +198,10 @@ If a question is unrelated to my work or portfolio, say: "That's outside my area
   return (
     <div className='bg-black/85 w-[700px] h-[500px] rounded-lg overflow-hidden shadow-lg mx-4 sm:mx-0'>
       <div className='bg-gray-800 h-6 flex items-center space-x-2 px-4'>
-        <div className='w-3 h-3 rounded-full bg-red-500'></div>
+        <button
+          onClick={onClose}
+          className='w-3 h-3 rounded-full bg-red-500 hover:bg-red-600 transition-colors'
+        />
         <div className='w-3 h-3 rounded-full bg-yellow-500'></div>
         <div className='w-3 h-3 rounded-full bg-green-500'></div>
         <span className='text-sm text-gray-500 flex-grow text-center font-semibold flex items-center justify-center gap-2'>

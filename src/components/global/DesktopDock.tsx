@@ -1,12 +1,12 @@
 import { useState, useEffect, useRef } from 'react';
-import { BsGithub, BsSpotify, BsTerminal, BsFilePdf, BsStickyFill, BsLinkedin, BsTwitter, BsCalendar } from 'react-icons/bs';
+import { BsGithub, BsSpotify, BsFilePdf, BsStickyFill, BsLinkedin, BsCalendar } from 'react-icons/bs';
 import { IoIosCall, IoIosMail } from 'react-icons/io';
 import { FaLink } from 'react-icons/fa';
 import { VscVscode } from 'react-icons/vsc';
-import { RiTerminalFill } from 'react-icons/ri';
 import ResumeViewer from './ResumeViewer';
 import SpotifyPlayer from './SpotifyPlayer';
 import { userConfig } from '../../config/userConfig';
+import { RiTerminalFill } from 'react-icons/ri';
 
 interface DesktopDockProps {
   onTerminalClick: () => void;
@@ -113,7 +113,7 @@ export default function DesktopDock({ onTerminalClick, onNotesClick, onGitHubCli
   return (
     <>
       <div className="fixed bottom-0 left-0 right-0 flex justify-center pb-4 z-50">
-        <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-2 shadow-xl">
+        <div className="bg-gray-600/50 backdrop-blur-sm rounded-2xl p-2 shadow-xl">
           <div className="flex space-x-2">
             {/* GitHub */}
             <button
@@ -122,8 +122,8 @@ export default function DesktopDock({ onTerminalClick, onNotesClick, onGitHubCli
               onMouseLeave={() => setHoveredIcon(null)}
               className='relative'
             >
-              <div className='w-14 h-14 bg-gradient-to-t from-black to-black/60 rounded-xl flex items-center justify-center shadow-lg'>
-                <BsGithub size={45} className='text-gray-100' />
+              <div className='w-12 h-12 bg-gradient-to-t from-black to-black/60 rounded-xl flex items-center justify-center shadow-lg'>
+                <BsGithub size={37} className='text-gray-100' />
               </div>
               {hoveredIcon === 'github' && <Tooltip text='My Projects' />}
             </button>
@@ -135,8 +135,8 @@ export default function DesktopDock({ onTerminalClick, onNotesClick, onGitHubCli
               onMouseLeave={() => setHoveredIcon(null)}
               className='relative'
             >
-              <div className='w-14 h-14 bg-gradient-to-t from-yellow-600 to-yellow-400 rounded-xl flex items-center justify-center shadow-lg'>
-                <BsStickyFill size={45} className='text-white' />
+              <div className='w-12 h-12 bg-gradient-to-t from-yellow-600 to-yellow-400 rounded-xl flex items-center justify-center shadow-lg'>
+                <BsStickyFill size={37} className='text-white' />
               </div>
               {hoveredIcon === 'notes' && <Tooltip text='Resume Notes' />}
             </button>
@@ -148,8 +148,8 @@ export default function DesktopDock({ onTerminalClick, onNotesClick, onGitHubCli
               onMouseLeave={() => setHoveredIcon(null)}
               className='relative'
             >
-              <div className='w-14 h-14 bg-gradient-to-t from-red-600 to-red-400 rounded-xl flex items-center justify-center shadow-lg'>
-                <BsFilePdf size={45} className='text-white' />
+              <div className='w-12 h-12 bg-gradient-to-t from-red-600 to-red-400 rounded-xl flex items-center justify-center shadow-lg'>
+                <BsFilePdf size={37} className='text-white' />
               </div>
               {hoveredIcon === 'resume' && <Tooltip text='View Resume' />}
             </button>
@@ -161,8 +161,8 @@ export default function DesktopDock({ onTerminalClick, onNotesClick, onGitHubCli
               onMouseLeave={() => setHoveredIcon(null)}
               className='relative'
             >
-              <div className='w-14 h-14 bg-gradient-to-t from-blue-600 to-blue-400 rounded-xl flex items-center justify-center shadow-lg'>
-                <BsCalendar size={45} className='text-white' />
+              <div className='w-12 h-12 bg-gradient-to-t from-blue-600 to-blue-400 rounded-xl flex items-center justify-center shadow-lg'>
+                <BsCalendar size={37} className='text-white' />
               </div>
               {hoveredIcon === 'calendar' && <Tooltip text='Schedule a Call' />}
             </button>
@@ -174,8 +174,8 @@ export default function DesktopDock({ onTerminalClick, onNotesClick, onGitHubCli
               onMouseLeave={() => setHoveredIcon(null)}
               className='relative'
             >
-              <div className='w-14 h-14 bg-gradient-to-t from-green-600 to-green-400 rounded-xl flex items-center justify-center shadow-lg'>
-                <BsSpotify size={45} className='text-white' />
+              <div className='w-12 h-12 bg-gradient-to-t from-green-600 to-green-400 rounded-xl flex items-center justify-center shadow-lg'>
+                <BsSpotify size={37} className='text-white' />
               </div>
               {hoveredIcon === 'spotify' && <Tooltip text='Spotify Playlist' />}
             </button>
@@ -187,8 +187,8 @@ export default function DesktopDock({ onTerminalClick, onNotesClick, onGitHubCli
               onMouseLeave={() => setHoveredIcon(null)}
               className='relative'
             >
-              <div className='w-14 h-14 bg-gradient-to-t from-purple-600 to-purple-400 rounded-xl flex items-center justify-center shadow-lg'>
-                <FaLink size={45} className='text-white' />
+              <div className='w-12 h-12 bg-gradient-to-t from-purple-600 to-purple-400 rounded-xl flex items-center justify-center shadow-lg'>
+                <FaLink size={37} className='text-white' />
               </div>
               {hoveredIcon === 'links' && <Tooltip text='Contact Links' />}
               {showLinksPopup && <LinksPopup />}
@@ -201,8 +201,8 @@ export default function DesktopDock({ onTerminalClick, onNotesClick, onGitHubCli
               onMouseLeave={() => setHoveredIcon(null)}
               className='relative'
             >
-              <div className='w-14 h-14 bg-gradient-to-t from-blue-600 to-blue-400 rounded-xl flex items-center justify-center shadow-lg'>
-                <VscVscode size={45} className='text-white' />
+              <div className='w-12 h-12 bg-gradient-to-t from-blue-600 to-blue-400 rounded-xl flex items-center justify-center shadow-lg'>
+                <VscVscode size={37} className='text-white' />
               </div>
               {hoveredIcon === 'vscode' && <Tooltip text='Open VSCode' />}
             </button>
@@ -214,8 +214,8 @@ export default function DesktopDock({ onTerminalClick, onNotesClick, onGitHubCli
               onMouseLeave={() => setHoveredIcon(null)}
               className='relative'
             >
-              <div className='w-14 h-14 bg-gradient-to-t from-black to-black/60 rounded-xl flex items-center justify-center shadow-lg'>
-                <RiTerminalFill size={45} className='text-green-500' />
+              <div className='w-12 h-12 bg-gradient-to-t from-black to-black/60 rounded-xl flex items-center justify-center shadow-lg'>
+                <RiTerminalFill size={37} className='text-white' />
               </div>
               {hoveredIcon === 'terminal' && <Tooltip text='Terminal' />}
             </button>

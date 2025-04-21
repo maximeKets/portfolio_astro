@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import {
     FaGraduationCap, FaBriefcase, FaChevronLeft, FaBookOpen,
-    FaCertificate, FaCode, FaUsers, FaPalette, FaTrophy
+    FaCode, FaUsers, FaPalette, FaTrophy
 } from 'react-icons/fa';
 import { userConfig } from '../../config/userConfig';
 

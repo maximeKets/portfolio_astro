@@ -1132,7 +1132,7 @@ const PLACEHOLDER_MESSAGES = [
   "Where are you located?",
   "What projects have you worked on?"
 ];
-function MacTerminal() {
+function MacTerminal({ onClose }) {
   const [chatHistory, setChatHistory] = useState({
     messages: [],
     input: ""
@@ -1284,7 +1284,13 @@ If a question is unrelated to my work or portfolio, say: "That's outside my area
   };
   return /* @__PURE__ */ jsxs("div", { className: "bg-black/85 w-[700px] h-[500px] rounded-lg overflow-hidden shadow-lg mx-4 sm:mx-0", children: [
     /* @__PURE__ */ jsxs("div", { className: "bg-gray-800 h-6 flex items-center space-x-2 px-4", children: [
-      /* @__PURE__ */ jsx("div", { className: "w-3 h-3 rounded-full bg-red-500" }),
+      /* @__PURE__ */ jsx(
+        "button",
+        {
+          onClick: onClose,
+          className: "w-3 h-3 rounded-full bg-red-500 hover:bg-red-600 transition-colors"
+        }
+      ),
       /* @__PURE__ */ jsx("div", { className: "w-3 h-3 rounded-full bg-yellow-500" }),
       /* @__PURE__ */ jsx("div", { className: "w-3 h-3 rounded-full bg-green-500" }),
       /* @__PURE__ */ jsxs("span", { className: "text-sm text-gray-500 flex-grow text-center font-semibold flex items-center justify-center gap-2", children: [
@@ -2234,8 +2240,8 @@ const GitHubViewer = ({ isOpen, onClose }) => {
 function Desktop({ initialBg, backgroundMap }) {
   const [currentBg, setCurrentBg] = useState(initialBg);
   const [showTerminal, setShowTerminal] = useState(false);
-  const [showNotes, setShowNotes] = useState(true);
-  const [showGitHub, setShowGitHub] = useState(true);
+  const [showNotes, setShowNotes] = useState(false);
+  const [showGitHub, setShowGitHub] = useState(false);
   useEffect(() => {
     const lastBg = localStorage.getItem("lastBackground");
     if (lastBg === initialBg) {
@@ -2255,7 +2261,7 @@ function Desktop({ initialBg, backgroundMap }) {
       }
     ),
     /* @__PURE__ */ jsx("div", { className: "relative z-10", children: /* @__PURE__ */ jsx(MacToolbar, {}) }),
-    /* @__PURE__ */ jsx("div", { className: "relative z-0 flex items-center justify-center h-[calc(100vh-10rem)] md:h-[calc(100vh-1.5rem)] pt-6", children: showTerminal && /* @__PURE__ */ jsx(MacTerminal, {}) }),
+    /* @__PURE__ */ jsx("div", { className: "relative z-0 flex items-center justify-center h-[calc(100vh-10rem)] md:h-[calc(100vh-1.5rem)] pt-6", children: showTerminal && /* @__PURE__ */ jsx(MacTerminal, { onClose: () => setShowTerminal(false) }) }),
     /* @__PURE__ */ jsx(MobileDock, {}),
     /* @__PURE__ */ jsx(
       DesktopDock,
