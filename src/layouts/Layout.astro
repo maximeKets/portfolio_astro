@@ -1,5 +1,7 @@
 ---
 import BaseHead from '../components/global/BaseHead.astro';
+import Analytics from '@vercel/analytics/astro'
+import  SpeedInsights  from "@vercel/speed-insights/astro"
 ---
 
 <html
@@ -13,6 +15,8 @@ import BaseHead from '../components/global/BaseHead.astro';
       canonical={Astro.props.canonical}
       openGraph={Astro.props.openGraph}
     />
+    <Analytics />
+    <SpeedInsights />
   </head>
 
   <body class='overflow-x-hidden bg-gray-900'>

@@ -86,7 +86,7 @@ const NotesApp = ({ isOpen, onClose }: NotesAppProps) => {
         if (!images || images.length === 0 || currentIndex >= images.length) {
             return null;
         }
-        
+
         return (
             <div className="mt-4">
                 <div className="rounded-lg overflow-hidden mb-2">
@@ -96,11 +96,11 @@ const NotesApp = ({ isOpen, onClose }: NotesAppProps) => {
                         className="w-full h-48 object-contain bg-gray-900 rounded-lg"
                     />
                 </div>
-                
+
                 <div className="text-sm text-gray-400 mb-3">
                     {images[currentIndex].description}
                 </div>
-                
+
                 {images.length > 1 && (
                     <div className="flex justify-between mt-2">
                         <button
@@ -277,6 +277,20 @@ const NotesApp = ({ isOpen, onClose }: NotesAppProps) => {
             <h2 className="text-2xl font-bold text-gray-200 mb-6">My Notes</h2>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {/* Competitions */}
+                <div
+                    className="bg-gray-800/50 p-4 rounded-lg cursor-pointer hover:bg-gray-700/50 transition-colors"
+                    onClick={() => handleSectionClick('competitions')}
+                >
+                    <div className="flex items-center gap-3 mb-2">
+                        <div className="w-12 h-12 bg-orange-600 rounded-xl flex items-center justify-center">
+                            <FaTrophy size={28} className="text-white" />
+                        </div>
+                        <h3 className="text-xl font-semibold text-gray-200">Competitions</h3>
+                    </div>
+                    <p className="text-gray-400">View my competition history and achievements</p>
+                </div>
+
                 {/* Education */}
                 <div
                     className="bg-gray-800/50 p-4 rounded-lg cursor-pointer hover:bg-gray-700/50 transition-colors"
@@ -357,20 +371,6 @@ const NotesApp = ({ isOpen, onClose }: NotesAppProps) => {
                         <h3 className="text-xl font-semibold text-gray-200">Skills</h3>
                     </div>
                     <p className="text-gray-400">See my technical skills and expertise</p>
-                </div>
-
-                {/* Competitions */}
-                <div
-                    className="bg-gray-800/50 p-4 rounded-lg cursor-pointer hover:bg-gray-700/50 transition-colors"
-                    onClick={() => handleSectionClick('competitions')}
-                >
-                    <div className="flex items-center gap-3 mb-2">
-                        <div className="w-12 h-12 bg-orange-600 rounded-xl flex items-center justify-center">
-                            <FaTrophy size={28} className="text-white" />
-                        </div>
-                        <h3 className="text-xl font-semibold text-gray-200">Competitions</h3>
-                    </div>
-                    <p className="text-gray-400">View my competition history and achievements</p>
                 </div>
             </div>
         </div>

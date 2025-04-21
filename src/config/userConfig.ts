@@ -32,8 +32,8 @@ export const userConfig = {
 
     // Spotify Configuration
     spotify: {
-        playlistId: '37i9dQZF1DXcBWIGoYBM5M', // Your Spotify playlist ID
-        playlistName: 'My Dev Playlist',
+        playlistId: '5WsS94KKm5wDhgEpg8VcgM', // Your Spotify playlist ID
+        playlistName: 'Coding-Time',
     },
 
     // Resume Configuration
@@ -265,6 +265,60 @@ export const userConfig = {
     ],
     competitions: [
         {
+            title: "UGRF 19th Edition",
+            description: "UGRF 19th Edition",
+            achievement: "1st Place at the 19th UGRF! 'Enhancing Readibility of Faded Text in Historical Documents Using Image Processing Techniques'",
+            year: "2025",
+            images: [
+                {
+                    url: "https://i.ibb.co/ks3fxrrm/1738247199943-e-1747872000-v-beta-t-h-XQ9njs-NIMHBp-SUTY26bge-Vx-Zj-EXS4mz2rhth-Jk-Ym-M.jpg",
+                    alt: "UGRF",
+                    description: "Team Photo"
+                },
+                {
+                    url: "https://i.ibb.co/dsMPdbzF/1738247190983.jpg",
+                    alt: "UGRF",
+                    description: "UGRF Certificate"
+                },
+                {
+                    url: "https://i.ibb.co/4wbzcM7j/1738247196516-e-1747872000-v-beta-t-8-TWVb-MGq-Elw-QW8-Jn-Ej-JMa-Yo-KPdy6-ZOl-Nwxn-GW-TMCY.jpg",
+                    alt: "UGRF",
+                    description: "Team Photo"
+                }
+            ]
+        },
+        {
+            title: "Nile University Innovation Competition",
+            description: "Nile University Innovation Competition",
+            achievement: "Secured second place in the Nile University Innovation Competition hosted by Nile University - NilePreneurs and NU E-Club ! 🎉🏆",
+            year: "2025",
+            images: [
+                {
+                    url: "https://i.ibb.co/HfGLHCQn/1723818852840.jpg",
+                    alt: "NUIC",
+                    // description: "NUIC Certificate"
+                },
+                {
+                    url: "https://i.ibb.co/VcyKywY4/1723818852069.jpg",
+                    alt: "NUIC",
+                    // description: "NUIC Certificate"
+                }
+            ]
+        },
+        {
+            title: "ECPC",
+            description: "Egyptian Collegiate Programming Contest",
+            achievement: "Rank 3rd in my third year at NU and qualified for the ECPC Finals",
+            year: "2024",
+            images: [
+                {
+                    url: "https://scontent.fcai19-7.fna.fbcdn.net/v/t39.30808-6/486719077_1079195597576204_1921460299948979682_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=833d8c&_nc_ohc=-RBEyRf5DsYQ7kNvwGAPX-S&_nc_oc=AdlMHxnis_S-Az0hXGBmTDw80t0XfK55XbZe34IEHiG--zxYVpokw67Y8od9tx1aMqc&_nc_zt=23&_nc_ht=scontent.fcai19-7.fna&_nc_gid=_GCzZ5neQVOXIjZRMixipw&oh=00_AfGzvQexmtZqvequQ5QoaDe2FTOGWr6htKxg61MhXLXfwQ&oe=6806F4EE",
+                    alt: "ECPC",
+                    description: "ECPC Certificate"
+                }
+            ]
+        },
+        {
             title: "EOI",
             description: "Egyptian Olympiad in Informatics",
             achievement: "Rank 51 in Egypt",
@@ -317,26 +371,13 @@ export const userConfig = {
             ]
         },
         {
-            title: "ECPC",
-            description: "Egyptian Collegiate Programming Contest",
-            achievement: "Rank 3rd in my third year at NU and qualified for the ECPC Finals",
-            year: "2024",
-            images: [
-                {
-                    url: "https://scontent.fcai19-7.fna.fbcdn.net/v/t39.30808-6/486719077_1079195597576204_1921460299948979682_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=833d8c&_nc_ohc=-RBEyRf5DsYQ7kNvwGAPX-S&_nc_oc=AdlMHxnis_S-Az0hXGBmTDw80t0XfK55XbZe34IEHiG--zxYVpokw67Y8od9tx1aMqc&_nc_zt=23&_nc_ht=scontent.fcai19-7.fna&_nc_gid=_GCzZ5neQVOXIjZRMixipw&oh=00_AfGzvQexmtZqvequQ5QoaDe2FTOGWr6htKxg61MhXLXfwQ&oe=6806F4EE",
-                    alt: "ECPC",
-                    description: "ECPC Certificate"
-                }
-            ]
-        },
-        {
             title: "UGRF 17th Edition",
             description: "UGRF 17th Edition",
             achievement: "2nd place SWE for PregTracker- personalized pregnancy tracker ",
             year: "2024",
             images: [
                 {
-                    url: "https://media.licdn.com/dms/image/v2/D4D22AQGisyubNyQdDw/feedshare-shrink_1280/feedshare-shrink_1280/0/1706802292377?e=1747872000&v=beta&t=6j4vmESk1eqUq9OW8K6wLPYhghvxRTVsu0QNktT6LCk",
+                    url: "https://i.ibb.co/N2qgnb92/1706802292377.jpg",
                     alt: "UGRF",
                     description: "UGRF Certificate"
                 }
@@ -349,38 +390,19 @@ export const userConfig = {
             year: "2024",
             images: [
                 {
-                    url: "https://media.licdn.com/dms/image/v2/D4D22AQGisyubNyQdDw/feedshare-shrink_1280/feedshare-shrink_1280/0/1706802292377?e=1747872000&v=beta&t=6j4vmESk1eqUq9OW8K6wLPYhghvxRTVsu0QNktT6LCk",
+                    url: "https://i.ibb.co/N2qgnb92/1706802292377.jpg",
+                    alt: "UGRF",
+                    description: "UGRF Certificate"
+                },
+                {
+                    url: "https://i.ibb.co/SkfYGDv/1706802293048.jpg",
                     alt: "UGRF",
                     description: "UGRF Certificate"
                 }
             ]
         },
-        {
-            title: "Nile University Innovation Competition",
-            description: "Nile University Innovation Competition",
-            achievement: "Secured second place in the Nile University Innovation Competition hosted by Nile University - NilePreneurs and NU E-Club ! 🎉🏆",
-            year: "2025",
-            images: [
-                {
-                    url: "https://media.licdn.com/dms/image/v2/D4D22AQFWTxm61eMz2g/feedshare-shrink_2048_1536/feedshare-shrink_2048_1536/0/1723818852069?e=1747872000&v=beta&t=gMw4p1a6nx3aXx-8bTnuoKovTjpxepmu1nE1Se5iTyI",
-                    alt: "NUIC",
-                    // description: "NUIC Certificate"
-                }
-            ]
-        },
-        {
-            title: "UGRF 19th Edition",
-            description: "UGRF 19th Edition",
-            achievement: "1st Place at the 19th UGRF! 'Enhancing Readibility of Faded Text in Historical Documents Using Image Processing Techniques'",
-            year: "2025",
-            images: [
-                {
-                    url: "https://media.licdn.com/dms/image/v2/D4D22AQGisyubNyQdDw/feedshare-shrink_1280/feedshare-shrink_1280/0/1706802292377?e=1747872000&v=beta&t=6j4vmESk1eqUq9OW8K6wLPYhghvxRTVsu0QNktT6LCk",
-                    alt: "UGRF",
-                    description: "UGRF Certificate"
-                }
-            ]
-        }
+        
+        
     ],
 
     // Professional Experience

@@ -71,9 +71,9 @@ export default function DesktopDock({ onTerminalClick, onNotesClick, onGitHubCli
   const LinksPopup = () => (
     <div
       ref={linksPopupRef}
-      className="absolute bottom-20 left-1/2 transform -translate-x-1/2 bg-gray-800/90 backdrop-blur-sm rounded-lg p-4 shadow-xl"
+      className="absolute bottom-20 left-1/2 transform -translate-x-1/2 bg-gray-800/90 w-30 backdrop-blur-sm rounded-lg p-4 shadow-xl"
     >
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 gap-y-2">
         <a
           href={userConfig.social.linkedin}
           target="_blank"
@@ -112,7 +112,7 @@ export default function DesktopDock({ onTerminalClick, onNotesClick, onGitHubCli
 
   return (
     <>
-      <div className="fixed bottom-0 left-0 right-0 flex justify-center pb-4 z-50">
+      <div className="fixed bottom-0 left-0 right-0 hidden md:flex justify-center pb-4 z-50">
         <div className="bg-gray-600/50 backdrop-blur-sm rounded-2xl p-2 shadow-xl">
           <div className="flex space-x-2">
             {/* GitHub */}

@@ -1,12 +1,12 @@
-import { c as createAstro, b as createComponent, r as renderComponent, e as renderTemplate, u as unescapeHTML, F as Fragment, f as addAttribute, g as renderHead, h as renderSlot } from '../chunks/astro/server_DsaXRM-z.mjs';
+import { c as createAstro, b as createComponent, r as renderComponent, e as renderTemplate, u as unescapeHTML, F as Fragment, f as addAttribute, g as renderScript, h as renderHead, i as renderSlot } from '../chunks/astro/server_BicDNenj.mjs';
 import 'kleur/colors';
 /* empty css                                 */
 import { escape } from 'html-escaper';
-import { c as getImage } from '../chunks/_astro_assets_SiEmllCD.mjs';
+import { c as getImage } from '../chunks/_astro_assets_DkpBhm4f.mjs';
 import { jsxs, Fragment as Fragment$1, jsx } from 'react/jsx-runtime';
 import { useState, useEffect, useRef } from 'react';
 import { MdWifi } from 'react-icons/md';
-import { FaApple, FaLink, FaGraduationCap, FaBriefcase, FaUsers, FaPalette, FaBookOpen, FaCode, FaTrophy, FaChevronLeft, FaGithub, FaExternalLinkAlt, FaFolder, FaFile } from 'react-icons/fa';
+import { FaApple, FaLink, FaTrophy, FaGraduationCap, FaBriefcase, FaUsers, FaPalette, FaBookOpen, FaCode, FaChevronLeft, FaGithub, FaExternalLinkAlt, FaFolder, FaFile } from 'react-icons/fa';
 import { IoCellular, IoBatteryHalfOutline, IoSearchSharp } from 'react-icons/io5';
 import { VscVscode } from 'react-icons/vsc';
 import { FaRegFolderClosed } from 'react-icons/fa6';
@@ -363,9 +363,9 @@ const buildTags = (config) => {
   return tagsToRender.trim();
 };
 
-const $$Astro$2 = createAstro("https://example.com");
+const $$Astro$4 = createAstro("https://example.com");
 const $$AstroSeo = createComponent(($$result, $$props, $$slots) => {
-  const Astro2 = $$result.createAstro($$Astro$2, $$props, $$slots);
+  const Astro2 = $$result.createAstro($$Astro$4, $$props, $$slots);
   Astro2.self = $$AstroSeo;
   const {
     title,
@@ -446,12 +446,12 @@ const neurospeccompanionmerged = {
 
 const id$7 = "scheds";
 const title$7 = "Scheds - A Course Schedule Generator";
-const description$7 = "My proudest project, a comprehensive course schedule generator application built with ASP.NET Core MVC";
+const description$7 = "My proudest project yet, a comprehensive course schedule generator application built with ASP.NET Core MVC";
 const repoUrl$7 = "https://github.com/aabdoo23/Scheds";
 const liveUrl$4 = "https://scheds.runasp.net";
 const techStack$7 = ["ASP.NET Core","C#","Entity Framework","SQL Server","Bootstrap","jQuery"];
 const structure$7 = /* #__PURE__ */ JSON.parse("{\"root\":\"scheds\",\"children\":[{\"name\":\".gitattributes\",\"type\":\"file\"},{\"name\":\".gitignore\",\"type\":\"file\"},{\"name\":\"README.md\",\"type\":\"file\"},{\"name\":\"Scheds.Application\",\"type\":\"directory\",\"children\":[{\"name\":\"Interfaces\",\"type\":\"directory\",\"children\":[{\"name\":\"Repositories\",\"type\":\"directory\",\"children\":[{\"name\":\"Common\",\"type\":\"directory\",\"children\":[{\"name\":\"IBaseRepository.cs\",\"type\":\"file\"}]},{\"name\":\"ICardItemRepository.cs\",\"type\":\"file\"},{\"name\":\"ICourseBaseRepository.cs\",\"type\":\"file\"},{\"name\":\"ICourseScheduleRepository.cs\",\"type\":\"file\"},{\"name\":\"IInstructorRepository.cs\",\"type\":\"file\"}]},{\"name\":\"Services\",\"type\":\"directory\",\"children\":[{\"name\":\"ICardItemService.cs\",\"type\":\"file\"},{\"name\":\"IEmptyRoomsService.cs\",\"type\":\"file\"},{\"name\":\"IParsingService.cs\",\"type\":\"file\"},{\"name\":\"ISelfServiceLiveFetchService.cs\",\"type\":\"file\"}]}]},{\"name\":\"Scheds.Application.csproj\",\"type\":\"file\"}]},{\"name\":\"Scheds.Domain\",\"type\":\"directory\",\"children\":[{\"name\":\"DTOs\",\"type\":\"directory\",\"children\":[{\"name\":\"Common\",\"type\":\"directory\",\"children\":[{\"name\":\"PaginatedEntityDTO.cs\",\"type\":\"file\"}]},{\"name\":\"CustomCourseBaseDTO.cs\",\"type\":\"file\"},{\"name\":\"GenerateRequestDTO.cs\",\"type\":\"file\"},{\"name\":\"ReturnedCardItemDTO.cs\",\"type\":\"file\"},{\"name\":\"SelfService\",\"type\":\"directory\",\"children\":[{\"name\":\"SearchRequest.cs\",\"type\":\"file\"},{\"name\":\"SectionSearchParameters.cs\",\"type\":\"file\"}]}]},{\"name\":\"Entities\",\"type\":\"directory\",\"children\":[{\"name\":\"CardItem.cs\",\"type\":\"file\"},{\"name\":\"Common\",\"type\":\"directory\",\"children\":[{\"name\":\"BaseEntity.cs\",\"type\":\"file\"}]},{\"name\":\"CourseBase.cs\",\"type\":\"file\"},{\"name\":\"CourseSchedule.cs\",\"type\":\"file\"},{\"name\":\"Instructor.cs\",\"type\":\"file\"}]},{\"name\":\"Scheds.Domain.csproj\",\"type\":\"file\"},{\"name\":\"ViewModels\",\"type\":\"directory\",\"children\":[{\"name\":\"ErrorViewModel.cs\",\"type\":\"file\"},{\"name\":\"GenerateAndResultViewModel.cs\",\"type\":\"file\"}]}]},{\"name\":\"Scheds.Infrastructure\",\"type\":\"directory\",\"children\":[{\"name\":\"Configurations\",\"type\":\"directory\",\"children\":[{\"name\":\"CourseScheduleConfiguration.cs\",\"type\":\"file\"}]},{\"name\":\"Contexts\",\"type\":\"directory\",\"children\":[{\"name\":\"SchedsDbContext.cs\",\"type\":\"file\"}]},{\"name\":\"InfrastructureServiceDI.cs\",\"type\":\"file\"},{\"name\":\"Migrations\",\"type\":\"directory\",\"children\":[{\"name\":\"20250205215848_please.Designer.cs\",\"type\":\"file\"},{\"name\":\"20250205215848_please.cs\",\"type\":\"file\"},{\"name\":\"20250205221819_indexFix.Designer.cs\",\"type\":\"file\"},{\"name\":\"20250205221819_indexFix.cs\",\"type\":\"file\"},{\"name\":\"20250205225306_cache.Designer.cs\",\"type\":\"file\"},{\"name\":\"20250205225306_cache.cs\",\"type\":\"file\"},{\"name\":\"SchedsDbContextModelSnapshot.cs\",\"type\":\"file\"}]},{\"name\":\"Repositories\",\"type\":\"directory\",\"children\":[{\"name\":\"CardItemRepository.cs\",\"type\":\"file\"},{\"name\":\"Common\",\"type\":\"directory\",\"children\":[{\"name\":\"BaseRepository.cs\",\"type\":\"file\"}]},{\"name\":\"CourseBaseRepository.cs\",\"type\":\"file\"},{\"name\":\"CourseScheduleRepository.cs\",\"type\":\"file\"},{\"name\":\"InstructorRepository.cs\",\"type\":\"file\"}]},{\"name\":\"Scheds.Infrastructure.csproj\",\"type\":\"file\"},{\"name\":\"Services\",\"type\":\"directory\",\"children\":[{\"name\":\"CardItemService.cs\",\"type\":\"file\"},{\"name\":\"EmptyRoomsService.cs\",\"type\":\"file\"},{\"name\":\"ParsingService.cs\",\"type\":\"file\"},{\"name\":\"SelfServiceLiveFetchService.cs\",\"type\":\"file\"}]},{\"name\":\"Util\",\"type\":\"directory\",\"children\":[{\"name\":\"GenerationUtil.cs\",\"type\":\"file\"},{\"name\":\"GlobalTimeUtil.cs\",\"type\":\"file\"},{\"name\":\"IdGenerationUtil.cs\",\"type\":\"file\"}]}]},{\"name\":\"Scheds.sln\",\"type\":\"file\"},{\"name\":\"Scheds\",\"type\":\"directory\",\"children\":[{\"name\":\".config\",\"type\":\"directory\",\"children\":[{\"name\":\"dotnet-tools.json\",\"type\":\"file\"}]},{\"name\":\"Controllers\",\"type\":\"directory\",\"children\":[{\"name\":\"CardController.cs\",\"type\":\"file\"},{\"name\":\"CartController.cs\",\"type\":\"file\"},{\"name\":\"CourseBaseController.cs\",\"type\":\"file\"},{\"name\":\"CourseScheduleController.cs\",\"type\":\"file\"},{\"name\":\"CustomizationsController.cs\",\"type\":\"file\"},{\"name\":\"FindStudyRoomsController.cs\",\"type\":\"file\"},{\"name\":\"GenerateController.cs\",\"type\":\"file\"},{\"name\":\"GenerateSchedulesController.cs\",\"type\":\"file\"},{\"name\":\"HomeController.cs\",\"type\":\"file\"},{\"name\":\"InstructorController.cs\",\"type\":\"file\"},{\"name\":\"RoomController.cs\",\"type\":\"file\"}]},{\"name\":\"Program.cs\",\"type\":\"file\"},{\"name\":\"Properties\",\"type\":\"directory\",\"children\":[{\"name\":\"launchSettings.json\",\"type\":\"file\"}]},{\"name\":\"Scheds.MVC.csproj\",\"type\":\"file\"},{\"name\":\"Scheds.sln\",\"type\":\"file\"},{\"name\":\"Views\",\"type\":\"directory\",\"children\":[{\"name\":\"FindStudyRooms\",\"type\":\"directory\",\"children\":[{\"name\":\"index.cshtml\",\"type\":\"file\"}]},{\"name\":\"GenerateSchedules\",\"type\":\"directory\",\"children\":[{\"name\":\"Index.cshtml\",\"type\":\"file\"}]},{\"name\":\"Home\",\"type\":\"directory\",\"children\":[{\"name\":\"Index.cshtml\",\"type\":\"file\"},{\"name\":\"Privacy.cshtml\",\"type\":\"file\"}]},{\"name\":\"Shared\",\"type\":\"directory\",\"children\":[{\"name\":\"Components\",\"type\":\"directory\",\"children\":[{\"name\":\"AllSchedulesViewComponent\",\"type\":\"directory\",\"children\":[{\"name\":\"AllSchedulesViewComponent.cs\",\"type\":\"file\"},{\"name\":\"Default.cshtml\",\"type\":\"file\"}]},{\"name\":\"CardItemViewComponent\",\"type\":\"directory\",\"children\":[{\"name\":\"CardItemViewComponent.cs\",\"type\":\"file\"},{\"name\":\"Default.cshtml\",\"type\":\"file\"}]},{\"name\":\"OneHourCardItemViewComponent\",\"type\":\"directory\",\"children\":[{\"name\":\"Default.cshtml\",\"type\":\"file\"},{\"name\":\"OneHourCardItemViewComponent.cs\",\"type\":\"file\"}]},{\"name\":\"ScheduleViewComponent\",\"type\":\"directory\",\"children\":[{\"name\":\"Default.cshtml\",\"type\":\"file\"},{\"name\":\"ScheduleViewComponent.cs\",\"type\":\"file\"}]}]},{\"name\":\"Error.cshtml\",\"type\":\"file\"},{\"name\":\"_Layout.cshtml\",\"type\":\"file\"},{\"name\":\"_Layout.cshtml.css\",\"type\":\"file\"},{\"name\":\"_NavbarPartial.cshtml\",\"type\":\"file\"},{\"name\":\"_ValidationScriptsPartial.cshtml\",\"type\":\"file\"}]},{\"name\":\"_ViewImports.cshtml\",\"type\":\"file\"},{\"name\":\"_ViewStart.cshtml\",\"type\":\"file\"}]},{\"name\":\"appsettings.Development.json\",\"type\":\"file\"},{\"name\":\"wwwroot\",\"type\":\"directory\",\"children\":[{\"name\":\"css\",\"type\":\"directory\",\"children\":[{\"name\":\"styles.css\",\"type\":\"file\"}]},{\"name\":\"favicon.ico\",\"type\":\"file\"},{\"name\":\"images\",\"type\":\"directory\",\"children\":[{\"name\":\"Calendar-pana.png\",\"type\":\"file\"},{\"name\":\"Schedule-amico.png\",\"type\":\"file\"},{\"name\":\"Time management-cuate.png\",\"type\":\"file\"},{\"name\":\"abdo.png\",\"type\":\"file\"},{\"name\":\"hero-bg.jpg\",\"type\":\"file\"},{\"name\":\"ideas.png\",\"type\":\"file\"},{\"name\":\"image-removebg-preview (1).png\",\"type\":\"file\"},{\"name\":\"image-removebg-preview (2).png\",\"type\":\"file\"},{\"name\":\"image-removebg-preview.png\",\"type\":\"file\"},{\"name\":\"logo-new.png\",\"type\":\"file\"},{\"name\":\"new-bg-final.png\",\"type\":\"file\"},{\"name\":\"new-bg.png\",\"type\":\"file\"},{\"name\":\"questions.png\",\"type\":\"file\"},{\"name\":\"register.png\",\"type\":\"file\"},{\"name\":\"schedules.png\",\"type\":\"file\"},{\"name\":\"study.png\",\"type\":\"file\"},{\"name\":\"studyRooms.png\",\"type\":\"file\"}]},{\"name\":\"js\",\"type\":\"directory\",\"children\":[{\"name\":\"find-study-rooms.js\",\"type\":\"file\"},{\"name\":\"generate-schedules.js\",\"type\":\"file\"},{\"name\":\"script.js\",\"type\":\"file\"}]},{\"name\":\"lib\",\"type\":\"directory\",\"children\":[{\"name\":\"bootstrap\",\"type\":\"directory\",\"children\":[{\"name\":\"LICENSE\",\"type\":\"file\"},{\"name\":\"dist\",\"type\":\"directory\",\"children\":[{\"name\":\"css\",\"type\":\"directory\",\"children\":[{\"name\":\"bootstrap-grid.css\",\"type\":\"file\"},{\"name\":\"bootstrap-grid.css.map\",\"type\":\"file\"},{\"name\":\"bootstrap-grid.min.css\",\"type\":\"file\"},{\"name\":\"bootstrap-grid.min.css.map\",\"type\":\"file\"},{\"name\":\"bootstrap-grid.rtl.css\",\"type\":\"file\"},{\"name\":\"bootstrap-grid.rtl.css.map\",\"type\":\"file\"},{\"name\":\"bootstrap-grid.rtl.min.css\",\"type\":\"file\"},{\"name\":\"bootstrap-grid.rtl.min.css.map\",\"type\":\"file\"},{\"name\":\"bootstrap-reboot.css\",\"type\":\"file\"},{\"name\":\"bootstrap-reboot.css.map\",\"type\":\"file\"},{\"name\":\"bootstrap-reboot.min.css\",\"type\":\"file\"},{\"name\":\"bootstrap-reboot.min.css.map\",\"type\":\"file\"},{\"name\":\"bootstrap-reboot.rtl.css\",\"type\":\"file\"},{\"name\":\"bootstrap-reboot.rtl.css.map\",\"type\":\"file\"},{\"name\":\"bootstrap-reboot.rtl.min.css\",\"type\":\"file\"},{\"name\":\"bootstrap-reboot.rtl.min.css.map\",\"type\":\"file\"},{\"name\":\"bootstrap-utilities.css\",\"type\":\"file\"},{\"name\":\"bootstrap-utilities.css.map\",\"type\":\"file\"},{\"name\":\"bootstrap-utilities.min.css\",\"type\":\"file\"},{\"name\":\"bootstrap-utilities.min.css.map\",\"type\":\"file\"},{\"name\":\"bootstrap-utilities.rtl.css\",\"type\":\"file\"},{\"name\":\"bootstrap-utilities.rtl.css.map\",\"type\":\"file\"},{\"name\":\"bootstrap-utilities.rtl.min.css\",\"type\":\"file\"},{\"name\":\"bootstrap-utilities.rtl.min.css.map\",\"type\":\"file\"},{\"name\":\"bootstrap.css\",\"type\":\"file\"},{\"name\":\"bootstrap.css.map\",\"type\":\"file\"},{\"name\":\"bootstrap.min.css\",\"type\":\"file\"},{\"name\":\"bootstrap.min.css.map\",\"type\":\"file\"},{\"name\":\"bootstrap.rtl.css\",\"type\":\"file\"},{\"name\":\"bootstrap.rtl.css.map\",\"type\":\"file\"},{\"name\":\"bootstrap.rtl.min.css\",\"type\":\"file\"},{\"name\":\"bootstrap.rtl.min.css.map\",\"type\":\"file\"}]},{\"name\":\"js\",\"type\":\"directory\",\"children\":[{\"name\":\"bootstrap.bundle.js\",\"type\":\"file\"},{\"name\":\"bootstrap.bundle.js.map\",\"type\":\"file\"},{\"name\":\"bootstrap.bundle.min.js\",\"type\":\"file\"},{\"name\":\"bootstrap.bundle.min.js.map\",\"type\":\"file\"},{\"name\":\"bootstrap.esm.js\",\"type\":\"file\"},{\"name\":\"bootstrap.esm.js.map\",\"type\":\"file\"},{\"name\":\"bootstrap.esm.min.js\",\"type\":\"file\"},{\"name\":\"bootstrap.esm.min.js.map\",\"type\":\"file\"},{\"name\":\"bootstrap.js\",\"type\":\"file\"},{\"name\":\"bootstrap.js.map\",\"type\":\"file\"},{\"name\":\"bootstrap.min.js\",\"type\":\"file\"},{\"name\":\"bootstrap.min.js.map\",\"type\":\"file\"}]}]}]},{\"name\":\"jquery-validation-unobtrusive\",\"type\":\"directory\",\"children\":[{\"name\":\"LICENSE.txt\",\"type\":\"file\"},{\"name\":\"jquery.validate.unobtrusive.js\",\"type\":\"file\"},{\"name\":\"jquery.validate.unobtrusive.min.js\",\"type\":\"file\"}]},{\"name\":\"jquery-validation\",\"type\":\"directory\",\"children\":[{\"name\":\"LICENSE.md\",\"type\":\"file\"},{\"name\":\"dist\",\"type\":\"directory\",\"children\":[{\"name\":\"additional-methods.js\",\"type\":\"file\"},{\"name\":\"additional-methods.min.js\",\"type\":\"file\"},{\"name\":\"jquery.validate.js\",\"type\":\"file\"},{\"name\":\"jquery.validate.min.js\",\"type\":\"file\"}]}]},{\"name\":\"jquery\",\"type\":\"directory\",\"children\":[{\"name\":\"LICENSE.txt\",\"type\":\"file\"},{\"name\":\"dist\",\"type\":\"directory\",\"children\":[{\"name\":\"jquery.js\",\"type\":\"file\"},{\"name\":\"jquery.min.js\",\"type\":\"file\"},{\"name\":\"jquery.min.map\",\"type\":\"file\"}]}]}]}]}]}]}");
-const images$7 = [{"url":"src/assets/images/projects/scheds/landingPage.png","alt":"Scheds Landing Page"},{"url":"src/assets/images/projects/scheds/generatedSchedules.png","alt":"Scheds Generated Schedules"},{"url":"src/assets/images/projects/scheds/customizationsSection.png","alt":"Scheds Generated Schedules"}];
+const images$7 = [{"url":"https://i.ibb.co/v6yPYfTb/landing-Page.png","alt":"Scheds Landing Page"},{"url":"https://i.ibb.co/6Jms8X4K/generated-Schedules.png","alt":"Scheds Generated Schedules"},{"url":"https://i.ibb.co/WpPxRqMr/customizations-Section.png","alt":"Scheds Customizations Section"}];
 const scheds = {
   id: id$7,
   title: title$7,
@@ -470,7 +470,7 @@ const repoUrl$6 = "https://github.com/aabdoo23/fadedTextRestoration";
 const liveUrl$3 = "https://huggingface.co/spaces/aabdoo234/fadedTextRestoration";
 const techStack$6 = ["Python","OpenCV","Tesseract OCR","Gradio","Gemini LLM"];
 const structure$6 = {"root":"fadedTextRestoration","children":[{"name":"README.md","type":"file"},{"name":"app.py","type":"file"},{"name":"requirements.txt","type":"file"}]};
-const images$6 = [{"url":"src/assets/images/projects/faded-text/mainFunction.png","alt":"Faded Text Restoration"},{"url":"src/assets/images/projects/faded-text/transcribed.png","alt":"Faded Text Restoration"}];
+const images$6 = [{"url":"https://i.ibb.co/hJcLNM3m/main-Function.png","alt":"Faded Text Restoration"},{"url":"https://i.ibb.co/nMcRc0WT/transcribed.png","alt":"Faded Text Restoration"}];
 const fadedTextRestoration = {
   id: id$6,
   title: title$6,
@@ -554,14 +554,14 @@ const nucpaBalloonsApi = {
   images: images$2,
 };
 
-const id$1 = "Portfolio";
-const title$1 = "Portfolio";
-const description$1 = "My portfolio website built with Astro.js";
+const id$1 = "portfolio";
+const title$1 = "Portfolio (This Website)";
+const description$1 = "An open source interactive portfolio website, with a clean and modern design, sections for education, experience, skills, competitions, and more. Built with Astro.js, Tailwind CSS, TypeScript, React, and Vercel.";
 const repoUrl$1 = "https://github.com/aabdoo23/portfolio";
-const liveUrl = "https://aabdoo23.github.io/portfolio";
+const liveUrl = "https://aabdoo23.vercel.app";
 const techStack$1 = ["Astro.js","Tailwind CSS","TypeScript","React","Vercel"];
-const structure$1 = {"root":"portfolio","children":[{"name":".gitignore","type":"file"},{"name":".vscode","type":"directory","children":[{"name":"extensions.json","type":"file"},{"name":"launch.json","type":"file"}]},{"name":"README.md","type":"file"},{"name":"astro.config.mjs","type":"file"},{"name":"package-lock.json","type":"file"},{"name":"package.json","type":"file"},{"name":"public","type":"directory","children":[{"name":"resume.pdf","type":"file"},{"name":"robots.txt","type":"file"}]},{"name":"src","type":"directory","children":[{"name":"assets","type":"directory","children":[{"name":"images","type":"directory","children":[{"name":"mac-background1.jpg","type":"file"},{"name":"mac-background2.jpg","type":"file"},{"name":"mac-background3.jpg","type":"file"},{"name":"projects","type":"directory","children":[{"name":"scheds","type":"directory","children":[{"name":"customizationsSection.png","type":"file"},{"name":"generatedSchedules.png","type":"file"},{"name":"landingPage.png","type":"file"}]}]}]}]},{"name":"components","type":"directory","children":[{"name":"LandingPage.astro","type":"file"},{"name":"global","type":"directory","children":[{"name":"BaseHead.astro","type":"file"},{"name":"DesktopDock.tsx","type":"file"},{"name":"GitHubViewer.tsx","type":"file"},{"name":"MacTerminal.tsx","type":"file"},{"name":"MacToolbar.tsx","type":"file"},{"name":"MobileDock.tsx","type":"file"},{"name":"NotesApp.tsx","type":"file"},{"name":"ResumeViewer.tsx","type":"file"},{"name":"SpotifyPlayer.tsx","type":"file"}]}]},{"name":"config","type":"directory","children":[{"name":"userConfig.ts","type":"file"}]},{"name":"layouts","type":"directory","children":[{"name":"AppLayout.tsx","type":"file"},{"name":"Layout.astro","type":"file"}]},{"name":"pages","type":"directory","children":[{"name":"api","type":"directory","children":[{"name":"chat.ts","type":"file"}]},{"name":"index.astro","type":"file"}]},{"name":"styles","type":"directory","children":[{"name":"global.css","type":"file"}]}]},{"name":"tsconfig.json","type":"file"}]};
-const images$1 = [];
+const structure$1 = {"root":"portfolio","children":[{"name":".gitignore","type":"file"},{"name":".vercel","type":"directory","children":[{"name":"output","type":"directory","children":[{"name":"_functions","type":"directory","children":[{"name":"_@astrojs-ssr-adapter.mjs","type":"file"},{"name":"_noop-actions.mjs","type":"file"},{"name":"_noop-middleware.mjs","type":"file"},{"name":"chunks","type":"directory","children":[{"name":"_astro_assets_SiEmllCD.mjs","type":"file"},{"name":"astro-designed-error-pages_CTohK4K9.mjs","type":"file"},{"name":"astro","type":"directory","children":[{"name":"server_DsaXRM-z.mjs","type":"file"}]},{"name":"entrypoint_Baf2ym7p.mjs","type":"file"},{"name":"path_BuZodYwm.mjs","type":"file"},{"name":"sharp_Dq3GUXHW.mjs","type":"file"}]},{"name":"entry.mjs","type":"file"},{"name":"pages","type":"directory","children":[{"name":"_image.astro.mjs","type":"file"},{"name":"api","type":"directory","children":[{"name":"chat.astro.mjs","type":"file"}]},{"name":"index.astro.mjs","type":"file"}]},{"name":"renderers.mjs","type":"file"}]},{"name":"config.json","type":"file"},{"name":"functions","type":"directory","children":[{"name":"_render.func","type":"directory","children":[{"name":".vc-config.json","type":"file"},{"name":"package.json","type":"file"},{"name":"src","type":"directory","children":[{"name":"pages","type":"directory","children":[{"name":"index.astro","type":"file"}]}]}]}]},{"name":"static","type":"directory","children":[{"name":"_astro","type":"directory","children":[{"name":"client.CBwL3ilQ.js","type":"file"},{"name":"index.CG0C8_-B.css","type":"file"},{"name":"index.ai7qpRr1.js","type":"file"},{"name":"mac-background1.BN3pAP-K.jpg","type":"file"},{"name":"mac-background2.DAWzICtV.jpg","type":"file"},{"name":"mac-background3.D2uWT5Yk.jpg","type":"file"}]},{"name":"resume.pdf","type":"file"},{"name":"robots.txt","type":"file"},{"name":"sitemap-0.xml","type":"file"},{"name":"sitemap-index.xml","type":"file"}]}]}]},{"name":".vscode","type":"directory","children":[{"name":"extensions.json","type":"file"},{"name":"launch.json","type":"file"}]},{"name":"README.md","type":"file"},{"name":"astro.config.mjs","type":"file"},{"name":"package-lock.json","type":"file"},{"name":"package.json","type":"file"},{"name":"public","type":"directory","children":[{"name":"resume.pdf","type":"file"},{"name":"robots.txt","type":"file"}]},{"name":"src","type":"directory","children":[{"name":"assets","type":"directory","children":[{"name":"images","type":"directory","children":[{"name":"mac-background1.jpg","type":"file"},{"name":"mac-background2.jpg","type":"file"},{"name":"mac-background3.jpg","type":"file"},{"name":"projects","type":"directory","children":[{"name":"faded-text","type":"directory","children":[{"name":"mainFunction.png","type":"file"},{"name":"transcribed.png","type":"file"}]},{"name":"scheds","type":"directory","children":[{"name":"customizationsSection.png","type":"file"},{"name":"generatedSchedules.png","type":"file"},{"name":"landingPage.png","type":"file"}]}]}]}]},{"name":"components","type":"directory","children":[{"name":"LandingPage.astro","type":"file"},{"name":"global","type":"directory","children":[{"name":"BaseHead.astro","type":"file"},{"name":"DesktopDock.tsx","type":"file"},{"name":"GitHubViewer.tsx","type":"file"},{"name":"MacTerminal.tsx","type":"file"},{"name":"MacToolbar.tsx","type":"file"},{"name":"MobileDock.tsx","type":"file"},{"name":"NotesApp.tsx","type":"file"},{"name":"ResumeViewer.tsx","type":"file"},{"name":"SpotifyPlayer.tsx","type":"file"}]}]},{"name":"config","type":"directory","children":[{"name":"projects","type":"directory","children":[{"name":"clinicalmain.json","type":"file"},{"name":"fadedtextrestoration.json","type":"file"},{"name":"foodies.json","type":"file"},{"name":"neurospeccompanionmerged.json","type":"file"},{"name":"nucpa-balloons.json","type":"file"},{"name":"nucpaballoonsapi.json","type":"file"},{"name":"portfolio.json","type":"file"},{"name":"scheds.json","type":"file"},{"name":"seatreservation.json","type":"file"}]},{"name":"userConfig.ts","type":"file"}]},{"name":"layouts","type":"directory","children":[{"name":"AppLayout.tsx","type":"file"},{"name":"Layout.astro","type":"file"}]},{"name":"pages","type":"directory","children":[{"name":"api","type":"directory","children":[{"name":"chat.ts","type":"file"}]},{"name":"index.astro","type":"file"}]},{"name":"styles","type":"directory","children":[{"name":"global.css","type":"file"}]}]},{"name":"tsconfig.json","type":"file"},{"name":"util","type":"directory","children":[{"name":"github_repo_parser.py","type":"file"},{"name":"requirements.txt","type":"file"}]}]};
+const images$1 = [{"url":"https://i.ibb.co/gbNxMqmP/B5-BE581-F-2-C7-C-48-A8-9-E7-C-77073-BEB66-AF.png","alt":"Portfolio","description":"Portfolio"},{"url":"https://i.ibb.co/FdTHqhM/68-D528-EE-07-BF-4406-8363-08-B2-CFB7-A381.png","alt":"Portfolio","description":"Projects Page"},{"url":"https://i.ibb.co/TBDmDtX8/495-DAF06-BC3-D-424-B-A8-FA-7-BEE852-B5012.png","alt":"Portfolio","description":"Project Page"},{"url":"https://i.ibb.co/qFNw99gR/D1-CD7826-84-EF-42-AC-BA40-55766-D792771.png","alt":"Portfolio","description":"Notes App"}];
 const portfolio = {
   id: id$1,
   title: title$1,
@@ -614,7 +614,7 @@ const userConfig = {
   },
   // Spotify Configuration
   spotify: {
-    playlistId: "37i9dQZF1DXcBWIGoYBM5M"},
+    playlistId: "5WsS94KKm5wDhgEpg8VcgM"},
   // Resume Configuration
   resume: {
     localPath: "/resume.pdf"
@@ -837,6 +837,60 @@ const userConfig = {
   ],
   competitions: [
     {
+      title: "UGRF 19th Edition",
+      description: "UGRF 19th Edition",
+      achievement: "1st Place at the 19th UGRF! 'Enhancing Readibility of Faded Text in Historical Documents Using Image Processing Techniques'",
+      year: "2025",
+      images: [
+        {
+          url: "https://i.ibb.co/ks3fxrrm/1738247199943-e-1747872000-v-beta-t-h-XQ9njs-NIMHBp-SUTY26bge-Vx-Zj-EXS4mz2rhth-Jk-Ym-M.jpg",
+          alt: "UGRF",
+          description: "Team Photo"
+        },
+        {
+          url: "https://i.ibb.co/dsMPdbzF/1738247190983.jpg",
+          alt: "UGRF",
+          description: "UGRF Certificate"
+        },
+        {
+          url: "https://i.ibb.co/4wbzcM7j/1738247196516-e-1747872000-v-beta-t-8-TWVb-MGq-Elw-QW8-Jn-Ej-JMa-Yo-KPdy6-ZOl-Nwxn-GW-TMCY.jpg",
+          alt: "UGRF",
+          description: "Team Photo"
+        }
+      ]
+    },
+    {
+      title: "Nile University Innovation Competition",
+      description: "Nile University Innovation Competition",
+      achievement: "Secured second place in the Nile University Innovation Competition hosted by Nile University - NilePreneurs and NU E-Club ! 🎉🏆",
+      year: "2025",
+      images: [
+        {
+          url: "https://i.ibb.co/HfGLHCQn/1723818852840.jpg",
+          alt: "NUIC"
+          // description: "NUIC Certificate"
+        },
+        {
+          url: "https://i.ibb.co/VcyKywY4/1723818852069.jpg",
+          alt: "NUIC"
+          // description: "NUIC Certificate"
+        }
+      ]
+    },
+    {
+      title: "ECPC",
+      description: "Egyptian Collegiate Programming Contest",
+      achievement: "Rank 3rd in my third year at NU and qualified for the ECPC Finals",
+      year: "2024",
+      images: [
+        {
+          url: "https://scontent.fcai19-7.fna.fbcdn.net/v/t39.30808-6/486719077_1079195597576204_1921460299948979682_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=833d8c&_nc_ohc=-RBEyRf5DsYQ7kNvwGAPX-S&_nc_oc=AdlMHxnis_S-Az0hXGBmTDw80t0XfK55XbZe34IEHiG--zxYVpokw67Y8od9tx1aMqc&_nc_zt=23&_nc_ht=scontent.fcai19-7.fna&_nc_gid=_GCzZ5neQVOXIjZRMixipw&oh=00_AfGzvQexmtZqvequQ5QoaDe2FTOGWr6htKxg61MhXLXfwQ&oe=6806F4EE",
+          alt: "ECPC",
+          description: "ECPC Certificate"
+        }
+      ]
+    },
+    {
       title: "EOI",
       description: "Egyptian Olympiad in Informatics",
       achievement: "Rank 51 in Egypt",
@@ -889,26 +943,13 @@ const userConfig = {
       ]
     },
     {
-      title: "ECPC",
-      description: "Egyptian Collegiate Programming Contest",
-      achievement: "Rank 3rd in my third year at NU and qualified for the ECPC Finals",
-      year: "2024",
-      images: [
-        {
-          url: "https://scontent.fcai19-7.fna.fbcdn.net/v/t39.30808-6/486719077_1079195597576204_1921460299948979682_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=833d8c&_nc_ohc=-RBEyRf5DsYQ7kNvwGAPX-S&_nc_oc=AdlMHxnis_S-Az0hXGBmTDw80t0XfK55XbZe34IEHiG--zxYVpokw67Y8od9tx1aMqc&_nc_zt=23&_nc_ht=scontent.fcai19-7.fna&_nc_gid=_GCzZ5neQVOXIjZRMixipw&oh=00_AfGzvQexmtZqvequQ5QoaDe2FTOGWr6htKxg61MhXLXfwQ&oe=6806F4EE",
-          alt: "ECPC",
-          description: "ECPC Certificate"
-        }
-      ]
-    },
-    {
       title: "UGRF 17th Edition",
       description: "UGRF 17th Edition",
       achievement: "2nd place SWE for PregTracker- personalized pregnancy tracker ",
       year: "2024",
       images: [
         {
-          url: "https://media.licdn.com/dms/image/v2/D4D22AQGisyubNyQdDw/feedshare-shrink_1280/feedshare-shrink_1280/0/1706802292377?e=1747872000&v=beta&t=6j4vmESk1eqUq9OW8K6wLPYhghvxRTVsu0QNktT6LCk",
+          url: "https://i.ibb.co/N2qgnb92/1706802292377.jpg",
           alt: "UGRF",
           description: "UGRF Certificate"
         }
@@ -921,33 +962,12 @@ const userConfig = {
       year: "2024",
       images: [
         {
-          url: "https://media.licdn.com/dms/image/v2/D4D22AQGisyubNyQdDw/feedshare-shrink_1280/feedshare-shrink_1280/0/1706802292377?e=1747872000&v=beta&t=6j4vmESk1eqUq9OW8K6wLPYhghvxRTVsu0QNktT6LCk",
+          url: "https://i.ibb.co/N2qgnb92/1706802292377.jpg",
           alt: "UGRF",
           description: "UGRF Certificate"
-        }
-      ]
-    },
-    {
-      title: "Nile University Innovation Competition",
-      description: "Nile University Innovation Competition",
-      achievement: "Secured second place in the Nile University Innovation Competition hosted by Nile University - NilePreneurs and NU E-Club ! 🎉🏆",
-      year: "2025",
-      images: [
+        },
         {
-          url: "https://media.licdn.com/dms/image/v2/D4D22AQFWTxm61eMz2g/feedshare-shrink_2048_1536/feedshare-shrink_2048_1536/0/1723818852069?e=1747872000&v=beta&t=gMw4p1a6nx3aXx-8bTnuoKovTjpxepmu1nE1Se5iTyI",
-          alt: "NUIC"
-          // description: "NUIC Certificate"
-        }
-      ]
-    },
-    {
-      title: "UGRF 19th Edition",
-      description: "UGRF 19th Edition",
-      achievement: "1st Place at the 19th UGRF! 'Enhancing Readibility of Faded Text in Historical Documents Using Image Processing Techniques'",
-      year: "2025",
-      images: [
-        {
-          url: "https://media.licdn.com/dms/image/v2/D4D22AQGisyubNyQdDw/feedshare-shrink_1280/feedshare-shrink_1280/0/1706802292377?e=1747872000&v=beta&t=6j4vmESk1eqUq9OW8K6wLPYhghvxRTVsu0QNktT6LCk",
+          url: "https://i.ibb.co/SkfYGDv/1706802293048.jpg",
           alt: "UGRF",
           description: "UGRF Certificate"
         }
@@ -1025,9 +1045,9 @@ const userConfig = {
   ]
 };
 
-const $$Astro$1 = createAstro("https://example.com");
+const $$Astro$3 = createAstro("https://example.com");
 const $$BaseHead = createComponent(async ($$result, $$props, $$slots) => {
-  const Astro2 = $$result.createAstro($$Astro$1, $$props, $$slots);
+  const Astro2 = $$result.createAstro($$Astro$3, $$props, $$slots);
   Astro2.self = $$BaseHead;
   const backgrounds = await Promise.all([
     getImage({ src: macBackground1, width: 3500 }),
@@ -1048,11 +1068,29 @@ const $$BaseHead = createComponent(async ($$result, $$props, $$slots) => {
   } })}<!-- Add your favicon files in public/images/ --><link rel="apple-touch-icon" sizes="180x180" href="https://avatars.githubusercontent.com/u/97130221?s=400&u=aaa4eb0bf9d07b901f0b15df8540fefea2fca729&v=4"><link rel="icon" type="image/png" sizes="32x32" href="https://avatars.githubusercontent.com/u/97130221?s=400&u=aaa4eb0bf9d07b901f0b15df8540fefea2fca729&v=4"><link rel="icon" type="image/png" sizes="16x16" href="https://avatars.githubusercontent.com/u/97130221?s=400&u=aaa4eb0bf9d07b901f0b15df8540fefea2fca729&v=4"><!-- Theme colors for browsers --><meta name="msapplication-TileColor"${addAttribute(userConfig.theme.secondaryColor, "content")}><meta name="theme-color"${addAttribute(userConfig.theme.secondaryColor, "content")}><!-- Auto-generated sitemap --><link rel="sitemap" href="/sitemap-index.xml"><!-- Preload background images for performance -->${backgrounds.map((bg) => renderTemplate`<link rel="preload"${addAttribute(bg.src, "href")} as="image" type="image/webp" fetchpriority="high">`)}`;
 }, "C:/Users/002/source/repos/portfolio/src/components/global/BaseHead.astro", void 0);
 
+const $$Astro$2 = createAstro("https://example.com");
+const $$Index$2 = createComponent(($$result, $$props, $$slots) => {
+  const Astro2 = $$result.createAstro($$Astro$2, $$props, $$slots);
+  Astro2.self = $$Index$2;
+  const propsStr = JSON.stringify(Astro2.props);
+  const paramsStr = JSON.stringify(Astro2.params);
+  return renderTemplate`${renderComponent($$result, "vercel-analytics", "vercel-analytics", { "data-props": propsStr, "data-params": paramsStr, "data-pathname": Astro2.url.pathname })} ${renderScript($$result, "C:/Users/002/source/repos/portfolio/node_modules/@vercel/analytics/dist/astro/index.astro?astro&type=script&index=0&lang.ts")}`;
+}, "C:/Users/002/source/repos/portfolio/node_modules/@vercel/analytics/dist/astro/index.astro", void 0);
+
+const $$Astro$1 = createAstro("https://example.com");
+const $$Index$1 = createComponent(($$result, $$props, $$slots) => {
+  const Astro2 = $$result.createAstro($$Astro$1, $$props, $$slots);
+  Astro2.self = $$Index$1;
+  const propsStr = JSON.stringify(Astro2.props);
+  const paramsStr = JSON.stringify(Astro2.params);
+  return renderTemplate`${renderComponent($$result, "vercel-speed-insights", "vercel-speed-insights", { "data-props": propsStr, "data-params": paramsStr, "data-pathname": Astro2.url.pathname })} ${renderScript($$result, "C:/Users/002/source/repos/portfolio/node_modules/@vercel/speed-insights/dist/astro/index.astro?astro&type=script&index=0&lang.ts")}`;
+}, "C:/Users/002/source/repos/portfolio/node_modules/@vercel/speed-insights/dist/astro/index.astro", void 0);
+
 const $$Astro = createAstro("https://example.com");
 const $$Layout = createComponent(($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro, $$props, $$slots);
   Astro2.self = $$Layout;
-  return renderTemplate`<html lang="en" class="scroll-smooth selection:bg-gray-900 selection:text-white overflow-x-hidden"> <head>${renderComponent($$result, "BaseHead", $$BaseHead, { "title": Astro2.props.title, "description": Astro2.props.description, "canonical": Astro2.props.canonical, "openGraph": Astro2.props.openGraph })}${renderHead()}</head> <body class="overflow-x-hidden bg-gray-900"> ${renderSlot($$result, $$slots["default"])} </body></html>`;
+  return renderTemplate`<html lang="en" class="scroll-smooth selection:bg-gray-900 selection:text-white overflow-x-hidden"> <head>${renderComponent($$result, "BaseHead", $$BaseHead, { "title": Astro2.props.title, "description": Astro2.props.description, "canonical": Astro2.props.canonical, "openGraph": Astro2.props.openGraph })}${renderComponent($$result, "Analytics", $$Index$2, {})}${renderComponent($$result, "SpeedInsights", $$Index$1, {})}${renderHead()}</head> <body class="overflow-x-hidden bg-gray-900"> ${renderSlot($$result, $$slots["default"])} </body></html>`;
 }, "C:/Users/002/source/repos/portfolio/src/layouts/Layout.astro", void 0);
 
 function MacToolbar() {
@@ -1283,7 +1321,7 @@ If a question is unrelated to my work or portfolio, say: "That's outside my area
     }
   };
   return /* @__PURE__ */ jsxs("div", { className: "bg-black/85 w-[700px] h-[500px] rounded-lg overflow-hidden shadow-lg mx-4 sm:mx-0", children: [
-    /* @__PURE__ */ jsxs("div", { className: "bg-gray-800 h-6 flex items-center space-x-2 px-4", children: [
+    /* @__PURE__ */ jsxs("div", { className: "bg-gray-800 h-6 flex items-center space-x-2 px-4 sticky top-0 left-0 right-0 z-10", children: [
       /* @__PURE__ */ jsx(
         "button",
         {
@@ -1299,7 +1337,7 @@ If a question is unrelated to my work or portfolio, say: "That's outside my area
         " ⸺ zsh"
       ] })
     ] }),
-    /* @__PURE__ */ jsxs("div", { className: "p-4 text-gray-200 font-mono text-s h-[calc(500px-1.5rem)] flex flex-col", children: [
+    /* @__PURE__ */ jsxs("div", { className: "p-4 text-gray-200 font-mono text-s h-[calc(500px-1.5rem)] flex flex-col overflow-hidden", children: [
       /* @__PURE__ */ jsxs("div", { className: "flex-1 overflow-y-auto", children: [
         chatHistory.messages.map((msg, index) => /* @__PURE__ */ jsx("div", { className: "mb-2", children: msg.role === "user" ? /* @__PURE__ */ jsxs("div", { className: "flex items-start space-x-2", children: [
           /* @__PURE__ */ jsx("span", { className: "text-green-400", children: ">" }),
@@ -1330,16 +1368,16 @@ If a question is unrelated to my work or portfolio, say: "That's outside my area
 
 function MobileDock() {
   const handleEmailClick = () => {
-    window.location.href = "mailto:john@johndoe.com";
+    window.location.href = `mailto:${userConfig.contact.email}`;
   };
   const handleGithubClick = () => {
-    window.open("https://github.com/johndoe", "_blank");
+    window.open(userConfig.social.github, "_blank");
   };
   const handleSpotifyClick = () => {
-    window.open("https://open.spotify.com", "_blank");
+    window.open(`https://open.spotify.com/playlist/${userConfig.spotify.playlistId}`, "_blank");
   };
   return /* @__PURE__ */ jsx("div", { className: "fixed bottom-0 left-0 right-0 md:hidden", children: /* @__PURE__ */ jsxs("div", { className: "mx-4 mb-4 p-3 bg-gradient-to-t from-gray-700 to-gray-800 backdrop-blur-xl rounded-3xl flex justify-around items-center max-w-[400px] mx-auto", children: [
-    /* @__PURE__ */ jsx("a", { href: "tel:+1234567890", className: "flex flex-col items-center", children: /* @__PURE__ */ jsx("div", { className: "w-18 h-18 bg-gradient-to-t from-green-600 to-green-400 rounded-2xl flex items-center justify-center", children: /* @__PURE__ */ jsx(IoIosCall, { size: 60, className: "text-white" }) }) }),
+    /* @__PURE__ */ jsx("a", { href: `tel:${userConfig.contact.phone}`, className: "flex flex-col items-center", children: /* @__PURE__ */ jsx("div", { className: "w-18 h-18 bg-gradient-to-t from-green-600 to-green-400 rounded-2xl flex items-center justify-center", children: /* @__PURE__ */ jsx(IoIosCall, { size: 60, className: "text-white" }) }) }),
     /* @__PURE__ */ jsx(
       "button",
       {
@@ -1493,8 +1531,8 @@ function DesktopDock({ onTerminalClick, onNotesClick, onGitHubClick }) {
     "div",
     {
       ref: linksPopupRef,
-      className: "absolute bottom-20 left-1/2 transform -translate-x-1/2 bg-gray-800/90 backdrop-blur-sm rounded-lg p-4 shadow-xl",
-      children: /* @__PURE__ */ jsxs("div", { className: "grid grid-cols-2 gap-4", children: [
+      className: "absolute bottom-20 left-1/2 transform -translate-x-1/2 bg-gray-800/90 w-30 backdrop-blur-sm rounded-lg p-4 shadow-xl",
+      children: /* @__PURE__ */ jsxs("div", { className: "grid grid-cols-1 gap-y-2", children: [
         /* @__PURE__ */ jsxs(
           "a",
           {
@@ -1547,7 +1585,7 @@ function DesktopDock({ onTerminalClick, onNotesClick, onGitHubClick }) {
     }
   );
   return /* @__PURE__ */ jsxs(Fragment$1, { children: [
-    /* @__PURE__ */ jsx("div", { className: "fixed bottom-0 left-0 right-0 flex justify-center pb-4 z-50", children: /* @__PURE__ */ jsx("div", { className: "bg-gray-800/50 backdrop-blur-sm rounded-2xl p-2 shadow-xl", children: /* @__PURE__ */ jsxs("div", { className: "flex space-x-2", children: [
+    /* @__PURE__ */ jsx("div", { className: "fixed bottom-0 left-0 right-0 hidden md:flex justify-center pb-4 z-50", children: /* @__PURE__ */ jsx("div", { className: "bg-gray-600/50 backdrop-blur-sm rounded-2xl p-2 shadow-xl", children: /* @__PURE__ */ jsxs("div", { className: "flex space-x-2", children: [
       /* @__PURE__ */ jsxs(
         "button",
         {
@@ -1556,7 +1594,7 @@ function DesktopDock({ onTerminalClick, onNotesClick, onGitHubClick }) {
           onMouseLeave: () => setHoveredIcon(null),
           className: "relative",
           children: [
-            /* @__PURE__ */ jsx("div", { className: "w-14 h-14 bg-gradient-to-t from-black to-black/60 rounded-xl flex items-center justify-center shadow-lg", children: /* @__PURE__ */ jsx(BsGithub, { size: 45, className: "text-gray-100" }) }),
+            /* @__PURE__ */ jsx("div", { className: "w-12 h-12 bg-gradient-to-t from-black to-black/60 rounded-xl flex items-center justify-center shadow-lg", children: /* @__PURE__ */ jsx(BsGithub, { size: 37, className: "text-gray-100" }) }),
             hoveredIcon === "github" && /* @__PURE__ */ jsx(Tooltip, { text: "My Projects" })
           ]
         }
@@ -1569,7 +1607,7 @@ function DesktopDock({ onTerminalClick, onNotesClick, onGitHubClick }) {
           onMouseLeave: () => setHoveredIcon(null),
           className: "relative",
           children: [
-            /* @__PURE__ */ jsx("div", { className: "w-14 h-14 bg-gradient-to-t from-yellow-600 to-yellow-400 rounded-xl flex items-center justify-center shadow-lg", children: /* @__PURE__ */ jsx(BsStickyFill, { size: 45, className: "text-white" }) }),
+            /* @__PURE__ */ jsx("div", { className: "w-12 h-12 bg-gradient-to-t from-yellow-600 to-yellow-400 rounded-xl flex items-center justify-center shadow-lg", children: /* @__PURE__ */ jsx(BsStickyFill, { size: 37, className: "text-white" }) }),
             hoveredIcon === "notes" && /* @__PURE__ */ jsx(Tooltip, { text: "Resume Notes" })
           ]
         }
@@ -1582,7 +1620,7 @@ function DesktopDock({ onTerminalClick, onNotesClick, onGitHubClick }) {
           onMouseLeave: () => setHoveredIcon(null),
           className: "relative",
           children: [
-            /* @__PURE__ */ jsx("div", { className: "w-14 h-14 bg-gradient-to-t from-red-600 to-red-400 rounded-xl flex items-center justify-center shadow-lg", children: /* @__PURE__ */ jsx(BsFilePdf, { size: 45, className: "text-white" }) }),
+            /* @__PURE__ */ jsx("div", { className: "w-12 h-12 bg-gradient-to-t from-red-600 to-red-400 rounded-xl flex items-center justify-center shadow-lg", children: /* @__PURE__ */ jsx(BsFilePdf, { size: 37, className: "text-white" }) }),
             hoveredIcon === "resume" && /* @__PURE__ */ jsx(Tooltip, { text: "View Resume" })
           ]
         }
@@ -1595,7 +1633,7 @@ function DesktopDock({ onTerminalClick, onNotesClick, onGitHubClick }) {
           onMouseLeave: () => setHoveredIcon(null),
           className: "relative",
           children: [
-            /* @__PURE__ */ jsx("div", { className: "w-14 h-14 bg-gradient-to-t from-blue-600 to-blue-400 rounded-xl flex items-center justify-center shadow-lg", children: /* @__PURE__ */ jsx(BsCalendar, { size: 45, className: "text-white" }) }),
+            /* @__PURE__ */ jsx("div", { className: "w-12 h-12 bg-gradient-to-t from-blue-600 to-blue-400 rounded-xl flex items-center justify-center shadow-lg", children: /* @__PURE__ */ jsx(BsCalendar, { size: 37, className: "text-white" }) }),
             hoveredIcon === "calendar" && /* @__PURE__ */ jsx(Tooltip, { text: "Schedule a Call" })
           ]
         }
@@ -1608,7 +1646,7 @@ function DesktopDock({ onTerminalClick, onNotesClick, onGitHubClick }) {
           onMouseLeave: () => setHoveredIcon(null),
           className: "relative",
           children: [
-            /* @__PURE__ */ jsx("div", { className: "w-14 h-14 bg-gradient-to-t from-green-600 to-green-400 rounded-xl flex items-center justify-center shadow-lg", children: /* @__PURE__ */ jsx(BsSpotify, { size: 45, className: "text-white" }) }),
+            /* @__PURE__ */ jsx("div", { className: "w-12 h-12 bg-gradient-to-t from-green-600 to-green-400 rounded-xl flex items-center justify-center shadow-lg", children: /* @__PURE__ */ jsx(BsSpotify, { size: 37, className: "text-white" }) }),
             hoveredIcon === "spotify" && /* @__PURE__ */ jsx(Tooltip, { text: "Spotify Playlist" })
           ]
         }
@@ -1621,7 +1659,7 @@ function DesktopDock({ onTerminalClick, onNotesClick, onGitHubClick }) {
           onMouseLeave: () => setHoveredIcon(null),
           className: "relative",
           children: [
-            /* @__PURE__ */ jsx("div", { className: "w-14 h-14 bg-gradient-to-t from-purple-600 to-purple-400 rounded-xl flex items-center justify-center shadow-lg", children: /* @__PURE__ */ jsx(FaLink, { size: 45, className: "text-white" }) }),
+            /* @__PURE__ */ jsx("div", { className: "w-12 h-12 bg-gradient-to-t from-purple-600 to-purple-400 rounded-xl flex items-center justify-center shadow-lg", children: /* @__PURE__ */ jsx(FaLink, { size: 37, className: "text-white" }) }),
             hoveredIcon === "links" && /* @__PURE__ */ jsx(Tooltip, { text: "Contact Links" }),
             showLinksPopup && /* @__PURE__ */ jsx(LinksPopup, {})
           ]
@@ -1635,7 +1673,7 @@ function DesktopDock({ onTerminalClick, onNotesClick, onGitHubClick }) {
           onMouseLeave: () => setHoveredIcon(null),
           className: "relative",
           children: [
-            /* @__PURE__ */ jsx("div", { className: "w-14 h-14 bg-gradient-to-t from-blue-600 to-blue-400 rounded-xl flex items-center justify-center shadow-lg", children: /* @__PURE__ */ jsx(VscVscode, { size: 45, className: "text-white" }) }),
+            /* @__PURE__ */ jsx("div", { className: "w-12 h-12 bg-gradient-to-t from-blue-600 to-blue-400 rounded-xl flex items-center justify-center shadow-lg", children: /* @__PURE__ */ jsx(VscVscode, { size: 37, className: "text-white" }) }),
             hoveredIcon === "vscode" && /* @__PURE__ */ jsx(Tooltip, { text: "Open VSCode" })
           ]
         }
@@ -1648,7 +1686,7 @@ function DesktopDock({ onTerminalClick, onNotesClick, onGitHubClick }) {
           onMouseLeave: () => setHoveredIcon(null),
           className: "relative",
           children: [
-            /* @__PURE__ */ jsx("div", { className: "w-14 h-14 bg-gradient-to-t from-black to-black/60 rounded-xl flex items-center justify-center shadow-lg", children: /* @__PURE__ */ jsx(RiTerminalFill, { size: 45, className: "text-green-500" }) }),
+            /* @__PURE__ */ jsx("div", { className: "w-12 h-12 bg-gradient-to-t from-black to-black/60 rounded-xl flex items-center justify-center shadow-lg", children: /* @__PURE__ */ jsx(RiTerminalFill, { size: 37, className: "text-white" }) }),
             hoveredIcon === "terminal" && /* @__PURE__ */ jsx(Tooltip, { text: "Terminal" })
           ]
         }
@@ -1870,6 +1908,20 @@ const NotesApp = ({ isOpen, onClose }) => {
         "div",
         {
           className: "bg-gray-800/50 p-4 rounded-lg cursor-pointer hover:bg-gray-700/50 transition-colors",
+          onClick: () => handleSectionClick("competitions"),
+          children: [
+            /* @__PURE__ */ jsxs("div", { className: "flex items-center gap-3 mb-2", children: [
+              /* @__PURE__ */ jsx("div", { className: "w-12 h-12 bg-orange-600 rounded-xl flex items-center justify-center", children: /* @__PURE__ */ jsx(FaTrophy, { size: 28, className: "text-white" }) }),
+              /* @__PURE__ */ jsx("h3", { className: "text-xl font-semibold text-gray-200", children: "Competitions" })
+            ] }),
+            /* @__PURE__ */ jsx("p", { className: "text-gray-400", children: "View my competition history and achievements" })
+          ]
+        }
+      ),
+      /* @__PURE__ */ jsxs(
+        "div",
+        {
+          className: "bg-gray-800/50 p-4 rounded-lg cursor-pointer hover:bg-gray-700/50 transition-colors",
           onClick: () => handleSectionClick("education"),
           children: [
             /* @__PURE__ */ jsxs("div", { className: "flex items-center gap-3 mb-2", children: [
@@ -1949,20 +2001,6 @@ const NotesApp = ({ isOpen, onClose }) => {
             /* @__PURE__ */ jsx("p", { className: "text-gray-400", children: "See my technical skills and expertise" })
           ]
         }
-      ),
-      /* @__PURE__ */ jsxs(
-        "div",
-        {
-          className: "bg-gray-800/50 p-4 rounded-lg cursor-pointer hover:bg-gray-700/50 transition-colors",
-          onClick: () => handleSectionClick("competitions"),
-          children: [
-            /* @__PURE__ */ jsxs("div", { className: "flex items-center gap-3 mb-2", children: [
-              /* @__PURE__ */ jsx("div", { className: "w-12 h-12 bg-orange-600 rounded-xl flex items-center justify-center", children: /* @__PURE__ */ jsx(FaTrophy, { size: 28, className: "text-white" }) }),
-              /* @__PURE__ */ jsx("h3", { className: "text-xl font-semibold text-gray-200", children: "Competitions" })
-            ] }),
-            /* @__PURE__ */ jsx("p", { className: "text-gray-400", children: "View my competition history and achievements" })
-          ]
-        }
       )
     ] })
   ] });
@@ -1988,8 +2026,8 @@ const NotesApp = ({ isOpen, onClose }) => {
         return "Notes";
     }
   };
-  return /* @__PURE__ */ jsx("div", { className: "fixed inset-0 bg-black/75 flex items-center justify-center z-50", children: /* @__PURE__ */ jsxs("div", { className: "bg-[#1d1d1f] rounded-lg shadow-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto p-6 relative", children: [
-    /* @__PURE__ */ jsxs("div", { className: "bg-gray-800 h-6 flex items-center space-x-2 px-4 rounded-t-lg absolute top-0 left-0 right-0", children: [
+  return /* @__PURE__ */ jsx("div", { className: "fixed inset-0 bg-black/75 flex items-center justify-center z-50", children: /* @__PURE__ */ jsxs("div", { className: "bg-[#1d1d1f] rounded-lg shadow-xl max-w-4xl w-full max-h-[90vh] overflow-hidden p-0 relative", children: [
+    /* @__PURE__ */ jsxs("div", { className: "bg-gray-800 h-6 flex items-center space-x-2 px-4 rounded-t-lg sticky top-0 left-0 right-0 z-10", children: [
       /* @__PURE__ */ jsx(
         "button",
         {
@@ -2001,7 +2039,7 @@ const NotesApp = ({ isOpen, onClose }) => {
       /* @__PURE__ */ jsx("div", { className: "w-3 h-3 rounded-full bg-green-500" }),
       /* @__PURE__ */ jsx("span", { className: "text-sm text-gray-300 flex-grow text-center font-semibold", children: getWindowTitle() })
     ] }),
-    /* @__PURE__ */ jsxs("div", { className: "mt-8", children: [
+    /* @__PURE__ */ jsxs("div", { className: "overflow-y-auto p-6", style: { maxHeight: "calc(90vh - 1.5rem)" }, children: [
       activeSection === "menu" && renderMenu(),
       activeSection === "education" && renderEducation(),
       activeSection === "experience" && renderExperience(),
@@ -2079,8 +2117,8 @@ const GitHubViewer = ({ isOpen, onClose }) => {
     }
   };
   if (!isOpen) return null;
-  return /* @__PURE__ */ jsx("div", { className: "fixed inset-0 bg-black/75 flex items-center justify-center z-50", children: /* @__PURE__ */ jsxs("div", { className: "bg-[#1d1d1f] rounded-lg shadow-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto p-6 relative", children: [
-    /* @__PURE__ */ jsxs("div", { className: "bg-gray-800 h-6 flex items-center space-x-2 px-4 rounded-t-lg absolute top-0 left-0 right-0", children: [
+  return /* @__PURE__ */ jsx("div", { className: "fixed inset-0 bg-black/75 flex items-center justify-center z-50", children: /* @__PURE__ */ jsxs("div", { className: "bg-[#1d1d1f] rounded-lg shadow-xl max-w-4xl w-full max-h-[90vh] overflow-hidden p-0 relative", children: [
+    /* @__PURE__ */ jsxs("div", { className: "bg-gray-800 h-6 flex items-center space-x-2 px-4 rounded-t-lg sticky top-0 left-0 right-0 z-10", children: [
       /* @__PURE__ */ jsx(
         "button",
         {
@@ -2092,7 +2130,7 @@ const GitHubViewer = ({ isOpen, onClose }) => {
       /* @__PURE__ */ jsx("div", { className: "w-3 h-3 rounded-full bg-green-500" }),
       /* @__PURE__ */ jsx("span", { className: "text-sm text-gray-300 flex-grow text-center font-semibold", children: showStructure ? selectedProject?.title : "GitHub Projects" })
     ] }),
-    /* @__PURE__ */ jsx("div", { className: "mt-8", children: !showStructure ? /* @__PURE__ */ jsxs(Fragment$1, { children: [
+    /* @__PURE__ */ jsx("div", { className: "overflow-y-auto p-6", style: { maxHeight: "calc(90vh - 1.5rem)" }, children: !showStructure ? /* @__PURE__ */ jsxs(Fragment$1, { children: [
       /* @__PURE__ */ jsx("h2", { className: "text-2xl font-bold mb-4 text-gray-200", children: "My Projects" }),
       /* @__PURE__ */ jsx("div", { className: "grid grid-cols-1 md:grid-cols-2 gap-4", children: userConfig.projects.map((project) => /* @__PURE__ */ jsxs(
         "div",

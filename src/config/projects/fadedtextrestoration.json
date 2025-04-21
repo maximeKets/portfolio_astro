@@ -30,11 +30,11 @@
     },
     "images": [
         {
-            "url": "src/assets/images/projects/faded-text/mainFunction.png",
+            "url": "https://i.ibb.co/hJcLNM3m/main-Function.png",
             "alt": "Faded Text Restoration"
         },
         {
-            "url": "src/assets/images/projects/faded-text/transcribed.png",
+            "url": "https://i.ibb.co/nMcRc0WT/transcribed.png",
             "alt": "Faded Text Restoration"
         }   
     ]

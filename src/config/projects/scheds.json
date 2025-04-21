@@ -1,7 +1,7 @@
 {
     "id": "scheds",
     "title": "Scheds - A Course Schedule Generator",
-    "description": "My proudest project, a comprehensive course schedule generator application built with ASP.NET Core MVC",
+    "description": "My proudest project yet, a comprehensive course schedule generator application built with ASP.NET Core MVC",
     "repoUrl": "https://github.com/aabdoo23/Scheds",
     "liveUrl": "https://scheds.runasp.net",
     "techStack": [
@@ -971,16 +971,16 @@
     },
     "images": [
         {
-            "url": "src/assets/images/projects/scheds/landingPage.png",
+            "url": "https://i.ibb.co/v6yPYfTb/landing-Page.png",
             "alt": "Scheds Landing Page"
         },
         {
-            "url": "src/assets/images/projects/scheds/generatedSchedules.png",
+            "url": "https://i.ibb.co/6Jms8X4K/generated-Schedules.png",
             "alt": "Scheds Generated Schedules"
         },
         {
-            "url": "src/assets/images/projects/scheds/customizationsSection.png",
-            "alt": "Scheds Generated Schedules"
+            "url": "https://i.ibb.co/WpPxRqMr/customizations-Section.png",
+            "alt": "Scheds Customizations Section"
         }
     ]
 }
