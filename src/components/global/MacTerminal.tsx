@@ -216,7 +216,7 @@ If a question is unrelated to my work or portfolio, say: "That's outside my area
         <div className='w-3 h-3 rounded-full bg-green-500'></div>
         <span className='text-sm text-gray-500 flex-grow text-center font-semibold flex items-center justify-center gap-2'>
           <FaRegFolderClosed size={14} className='text-gray-300' />
-          {userConfig.website.replace('https://', '')} ⸺ zsh
+          {userConfig.website} ⸺ zsh
         </span>
       </div>
       <div className='p-4 text-gray-200 font-mono text-s h-[calc(500px-1.5rem)] flex flex-col overflow-hidden'>
@@ -229,7 +229,10 @@ If a question is unrelated to my work or portfolio, say: "That's outside my area
                   <pre className='whitespace-pre-wrap'>{msg.content}</pre>
                 </div>
               ) : (
-                <pre className='whitespace-pre-wrap'>{msg.content}</pre>
+                <div className='flex items-start space-x-2'>
+                  <span className='text-green-400'>${userConfig.website}</span>
+                  <pre className='whitespace-pre-wrap'>{msg.content}</pre>
+                </div>
               )}
             </div>
           ))}
@@ -238,7 +241,7 @@ If a question is unrelated to my work or portfolio, say: "That's outside my area
         </div>
         <form onSubmit={handleSubmit} className='mt-2'>
           <div className='flex flex-col sm:flex-row items-start sm:items-center space-y-2 sm:space-y-0 sm:space-x-2'>
-            <span className='whitespace-nowrap'>{userConfig.contact.email} root %</span>
+            <span className='whitespace-nowrap'>{userConfig.website} root %</span>
             <input
               type='text'
               value={chatHistory.input}

@@ -2,7 +2,6 @@ import { useState, useEffect, useRef } from 'react';
 import { BsGithub, BsSpotify, BsFilePdf, BsStickyFill, BsLinkedin, BsCalendar } from 'react-icons/bs';
 import { IoIosCall, IoIosMail } from 'react-icons/io';
 import { FaLink } from 'react-icons/fa';
-import { VscVscode } from 'react-icons/vsc';
 import ResumeViewer from './ResumeViewer';
 import SpotifyPlayer from './SpotifyPlayer';
 import { userConfig } from '../../config/userConfig';
@@ -14,7 +13,7 @@ interface DesktopDockProps {
   onGitHubClick: () => void;
 }
 
-export default function DesktopDock({ onTerminalClick, onNotesClick, onGitHubClick }: DesktopDockProps) {
+const DesktopDock = ({ onTerminalClick, onNotesClick, onGitHubClick }: DesktopDockProps) => {
   const [hoveredIcon, setHoveredIcon] = useState<string | null>(null);
   const [showResume, setShowResume] = useState(false);
   const [showSpotify, setShowSpotify] = useState(false);
@@ -31,10 +30,6 @@ export default function DesktopDock({ onTerminalClick, onNotesClick, onGitHubCli
 
   const handleSpotifyClick = () => {
     setShowSpotify(true);
-  };
-
-  const handleVSCodeClick = () => {
-    window.location.href = 'vscode:/';
   };
 
   const handleResumeClick = () => {
@@ -120,7 +115,7 @@ export default function DesktopDock({ onTerminalClick, onNotesClick, onGitHubCli
               onClick={onGitHubClick}
               onMouseEnter={() => setHoveredIcon('github')}
               onMouseLeave={() => setHoveredIcon(null)}
-              className='relative'
+              className="relative"
             >
               <div className='w-12 h-12 bg-gradient-to-t from-black to-black/60 rounded-xl flex items-center justify-center shadow-lg'>
                 <BsGithub size={37} className='text-gray-100' />
@@ -133,7 +128,7 @@ export default function DesktopDock({ onTerminalClick, onNotesClick, onGitHubCli
               onClick={onNotesClick}
               onMouseEnter={() => setHoveredIcon('notes')}
               onMouseLeave={() => setHoveredIcon(null)}
-              className='relative'
+              className="relative"
             >
               <div className='w-12 h-12 bg-gradient-to-t from-yellow-600 to-yellow-400 rounded-xl flex items-center justify-center shadow-lg'>
                 <BsStickyFill size={37} className='text-white' />
@@ -146,7 +141,7 @@ export default function DesktopDock({ onTerminalClick, onNotesClick, onGitHubCli
               onClick={handleResumeClick}
               onMouseEnter={() => setHoveredIcon('resume')}
               onMouseLeave={() => setHoveredIcon(null)}
-              className='relative'
+              className="relative"
             >
               <div className='w-12 h-12 bg-gradient-to-t from-red-600 to-red-400 rounded-xl flex items-center justify-center shadow-lg'>
                 <BsFilePdf size={37} className='text-white' />
@@ -159,7 +154,7 @@ export default function DesktopDock({ onTerminalClick, onNotesClick, onGitHubCli
               onClick={handleCalendarClick}
               onMouseEnter={() => setHoveredIcon('calendar')}
               onMouseLeave={() => setHoveredIcon(null)}
-              className='relative'
+              className="relative"
             >
               <div className='w-12 h-12 bg-gradient-to-t from-blue-600 to-blue-400 rounded-xl flex items-center justify-center shadow-lg'>
                 <BsCalendar size={37} className='text-white' />
@@ -172,7 +167,7 @@ export default function DesktopDock({ onTerminalClick, onNotesClick, onGitHubCli
               onClick={handleSpotifyClick}
               onMouseEnter={() => setHoveredIcon('spotify')}
               onMouseLeave={() => setHoveredIcon(null)}
-              className='relative'
+              className="relative"
             >
               <div className='w-12 h-12 bg-gradient-to-t from-green-600 to-green-400 rounded-xl flex items-center justify-center shadow-lg'>
                 <BsSpotify size={37} className='text-white' />
@@ -185,7 +180,7 @@ export default function DesktopDock({ onTerminalClick, onNotesClick, onGitHubCli
               onClick={handleLinksClick}
               onMouseEnter={() => setHoveredIcon('links')}
               onMouseLeave={() => setHoveredIcon(null)}
-              className='relative'
+              className="relative"
             >
               <div className='w-12 h-12 bg-gradient-to-t from-purple-600 to-purple-400 rounded-xl flex items-center justify-center shadow-lg'>
                 <FaLink size={37} className='text-white' />
@@ -194,25 +189,12 @@ export default function DesktopDock({ onTerminalClick, onNotesClick, onGitHubCli
               {showLinksPopup && <LinksPopup />}
             </button>
 
-            {/* VSCode */}
-            <button
-              onClick={handleVSCodeClick}
-              onMouseEnter={() => setHoveredIcon('vscode')}
-              onMouseLeave={() => setHoveredIcon(null)}
-              className='relative'
-            >
-              <div className='w-12 h-12 bg-gradient-to-t from-blue-600 to-blue-400 rounded-xl flex items-center justify-center shadow-lg'>
-                <VscVscode size={37} className='text-white' />
-              </div>
-              {hoveredIcon === 'vscode' && <Tooltip text='Open VSCode' />}
-            </button>
-
             {/* Terminal */}
             <button
               onClick={onTerminalClick}
               onMouseEnter={() => setHoveredIcon('terminal')}
               onMouseLeave={() => setHoveredIcon(null)}
-              className='relative'
+              className="relative"
             >
               <div className='w-12 h-12 bg-gradient-to-t from-black to-black/60 rounded-xl flex items-center justify-center shadow-lg'>
                 <RiTerminalFill size={37} className='text-white' />
@@ -231,4 +213,6 @@ export default function DesktopDock({ onTerminalClick, onNotesClick, onGitHubCli
       />
     </>
   );
-}
+};
+
+export default DesktopDock;

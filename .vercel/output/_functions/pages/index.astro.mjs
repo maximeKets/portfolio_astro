@@ -1343,7 +1343,7 @@ If a question is unrelated to my work or portfolio, say: "That's outside my area
       /* @__PURE__ */ jsx("div", { className: "w-3 h-3 rounded-full bg-green-500" }),
       /* @__PURE__ */ jsxs("span", { className: "text-sm text-gray-500 flex-grow text-center font-semibold flex items-center justify-center gap-2", children: [
         /* @__PURE__ */ jsx(FaRegFolderClosed, { size: 14, className: "text-gray-300" }),
-        userConfig.website.replace("https://", ""),
+        userConfig.website,
         " ⸺ zsh"
       ] })
     ] }),
@@ -1352,13 +1352,19 @@ If a question is unrelated to my work or portfolio, say: "That's outside my area
         chatHistory.messages.map((msg, index) => /* @__PURE__ */ jsx("div", { className: "mb-2", children: msg.role === "user" ? /* @__PURE__ */ jsxs("div", { className: "flex items-start space-x-2", children: [
           /* @__PURE__ */ jsx("span", { className: "text-green-400", children: ">" }),
           /* @__PURE__ */ jsx("pre", { className: "whitespace-pre-wrap", children: msg.content })
-        ] }) : /* @__PURE__ */ jsx("pre", { className: "whitespace-pre-wrap", children: msg.content }) }, index)),
+        ] }) : /* @__PURE__ */ jsxs("div", { className: "flex items-start space-x-2", children: [
+          /* @__PURE__ */ jsxs("span", { className: "text-green-400", children: [
+            "$",
+            userConfig.website
+          ] }),
+          /* @__PURE__ */ jsx("pre", { className: "whitespace-pre-wrap", children: msg.content })
+        ] }) }, index)),
         isTyping && /* @__PURE__ */ jsx("div", { className: "animate-pulse", children: "..." }),
         /* @__PURE__ */ jsx("div", { ref: messagesEndRef })
       ] }),
       /* @__PURE__ */ jsx("form", { onSubmit: handleSubmit, className: "mt-2", children: /* @__PURE__ */ jsxs("div", { className: "flex flex-col sm:flex-row items-start sm:items-center space-y-2 sm:space-y-0 sm:space-x-2", children: [
         /* @__PURE__ */ jsxs("span", { className: "whitespace-nowrap", children: [
-          userConfig.contact.email,
+          userConfig.website,
           " root %"
         ] }),
         /* @__PURE__ */ jsx(
@@ -1498,7 +1504,7 @@ function SpotifyPlayer({ isOpen, onClose, playlistId }) {
   ] }) });
 }
 
-function DesktopDock({ onTerminalClick, onNotesClick, onGitHubClick }) {
+const DesktopDock = ({ onTerminalClick, onNotesClick, onGitHubClick }) => {
   const [hoveredIcon, setHoveredIcon] = useState(null);
   const [showResume, setShowResume] = useState(false);
   const [showSpotify, setShowSpotify] = useState(false);
@@ -1512,9 +1518,6 @@ function DesktopDock({ onTerminalClick, onNotesClick, onGitHubClick }) {
   };
   const handleSpotifyClick = () => {
     setShowSpotify(true);
-  };
-  const handleVSCodeClick = () => {
-    window.location.href = "vscode:/";
   };
   const handleResumeClick = () => {
     setShowResume(true);
@@ -1678,19 +1681,6 @@ function DesktopDock({ onTerminalClick, onNotesClick, onGitHubClick }) {
       /* @__PURE__ */ jsxs(
         "button",
         {
-          onClick: handleVSCodeClick,
-          onMouseEnter: () => setHoveredIcon("vscode"),
-          onMouseLeave: () => setHoveredIcon(null),
-          className: "relative",
-          children: [
-            /* @__PURE__ */ jsx("div", { className: "w-12 h-12 bg-gradient-to-t from-blue-600 to-blue-400 rounded-xl flex items-center justify-center shadow-lg", children: /* @__PURE__ */ jsx(VscVscode, { size: 37, className: "text-white" }) }),
-            hoveredIcon === "vscode" && /* @__PURE__ */ jsx(Tooltip, { text: "Open VSCode" })
-          ]
-        }
-      ),
-      /* @__PURE__ */ jsxs(
-        "button",
-        {
           onClick: onTerminalClick,
           onMouseEnter: () => setHoveredIcon("terminal"),
           onMouseLeave: () => setHoveredIcon(null),
@@ -1712,7 +1702,7 @@ function DesktopDock({ onTerminalClick, onNotesClick, onGitHubClick }) {
       }
     )
   ] });
-}
+};
 
 const NotesApp = ({ isOpen, onClose }) => {
   const [activeSection, setActiveSection] = useState("menu");
@@ -2290,8 +2280,11 @@ function Desktop({ initialBg, backgroundMap }) {
   const [showTerminal, setShowTerminal] = useState(false);
   const [showNotes, setShowNotes] = useState(false);
   const [showGitHub, setShowGitHub] = useState(false);
+  const [currentTutorialStep, setCurrentTutorialStep] = useState(0);
+  const [showTutorial, setShowTutorial] = useState(true);
   useEffect(() => {
     const lastBg = localStorage.getItem("lastBackground");
+    setShowTutorial(true);
     if (lastBg === initialBg) {
       const bgKeys = Object.keys(backgroundMap);
       const availableBgs = bgKeys.filter((bg) => bg !== lastBg);
@@ -2300,6 +2293,58 @@ function Desktop({ initialBg, backgroundMap }) {
     }
     localStorage.setItem("lastBackground", currentBg);
   }, [initialBg, backgroundMap]);
+  const tutorialSteps = [
+    {
+      title: "Welcome to My Portfolio! 👋",
+      content: "This is a macOS-inspired portfolio where you can explore my work and experience. Let me guide you through some of the features!",
+      action: () => setShowNotes(true),
+      buttonText: "Let's Begin"
+    },
+    {
+      title: "Notes App",
+      content: "This is my Notes app where you can find detailed information about my education, experience, and skills. Feel free to explore!",
+      action: () => {
+        setShowNotes(false);
+        setShowGitHub(true);
+      },
+      buttonText: "Next: Projects"
+    },
+    {
+      title: "GitHub Projects",
+      content: "Here you can browse through my projects, see their structure, and check out the code. Each project has screenshots and links to the repository.",
+      action: () => {
+        setShowGitHub(false);
+        setShowTerminal(true);
+      },
+      buttonText: "Next: Terminal"
+    },
+    {
+      title: "Terminal",
+      content: "The terminal is an interactive way to learn more about me. Try asking questions like 'What are your skills?' or 'Tell me about your experience'",
+      action: () => {
+        setShowTerminal(false);
+      },
+      buttonText: "Next: Explore"
+    },
+    {
+      title: "Explore",
+      content: "Now that you've seen the basics, feel free to explore the rest of the portfolio from the dock below. I've got some cool projects and information waiting for you!",
+      action: () => {
+        setShowTutorial(false);
+      },
+      buttonText: "Thanks! I Got it from here!"
+    }
+  ];
+  const handleTutorialAction = () => {
+    if (tutorialSteps[currentTutorialStep].action) {
+      tutorialSteps[currentTutorialStep].action();
+    }
+    if (currentTutorialStep < tutorialSteps.length - 1) {
+      setCurrentTutorialStep((prev) => prev + 1);
+    } else {
+      setShowTutorial(false);
+    }
+  };
   return /* @__PURE__ */ jsxs("div", { className: "relative w-screen h-screen overflow-hidden", children: [
     /* @__PURE__ */ jsx(
       "div",
@@ -2320,7 +2365,26 @@ function Desktop({ initialBg, backgroundMap }) {
       }
     ),
     /* @__PURE__ */ jsx(NotesApp, { isOpen: showNotes, onClose: () => setShowNotes(false) }),
-    /* @__PURE__ */ jsx(GitHubViewer, { isOpen: showGitHub, onClose: () => setShowGitHub(false) })
+    /* @__PURE__ */ jsx(GitHubViewer, { isOpen: showGitHub, onClose: () => setShowGitHub(false) }),
+    showTutorial && /* @__PURE__ */ jsx("div", { className: "fixed right-4 top-1/2 transform -translate-y-1/2 z-50", children: /* @__PURE__ */ jsxs("div", { className: "bg-gray-800/90 backdrop-blur-sm text-white p-4 rounded-lg shadow-xl max-w-xs animate-fade-in", children: [
+      /* @__PURE__ */ jsx("h3", { className: "text-lg font-semibold mb-2", children: tutorialSteps[currentTutorialStep].title }),
+      /* @__PURE__ */ jsx("p", { className: "text-sm text-gray-300 mb-4", children: tutorialSteps[currentTutorialStep].content }),
+      /* @__PURE__ */ jsxs("div", { className: "flex justify-between items-center", children: [
+        /* @__PURE__ */ jsxs("span", { className: "text-xs text-gray-400", children: [
+          currentTutorialStep + 1,
+          " of ",
+          tutorialSteps.length
+        ] }),
+        /* @__PURE__ */ jsx(
+          "button",
+          {
+            onClick: handleTutorialAction,
+            className: "text-sm text-blue-400 hover:text-blue-300",
+            children: tutorialSteps[currentTutorialStep].buttonText
+          }
+        )
+      ] })
+    ] }) })
   ] });
 }
 
