@@ -15,7 +15,7 @@ export const userConfig = {
     email: 'aabdoo2304@gmail.com',
     website: 'aabdoo23',
     roleFocus: 'Backend Development using .NET, C#, Entity Framework, SQL Server, and Bootstrap. Can also work with Angular, React, and Node.js.',
-    age: 24,
+    age: 23,    
 
     // Social Links
     social: {
@@ -226,13 +226,37 @@ export const userConfig = {
 
     extraCurricularActivities: [
         {
+            title: "Head of IT & Cheating Control Committee",
+            description: "NUCPA",
+            institution: "NUCPA",
+            location: "Nile University",
+            year: "2025",
+            images: [
+                {
+                    url: "https://i.ibb.co/N6FsYfLW/NP100582-2.jpg",
+                    alt: "Nile University",
+                    description: "Nile University Campus"
+                },
+                {
+                    url: "https://i.ibb.co/355vdbMJ/NP109982-1.jpg",
+                    alt: "Nile University",
+                    description: "Nile University Campus"
+                },
+                {
+                    url: "https://i.ibb.co/Frhbfyq/NP100626-2-1.jpg",
+                    alt: "Nile University",
+                    description: "Nile University Campus"
+                }
+            ]
+        },
+        {
             title: "SWE Sessions",
             institution: "GDG Nile University",
             location: "Nile University",
             year: "2025",
             images: [
                 {
-                    url: "https://drive.google.com/file/d/1dowYpSfYoc_lLmsWq3USol9zO1chGP8D",
+                    url: "https://scontent.fcai19-7.fna.fbcdn.net/v/t39.30808-6/487509808_1082047970624300_6971553578124341594_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=833d8c&_nc_ohc=aHeR-Y9xLCoQ7kNvwEt75GT&_nc_oc=AdmO0ISS5S83f5_spVUXrCY5OhawFzqurVuym-4vhEnrUw3H4-jlAWwwPr51_y97zEE&_nc_zt=23&_nc_ht=scontent.fcai19-7.fna&_nc_gid=yluqC4DSHyLfMjmLwL8hWA&oh=00_AfHf2HeyPANMbQPqIrHx24nzfxeuQkMaeMbP9SlpaTW-gg&oe=6806D086",
                     alt: "Nile University",
                     description: "Nile University Campus"
                 }
@@ -246,12 +270,12 @@ export const userConfig = {
             year: "2022-2025",
             images: [
                 {
-                    url: "https://scontent.fcai19-7.fna.fbcdn.net/v/t39.30808-6/487509808_1082047970624300_6971553578124341594_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=833d8c&_nc_ohc=aHeR-Y9xLCoQ7kNvwEt75GT&_nc_oc=AdmO0ISS5S83f5_spVUXrCY5OhawFzqurVuym-4vhEnrUw3H4-jlAWwwPr51_y97zEE&_nc_zt=23&_nc_ht=scontent.fcai19-7.fna&_nc_gid=yluqC4DSHyLfMjmLwL8hWA&oh=00_AfHf2HeyPANMbQPqIrHx24nzfxeuQkMaeMbP9SlpaTW-gg&oe=6806D086",
+                    url: "https://scontent.fcai19-7.fna.fbcdn.net/v/t39.30808-6/486652074_1077701407725623_8749819316280105843_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=833d8c&_nc_ohc=925gSLld9YIQ7kNvwH1Tnis&_nc_oc=AdkNGFJJzloJMZ7UyMqzyxpop7LgOAS4wDf37phzksSB9zyg6YYoJn9DvQBkTRCPe3c&_nc_zt=23&_nc_ht=scontent.fcai19-7.fna&_nc_gid=2jkQxIt1NA2bEK9hDA_sLw&oh=00_AfEFWMQ8TXpm7J7GNg31NTQtj51-xBK0gA96v3e3FXFOXw&oe=6806D41D",
                     alt: "Nile University",
                     description: "Nile University Campus"
                 },
                 {
-                    url: "https://scontent.fcai19-7.fna.fbcdn.net/v/t39.30808-6/486652074_1077701407725623_8749819316280105843_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=833d8c&_nc_ohc=925gSLld9YIQ7kNvwH1Tnis&_nc_oc=AdkNGFJJzloJMZ7UyMqzyxpop7LgOAS4wDf37phzksSB9zyg6YYoJn9DvQBkTRCPe3c&_nc_zt=23&_nc_ht=scontent.fcai19-7.fna&_nc_gid=2jkQxIt1NA2bEK9hDA_sLw&oh=00_AfEFWMQ8TXpm7J7GNg31NTQtj51-xBK0gA96v3e3FXFOXw&oe=6806D41D",
+                    url: "https://scontent.fcai19-7.fna.fbcdn.net/v/t39.30808-6/487509808_1082047970624300_6971553578124341594_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=833d8c&_nc_ohc=aHeR-Y9xLCoQ7kNvwEt75GT&_nc_oc=AdmO0ISS5S83f5_spVUXrCY5OhawFzqurVuym-4vhEnrUw3H4-jlAWwwPr51_y97zEE&_nc_zt=23&_nc_ht=scontent.fcai19-7.fna&_nc_gid=yluqC4DSHyLfMjmLwL8hWA&oh=00_AfHf2HeyPANMbQPqIrHx24nzfxeuQkMaeMbP9SlpaTW-gg&oe=6806D086",
                     alt: "Nile University",
                     description: "Nile University Campus"
                 },
