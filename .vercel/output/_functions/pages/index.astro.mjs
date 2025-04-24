@@ -3,16 +3,15 @@ import 'kleur/colors';
 /* empty css                                 */
 import { escape } from 'html-escaper';
 import { c as getImage } from '../chunks/_astro_assets_DkpBhm4f.mjs';
-import { jsxs, Fragment as Fragment$1, jsx } from 'react/jsx-runtime';
+import { jsxs, jsx, Fragment as Fragment$1 } from 'react/jsx-runtime';
 import { useState, useEffect, useRef } from 'react';
 import { MdWifi } from 'react-icons/md';
-import { FaApple, FaLink, FaTrophy, FaGraduationCap, FaBriefcase, FaUsers, FaPalette, FaBookOpen, FaCode, FaChevronLeft, FaGithub, FaExternalLinkAlt, FaFolder, FaFile } from 'react-icons/fa';
-import { IoCellular, IoBatteryHalfOutline, IoSearchSharp } from 'react-icons/io5';
+import { FaLink, FaApple, FaGithub, FaLinkedin, FaEnvelope, FaTrophy, FaGraduationCap, FaBriefcase, FaUsers, FaPalette, FaBookOpen, FaCode, FaChevronLeft, FaExternalLinkAlt, FaFolder, FaFile } from 'react-icons/fa';
+import { IoClose, IoCellular, IoBatteryHalfOutline, IoSearchSharp, IoHelpCircle, IoSchool, IoBriefcase, IoPerson, IoMail, IoCall, IoDocumentText, IoCodeSlash } from 'react-icons/io5';
 import { VscVscode } from 'react-icons/vsc';
-import { FaRegFolderClosed } from 'react-icons/fa6';
-import { BsGithub, BsStickyFill, BsFilePdf, BsLinkedin, BsSpotify, BsCalendar } from 'react-icons/bs';
-import { IoIosCall, IoIosMail } from 'react-icons/io';
+import { BsGithub, BsStickyFill, BsFilePdf, BsCalendar, BsSpotify, BsLinkedin } from 'react-icons/bs';
 import { RiTerminalFill } from 'react-icons/ri';
+import { IoIosCall, IoIosMail } from 'react-icons/io';
 export { renderers } from '../renderers.mjs';
 
 const createMetaTag = (attributes) => {
@@ -597,7 +596,7 @@ const userConfig = {
   location: "Giza, Egypt",
   website: "aabdoo23",
   roleFocus: "Backend Development using .NET, C#, Entity Framework, SQL Server, and Bootstrap. Can also work with Angular, React, and Node.js.",
-  age: 24,
+  age: 23,
   // Social Links
   social: {
     github: "https://github.com/aabdoo23",
@@ -617,6 +616,7 @@ const userConfig = {
     playlistId: "5WsS94KKm5wDhgEpg8VcgM"},
   // Resume Configuration
   resume: {
+    url: "https://drive.google.com/file/d/1ZyaeXLpdOtPUygFCu55yYCQSEdW3K4pm/view",
     localPath: "/resume.pdf"
   },
   // Education Background
@@ -646,9 +646,9 @@ const userConfig = {
       year: "2023-2024",
       images: [
         {
-          url: "https://scontent.fcai19-7.fna.fbcdn.net/v/t1.6435-9/34643066_1776660339023309_3618202826653564928_n.png?_nc_cat=102&ccb=1-7&_nc_sid=127cfc&_nc_ohc=2bh4W4H09QMQ7kNvwGKarTa&_nc_oc=AdmHU5Y97WNIrlJp9clZ9e7tFpBVEkmcCwKO3I7K3Wv31lt1SOaFny9tPo-TT6CN1Cc&_nc_zt=23&_nc_ht=scontent.fcai19-7.fna&_nc_gid=aAHjEDXbI0sySz-Wpg7IRA&oh=00_AfGVxtNPE_faYryNMnshNnXfSkvbZwG97CUi7YMojNJSGw&oe=6828684C",
-          alt: "ITI",
-          description: "ITI Campus"
+          url: "https://iti.gov.eg/assets/images/ColoredLogo.svg",
+          alt: "ITI"
+          // description: "ITI Campus"
         }
       ]
     },
@@ -660,7 +660,7 @@ const userConfig = {
       year: "2024",
       images: [
         {
-          url: "https://scontent.fcai19-7.fna.fbcdn.net/v/t39.30808-6/395134646_122098455926090715_7710702962729537293_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=qWHQErYWbJ8Q7kNvwEVP8oB&_nc_oc=AdnccH6iyHJ7pP7oaw3TbsmcIlL5SC-ocy7ydfg6TI4UeT2qCiph6qcvzEr-9GnSTH0&_nc_zt=23&_nc_ht=scontent.fcai19-7.fna&_nc_gid=37ovUZT5L_INunwD2NkYQA&oh=00_AfHQ_Cw4pz6kpPPTDrNPEmqiV0fQ276sXRXTdLbk3CPpxg&oe=6806F0B9",
+          url: "https://depi.gov.eg/assets/images/proAr.png",
           alt: "DEPI"
           // description: "DEPI Logo"
         }
@@ -699,42 +699,37 @@ const userConfig = {
       year: "2023-2024",
       images: [
         {
-          url: "https://scontent.fcai19-7.fna.fbcdn.net/v/t39.30808-6/486552101_1079199274242503_2182012264778860651_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=Ig6nvZbGJeQQ7kNvwFEMEZJ&_nc_oc=AdlabRhbe8nd5HC9X5BXuZN0k3NCXb7DUVE2O7XmUkYH1fhW711l8gUvSfzOo5410ZU&_nc_zt=23&_nc_ht=scontent.fcai19-7.fna&_nc_gid=h6MzxRBHoHxP_B0XuRsSWA&oh=00_AfHCK5Fk3Hy0k5Dz0wZqipOVMduukf-lPL8kpNwQ7BuR_g&oe=6807009A",
+          url: "https://i.ibb.co/FbSmTsBw/486635391-1079182187577545-400541279663759578-n.jpg",
           alt: "NUICPC"
           // description: "NUICPC Campus"
         },
         {
-          url: "https://scontent.fcai19-7.fna.fbcdn.net/v/t39.30808-6/487803199_1081518930677204_2426192278524131232_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=127cfc&_nc_ohc=bToX8lkaHTMQ7kNvwG8TdRi&_nc_oc=AdmjaGDIVnyFC3nGbr7lpnxylfYSWuuU7LHPeBspEe7Hj7RspTz2iXIT9xOa_fCYIbM&_nc_zt=23&_nc_ht=scontent.fcai19-7.fna&_nc_gid=TZP48-MxXopnfgBqCk2CCQ&oh=00_AfHpIzBsGZwMi0vqoAF1JYN3UI_xfOSn_FNQmWQIHTOh8g&oe=6806E475",
+          url: "https://i.ibb.co/1fLrcywC/487093779-1079182100910887-5326561587880729477-n.jpg",
           alt: "NUICPC"
           // description: "NUICPC Campus"
         },
         {
-          url: "https://scontent.fcai19-7.fna.fbcdn.net/v/t39.30808-6/487093779_1079182100910887_5326561587880729477_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=127cfc&_nc_ohc=6SeZGzJlCHAQ7kNvwHiSgKR&_nc_oc=Adns485WxMZal8W0rCCGUuWMyEmPmBbF50bJvJMbymlAn64vpxmAc6rjX0mnjVhVKx4&_nc_zt=23&_nc_ht=scontent.fcai19-7.fna&_nc_gid=XvdVjZkFOUVoiGlkHeLjiw&oh=00_AfEtI82S7CWI-VnC3dR8E-D2yhx_QJyCpQ8JoLEHF6xt-Q&oe=6806D01A",
+          url: "https://i.ibb.co/mVJBpngp/486181151-1075334944628936-2845216629795518112-n.jpg",
           alt: "NUICPC"
           // description: "NUICPC Campus"
         },
         {
-          url: "https://scontent.fcai19-7.fna.fbcdn.net/v/t39.30808-6/486635391_1079182187577545_400541279663759578_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=127cfc&_nc_ohc=IAZjJj7r4O8Q7kNvwE3AJj7&_nc_oc=AdlBsjO4FJ4ulyMyMED7zXLb5iBijC3FLZFr5Z9jBBcz2bB7Jkyn7XBbrmOjPVPiM4Y&_nc_zt=23&_nc_ht=scontent.fcai19-7.fna&_nc_gid=_8O6cFxxYzrcgNlbsjGyKg&oh=00_AfERVRXgG2VxoOHxCF3ruQPv4Nr0YJ5nTnmgMRvxKyt9VA&oe=6806EA44",
+          url: "https://i.ibb.co/yn7ccHM1/486507182-1075334774628953-7774379668898780058-n.jpg",
           alt: "NUICPC"
           // description: "NUICPC Campus"
         },
         {
-          url: "https://scontent.fcai19-7.fna.fbcdn.net/v/t39.30808-6/482027750_1063466179149146_4344066305683793822_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=127cfc&_nc_ohc=iUXvI2zd3wAQ7kNvwHu1OEg&_nc_oc=Admb_rDL0b8dejNC0mwgoPYe8_z3qB1H2RUMW4YoQNVRiJvllFcxda0Y06w-jvpMMLQ&_nc_zt=23&_nc_ht=scontent.fcai19-7.fna&_nc_gid=QTNJQHoRg0tm4RF16pWT5w&oh=00_AfGuQk8kp85E7SGZg4aceRaa1j-4_rNvkD0JoBJbfGVftw&oe=6806E134",
+          url: "https://i.ibb.co/35xMtCDV/486104871-1075333997962364-6362307301859416001-n.jpg",
           alt: "NUICPC"
           // description: "NUICPC Campus"
         },
         {
-          url: "https://scontent.fcai19-7.fna.fbcdn.net/v/t39.30808-6/486507182_1075334774628953_7774379668898780058_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=833d8c&_nc_ohc=ji9vikzmg0cQ7kNvwFz_1Zm&_nc_oc=AdnuoVlWjdOQHMx-8KcQOycVaUiJfQl9H47soE4FEtOPC30B4rPyx5kg_gvlffqmtLk&_nc_zt=23&_nc_ht=scontent.fcai19-7.fna&_nc_gid=xsJxnuJ-_EENzZsGG3LOfg&oh=00_AfEc0FMZaBH0XDVr5KpJFM9btMSyAaP9818471rqdWIhrQ&oe=680705A6",
+          url: "https://i.ibb.co/fzL5qvvS/486248194-1074582274704203-6554786202979315108-n.jpg",
           alt: "NUICPC"
           // description: "NUICPC Campus"
         },
         {
-          url: "https://scontent.fcai19-7.fna.fbcdn.net/v/t39.30808-6/487493482_1081518997343864_4066413282342283933_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=127cfc&_nc_ohc=RXdT9NJjVf0Q7kNvwGEyAIN&_nc_oc=AdkresiErTCubV9WbJIB6EWQ_a1O55EeCITxDL824xZbMd8Yf6h-zoOnI25bZeERrCY&_nc_zt=23&_nc_ht=scontent.fcai19-7.fna&_nc_gid=xm8tcFVk4onChdL7gczyJw&oh=00_AfH9bTusfY6L-72iYBeajJNzWAy5kvmb20PqXY_PyaELig&oe=6806F6EC",
-          alt: "NUICPC"
-          // description: "NUICPC Campus"
-        },
-        {
-          url: "https://scontent.fcai19-7.fna.fbcdn.net/v/t39.30808-6/480963441_1074286478067116_5784537412456976186_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=833d8c&_nc_ohc=P5Q28jPJ9nIQ7kNvwHhQXeM&_nc_oc=AdmFjIml6r6y7nyl7EzgA5A7pIcVMnUnj91WF702aBjt6qjyCNrSOtZ2x8unOdeZtko&_nc_zt=23&_nc_ht=scontent.fcai19-7.fna&_nc_gid=XOk3PbxzJfliIuS1JBV_JQ&oh=00_AfEN4eRN4moWd8EIS29aNBPrgJm8o01AnwKe27F_68W6Kw&oe=6806F993",
+          url: "https://i.ibb.co/VYxSXZF5/483525641-1070070571822040-3631060112169135578-n.jpg",
           alt: "NUICPC"
           // description: "NUICPC Campus"
         }
@@ -760,26 +755,64 @@ const userConfig = {
       year: "2021-2024",
       images: [
         {
-          url: "https://scontent.fcai19-7.fna.fbcdn.net/v/t39.30808-6/484381461_1069479998547764_3349306911678016045_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=833d8c&_nc_ohc=ZLOYTjM-xXAQ7kNvwGNdhe-&_nc_oc=AdnbiiZQFf4nRWUCRzFiEux1FV_eZiIP8dKkwjewfQsN78rZssnvYq2lkK2PvjvujF4&_nc_zt=23&_nc_ht=scontent.fcai19-7.fna&_nc_gid=kbg-A_OYirwtcuwFxankwA&oh=00_AfFWHg144Xq2x0Z1F9sTqwJoEjbmMegODBNsLaXiY7sEsA&oe=6806E331",
+          url: "https://i.ibb.co/Y43vdxrV/484501388-1069637098532054-11435862832739630-n.jpg",
           alt: "NUICPC"
         },
         {
-          url: "https://scontent.fcai19-7.fna.fbcdn.net/v/t39.30808-6/486111099_1075334037962360_2496524144509107583_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=833d8c&_nc_ohc=sKKwkUNTeUMQ7kNvwH3UvvC&_nc_oc=AdlPZQ78vfKhpsZaq4z-7f1phmQtbBy42Z9-LgaFErT9vzB3HTM4Q9Jn3rrF_4F5ZXg&_nc_zt=23&_nc_ht=scontent.fcai19-7.fna&_nc_gid=YOE8oOZD-oTjlkjeuOZ2sA&oh=00_AfE6K5qoFhSmqWIutJJ00kYG0h4aQjHBBf4sRGCNTPfhQw&oe=6806E0D1",
+          url: "https://i.ibb.co/WWBPM6GG/484804363-1069556495206781-5476304623000762204-n.jpg",
           alt: "Nile University"
           // description: "Nile University Campus"
         },
         {
-          url: "https://scontent.fcai19-7.fna.fbcdn.net/v/t39.30808-6/483525641_1070070571822040_3631060112169135578_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=833d8c&_nc_ohc=DqR3PHrPgWoQ7kNvwF1c4TX&_nc_oc=Admq-2OmYR1nCDaPVkaTiJlhut_7vivZ9meVdz88Dl1m4r3G4cY69MqBzyi71JB37mI&_nc_zt=23&_nc_ht=scontent.fcai19-7.fna&_nc_gid=90rrrJijScH4H0TevbA3Cw&oh=00_AfHTggq_0CwOL5CQ0BRwqXYQQhRtsXgl8nzwxFN5DadeNg&oe=6806CEDF",
+          url: "https://i.ibb.co/wNFg7VkR/484643522-1069479561881141-6397451359649224021-n.jpg",
           alt: "Nile University"
           // description: "Nile University Campus"
         },
         {
-          url: "https://scontent.fcai19-7.fna.fbcdn.net/v/t39.30808-6/485055122_1070070671822030_1640814515474648675_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=833d8c&_nc_ohc=GyS1H1x8MHkQ7kNvwGklCsi&_nc_oc=AdlHtT1kfY5InidBwN_yOY-JA46ldkzNnBJrbZtALoPhCJrTSkCk8_9m_rm1ZzSJNag&_nc_zt=23&_nc_ht=scontent.fcai19-7.fna&_nc_gid=VoLqdNRCdfkKQVT_xPQh6A&oh=00_AfF7Zc8u9HyKvfMElbNQbgO1EMgqa42GsCC_vCo_NaUAIg&oe=6806F032",
+          url: "https://i.ibb.co/ZR4dJLyv/482238905-1065269192302178-4747858326277637907-n.jpg",
           alt: "NUICPC"
         },
         {
-          url: "https://scontent.fcai19-7.fna.fbcdn.net/v/t39.30808-6/486627143_1081260057369758_4195012303656403802_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=833d8c&_nc_ohc=qsW4vGZfP0sQ7kNvwHySMfh&_nc_oc=Adlyz2BmQopTHD959nyiv-rbBawrPi6o1-KPz6ZnS5lvQPae7__2W3Sd8CHkFTYHZX8&_nc_zt=23&_nc_ht=scontent.fcai19-7.fna&_nc_gid=FB77Kf7kYt2BT42b5ZpZcA&oh=00_AfGC1HvMlR2suR_MjmcUZRlGG0EiQf-mOxcLzuftNuhfrg&oe=6806E581"
-        }
+          url: "https://i.ibb.co/ymJN2v00/482246774-1065269122302185-3150232388297078773-n.jpg",
+          alt: "NUICPC"
+        },
+        {
+          url: "https://i.ibb.co/vxYBzH64/482027750-1063466179149146-4344066305683793822-n.jpg",
+          alt: "NUICPC"
+        },
+        {
+          url: "https://i.ibb.co/j9K3Smq8/481466571-1061263352702762-7633575959379424468-n.jpg",
+          alt: "NUICPC"
+        },
+        {
+          url: "https://i.ibb.co/S7R12bRy/484136881-1069556391873458-1395371296655723435-n.jpg",
+          alt: "NUICPC"
+        },
+        {
+          url: "https://i.ibb.co/zWVHwSPH/484516365-1070411428454621-8390835945290794938-n.jpg",
+          alt: "NUICPC"
+        },
+        {
+          url: "https://i.ibb.co/27L4bpQY/484381461-1069479998547764-3349306911678016045-n.jpg",
+          alt: "NUICPC"
+        },
+        {
+          url: "https://i.ibb.co/wNFg7VkR/484643522-1069479561881141-6397451359649224021-n.jpg",
+          alt: "NUICPC"
+        },
+        {
+          url: "https://i.ibb.co/MyFj8V6s/484140894-1069479545214476-3560564697839847145-n.jpg",
+          alt: "NUICPC"
+        },
+        {
+          url: "https://i.ibb.co/Sw9psfwX/484640131-1069484585213972-5052989750649951025-n.jpg",
+          alt: "NUICPC"
+        },
+        {
+          url: "https://i.ibb.co/v6QLXpqg/486627143-1081260057369758-4195012303656403802-n.jpg",
+          alt: "NUICPC"
+        },
+        {}
       ]
     },
     {
@@ -798,13 +831,37 @@ const userConfig = {
   ],
   extraCurricularActivities: [
     {
+      title: "Head of IT & Cheating Control Committee",
+      description: "NUCPA",
+      institution: "NUCPA",
+      location: "Nile University",
+      year: "2025",
+      images: [
+        {
+          url: "https://i.ibb.co/N6FsYfLW/NP100582-2.jpg",
+          alt: "Nile University",
+          description: "Nile University Campus"
+        },
+        {
+          url: "https://i.ibb.co/355vdbMJ/NP109982-1.jpg",
+          alt: "Nile University",
+          description: "Nile University Campus"
+        },
+        {
+          url: "https://i.ibb.co/Frhbfyq/NP100626-2-1.jpg",
+          alt: "Nile University",
+          description: "Nile University Campus"
+        }
+      ]
+    },
+    {
       title: "SWE Sessions",
       institution: "GDG Nile University",
       location: "Nile University",
       year: "2025",
       images: [
         {
-          url: "https://drive.google.com/file/d/1dowYpSfYoc_lLmsWq3USol9zO1chGP8D",
+          url: "https://scontent.fcai19-7.fna.fbcdn.net/v/t39.30808-6/487509808_1082047970624300_6971553578124341594_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=833d8c&_nc_ohc=aHeR-Y9xLCoQ7kNvwEt75GT&_nc_oc=AdmO0ISS5S83f5_spVUXrCY5OhawFzqurVuym-4vhEnrUw3H4-jlAWwwPr51_y97zEE&_nc_zt=23&_nc_ht=scontent.fcai19-7.fna&_nc_gid=yluqC4DSHyLfMjmLwL8hWA&oh=00_AfHf2HeyPANMbQPqIrHx24nzfxeuQkMaeMbP9SlpaTW-gg&oe=6806D086",
           alt: "Nile University",
           description: "Nile University Campus"
         }
@@ -818,12 +875,12 @@ const userConfig = {
       year: "2022-2025",
       images: [
         {
-          url: "https://scontent.fcai19-7.fna.fbcdn.net/v/t39.30808-6/487509808_1082047970624300_6971553578124341594_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=833d8c&_nc_ohc=aHeR-Y9xLCoQ7kNvwEt75GT&_nc_oc=AdmO0ISS5S83f5_spVUXrCY5OhawFzqurVuym-4vhEnrUw3H4-jlAWwwPr51_y97zEE&_nc_zt=23&_nc_ht=scontent.fcai19-7.fna&_nc_gid=yluqC4DSHyLfMjmLwL8hWA&oh=00_AfHf2HeyPANMbQPqIrHx24nzfxeuQkMaeMbP9SlpaTW-gg&oe=6806D086",
+          url: "https://scontent.fcai19-7.fna.fbcdn.net/v/t39.30808-6/486652074_1077701407725623_8749819316280105843_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=833d8c&_nc_ohc=925gSLld9YIQ7kNvwH1Tnis&_nc_oc=AdkNGFJJzloJMZ7UyMqzyxpop7LgOAS4wDf37phzksSB9zyg6YYoJn9DvQBkTRCPe3c&_nc_zt=23&_nc_ht=scontent.fcai19-7.fna&_nc_gid=2jkQxIt1NA2bEK9hDA_sLw&oh=00_AfEFWMQ8TXpm7J7GNg31NTQtj51-xBK0gA96v3e3FXFOXw&oe=6806D41D",
           alt: "Nile University",
           description: "Nile University Campus"
         },
         {
-          url: "https://scontent.fcai19-7.fna.fbcdn.net/v/t39.30808-6/486652074_1077701407725623_8749819316280105843_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=833d8c&_nc_ohc=925gSLld9YIQ7kNvwH1Tnis&_nc_oc=AdkNGFJJzloJMZ7UyMqzyxpop7LgOAS4wDf37phzksSB9zyg6YYoJn9DvQBkTRCPe3c&_nc_zt=23&_nc_ht=scontent.fcai19-7.fna&_nc_gid=2jkQxIt1NA2bEK9hDA_sLw&oh=00_AfEFWMQ8TXpm7J7GNg31NTQtj51-xBK0gA96v3e3FXFOXw&oe=6806D41D",
+          url: "https://scontent.fcai19-7.fna.fbcdn.net/v/t39.30808-6/487509808_1082047970624300_6971553578124341594_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=833d8c&_nc_ohc=aHeR-Y9xLCoQ7kNvwEt75GT&_nc_oc=AdmO0ISS5S83f5_spVUXrCY5OhawFzqurVuym-4vhEnrUw3H4-jlAWwwPr51_y97zEE&_nc_zt=23&_nc_ht=scontent.fcai19-7.fna&_nc_gid=yluqC4DSHyLfMjmLwL8hWA&oh=00_AfHf2HeyPANMbQPqIrHx24nzfxeuQkMaeMbP9SlpaTW-gg&oe=6806D086",
           alt: "Nile University",
           description: "Nile University Campus"
         },
@@ -860,6 +917,19 @@ const userConfig = {
       ]
     },
     {
+      title: "Dean's Honors",
+      description: "Dean's Honors",
+      achievement: "Made the Dean's List for the Fall 2024 semester",
+      year: "2024",
+      images: [
+        {
+          url: "https://i.ibb.co/k2jWyBVz/468465943-17952654941854972-3647153475567609171-n.jpg",
+          alt: "Dean's Honors",
+          description: "Dean's Honors"
+        }
+      ]
+    },
+    {
       title: "Nile University Innovation Competition",
       description: "Nile University Innovation Competition",
       achievement: "Secured second place in the Nile University Innovation Competition hosted by Nile University - NilePreneurs and NU E-Club ! 🎉🏆",
@@ -884,7 +954,7 @@ const userConfig = {
       year: "2024",
       images: [
         {
-          url: "https://scontent.fcai19-7.fna.fbcdn.net/v/t39.30808-6/486719077_1079195597576204_1921460299948979682_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=833d8c&_nc_ohc=-RBEyRf5DsYQ7kNvwGAPX-S&_nc_oc=AdlMHxnis_S-Az0hXGBmTDw80t0XfK55XbZe34IEHiG--zxYVpokw67Y8od9tx1aMqc&_nc_zt=23&_nc_ht=scontent.fcai19-7.fna&_nc_gid=_GCzZ5neQVOXIjZRMixipw&oh=00_AfGzvQexmtZqvequQ5QoaDe2FTOGWr6htKxg61MhXLXfwQ&oe=6806F4EE",
+          url: "https://i.ibb.co/N2RZwmKT/487497338-1081518670677230-8143431170413885977-n.jpg",
           alt: "ECPC",
           description: "ECPC Certificate"
         }
@@ -941,7 +1011,7 @@ const userConfig = {
       year: "2023",
       images: [
         {
-          url: "https://scontent.fcai19-7.fna.fbcdn.net/v/t39.30808-6/482246774_1065269122302185_3150232388297078773_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=127cfc&_nc_ohc=uSkoOkyXlgoQ7kNvwF7dpvx&_nc_oc=AdlwvxORgxB2CpGKJ7oWdrvXvDJjV9sZaCxYfQak3b8PIutXe8oZoFqxb0Gqd4bjQZY&_nc_zt=23&_nc_ht=scontent.fcai19-7.fna&_nc_gid=0fQEIbG-WDz2VKt4Hf6-SA&oh=00_AfHqV1k-2n2xGo_HUDL_r1ed6sGi8l9u7ZenWHdbiqooHw&oe=680705EC",
+          url: "https://i.ibb.co/NnWkjG8g/486719077-1079195597576204-1921460299948979682-n.jpg",
           alt: "ECPC"
           // description: "ECPC Certificate"
         }
@@ -1093,13 +1163,165 @@ const $$Layout = createComponent(($$result, $$props, $$slots) => {
   return renderTemplate`<html lang="en" class="scroll-smooth selection:bg-gray-900 selection:text-white overflow-x-hidden"> <head>${renderComponent($$result, "BaseHead", $$BaseHead, { "title": Astro2.props.title, "description": Astro2.props.description, "canonical": Astro2.props.canonical, "openGraph": Astro2.props.openGraph })}${renderComponent($$result, "Analytics", $$Index$2, {})}${renderComponent($$result, "SpeedInsights", $$Index$1, {})}${renderHead()}</head> <body class="overflow-x-hidden bg-gray-900"> ${renderSlot($$result, $$slots["default"])} </body></html>`;
 }, "C:/Users/002/source/repos/portfolio/src/layouts/Layout.astro", void 0);
 
-function MacToolbar() {
+function HelpModal({
+  isOpen,
+  onClose,
+  onTerminalClick
+}) {
+  const [activeStep, setActiveStep] = useState(0);
+  const [isVisible, setIsVisible] = useState(false);
+  useEffect(() => {
+    if (isOpen) {
+      setIsVisible(true);
+      setActiveStep(0);
+    }
+  }, [isOpen]);
+  const steps = [
+    {
+      title: "Welcome to My Portfolio!",
+      content: "This is a macOS-inspired portfolio with interactive features. Let me show you around!",
+      animation: "animate-fade-in",
+      button: null
+    },
+    {
+      title: "The Terminal",
+      content: "The MacTerminal is your AI-powered assistant. Ask it anything about me, my skills, or my experience!",
+      animation: "animate-slide-in-right",
+      button: {
+        text: "Open Terminal",
+        icon: /* @__PURE__ */ jsx(RiTerminalFill, { size: 20 }),
+        onClick: () => {
+          if (onTerminalClick) {
+            onTerminalClick();
+            handleClose();
+          }
+        }
+      }
+    },
+    {
+      title: "Desktop Dock",
+      content: "The dock at the bottom contains all the main features of my portfolio. Each icon represents a different section:",
+      animation: "animate-slide-in-left",
+      button: null,
+      features: [
+        { icon: /* @__PURE__ */ jsx(BsGithub, { size: 20 }), text: "GitHub Projects" },
+        { icon: /* @__PURE__ */ jsx(BsStickyFill, { size: 20 }), text: "Resume Notes" },
+        { icon: /* @__PURE__ */ jsx(BsFilePdf, { size: 20 }), text: "Resume Viewer" },
+        { icon: /* @__PURE__ */ jsx(BsCalendar, { size: 20 }), text: "Schedule a Call" },
+        { icon: /* @__PURE__ */ jsx(BsSpotify, { size: 20 }), text: "Spotify Playlist" },
+        { icon: /* @__PURE__ */ jsx(FaLink, { size: 20 }), text: "Contact Links" },
+        { icon: /* @__PURE__ */ jsx(RiTerminalFill, { size: 20 }), text: "Terminal" }
+      ]
+    },
+    {
+      title: "Menu Bar",
+      content: "Use the menu bar to access my resume, projects, and contact information. Hover over my name to see a special surprise!",
+      animation: "animate-slide-in-up",
+      button: null
+    }
+  ];
+  const handleClose = () => {
+    setIsVisible(false);
+    setTimeout(onClose, 300);
+  };
+  const handleNext = () => {
+    if (activeStep < steps.length - 1) {
+      setActiveStep((prev) => prev + 1);
+    } else {
+      handleClose();
+    }
+  };
+  if (!isOpen) return null;
+  return /* @__PURE__ */ jsxs("div", { className: "fixed inset-0 z-[100] flex items-center justify-center overflow-hidden", children: [
+    /* @__PURE__ */ jsx(
+      "div",
+      {
+        className: "absolute inset-0 bg-black/50 backdrop-blur-sm transition-opacity duration-300",
+        style: { opacity: isVisible ? 1 : 0 },
+        onClick: handleClose
+      }
+    ),
+    /* @__PURE__ */ jsxs(
+      "div",
+      {
+        className: `relative bg-gray-900/95 rounded-lg p-6 max-w-md w-full mx-4 transform transition-all duration-300 ${isVisible ? "scale-100 opacity-100" : "scale-95 opacity-0"}`,
+        children: [
+          /* @__PURE__ */ jsx(
+            "button",
+            {
+              onClick: handleClose,
+              className: "absolute top-4 right-4 text-gray-400 hover:text-white transition-colors",
+              children: /* @__PURE__ */ jsx(IoClose, { size: 24 })
+            }
+          ),
+          /* @__PURE__ */ jsxs("div", { className: `${steps[activeStep].animation} mb-4`, children: [
+            /* @__PURE__ */ jsx("h2", { className: "text-2xl font-bold text-white mb-2", children: steps[activeStep].title }),
+            /* @__PURE__ */ jsx("p", { className: "text-gray-300 mb-4", children: steps[activeStep].content }),
+            steps[activeStep].features && /* @__PURE__ */ jsx("div", { className: "grid grid-cols-2 gap-4 mt-4", children: steps[activeStep].features.map((feature, index) => /* @__PURE__ */ jsxs("div", { className: "flex items-center gap-2 text-gray-300", children: [
+              /* @__PURE__ */ jsx("div", { className: "text-white", children: feature.icon }),
+              /* @__PURE__ */ jsx("span", { children: feature.text })
+            ] }, index)) })
+          ] }),
+          /* @__PURE__ */ jsxs("div", { className: "flex justify-between items-center mt-6", children: [
+            /* @__PURE__ */ jsx("div", { className: "flex space-x-2", children: steps.map((_, index) => /* @__PURE__ */ jsx(
+              "button",
+              {
+                onClick: () => setActiveStep(index),
+                className: `w-2 h-2 rounded-full transition-colors ${index === activeStep ? "bg-white" : "bg-gray-600"}`
+              },
+              index
+            )) }),
+            /* @__PURE__ */ jsxs("div", { className: "flex gap-2", children: [
+              steps[activeStep].button && /* @__PURE__ */ jsxs(
+                "button",
+                {
+                  onClick: steps[activeStep].button?.onClick,
+                  className: "px-4 py-2 bg-gray-700 text-white rounded hover:bg-gray-600 transition-colors flex items-center gap-2",
+                  children: [
+                    steps[activeStep].button?.icon,
+                    steps[activeStep].button?.text
+                  ]
+                }
+              ),
+              /* @__PURE__ */ jsx(
+                "button",
+                {
+                  onClick: handleNext,
+                  className: "px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors",
+                  children: activeStep === steps.length - 1 ? "Got it!" : "Next"
+                }
+              )
+            ] })
+          ] })
+        ]
+      }
+    )
+  ] });
+}
+
+function MacToolbar({
+  onTerminalClick,
+  onShowTutorial
+}) {
   const [currentDateTime, setCurrentDateTime] = useState(/* @__PURE__ */ new Date());
+  const [activeMenu, setActiveMenu] = useState(null);
+  const [showSignature, setShowSignature] = useState(false);
+  const [showHelp, setShowHelp] = useState(false);
+  const menuRef = useRef(null);
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentDateTime(/* @__PURE__ */ new Date());
     }, 6e4);
     return () => clearInterval(timer);
+  }, []);
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        setActiveMenu(null);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
   const formatMacDate = (date) => {
     const weekday = date.toLocaleString("en-US", { weekday: "short" });
@@ -1126,7 +1348,128 @@ function MacToolbar() {
   const handleVSCodeClick = () => {
     window.location.href = "vscode:/";
   };
+  const handleMenuClick = (menu) => {
+    setActiveMenu(activeMenu === menu ? null : menu);
+  };
+  const handleAction = (action) => {
+    if (action) {
+      action();
+      setActiveMenu(null);
+    }
+  };
+  const menus = {
+    File: [
+      {
+        label: "Resume",
+        icon: /* @__PURE__ */ jsx(IoDocumentText, { size: 16 }),
+        action: () => window.open(userConfig.resume.url, "_blank")
+      },
+      {
+        label: "Projects",
+        icon: /* @__PURE__ */ jsx(IoCodeSlash, { size: 16 }),
+        action: () => window.open(userConfig.social.github, "_blank")
+      }
+    ],
+    Edit: [
+      {
+        label: "Copy Email",
+        icon: /* @__PURE__ */ jsx(IoMail, { size: 16 }),
+        action: () => {
+          navigator.clipboard.writeText(userConfig.contact.email);
+          alert("Email copied to clipboard!");
+        }
+      },
+      {
+        label: "Copy Phone",
+        icon: /* @__PURE__ */ jsx(IoCall, { size: 16 }),
+        action: () => {
+          navigator.clipboard.writeText(userConfig.contact.phone);
+          alert("Phone number copied to clipboard!");
+        }
+      }
+    ],
+    View: [
+      {
+        label: "About Me",
+        icon: /* @__PURE__ */ jsx(IoPerson, { size: 16 }),
+        submenu: [
+          {
+            label: "Education",
+            icon: /* @__PURE__ */ jsx(IoSchool, { size: 16 }),
+            action: () => window.scrollTo({ top: 0, behavior: "smooth" })
+          },
+          {
+            label: "Experience",
+            icon: /* @__PURE__ */ jsx(IoBriefcase, { size: 16 }),
+            action: () => window.scrollTo({ top: 0, behavior: "smooth" })
+          }
+        ]
+      }
+    ],
+    Go: [
+      {
+        label: "GitHub",
+        icon: /* @__PURE__ */ jsx(FaGithub, { size: 16 }),
+        action: () => window.open(userConfig.social.github, "_blank")
+      },
+      {
+        label: "LinkedIn",
+        icon: /* @__PURE__ */ jsx(FaLinkedin, { size: 16 }),
+        action: () => window.open(userConfig.social.linkedin, "_blank")
+      },
+      {
+        label: "Email",
+        icon: /* @__PURE__ */ jsx(FaEnvelope, { size: 16 }),
+        action: () => window.open(`mailto:${userConfig.contact.email}`)
+      }
+    ],
+    Help: [
+      {
+        label: "Show Help",
+        icon: /* @__PURE__ */ jsx(IoHelpCircle, { size: 16 }),
+        action: () => setShowHelp(true)
+      },
+      {
+        label: "Show Tutorial",
+        icon: /* @__PURE__ */ jsx(IoHelpCircle, { size: 16 }),
+        action: () => onShowTutorial?.()
+      }
+    ]
+  };
+  const renderMenu = (menuItems) => /* @__PURE__ */ jsx("div", { className: "absolute top-full left-0 mt-1 bg-gray-800/90 backdrop-blur-sm rounded-lg shadow-xl py-1 min-w-[200px]", children: menuItems.map((item, index) => /* @__PURE__ */ jsxs("div", { children: [
+    /* @__PURE__ */ jsxs(
+      "button",
+      {
+        onClick: () => handleAction(item.action),
+        className: "w-full px-4 py-2 text-left text-sm text-gray-200 hover:bg-gray-700/50 flex items-center gap-2",
+        children: [
+          item.icon,
+          item.label
+        ]
+      }
+    ),
+    item.submenu && /* @__PURE__ */ jsx("div", { className: "absolute left-full top-0 ml-1 bg-gray-800/90 backdrop-blur-sm rounded-lg shadow-xl py-1 min-w-[200px]", children: item.submenu.map((subItem, subIndex) => /* @__PURE__ */ jsxs(
+      "button",
+      {
+        onClick: () => handleAction(subItem.action),
+        className: "w-full px-4 py-2 text-left text-sm text-gray-200 hover:bg-gray-700/50 flex items-center gap-2",
+        children: [
+          subItem.icon,
+          subItem.label
+        ]
+      },
+      subIndex
+    )) })
+  ] }, index)) });
   return /* @__PURE__ */ jsxs(Fragment$1, { children: [
+    /* @__PURE__ */ jsx(
+      HelpModal,
+      {
+        isOpen: showHelp,
+        onClose: () => setShowHelp(false),
+        onTerminalClick
+      }
+    ),
     /* @__PURE__ */ jsxs("div", { className: "sticky top-0 z-50 md:hidden bg-transparent text-white h-12 px-8 flex items-center justify-between text-base font-medium", children: [
       /* @__PURE__ */ jsx("span", { className: "font-semibold", children: formatIPhoneTime(currentDateTime) }),
       /* @__PURE__ */ jsxs("div", { className: "flex items-center gap-1.5", children: [
@@ -1136,22 +1479,71 @@ function MacToolbar() {
       ] })
     ] }),
     /* @__PURE__ */ jsxs("div", { className: "sticky top-0 z-50 hidden md:flex bg-black/20 backdrop-blur-md text-white h-6 px-4 items-center justify-between text-sm", children: [
-      /* @__PURE__ */ jsxs("div", { className: "flex items-center space-x-4", children: [
+      /* @__PURE__ */ jsxs("div", { className: "flex items-center space-x-4", ref: menuRef, children: [
         /* @__PURE__ */ jsx(FaApple, { size: 16 }),
-        /* @__PURE__ */ jsx("span", { className: "font-semibold cursor-default", children: userConfig.name }),
-        /* @__PURE__ */ jsx("span", { className: "cursor-default", children: "File" }),
-        /* @__PURE__ */ jsx("span", { className: "cursor-default", children: "Edit" }),
-        /* @__PURE__ */ jsx("span", { className: "cursor-default", children: "View" }),
-        /* @__PURE__ */ jsx("span", { className: "cursor-default", children: "Go" }),
-        /* @__PURE__ */ jsx("span", { className: "cursor-default", children: "Window" }),
-        /* @__PURE__ */ jsx("span", { className: "cursor-default", children: "Help" })
+        /* @__PURE__ */ jsxs("div", { className: "relative", children: [
+          /* @__PURE__ */ jsx(
+            "span",
+            {
+              className: "font-semibold hover:text-gray-300 transition-colors cursor-pointer",
+              onMouseEnter: () => setShowSignature(true),
+              onMouseLeave: () => setShowSignature(false),
+              children: userConfig.name
+            }
+          ),
+          showSignature && /* @__PURE__ */ jsx("div", { className: "absolute top-full left-0 mt-1 bg-white/90 backdrop-blur-sm rounded-lg p-4 shadow-xl z-[100]", children: /* @__PURE__ */ jsxs("svg", { width: "100", height: "100", viewBox: "0, 0, 400, 400", children: [
+            /* @__PURE__ */ jsx(
+              "path",
+              {
+                d: "M108.569 28.616 C 106.734 29.520,104.726 32.670,104.726 34.644 C 104.726 38.003,107.697 39.449,129.820 46.856 C 138.973 49.921,146.527 52.624,146.607 52.863 C 146.686 53.103,145.246 54.959,143.407 56.989 C 124.286 78.087,112.615 112.565,116.576 136.249 C 121.489 165.623,141.596 190.907,170.380 203.907 C 201.975 218.177,230.960 211.170,260.824 182.042 C 284.512 158.939,290.778 139.488,280.920 119.660 C 270.945 99.596,249.140 84.175,202.030 63.867 C 186.951 57.368,185.093 56.168,184.311 52.432 C 182.587 44.191,177.239 42.165,164.583 44.957 L 158.844 46.223 143.978 40.267 C 114.671 28.527,111.121 27.359,108.569 28.616",
+                fill: "#000000",
+                fillRule: "evenodd"
+              }
+            ),
+            /* @__PURE__ */ jsx(
+              "path",
+              {
+                d: "M180.151 221.586 C 172.696 224.807,172.098 228.567,174.461 257.349 C 174.970 263.548,175.907 275.255,176.544 283.365 C 178.911 313.539,179.680 321.150,182.081 338.170 C 184.544 355.633,187.406 371.811,191.197 389.698 L 193.381 400.000 197.635 400.000 C 200.789 400.000,201.890 399.878,201.888 399.527 C 201.887 399.267,201.202 395.907,200.368 392.060 C 192.002 353.514,189.396 329.312,189.405 290.237 C 189.410 264.279,189.932 256.659,192.688 242.344 C 194.647 232.170,194.659 230.718,192.822 226.985 C 190.108 221.473,185.228 219.393,180.151 221.586",
+                fill: "#000000",
+                fillRule: "evenodd"
+              }
+            ),
+            /* @__PURE__ */ jsx(
+              "path",
+              {
+                d: "M128.922 258.062 C 123.505 260.577,122.583 263.116,120.614 280.942 C 119.089 294.757,117.420 307.080,113.605 332.703 C 107.161 375.986,107.138 376.412,111.110 378.748 C 113.415 380.103,117.666 380.230,119.324 378.994 C 121.925 377.054,122.361 375.086,123.624 359.546",
+                fill: "#000000",
+                fillRule: "evenodd"
+              }
+            ),
+            /* @__PURE__ */ jsx("g", { className: "origin-top animate-wave", children: /* @__PURE__ */ jsx(
+              "path",
+              {
+                d: "M279.276 172.949 C 276.309 174.007,275.334 176.072,272.211 187.925 C 263.640 220.452,251.678 249.700,242.532 260.491 C 241.563 261.635,237.066 266.399,232.538 271.078 C 218.672 285.408,217.752 286.587,217.798 289.961 C 217.940 300.352,231.821 304.008,237.316 295.101 C 238.091 293.845,240.750 290.301,243.225 287.227 C 251.656 276.753,256.254 268.957,261.554 256.144 C 271.645 231.748,288.332 185.082,289.049 179.249 C 289.586 174.884,283.980 171.271,279.276 172.949",
+                fill: "#000000",
+                fillRule: "evenodd"
+              }
+            ) })
+          ] }) })
+        ] }),
+        Object.entries(menus).map(([menu, items]) => /* @__PURE__ */ jsxs("div", { className: "relative", children: [
+          /* @__PURE__ */ jsx(
+            "span",
+            {
+              className: "cursor-pointer hover:text-gray-300 transition-colors",
+              onClick: () => handleMenuClick(menu),
+              children: menu
+            }
+          ),
+          activeMenu === menu && renderMenu(items)
+        ] }, menu))
       ] }),
       /* @__PURE__ */ jsxs("div", { className: "flex items-center space-x-4", children: [
         /* @__PURE__ */ jsx(
           VscVscode,
           {
             size: 16,
-            className: "cursor-default hover:opacity-80 transition-opacity",
+            className: "cursor-pointer hover:opacity-80 transition-opacity",
             onClick: handleVSCodeClick,
             title: "Open in VSCode"
           }
@@ -1164,13 +1556,174 @@ function MacToolbar() {
   ] });
 }
 
+let globalZIndex = 1e3;
+const MIN_WIDTH = 400;
+const MIN_HEIGHT = 300;
+function DraggableWindow({
+  title,
+  onClose,
+  children,
+  initialPosition = { x: 0, y: 0 },
+  initialSize = { width: 400, height: 300 },
+  className = ""
+}) {
+  const [position, setPosition] = useState(initialPosition);
+  const [size, setSize] = useState(initialSize);
+  const [isDragging, setIsDragging] = useState(false);
+  const [isResizing, setIsResizing] = useState(false);
+  const [resizeDirection, setResizeDirection] = useState(null);
+  const [dragOffset, setDragOffset] = useState({ x: 0, y: 0 });
+  const [zIndex, setZIndex] = useState(globalZIndex);
+  const [isMobile, setIsMobile] = useState(false);
+  const windowRef = useRef(null);
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+  const bringToFront = () => {
+    globalZIndex += 1;
+    setZIndex(globalZIndex);
+  };
+  const handleMouseDown = (e) => {
+    if (isMobile) return;
+    if (e.target instanceof HTMLElement) {
+      bringToFront();
+      if (e.target.closest(".window-header")) {
+        setIsDragging(true);
+        const rect = windowRef.current?.getBoundingClientRect();
+        if (rect) {
+          setDragOffset({
+            x: e.clientX - rect.left,
+            y: e.clientY - rect.top
+          });
+        }
+        e.preventDefault();
+      } else if (e.target.closest(".resize-handle")) {
+        setIsResizing(true);
+        setResizeDirection(e.target.getAttribute("data-direction"));
+        e.preventDefault();
+      }
+    }
+  };
+  const handleMouseMove = (e) => {
+    if (isMobile) return;
+    if (isDragging) {
+      const newX = e.clientX - dragOffset.x;
+      const newY = e.clientY - dragOffset.y;
+      const windowWidth = windowRef.current?.offsetWidth || 0;
+      const windowHeight = windowRef.current?.offsetHeight || 0;
+      const maxX = window.innerWidth - windowWidth / 2;
+      const maxY = window.innerHeight - windowHeight / 2;
+      const minX = -windowWidth / 2;
+      const minY = -windowHeight / 2;
+      setPosition({
+        x: Math.max(minX, Math.min(newX, maxX)),
+        y: Math.max(minY, Math.min(newY, maxY))
+      });
+    } else if (isResizing) {
+      const rect = windowRef.current?.getBoundingClientRect();
+      if (rect) {
+        const newSize = { ...size };
+        if (resizeDirection === "right" || resizeDirection === "bottom-right") {
+          newSize.width = Math.max(MIN_WIDTH, e.clientX - rect.left);
+        }
+        if (resizeDirection === "bottom" || resizeDirection === "bottom-right") {
+          newSize.height = Math.max(MIN_HEIGHT, e.clientY - rect.top);
+        }
+        setSize(newSize);
+      }
+    }
+  };
+  const handleMouseUp = () => {
+    if (isMobile) return;
+    setIsDragging(false);
+    setIsResizing(false);
+    setResizeDirection(null);
+  };
+  useEffect(() => {
+    if (isMobile) return;
+    if (isDragging || isResizing) {
+      document.addEventListener("mousemove", handleMouseMove);
+      document.addEventListener("mouseup", handleMouseUp);
+      document.body.style.userSelect = "none";
+    }
+    return () => {
+      document.removeEventListener("mousemove", handleMouseMove);
+      document.removeEventListener("mouseup", handleMouseUp);
+      document.body.style.userSelect = "";
+    };
+  }, [isDragging, isResizing, resizeDirection, dragOffset, isMobile]);
+  return /* @__PURE__ */ jsxs(
+    "div",
+    {
+      ref: windowRef,
+      className: `${isMobile ? "fixed inset-0 m-4 rounded-xl" : "absolute rounded-xl"} bg-[#1d1d1f] shadow-xl overflow-hidden p-0 transition-all duration-300 ${isDragging ? "cursor-grabbing" : "cursor-default"} ${className}`,
+      style: {
+        ...isMobile ? {} : {
+          left: position.x,
+          top: position.y,
+          width: size.width,
+          height: size.height
+        },
+        zIndex,
+        transition: isDragging || isResizing ? "none" : "all 0.2s ease-out"
+      },
+      onMouseDown: handleMouseDown,
+      children: [
+        /* @__PURE__ */ jsxs("div", { className: "window-header bg-gray-800 h-6 flex items-center space-x-2 px-4 rounded-t-xl sticky top-0 left-0 right-0 z-10", children: [
+          /* @__PURE__ */ jsx(
+            "button",
+            {
+              onClick: onClose,
+              className: "w-3 h-3 rounded-full bg-red-500 hover:bg-red-600 transition-colors"
+            }
+          ),
+          /* @__PURE__ */ jsx("div", { className: "w-3 h-3 rounded-full bg-yellow-500" }),
+          /* @__PURE__ */ jsx("div", { className: "w-3 h-3 rounded-full bg-green-500" }),
+          /* @__PURE__ */ jsx("span", { className: "text-sm text-gray-300 flex-grow text-center font-semibold", children: title })
+        ] }),
+        /* @__PURE__ */ jsxs("div", { className: "relative h-[calc(100%-1.5rem)]", children: [
+          children,
+          !isMobile && /* @__PURE__ */ jsxs(Fragment$1, { children: [
+            /* @__PURE__ */ jsx(
+              "div",
+              {
+                className: "resize-handle absolute bottom-0 left-0 right-0 h-2 cursor-ns-resize",
+                "data-direction": "bottom"
+              }
+            ),
+            /* @__PURE__ */ jsx(
+              "div",
+              {
+                className: "resize-handle absolute right-0 top-0 bottom-0 w-2 cursor-ew-resize",
+                "data-direction": "right"
+              }
+            ),
+            /* @__PURE__ */ jsx(
+              "div",
+              {
+                className: "resize-handle absolute bottom-0 right-0 w-3 h-3 cursor-nwse-resize",
+                "data-direction": "bottom-right"
+              }
+            )
+          ] })
+        ] })
+      ]
+    }
+  );
+}
+
 const PLACEHOLDER_MESSAGES = [
   "Type your question...",
   "What are your skills?",
   "Where are you located?",
   "What projects have you worked on?"
 ];
-function MacTerminal({ onClose }) {
+function MacTerminal({ isOpen, onClose }) {
   const [chatHistory, setChatHistory] = useState({
     messages: [],
     input: ""
@@ -1330,57 +1883,57 @@ If a question is unrelated to my work or portfolio, say: "That's outside my area
       setIsTyping(false);
     }
   };
-  return /* @__PURE__ */ jsxs("div", { className: "bg-black/85 w-[700px] h-[500px] rounded-lg overflow-hidden shadow-lg mx-4 sm:mx-0", children: [
-    /* @__PURE__ */ jsxs("div", { className: "bg-gray-800 h-6 flex items-center space-x-2 px-4 sticky top-0 left-0 right-0 z-10", children: [
-      /* @__PURE__ */ jsx(
-        "button",
-        {
-          onClick: onClose,
-          className: "w-3 h-3 rounded-full bg-red-500 hover:bg-red-600 transition-colors"
-        }
-      ),
-      /* @__PURE__ */ jsx("div", { className: "w-3 h-3 rounded-full bg-yellow-500" }),
-      /* @__PURE__ */ jsx("div", { className: "w-3 h-3 rounded-full bg-green-500" }),
-      /* @__PURE__ */ jsxs("span", { className: "text-sm text-gray-500 flex-grow text-center font-semibold flex items-center justify-center gap-2", children: [
-        /* @__PURE__ */ jsx(FaRegFolderClosed, { size: 14, className: "text-gray-300" }),
-        userConfig.website,
-        " ⸺ zsh"
-      ] })
-    ] }),
-    /* @__PURE__ */ jsxs("div", { className: "p-4 text-gray-200 font-mono text-s h-[calc(500px-1.5rem)] flex flex-col overflow-hidden", children: [
-      /* @__PURE__ */ jsxs("div", { className: "flex-1 overflow-y-auto", children: [
-        chatHistory.messages.map((msg, index) => /* @__PURE__ */ jsx("div", { className: "mb-2", children: msg.role === "user" ? /* @__PURE__ */ jsxs("div", { className: "flex items-start space-x-2", children: [
-          /* @__PURE__ */ jsx("span", { className: "text-green-400", children: ">" }),
-          /* @__PURE__ */ jsx("pre", { className: "whitespace-pre-wrap", children: msg.content })
-        ] }) : /* @__PURE__ */ jsxs("div", { className: "flex items-start space-x-2", children: [
-          /* @__PURE__ */ jsxs("span", { className: "text-green-400", children: [
-            "$",
-            userConfig.website,
-            ":"
+  if (!isOpen) return null;
+  return /* @__PURE__ */ jsx(
+    DraggableWindow,
+    {
+      title: `${userConfig.website} ⸺ zsh`,
+      onClose,
+      initialPosition: {
+        x: Math.floor(window.innerWidth * 0.1),
+        y: Math.floor(window.innerHeight * 0.1)
+      },
+      initialSize: { width: 700, height: 500 },
+      className: "bg-black/80 backdrop-blur-sm",
+      children: /* @__PURE__ */ jsxs("div", { className: "p-4 text-gray-200 font-mono text-sm h-full flex flex-col overflow-hidden", children: [
+        /* @__PURE__ */ jsxs("div", { className: "flex-1 overflow-y-auto bg-black/50 rounded-lg p-4", children: [
+          chatHistory.messages.map((msg, index) => /* @__PURE__ */ jsx("div", { className: "mb-2", children: msg.role === "user" ? /* @__PURE__ */ jsxs("div", { className: "flex items-start space-x-2", children: [
+            /* @__PURE__ */ jsx("span", { className: "text-green-400 font-bold", children: ">" }),
+            /* @__PURE__ */ jsx("pre", { className: "whitespace-pre-wrap", children: msg.content })
+          ] }) : /* @__PURE__ */ jsxs("div", { className: "flex items-start space-x-2", children: [
+            /* @__PURE__ */ jsxs("span", { className: "text-green-400 font-bold", children: [
+              "$",
+              userConfig.website,
+              ":"
+            ] }),
+            /* @__PURE__ */ jsx("pre", { className: "whitespace-pre-wrap", children: msg.content })
+          ] }) }, index)),
+          isTyping && /* @__PURE__ */ jsxs("div", { className: "flex items-center space-x-1", children: [
+            /* @__PURE__ */ jsx("div", { className: "w-2 h-2 bg-green-400 rounded-full animate-bounce", style: { animationDelay: "0ms" } }),
+            /* @__PURE__ */ jsx("div", { className: "w-2 h-2 bg-green-400 rounded-full animate-bounce", style: { animationDelay: "150ms" } }),
+            /* @__PURE__ */ jsx("div", { className: "w-2 h-2 bg-green-400 rounded-full animate-bounce", style: { animationDelay: "300ms" } })
           ] }),
-          /* @__PURE__ */ jsx("pre", { className: "whitespace-pre-wrap", children: msg.content })
-        ] }) }, index)),
-        isTyping && /* @__PURE__ */ jsx("div", { className: "animate-pulse", children: "..." }),
-        /* @__PURE__ */ jsx("div", { ref: messagesEndRef })
-      ] }),
-      /* @__PURE__ */ jsx("form", { onSubmit: handleSubmit, className: "mt-2", children: /* @__PURE__ */ jsxs("div", { className: "flex flex-col sm:flex-row items-start sm:items-center space-y-2 sm:space-y-0 sm:space-x-2", children: [
-        /* @__PURE__ */ jsxs("span", { className: "whitespace-nowrap", children: [
-          userConfig.website,
-          " root %"
+          /* @__PURE__ */ jsx("div", { ref: messagesEndRef })
         ] }),
-        /* @__PURE__ */ jsx(
-          "input",
-          {
-            type: "text",
-            value: chatHistory.input,
-            onChange: handleInputChange,
-            className: "w-full sm:flex-1 bg-transparent outline-none text-white placeholder-gray-400",
-            placeholder
-          }
-        )
-      ] }) })
-    ] })
-  ] });
+        /* @__PURE__ */ jsx("form", { onSubmit: handleSubmit, className: "mt-2 bg-black/50 rounded-lg p-2", children: /* @__PURE__ */ jsxs("div", { className: "flex flex-col sm:flex-row items-start sm:items-center space-y-2 sm:space-y-0 sm:space-x-2", children: [
+          /* @__PURE__ */ jsxs("span", { className: "whitespace-nowrap text-green-400 font-bold", children: [
+            userConfig.website,
+            " root %"
+          ] }),
+          /* @__PURE__ */ jsx(
+            "input",
+            {
+              type: "text",
+              value: chatHistory.input,
+              onChange: handleInputChange,
+              className: "w-full sm:flex-1 bg-transparent outline-none text-white placeholder-gray-400",
+              placeholder
+            }
+          )
+        ] }) })
+      ] })
+    }
+  );
 }
 
 function MobileDock({ onGitHubClick, onNotesClick, onResumeClick, onTerminalClick }) {
@@ -1461,25 +2014,20 @@ function ResumeViewer({ isOpen, onClose }) {
     };
   }, [isOpen]);
   if (!isOpen) return null;
-  return /* @__PURE__ */ jsx("div", { className: "fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm", children: /* @__PURE__ */ jsxs("div", { className: "w-[90%] h-[90%] max-w-5xl bg-gray-800 rounded-lg shadow-2xl overflow-hidden", children: [
-    /* @__PURE__ */ jsxs("div", { className: "h-8 bg-gray-700 flex items-center justify-between px-4", children: [
-      /* @__PURE__ */ jsxs("div", { className: "flex items-center space-x-2", children: [
-        /* @__PURE__ */ jsx(
-          "button",
-          {
-            onClick: onClose,
-            className: "w-3 h-3 rounded-full bg-red-500 hover:bg-red-600 transition-colors"
-          }
-        ),
-        /* @__PURE__ */ jsx("button", { className: "w-3 h-3 rounded-full bg-yellow-500 hover:bg-yellow-600 transition-colors" }),
-        /* @__PURE__ */ jsx("button", { className: "w-3 h-3 rounded-full bg-green-500 hover:bg-green-600 transition-colors" })
-      ] }),
-      /* @__PURE__ */ jsx("div", { className: "text-gray-300 text-sm font-medium", children: "Resume.pdf" }),
-      /* @__PURE__ */ jsx("div", { className: "w-12" }),
-      " "
-    ] }),
-    /* @__PURE__ */ jsx("div", { className: "h-[calc(100%-2rem)] bg-white", children: /* @__PURE__ */ jsx("figure", { className: "h-full", children: /* @__PURE__ */ jsx("object", { data: userConfig.resume.localPath, type: "application/pdf", width: "100%", className: "h-full" }) }) })
-  ] }) });
+  return /* @__PURE__ */ jsx(
+    DraggableWindow,
+    {
+      title: "Resume.pdf",
+      onClose,
+      initialPosition: {
+        x: Math.floor(window.innerWidth * 0.4),
+        y: Math.floor(window.innerHeight * 0.2)
+      },
+      className: "w-[90%] h-[90%] max-w-5xl",
+      initialSize: { width: 800, height: 600 },
+      children: /* @__PURE__ */ jsx("div", { className: "h-full bg-white", children: /* @__PURE__ */ jsx("figure", { className: "h-full", children: /* @__PURE__ */ jsx("object", { data: userConfig.resume.localPath, type: "application/pdf", width: "100%", className: "h-full" }) }) })
+    }
+  );
 }
 
 function SpotifyPlayer({ isOpen, onClose, playlistId }) {
@@ -1495,43 +2043,33 @@ function SpotifyPlayer({ isOpen, onClose, playlistId }) {
     };
   }, [isOpen]);
   if (!isOpen) return null;
-  return /* @__PURE__ */ jsx("div", { className: "fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm", children: /* @__PURE__ */ jsxs("div", { className: `w-[90%] max-w-md bg-gray-800 rounded-lg shadow-2xl overflow-hidden transition-all duration-300 ${isMinimized ? "h-16" : "h-[500px]"}`, children: [
-    /* @__PURE__ */ jsxs("div", { className: "h-8 bg-gray-700 flex items-center justify-between px-4", children: [
-      /* @__PURE__ */ jsxs("div", { className: "flex items-center space-x-2", children: [
-        /* @__PURE__ */ jsx(
-          "button",
-          {
-            onClick: onClose,
-            className: "w-3 h-3 rounded-full bg-red-500 hover:bg-red-600 transition-colors"
-          }
-        ),
-        /* @__PURE__ */ jsx(
-          "button",
-          {
-            onClick: () => setIsMinimized(!isMinimized),
-            className: "w-3 h-3 rounded-full bg-yellow-500 hover:bg-yellow-600 transition-colors"
-          }
-        ),
-        /* @__PURE__ */ jsx("button", { className: "w-3 h-3 rounded-full bg-green-500 hover:bg-green-600 transition-colors" })
-      ] }),
-      /* @__PURE__ */ jsx("div", { className: "text-gray-300 text-sm font-medium", children: "Spotify Player" }),
-      /* @__PURE__ */ jsx("div", { className: "w-12" })
-    ] }),
-    /* @__PURE__ */ jsx("div", { className: `h-[calc(100%-2rem)] transition-all duration-300 ${isMinimized ? "hidden" : "block"}`, children: /* @__PURE__ */ jsx(
-      "iframe",
-      {
-        src: `https://open.spotify.com/embed/playlist/${playlistId}?utm_source=generator&theme=0`,
-        width: "100%",
-        height: "100%",
-        allow: "autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture",
-        loading: "lazy",
-        className: "border-0"
-      }
-    ) })
-  ] }) });
+  return /* @__PURE__ */ jsx(
+    DraggableWindow,
+    {
+      title: "Spotify Player",
+      onClose,
+      initialPosition: {
+        x: Math.floor(window.innerWidth * 0.1),
+        y: Math.floor(window.innerHeight * 0.2)
+      },
+      className: `w-[90%] max-w-md transition-all duration-300 ${isMinimized ? "h-16" : "h-[300px]"}`,
+      initialSize: { width: 800, height: 600 },
+      children: /* @__PURE__ */ jsx("div", { className: `h-full transition-all duration-300 ${isMinimized ? "hidden" : "block"}`, children: /* @__PURE__ */ jsx(
+        "iframe",
+        {
+          src: `https://open.spotify.com/embed/playlist/${playlistId}?utm_source=generator&theme=0`,
+          width: "100%",
+          height: "100%",
+          allow: "autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture",
+          loading: "lazy",
+          className: "border-0"
+        }
+      ) })
+    }
+  );
 }
 
-const DesktopDock = ({ onTerminalClick, onNotesClick, onGitHubClick }) => {
+const DesktopDock = ({ onTerminalClick, onNotesClick, onGitHubClick, activeApps }) => {
   const [hoveredIcon, setHoveredIcon] = useState(null);
   const [showResume, setShowResume] = useState(false);
   const [showSpotify, setShowSpotify] = useState(false);
@@ -1625,7 +2163,7 @@ const DesktopDock = ({ onTerminalClick, onNotesClick, onGitHubClick }) => {
     }
   );
   return /* @__PURE__ */ jsxs(Fragment$1, { children: [
-    /* @__PURE__ */ jsx("div", { className: "fixed bottom-0 left-0 right-0 hidden md:flex justify-center pb-4 z-50", children: /* @__PURE__ */ jsx("div", { className: "bg-gray-600/50 backdrop-blur-sm rounded-2xl p-2 shadow-xl", children: /* @__PURE__ */ jsxs("div", { className: "flex space-x-2", children: [
+    /* @__PURE__ */ jsx("div", { className: "fixed bottom-0 left-0 right-0 hidden md:flex justify-center pb-4 z-0", children: /* @__PURE__ */ jsx("div", { className: "bg-gray-600/50 backdrop-blur-sm rounded-2xl p-2 shadow-xl", children: /* @__PURE__ */ jsxs("div", { className: "flex space-x-2", children: [
       /* @__PURE__ */ jsxs(
         "button",
         {
@@ -1634,7 +2172,7 @@ const DesktopDock = ({ onTerminalClick, onNotesClick, onGitHubClick }) => {
           onMouseLeave: () => setHoveredIcon(null),
           className: "relative group",
           children: [
-            /* @__PURE__ */ jsx("div", { className: "w-12 h-12 bg-gradient-to-t from-black to-black/60 rounded-xl flex items-center justify-center shadow-lg transition-transform duration-300 ease-out group-hover:scale-110 group-hover:animate-bounce", children: /* @__PURE__ */ jsx(BsGithub, { size: 35, className: "text-gray-100" }) }),
+            /* @__PURE__ */ jsx("div", { className: `w-12 h-12 bg-gradient-to-t from-black to-black/60 rounded-xl flex items-center justify-center shadow-lg transition-all duration-300 ease-out hover:scale-110 active:scale-95 ${activeApps.github ? "ring-2 ring-white/50" : ""}`, children: /* @__PURE__ */ jsx(BsGithub, { size: 35, className: "text-gray-100" }) }),
             hoveredIcon === "github" && /* @__PURE__ */ jsx(Tooltip, { text: "My Projects" })
           ]
         }
@@ -1647,7 +2185,7 @@ const DesktopDock = ({ onTerminalClick, onNotesClick, onGitHubClick }) => {
           onMouseLeave: () => setHoveredIcon(null),
           className: "relative group",
           children: [
-            /* @__PURE__ */ jsx("div", { className: "w-12 h-12 bg-gradient-to-t from-yellow-600 to-yellow-400 rounded-xl flex items-center justify-center shadow-lg transition-transform duration-300 ease-out group-hover:scale-110 group-hover:animate-bounce", children: /* @__PURE__ */ jsx(BsStickyFill, { size: 35, className: "text-white" }) }),
+            /* @__PURE__ */ jsx("div", { className: `w-12 h-12 bg-gradient-to-t from-yellow-600 to-yellow-400 rounded-xl flex items-center justify-center shadow-lg transition-all duration-300 ease-out hover:scale-110 active:scale-95 ${activeApps.notes ? "ring-2 ring-white/50" : ""}`, children: /* @__PURE__ */ jsx(BsStickyFill, { size: 35, className: "text-white" }) }),
             hoveredIcon === "notes" && /* @__PURE__ */ jsx(Tooltip, { text: "Resume Notes" })
           ]
         }
@@ -1660,7 +2198,7 @@ const DesktopDock = ({ onTerminalClick, onNotesClick, onGitHubClick }) => {
           onMouseLeave: () => setHoveredIcon(null),
           className: "relative group",
           children: [
-            /* @__PURE__ */ jsx("div", { className: "w-12 h-12 bg-gradient-to-t from-red-600 to-red-400 rounded-xl flex items-center justify-center shadow-lg transition-transform duration-300 ease-out group-hover:scale-110 group-hover:animate-bounce", children: /* @__PURE__ */ jsx(BsFilePdf, { size: 35, className: "text-white" }) }),
+            /* @__PURE__ */ jsx("div", { className: `w-12 h-12 bg-gradient-to-t from-red-600 to-red-400 rounded-xl flex items-center justify-center shadow-lg transition-all duration-300 ease-out hover:scale-110 active:scale-95 ${activeApps.resume ? "ring-2 ring-white/50" : ""}`, children: /* @__PURE__ */ jsx(BsFilePdf, { size: 35, className: "text-white" }) }),
             hoveredIcon === "resume" && /* @__PURE__ */ jsx(Tooltip, { text: "View Resume" })
           ]
         }
@@ -1673,7 +2211,7 @@ const DesktopDock = ({ onTerminalClick, onNotesClick, onGitHubClick }) => {
           onMouseLeave: () => setHoveredIcon(null),
           className: "relative",
           children: [
-            /* @__PURE__ */ jsx("div", { className: "w-12 h-12 bg-gradient-to-t from-blue-600 to-blue-400 rounded-xl flex items-center justify-center shadow-lg transition-transform duration-300 ease-out group-hover:scale-110 group-hover:animate-bounce", children: /* @__PURE__ */ jsx(BsCalendar, { size: 35, className: "text-white" }) }),
+            /* @__PURE__ */ jsx("div", { className: "w-12 h-12 bg-gradient-to-t from-blue-600 to-blue-400 rounded-xl flex items-center justify-center shadow-lg transition-all duration-300 ease-out hover:scale-110 active:scale-95", children: /* @__PURE__ */ jsx(BsCalendar, { size: 35, className: "text-white" }) }),
             hoveredIcon === "calendar" && /* @__PURE__ */ jsx(Tooltip, { text: "Schedule a Call" })
           ]
         }
@@ -1686,7 +2224,7 @@ const DesktopDock = ({ onTerminalClick, onNotesClick, onGitHubClick }) => {
           onMouseLeave: () => setHoveredIcon(null),
           className: "relative",
           children: [
-            /* @__PURE__ */ jsx("div", { className: "w-12 h-12 bg-gradient-to-t from-green-600 to-green-400 rounded-xl flex items-center justify-center shadow-lg transition-transform duration-300 ease-out group-hover:scale-110 group-hover:animate-bounce", children: /* @__PURE__ */ jsx(BsSpotify, { size: 35, className: "text-white" }) }),
+            /* @__PURE__ */ jsx("div", { className: `w-12 h-12 bg-gradient-to-t from-green-600 to-green-400 rounded-xl flex items-center justify-center shadow-lg transition-all duration-300 ease-out hover:scale-110 active:scale-95 ${activeApps.spotify ? "ring-2 ring-white/50" : ""}`, children: /* @__PURE__ */ jsx(BsSpotify, { size: 35, className: "text-white" }) }),
             hoveredIcon === "spotify" && /* @__PURE__ */ jsx(Tooltip, { text: "Spotify Playlist" })
           ]
         }
@@ -1699,7 +2237,7 @@ const DesktopDock = ({ onTerminalClick, onNotesClick, onGitHubClick }) => {
           onMouseLeave: () => setHoveredIcon(null),
           className: "relative",
           children: [
-            /* @__PURE__ */ jsx("div", { className: "w-12 h-12 bg-gradient-to-t from-purple-600 to-purple-400 rounded-xl flex items-center justify-center shadow-lg transition-transform duration-300 ease-out group-hover:scale-110 group-hover:animate-bounce", children: /* @__PURE__ */ jsx(FaLink, { size: 35, className: "text-white" }) }),
+            /* @__PURE__ */ jsx("div", { className: "w-12 h-12 bg-gradient-to-t from-purple-600 to-purple-400 rounded-xl flex items-center justify-center shadow-lg transition-all duration-300 ease-out hover:scale-110 active:scale-95", children: /* @__PURE__ */ jsx(FaLink, { size: 35, className: "text-white" }) }),
             hoveredIcon === "links" && /* @__PURE__ */ jsx(Tooltip, { text: "Contact Links" }),
             showLinksPopup && /* @__PURE__ */ jsx(LinksPopup, {})
           ]
@@ -1713,7 +2251,7 @@ const DesktopDock = ({ onTerminalClick, onNotesClick, onGitHubClick }) => {
           onMouseLeave: () => setHoveredIcon(null),
           className: "relative",
           children: [
-            /* @__PURE__ */ jsx("div", { className: "w-12 h-12 bg-gradient-to-t from-black to-black/60 rounded-xl flex items-center justify-center shadow-lg transition-transform duration-300 ease-out group-hover:scale-110 group-hover:animate-bounce", children: /* @__PURE__ */ jsx(RiTerminalFill, { size: 35, className: "text-white" }) }),
+            /* @__PURE__ */ jsx("div", { className: `w-12 h-12 bg-gradient-to-t from-black to-black/60 rounded-xl flex items-center justify-center shadow-lg transition-all duration-300 ease-out hover:scale-110 active:scale-95 ${activeApps.terminal ? "ring-2 ring-white/50" : ""}`, children: /* @__PURE__ */ jsx(RiTerminalFill, { size: 35, className: "text-white" }) }),
             hoveredIcon === "terminal" && /* @__PURE__ */ jsx(Tooltip, { text: "Terminal" })
           ]
         }
@@ -2053,30 +2591,29 @@ const NotesApp = ({ isOpen, onClose }) => {
         return "Notes";
     }
   };
-  return /* @__PURE__ */ jsx("div", { className: "fixed inset-0 bg-black/75 flex items-center justify-center z-50", children: /* @__PURE__ */ jsxs("div", { className: "bg-[#1d1d1f] rounded-lg shadow-xl max-w-4xl w-full max-h-[90vh] overflow-hidden p-0 relative", children: [
-    /* @__PURE__ */ jsxs("div", { className: "bg-gray-800 h-6 flex items-center space-x-2 px-4 rounded-t-lg sticky top-0 left-0 right-0 z-10", children: [
-      /* @__PURE__ */ jsx(
-        "button",
-        {
-          onClick: onClose,
-          className: "w-3 h-3 rounded-full bg-red-500 hover:bg-red-600 transition-colors"
-        }
-      ),
-      /* @__PURE__ */ jsx("div", { className: "w-3 h-3 rounded-full bg-yellow-500" }),
-      /* @__PURE__ */ jsx("div", { className: "w-3 h-3 rounded-full bg-green-500" }),
-      /* @__PURE__ */ jsx("span", { className: "text-sm text-gray-300 flex-grow text-center font-semibold", children: getWindowTitle() })
-    ] }),
-    /* @__PURE__ */ jsxs("div", { className: "overflow-y-auto p-6", style: { maxHeight: "calc(90vh - 1.5rem)" }, children: [
-      activeSection === "menu" && renderMenu(),
-      activeSection === "education" && renderEducation(),
-      activeSection === "experience" && renderExperience(),
-      activeSection === "courses" && renderCourses(),
-      activeSection === "skills" && renderSkills(),
-      activeSection === "roles" && renderExtraCurricularRoles(),
-      activeSection === "activities" && renderExtraCurricularActivities(),
-      activeSection === "competitions" && renderCompetitions()
-    ] })
-  ] }) });
+  return /* @__PURE__ */ jsx(
+    DraggableWindow,
+    {
+      title: getWindowTitle(),
+      onClose,
+      initialPosition: {
+        x: Math.floor(window.innerWidth * 0.3),
+        y: Math.floor(window.innerHeight * 0.2)
+      },
+      className: "w-[93vw] md:max-w-4xl max-h-[90vh]",
+      initialSize: { width: 700, height: 600 },
+      children: /* @__PURE__ */ jsxs("div", { className: "overflow-y-auto p-4 md:p-6", style: { maxHeight: "calc(90vh - 1.5rem)" }, children: [
+        activeSection === "menu" && renderMenu(),
+        activeSection === "education" && renderEducation(),
+        activeSection === "experience" && renderExperience(),
+        activeSection === "courses" && renderCourses(),
+        activeSection === "skills" && renderSkills(),
+        activeSection === "roles" && renderExtraCurricularRoles(),
+        activeSection === "activities" && renderExtraCurricularActivities(),
+        activeSection === "competitions" && renderCompetitions()
+      ] })
+    }
+  );
 };
 
 const GitHubViewer = ({ isOpen, onClose }) => {
@@ -2144,162 +2681,161 @@ const GitHubViewer = ({ isOpen, onClose }) => {
     }
   };
   if (!isOpen) return null;
-  return /* @__PURE__ */ jsx("div", { className: "fixed inset-0 bg-black/75 flex items-center justify-center z-50", children: /* @__PURE__ */ jsxs("div", { className: "bg-[#1d1d1f] rounded-lg shadow-xl max-w-4xl w-full max-h-[90vh] overflow-hidden p-0 relative", children: [
-    /* @__PURE__ */ jsxs("div", { className: "bg-gray-800 h-6 flex items-center space-x-2 px-4 rounded-t-lg sticky top-0 left-0 right-0 z-10", children: [
-      /* @__PURE__ */ jsx(
-        "button",
-        {
-          onClick: onClose,
-          className: "w-3 h-3 rounded-full bg-red-500 hover:bg-red-600 transition-colors"
-        }
-      ),
-      /* @__PURE__ */ jsx("div", { className: "w-3 h-3 rounded-full bg-yellow-500" }),
-      /* @__PURE__ */ jsx("div", { className: "w-3 h-3 rounded-full bg-green-500" }),
-      /* @__PURE__ */ jsx("span", { className: "text-sm text-gray-300 flex-grow text-center font-semibold", children: showStructure ? selectedProject?.title : "GitHub Projects" })
-    ] }),
-    /* @__PURE__ */ jsx("div", { className: "overflow-y-auto p-6", style: { maxHeight: "calc(90vh - 1.5rem)" }, children: !showStructure ? /* @__PURE__ */ jsxs(Fragment$1, { children: [
-      /* @__PURE__ */ jsx("h2", { className: "text-2xl font-bold mb-4 text-gray-200", children: "My Projects" }),
-      /* @__PURE__ */ jsx("div", { className: "grid grid-cols-1 md:grid-cols-2 gap-4", children: userConfig.projects.map((project) => /* @__PURE__ */ jsxs(
-        "div",
-        {
-          className: "bg-gray-800/50 p-4 rounded-lg cursor-pointer transition-colors hover:bg-gray-700/50",
-          onClick: () => handleProjectClick(project),
-          children: [
-            project.images && project.images.length > 0 && /* @__PURE__ */ jsx("div", { className: "w-full h-48 mb-3 overflow-hidden rounded-lg", children: /* @__PURE__ */ jsx(
-              "img",
-              {
-                src: project.images[0].url,
-                alt: project.images[0].alt,
-                className: "w-full h-full object-cover"
-              }
-            ) }),
-            /* @__PURE__ */ jsx("h3", { className: "text-xl font-semibold mb-2 text-gray-200", children: project.title }),
-            /* @__PURE__ */ jsx("p", { className: "text-gray-400 mb-2", children: project.description }),
-            /* @__PURE__ */ jsx("div", { className: "flex flex-wrap gap-2 mb-2", children: project.techStack.map((tech) => /* @__PURE__ */ jsx(
-              "span",
-              {
-                className: "px-2 py-1 bg-gray-700 rounded text-xs text-gray-300",
-                children: tech
-              },
-              tech
-            )) }),
-            /* @__PURE__ */ jsxs("div", { className: "flex gap-4", children: [
-              /* @__PURE__ */ jsxs(
-                "a",
+  return /* @__PURE__ */ jsx(
+    DraggableWindow,
+    {
+      title: showStructure ? selectedProject?.title || "GitHub Projects" : "GitHub Projects",
+      onClose,
+      initialPosition: {
+        x: Math.floor(window.innerWidth * 0.2),
+        y: Math.floor(window.innerHeight * 0.2)
+      },
+      className: "w-[93vw] md:max-w-4xl max-h-[90vh]",
+      initialSize: { width: 800, height: 600 },
+      children: /* @__PURE__ */ jsx("div", { className: "overflow-y-auto p-4 md:p-6", style: { maxHeight: "calc(90vh - 1.5rem)" }, children: !showStructure ? /* @__PURE__ */ jsxs(Fragment$1, { children: [
+        /* @__PURE__ */ jsx("h2", { className: "text-2xl font-bold mb-4 text-gray-200", children: "My Projects" }),
+        /* @__PURE__ */ jsx("div", { className: "grid grid-cols-1 md:grid-cols-2 gap-4", children: userConfig.projects.map((project) => /* @__PURE__ */ jsxs(
+          "div",
+          {
+            className: "bg-gray-800/50 p-4 rounded-lg cursor-pointer transition-colors hover:bg-gray-700/50",
+            onClick: () => handleProjectClick(project),
+            children: [
+              project.images && project.images.length > 0 && /* @__PURE__ */ jsx("div", { className: "w-full h-48 mb-3 overflow-hidden rounded-lg", children: /* @__PURE__ */ jsx(
+                "img",
                 {
-                  href: project.repoUrl,
-                  target: "_blank",
-                  rel: "noopener noreferrer",
-                  className: "flex items-center gap-2 text-sm hover:text-blue-400 text-gray-300",
-                  onClick: (e) => e.stopPropagation(),
-                  children: [
-                    /* @__PURE__ */ jsx(FaGithub, {}),
-                    /* @__PURE__ */ jsx("span", { children: "Repository" })
-                  ]
+                  src: project.images[0].url,
+                  alt: project.images[0].alt,
+                  className: "w-full h-full object-cover"
                 }
-              ),
-              project.liveUrl && /* @__PURE__ */ jsxs(
-                "a",
+              ) }),
+              /* @__PURE__ */ jsx("h3", { className: "text-xl font-semibold mb-2 text-gray-200", children: project.title }),
+              /* @__PURE__ */ jsx("p", { className: "text-gray-400 mb-2", children: project.description }),
+              /* @__PURE__ */ jsx("div", { className: "flex flex-wrap gap-2 mb-2", children: project.techStack.map((tech) => /* @__PURE__ */ jsx(
+                "span",
                 {
-                  href: project.liveUrl,
-                  target: "_blank",
-                  rel: "noopener noreferrer",
-                  className: "flex items-center gap-2 text-sm hover:text-blue-400 text-gray-300",
-                  onClick: (e) => e.stopPropagation(),
-                  children: [
-                    /* @__PURE__ */ jsx(FaExternalLinkAlt, {}),
-                    /* @__PURE__ */ jsx("span", { children: "Live Demo" })
-                  ]
-                }
-              )
-            ] })
-          ]
-        },
-        project.id
-      )) })
-    ] }) : /* @__PURE__ */ jsxs("div", { children: [
-      /* @__PURE__ */ jsxs(
-        "button",
-        {
-          onClick: handleBackClick,
-          className: "flex items-center gap-2 text-gray-300 hover:text-gray-100 mb-4",
-          children: [
-            /* @__PURE__ */ jsx(FaChevronLeft, {}),
-            /* @__PURE__ */ jsx("span", { children: "Back to Projects" })
-          ]
-        }
-      ),
-      /* @__PURE__ */ jsxs("div", { className: "grid grid-cols-1 md:grid-cols-2 gap-4", children: [
-        /* @__PURE__ */ jsxs("div", { className: "bg-gray-800/50 rounded-lg p-4", children: [
-          /* @__PURE__ */ jsx("h3", { className: "text-xl font-semibold mb-4 text-gray-200", children: "Project Structure" }),
-          /* @__PURE__ */ jsx("div", { className: "font-mono text-sm", children: selectedProject && renderProjectStructure(selectedProject.structure) })
-        ] }),
-        selectedProject && selectedProject.images && selectedProject.images.length > 0 && /* @__PURE__ */ jsxs("div", { className: "bg-gray-800/50 rounded-lg p-4", children: [
-          /* @__PURE__ */ jsx("h3", { className: "text-xl font-semibold mb-4 text-gray-200", children: "Screenshots" }),
-          /* @__PURE__ */ jsxs("div", { className: "relative", children: [
-            /* @__PURE__ */ jsx("div", { className: "rounded-lg overflow-hidden mb-2", children: /* @__PURE__ */ jsx(
-              "img",
-              {
-                src: selectedProject.images[activeImageIndex].url,
-                alt: selectedProject.images[activeImageIndex].alt,
-                className: "w-full object-cover"
-              }
-            ) }),
-            /* @__PURE__ */ jsx("div", { className: "text-sm text-gray-300 mb-3", children: selectedProject.images[activeImageIndex].description }),
-            selectedProject.images.length > 1 && /* @__PURE__ */ jsxs("div", { className: "flex justify-between mt-2", children: [
-              /* @__PURE__ */ jsx(
-                "button",
-                {
-                  onClick: handlePrevImage,
-                  className: "bg-gray-700 hover:bg-gray-600 text-white rounded-full w-8 h-8 flex items-center justify-center",
-                  children: "←"
-                }
-              ),
-              /* @__PURE__ */ jsxs("span", { className: "text-gray-400", children: [
-                activeImageIndex + 1,
-                " / ",
-                selectedProject.images.length
-              ] }),
-              /* @__PURE__ */ jsx(
-                "button",
-                {
-                  onClick: handleNextImage,
-                  className: "bg-gray-700 hover:bg-gray-600 text-white rounded-full w-8 h-8 flex items-center justify-center",
-                  children: "→"
-                }
-              )
-            ] })
+                  className: "px-2 py-1 bg-gray-700 rounded text-xs text-gray-300",
+                  children: tech
+                },
+                tech
+              )) }),
+              /* @__PURE__ */ jsxs("div", { className: "flex gap-4", children: [
+                /* @__PURE__ */ jsxs(
+                  "a",
+                  {
+                    href: project.repoUrl,
+                    target: "_blank",
+                    rel: "noopener noreferrer",
+                    className: "flex items-center gap-2 text-sm hover:text-blue-400 text-gray-300",
+                    onClick: (e) => e.stopPropagation(),
+                    children: [
+                      /* @__PURE__ */ jsx(FaGithub, {}),
+                      /* @__PURE__ */ jsx("span", { children: "Repository" })
+                    ]
+                  }
+                ),
+                project.liveUrl && /* @__PURE__ */ jsxs(
+                  "a",
+                  {
+                    href: project.liveUrl,
+                    target: "_blank",
+                    rel: "noopener noreferrer",
+                    className: "flex items-center gap-2 text-sm hover:text-blue-400 text-gray-300",
+                    onClick: (e) => e.stopPropagation(),
+                    children: [
+                      /* @__PURE__ */ jsx(FaExternalLinkAlt, {}),
+                      /* @__PURE__ */ jsx("span", { children: "Live Demo" })
+                    ]
+                  }
+                )
+              ] })
+            ]
+          },
+          project.id
+        )) })
+      ] }) : /* @__PURE__ */ jsxs("div", { children: [
+        /* @__PURE__ */ jsxs(
+          "button",
+          {
+            onClick: handleBackClick,
+            className: "flex items-center gap-2 text-gray-300 hover:text-gray-100 mb-4",
+            children: [
+              /* @__PURE__ */ jsx(FaChevronLeft, {}),
+              /* @__PURE__ */ jsx("span", { children: "Back to Projects" })
+            ]
+          }
+        ),
+        /* @__PURE__ */ jsxs("div", { className: "grid grid-cols-1 md:grid-cols-2 gap-4", children: [
+          /* @__PURE__ */ jsxs("div", { className: "bg-gray-800/50 rounded-lg p-4", children: [
+            /* @__PURE__ */ jsx("h3", { className: "text-xl font-semibold mb-4 text-gray-200", children: "Project Structure" }),
+            /* @__PURE__ */ jsx("div", { className: "font-mono text-sm", children: selectedProject && renderProjectStructure(selectedProject.structure) })
           ] }),
-          selectedProject.repoUrl && /* @__PURE__ */ jsx("div", { className: "mt-4", children: /* @__PURE__ */ jsxs(
-            "a",
-            {
-              href: selectedProject.repoUrl,
-              target: "_blank",
-              rel: "noopener noreferrer",
-              className: "flex items-center gap-2 text-sm hover:text-blue-400 text-gray-300 bg-gray-700/50 p-2 rounded-lg",
-              children: [
-                /* @__PURE__ */ jsx(FaGithub, {}),
-                /* @__PURE__ */ jsx("span", { children: "Visit GitHub Repository" })
-              ]
-            }
-          ) }),
-          selectedProject.liveUrl && /* @__PURE__ */ jsx("div", { className: "mt-4", children: /* @__PURE__ */ jsxs(
-            "a",
-            {
-              href: selectedProject.liveUrl,
-              target: "_blank",
-              rel: "noopener noreferrer",
-              className: "flex items-center gap-2 text-sm hover:text-blue-400 text-gray-300 bg-gray-700/50 p-2 rounded-lg",
-              children: [
-                /* @__PURE__ */ jsx(FaLink, {}),
-                /* @__PURE__ */ jsx("span", { children: "Visit Live Site" })
-              ]
-            }
-          ) })
+          selectedProject && selectedProject.images && selectedProject.images.length > 0 && /* @__PURE__ */ jsxs("div", { className: "bg-gray-800/50 rounded-lg p-4", children: [
+            /* @__PURE__ */ jsx("h3", { className: "text-xl font-semibold mb-4 text-gray-200", children: "Screenshots" }),
+            /* @__PURE__ */ jsxs("div", { className: "relative", children: [
+              /* @__PURE__ */ jsx("div", { className: "rounded-lg overflow-hidden mb-2", children: /* @__PURE__ */ jsx(
+                "img",
+                {
+                  src: selectedProject.images[activeImageIndex].url,
+                  alt: selectedProject.images[activeImageIndex].alt,
+                  className: "w-full object-cover"
+                }
+              ) }),
+              /* @__PURE__ */ jsx("div", { className: "text-sm text-gray-300 mb-3", children: selectedProject.images[activeImageIndex].description }),
+              selectedProject.images.length > 1 && /* @__PURE__ */ jsxs("div", { className: "flex justify-between mt-2", children: [
+                /* @__PURE__ */ jsx(
+                  "button",
+                  {
+                    onClick: handlePrevImage,
+                    className: "bg-gray-700 hover:bg-gray-600 text-white rounded-full w-8 h-8 flex items-center justify-center",
+                    children: "←"
+                  }
+                ),
+                /* @__PURE__ */ jsxs("span", { className: "text-gray-400", children: [
+                  activeImageIndex + 1,
+                  " / ",
+                  selectedProject.images.length
+                ] }),
+                /* @__PURE__ */ jsx(
+                  "button",
+                  {
+                    onClick: handleNextImage,
+                    className: "bg-gray-700 hover:bg-gray-600 text-white rounded-full w-8 h-8 flex items-center justify-center",
+                    children: "→"
+                  }
+                )
+              ] })
+            ] }),
+            selectedProject.repoUrl && /* @__PURE__ */ jsx("div", { className: "mt-4", children: /* @__PURE__ */ jsxs(
+              "a",
+              {
+                href: selectedProject.repoUrl,
+                target: "_blank",
+                rel: "noopener noreferrer",
+                className: "flex items-center gap-2 text-sm hover:text-blue-400 text-gray-300 bg-gray-700/50 p-2 rounded-lg",
+                children: [
+                  /* @__PURE__ */ jsx(FaGithub, {}),
+                  /* @__PURE__ */ jsx("span", { children: "Visit GitHub Repository" })
+                ]
+              }
+            ) }),
+            selectedProject.liveUrl && /* @__PURE__ */ jsx("div", { className: "mt-4", children: /* @__PURE__ */ jsxs(
+              "a",
+              {
+                href: selectedProject.liveUrl,
+                target: "_blank",
+                rel: "noopener noreferrer",
+                className: "flex items-center gap-2 text-sm hover:text-blue-400 text-gray-300 bg-gray-700/50 p-2 rounded-lg",
+                children: [
+                  /* @__PURE__ */ jsx(FaLink, {}),
+                  /* @__PURE__ */ jsx("span", { children: "Visit Live Site" })
+                ]
+              }
+            ) })
+          ] })
         ] })
-      ] })
-    ] }) })
-  ] }) });
+      ] }) })
+    }
+  );
 };
 
 function Desktop({ initialBg, backgroundMap }) {
@@ -2308,19 +2844,35 @@ function Desktop({ initialBg, backgroundMap }) {
   const [showNotes, setShowNotes] = useState(false);
   const [showGitHub, setShowGitHub] = useState(false);
   const [showResume, setShowResume] = useState(false);
+  const [showSpotify, setShowSpotify] = useState(false);
   const [currentTutorialStep, setCurrentTutorialStep] = useState(0);
-  const [showTutorial, setShowTutorial] = useState(true);
+  const [showTutorial, setShowTutorial] = useState(false);
+  const [activeApps, setActiveApps] = useState({
+    terminal: false,
+    notes: false,
+    github: false,
+    resume: false,
+    spotify: false
+  });
   useEffect(() => {
     const lastBg = localStorage.getItem("lastBackground");
-    setShowTutorial(true);
+    const hasCompletedTutorial = localStorage.getItem("hasCompletedTutorial") === "true";
     if (lastBg === initialBg) {
       const bgKeys = Object.keys(backgroundMap);
       const availableBgs = bgKeys.filter((bg) => bg !== lastBg);
       const newBg = availableBgs[Math.floor(Math.random() * availableBgs.length)];
       setCurrentBg(newBg);
     }
+    if (!hasCompletedTutorial) {
+      setShowTutorial(true);
+    }
     localStorage.setItem("lastBackground", currentBg);
   }, [initialBg, backgroundMap]);
+  const resetTutorial = () => {
+    setCurrentTutorialStep(0);
+    setShowTutorial(true);
+    localStorage.setItem("hasCompletedTutorial", "false");
+  };
   const tutorialSteps = [
     {
       title: "Welcome to My Portfolio! 👋",
@@ -2371,7 +2923,20 @@ function Desktop({ initialBg, backgroundMap }) {
       setCurrentTutorialStep((prev) => prev + 1);
     } else {
       setShowTutorial(false);
+      localStorage.setItem("hasCompletedTutorial", "true");
     }
+  };
+  const handleAppOpen = (app) => {
+    setActiveApps((prev) => ({
+      ...prev,
+      [app]: true
+    }));
+  };
+  const handleAppClose = (app) => {
+    setActiveApps((prev) => ({
+      ...prev,
+      [app]: false
+    }));
   };
   return /* @__PURE__ */ jsxs("div", { className: "relative w-screen h-screen overflow-hidden", children: [
     /* @__PURE__ */ jsx(
@@ -2381,28 +2946,69 @@ function Desktop({ initialBg, backgroundMap }) {
         style: { backgroundImage: `url(${backgroundMap[currentBg]})` }
       }
     ),
-    /* @__PURE__ */ jsx("div", { className: "relative z-10", children: /* @__PURE__ */ jsx(MacToolbar, {}) }),
-    /* @__PURE__ */ jsx("div", { className: "relative z-0 flex items-center justify-center h-[calc(100vh-10rem)] md:h-[calc(100vh-1.5rem)] pt-6", children: showTerminal && /* @__PURE__ */ jsx(MacTerminal, { onClose: () => setShowTerminal(false) }) }),
+    /* @__PURE__ */ jsx("div", { className: "relative z-10", children: /* @__PURE__ */ jsx(
+      MacToolbar,
+      {
+        onTerminalClick: () => setShowTerminal(true),
+        onShowTutorial: resetTutorial
+      }
+    ) }),
+    /* @__PURE__ */ jsx("div", { className: "relative z-0 flex items-center justify-center h-[calc(100vh-10rem)] md:h-[calc(100vh-1.5rem)] pt-6" }),
     /* @__PURE__ */ jsx(
       MobileDock,
       {
-        onGitHubClick: () => setShowGitHub(true),
-        onNotesClick: () => setShowNotes(true),
-        onResumeClick: () => setShowResume(true),
-        onTerminalClick: () => setShowTerminal(true)
+        onGitHubClick: () => {
+          setShowGitHub(true);
+          handleAppOpen("github");
+        },
+        onNotesClick: () => {
+          setShowNotes(true);
+          handleAppOpen("notes");
+        },
+        onResumeClick: () => {
+          setShowResume(true);
+          handleAppOpen("resume");
+        },
+        onTerminalClick: () => {
+          setShowTerminal(true);
+          handleAppOpen("terminal");
+        }
       }
     ),
     /* @__PURE__ */ jsx(
       DesktopDock,
       {
-        onTerminalClick: () => setShowTerminal(true),
-        onNotesClick: () => setShowNotes(true),
-        onGitHubClick: () => setShowGitHub(true)
+        onTerminalClick: () => {
+          setShowTerminal(true);
+          handleAppOpen("terminal");
+        },
+        onNotesClick: () => {
+          setShowNotes(true);
+          handleAppOpen("notes");
+        },
+        onGitHubClick: () => {
+          setShowGitHub(true);
+          handleAppOpen("github");
+        },
+        activeApps
       }
     ),
-    /* @__PURE__ */ jsx(NotesApp, { isOpen: showNotes, onClose: () => setShowNotes(false) }),
-    /* @__PURE__ */ jsx(GitHubViewer, { isOpen: showGitHub, onClose: () => setShowGitHub(false) }),
-    /* @__PURE__ */ jsx(ResumeViewer, { isOpen: showResume, onClose: () => setShowResume(false) }),
+    /* @__PURE__ */ jsx(NotesApp, { isOpen: showNotes, onClose: () => {
+      setShowNotes(false);
+      handleAppClose("notes");
+    } }),
+    /* @__PURE__ */ jsx(GitHubViewer, { isOpen: showGitHub, onClose: () => {
+      setShowGitHub(false);
+      handleAppClose("github");
+    } }),
+    /* @__PURE__ */ jsx(ResumeViewer, { isOpen: showResume, onClose: () => {
+      setShowResume(false);
+      handleAppClose("resume");
+    } }),
+    /* @__PURE__ */ jsx(MacTerminal, { isOpen: showTerminal, onClose: () => {
+      setShowTerminal(false);
+      handleAppClose("terminal");
+    } }),
     showTutorial && /* @__PURE__ */ jsx("div", { className: "fixed right-4 top-1/2 transform -translate-y-1/2 z-50", children: /* @__PURE__ */ jsxs("div", { className: "bg-gray-800/90 backdrop-blur-sm text-white p-4 rounded-lg shadow-xl max-w-xs animate-fade-in", children: [
       /* @__PURE__ */ jsx("h3", { className: "text-lg font-semibold mb-2", children: tutorialSteps[currentTutorialStep].title }),
       /* @__PURE__ */ jsx("p", { className: "text-sm text-gray-300 mb-4", children: tutorialSteps[currentTutorialStep].content }),

@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { userConfig } from '../../config/userConfig';
+import DraggableWindow from './DraggableWindow';
 
 interface ResumeViewerProps {
   isOpen: boolean;
@@ -23,29 +24,21 @@ export default function ResumeViewer({ isOpen, onClose }: ResumeViewerProps) {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm">
-      <div className="w-[90%] h-[90%] max-w-5xl bg-gray-800 rounded-lg shadow-2xl overflow-hidden">
-        {/* Window Title Bar */}
-        <div className="h-8 bg-gray-700 flex items-center justify-between px-4">
-          <div className="flex items-center space-x-2">
-            <button
-              onClick={onClose}
-              className="w-3 h-3 rounded-full bg-red-500 hover:bg-red-600 transition-colors"
-            />
-            <button className="w-3 h-3 rounded-full bg-yellow-500 hover:bg-yellow-600 transition-colors" />
-            <button className="w-3 h-3 rounded-full bg-green-500 hover:bg-green-600 transition-colors" />
-          </div>
-          <div className="text-gray-300 text-sm font-medium">Resume.pdf</div>
-          <div className="w-12" /> {/* Spacer for symmetry */}
-        </div>
-
-        {/* PDF Viewer */}
-        <div className="h-[calc(100%-2rem)] bg-white">
-          <figure className="h-full">
-            <object data={userConfig.resume.localPath} type="application/pdf" width="100%" className="h-full"></object>
-          </figure>
-        </div>
+    <DraggableWindow
+      title="Resume.pdf"
+      onClose={onClose}
+      initialPosition={{ 
+        x: Math.floor(window.innerWidth * 0.4), 
+        y: Math.floor(window.innerHeight * 0.2) 
+      }}
+      className="w-[90%] h-[90%] max-w-5xl"
+      initialSize={{ width: 800, height: 600 }}
+    >
+      <div className="h-full bg-white">
+        <figure className="h-full">
+          <object data={userConfig.resume.localPath} type="application/pdf" width="100%" className="h-full"></object>
+        </figure>
       </div>
-    </div>
+    </DraggableWindow>
   );
 } 

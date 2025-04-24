@@ -25,12 +25,21 @@ export default function Desktop({ initialBg, backgroundMap }: AppLayoutProps) {
   const [showNotes, setShowNotes] = useState(false);
   const [showGitHub, setShowGitHub] = useState(false);
   const [showResume, setShowResume] = useState(false);
+  const [showSpotify, setShowSpotify] = useState(false);
   const [currentTutorialStep, setCurrentTutorialStep] = useState(0);
-  const [showTutorial, setShowTutorial] = useState(true);
+  const [showTutorial, setShowTutorial] = useState(false);
+
+  const [activeApps, setActiveApps] = useState({
+    terminal: false,
+    notes: false,
+    github: false,
+    resume: false,
+    spotify: false,
+  });
 
   useEffect(() => {
     const lastBg = localStorage.getItem('lastBackground');
-    setShowTutorial(true);
+    const hasCompletedTutorial = localStorage.getItem('hasCompletedTutorial') === 'true';
 
     if (lastBg === initialBg) {
       const bgKeys = Object.keys(backgroundMap);
@@ -40,8 +49,20 @@ export default function Desktop({ initialBg, backgroundMap }: AppLayoutProps) {
       setCurrentBg(newBg);
     }
 
+    // Only show tutorial if user hasn't completed it before
+    if (!hasCompletedTutorial) {
+      setShowTutorial(true);
+    }
+
     localStorage.setItem('lastBackground', currentBg);
   }, [initialBg, backgroundMap]);
+
+  // Add this function to reset tutorial
+  const resetTutorial = () => {
+    setCurrentTutorialStep(0);
+    setShowTutorial(true);
+    localStorage.setItem('hasCompletedTutorial', 'false');
+  };
 
   const tutorialSteps: TutorialStep[] = [
     {
@@ -95,7 +116,22 @@ export default function Desktop({ initialBg, backgroundMap }: AppLayoutProps) {
       setCurrentTutorialStep(prev => prev + 1);
     } else {
       setShowTutorial(false);
+      localStorage.setItem('hasCompletedTutorial', 'true');
     }
+  };
+
+  const handleAppOpen = (app: keyof typeof activeApps) => {
+    setActiveApps(prev => ({
+      ...prev,
+      [app]: true
+    }));
+  };
+
+  const handleAppClose = (app: keyof typeof activeApps) => {
+    setActiveApps(prev => ({
+      ...prev,
+      [app]: false
+    }));
   };
 
   return (
@@ -106,28 +142,65 @@ export default function Desktop({ initialBg, backgroundMap }: AppLayoutProps) {
       />
 
       <div className='relative z-10'>
-        <MacToolbar />
+        <MacToolbar 
+          onTerminalClick={() => setShowTerminal(true)} 
+          onShowTutorial={resetTutorial}
+        />
       </div>
 
       <div className='relative z-0 flex items-center justify-center h-[calc(100vh-10rem)] md:h-[calc(100vh-1.5rem)] pt-6'>
-        {showTerminal && <MacTerminal onClose={() => setShowTerminal(false)} />}
       </div>
 
       <MobileDock
-        onGitHubClick={() => setShowGitHub(true)}
-        onNotesClick={() => setShowNotes(true)}
-        onResumeClick={() => setShowResume(true)}
-        onTerminalClick={() => setShowTerminal(true)}
+        onGitHubClick={() => {
+          setShowGitHub(true);
+          handleAppOpen('github');
+        }}
+        onNotesClick={() => {
+          setShowNotes(true);
+          handleAppOpen('notes');
+        }}
+        onResumeClick={() => {
+          setShowResume(true);
+          handleAppOpen('resume');
+        }}
+        onTerminalClick={() => {
+          setShowTerminal(true);
+          handleAppOpen('terminal');
+        }}
       />
       <DesktopDock
-        onTerminalClick={() => setShowTerminal(true)}
-        onNotesClick={() => setShowNotes(true)}
-        onGitHubClick={() => setShowGitHub(true)}
+        onTerminalClick={() => {
+          setShowTerminal(true);
+          handleAppOpen('terminal');
+        }}
+        onNotesClick={() => {
+          setShowNotes(true);
+          handleAppOpen('notes');
+        }}
+        onGitHubClick={() => {
+          setShowGitHub(true);
+          handleAppOpen('github');
+        }}
+        activeApps={activeApps}
       />
 
-      <NotesApp isOpen={showNotes} onClose={() => setShowNotes(false)} />
-      <GitHubViewer isOpen={showGitHub} onClose={() => setShowGitHub(false)} />
-      <ResumeViewer isOpen={showResume} onClose={() => setShowResume(false)} />
+      <NotesApp isOpen={showNotes} onClose={() => {
+        setShowNotes(false);
+        handleAppClose('notes');
+      }} />
+      <GitHubViewer isOpen={showGitHub} onClose={() => {
+        setShowGitHub(false);
+        handleAppClose('github');
+      }} />
+      <ResumeViewer isOpen={showResume} onClose={() => {
+        setShowResume(false);
+        handleAppClose('resume');
+      }} />
+      <MacTerminal isOpen={showTerminal} onClose={() => {
+        setShowTerminal(false);
+        handleAppClose('terminal');
+      }} />
       {showTutorial && (
         <div className="fixed right-4 top-1/2 transform -translate-y-1/2 z-50">
           <div className="bg-gray-800/90 backdrop-blur-sm text-white p-4 rounded-lg shadow-xl max-w-xs animate-fade-in">

@@ -70,9 +70,9 @@ export const userConfig = {
             year: "2023-2024",
             images: [
                 {
-                    url: "https://scontent.fcai19-7.fna.fbcdn.net/v/t1.6435-9/34643066_1776660339023309_3618202826653564928_n.png?_nc_cat=102&ccb=1-7&_nc_sid=127cfc&_nc_ohc=2bh4W4H09QMQ7kNvwGKarTa&_nc_oc=AdmHU5Y97WNIrlJp9clZ9e7tFpBVEkmcCwKO3I7K3Wv31lt1SOaFny9tPo-TT6CN1Cc&_nc_zt=23&_nc_ht=scontent.fcai19-7.fna&_nc_gid=aAHjEDXbI0sySz-Wpg7IRA&oh=00_AfGVxtNPE_faYryNMnshNnXfSkvbZwG97CUi7YMojNJSGw&oe=6828684C",
+                    url: "https://iti.gov.eg/assets/images/ColoredLogo.svg",
                     alt: "ITI",
-                    description: "ITI Campus"
+                    // description: "ITI Campus"
                 }
             ]
         },
@@ -84,7 +84,7 @@ export const userConfig = {
             year: "2024",
             images: [
                 {
-                    url: "https://scontent.fcai19-7.fna.fbcdn.net/v/t39.30808-6/395134646_122098455926090715_7710702962729537293_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=qWHQErYWbJ8Q7kNvwEVP8oB&_nc_oc=AdnccH6iyHJ7pP7oaw3TbsmcIlL5SC-ocy7ydfg6TI4UeT2qCiph6qcvzEr-9GnSTH0&_nc_zt=23&_nc_ht=scontent.fcai19-7.fna&_nc_gid=37ovUZT5L_INunwD2NkYQA&oh=00_AfHQ_Cw4pz6kpPPTDrNPEmqiV0fQ276sXRXTdLbk3CPpxg&oe=6806F0B9",
+                    url: "https://depi.gov.eg/assets/images/proAr.png",
                     alt: "DEPI",
                     // description: "DEPI Logo"
                 }
@@ -125,42 +125,37 @@ export const userConfig = {
             year: "2023-2024",
             images: [
                 {
-                    url: "https://scontent.fcai19-7.fna.fbcdn.net/v/t39.30808-6/486552101_1079199274242503_2182012264778860651_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=Ig6nvZbGJeQQ7kNvwFEMEZJ&_nc_oc=AdlabRhbe8nd5HC9X5BXuZN0k3NCXb7DUVE2O7XmUkYH1fhW711l8gUvSfzOo5410ZU&_nc_zt=23&_nc_ht=scontent.fcai19-7.fna&_nc_gid=h6MzxRBHoHxP_B0XuRsSWA&oh=00_AfHCK5Fk3Hy0k5Dz0wZqipOVMduukf-lPL8kpNwQ7BuR_g&oe=6807009A",
+                    url: "https://i.ibb.co/FbSmTsBw/486635391-1079182187577545-400541279663759578-n.jpg",
                     alt: "NUICPC",
                     // description: "NUICPC Campus"
                 },
                 {
-                    url: "https://scontent.fcai19-7.fna.fbcdn.net/v/t39.30808-6/487803199_1081518930677204_2426192278524131232_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=127cfc&_nc_ohc=bToX8lkaHTMQ7kNvwG8TdRi&_nc_oc=AdmjaGDIVnyFC3nGbr7lpnxylfYSWuuU7LHPeBspEe7Hj7RspTz2iXIT9xOa_fCYIbM&_nc_zt=23&_nc_ht=scontent.fcai19-7.fna&_nc_gid=TZP48-MxXopnfgBqCk2CCQ&oh=00_AfHpIzBsGZwMi0vqoAF1JYN3UI_xfOSn_FNQmWQIHTOh8g&oe=6806E475",
+                    url: "https://i.ibb.co/1fLrcywC/487093779-1079182100910887-5326561587880729477-n.jpg",
                     alt: "NUICPC",
                     // description: "NUICPC Campus"
                 },
                 {
-                    url: "https://scontent.fcai19-7.fna.fbcdn.net/v/t39.30808-6/487093779_1079182100910887_5326561587880729477_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=127cfc&_nc_ohc=6SeZGzJlCHAQ7kNvwHiSgKR&_nc_oc=Adns485WxMZal8W0rCCGUuWMyEmPmBbF50bJvJMbymlAn64vpxmAc6rjX0mnjVhVKx4&_nc_zt=23&_nc_ht=scontent.fcai19-7.fna&_nc_gid=XvdVjZkFOUVoiGlkHeLjiw&oh=00_AfEtI82S7CWI-VnC3dR8E-D2yhx_QJyCpQ8JoLEHF6xt-Q&oe=6806D01A",
+                    url: "https://i.ibb.co/mVJBpngp/486181151-1075334944628936-2845216629795518112-n.jpg",
                     alt: "NUICPC",
                     // description: "NUICPC Campus"
                 },
                 {
-                    url: "https://scontent.fcai19-7.fna.fbcdn.net/v/t39.30808-6/486635391_1079182187577545_400541279663759578_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=127cfc&_nc_ohc=IAZjJj7r4O8Q7kNvwE3AJj7&_nc_oc=AdlBsjO4FJ4ulyMyMED7zXLb5iBijC3FLZFr5Z9jBBcz2bB7Jkyn7XBbrmOjPVPiM4Y&_nc_zt=23&_nc_ht=scontent.fcai19-7.fna&_nc_gid=_8O6cFxxYzrcgNlbsjGyKg&oh=00_AfERVRXgG2VxoOHxCF3ruQPv4Nr0YJ5nTnmgMRvxKyt9VA&oe=6806EA44",
+                    url: "https://i.ibb.co/yn7ccHM1/486507182-1075334774628953-7774379668898780058-n.jpg",
                     alt: "NUICPC",
                     // description: "NUICPC Campus"
                 },
                 {
-                    url: "https://scontent.fcai19-7.fna.fbcdn.net/v/t39.30808-6/482027750_1063466179149146_4344066305683793822_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=127cfc&_nc_ohc=iUXvI2zd3wAQ7kNvwHu1OEg&_nc_oc=Admb_rDL0b8dejNC0mwgoPYe8_z3qB1H2RUMW4YoQNVRiJvllFcxda0Y06w-jvpMMLQ&_nc_zt=23&_nc_ht=scontent.fcai19-7.fna&_nc_gid=QTNJQHoRg0tm4RF16pWT5w&oh=00_AfGuQk8kp85E7SGZg4aceRaa1j-4_rNvkD0JoBJbfGVftw&oe=6806E134",
+                    url: "https://i.ibb.co/35xMtCDV/486104871-1075333997962364-6362307301859416001-n.jpg",
                     alt: "NUICPC",
                     // description: "NUICPC Campus"
                 },
                 {
-                    url: "https://scontent.fcai19-7.fna.fbcdn.net/v/t39.30808-6/486507182_1075334774628953_7774379668898780058_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=833d8c&_nc_ohc=ji9vikzmg0cQ7kNvwFz_1Zm&_nc_oc=AdnuoVlWjdOQHMx-8KcQOycVaUiJfQl9H47soE4FEtOPC30B4rPyx5kg_gvlffqmtLk&_nc_zt=23&_nc_ht=scontent.fcai19-7.fna&_nc_gid=xsJxnuJ-_EENzZsGG3LOfg&oh=00_AfEc0FMZaBH0XDVr5KpJFM9btMSyAaP9818471rqdWIhrQ&oe=680705A6",
+                    url: "https://i.ibb.co/fzL5qvvS/486248194-1074582274704203-6554786202979315108-n.jpg",
                     alt: "NUICPC",
                     // description: "NUICPC Campus"
                 },
                 {
-                    url: "https://scontent.fcai19-7.fna.fbcdn.net/v/t39.30808-6/487493482_1081518997343864_4066413282342283933_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=127cfc&_nc_ohc=RXdT9NJjVf0Q7kNvwGEyAIN&_nc_oc=AdkresiErTCubV9WbJIB6EWQ_a1O55EeCITxDL824xZbMd8Yf6h-zoOnI25bZeERrCY&_nc_zt=23&_nc_ht=scontent.fcai19-7.fna&_nc_gid=xm8tcFVk4onChdL7gczyJw&oh=00_AfH9bTusfY6L-72iYBeajJNzWAy5kvmb20PqXY_PyaELig&oe=6806F6EC",
-                    alt: "NUICPC",
-                    // description: "NUICPC Campus"
-                },
-                {
-                    url: "https://scontent.fcai19-7.fna.fbcdn.net/v/t39.30808-6/480963441_1074286478067116_5784537412456976186_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=833d8c&_nc_ohc=P5Q28jPJ9nIQ7kNvwHhQXeM&_nc_oc=AdmFjIml6r6y7nyl7EzgA5A7pIcVMnUnj91WF702aBjt6qjyCNrSOtZ2x8unOdeZtko&_nc_zt=23&_nc_ht=scontent.fcai19-7.fna&_nc_gid=XOk3PbxzJfliIuS1JBV_JQ&oh=00_AfEN4eRN4moWd8EIS29aNBPrgJm8o01AnwKe27F_68W6Kw&oe=6806F993",
+                    url: "https://i.ibb.co/VYxSXZF5/483525641-1070070571822040-3631060112169135578-n.jpg",
                     alt: "NUICPC",
                     // description: "NUICPC Campus"
                 }
@@ -186,26 +181,67 @@ export const userConfig = {
             year: "2021-2024",
             images: [
                 {
-                    url: "https://scontent.fcai19-7.fna.fbcdn.net/v/t39.30808-6/484381461_1069479998547764_3349306911678016045_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=833d8c&_nc_ohc=ZLOYTjM-xXAQ7kNvwGNdhe-&_nc_oc=AdnbiiZQFf4nRWUCRzFiEux1FV_eZiIP8dKkwjewfQsN78rZssnvYq2lkK2PvjvujF4&_nc_zt=23&_nc_ht=scontent.fcai19-7.fna&_nc_gid=kbg-A_OYirwtcuwFxankwA&oh=00_AfFWHg144Xq2x0Z1F9sTqwJoEjbmMegODBNsLaXiY7sEsA&oe=6806E331",
+                    url: "https://i.ibb.co/Y43vdxrV/484501388-1069637098532054-11435862832739630-n.jpg",
                     alt: "NUICPC",
                 },
                 {
-                    url: "https://scontent.fcai19-7.fna.fbcdn.net/v/t39.30808-6/486111099_1075334037962360_2496524144509107583_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=833d8c&_nc_ohc=sKKwkUNTeUMQ7kNvwH3UvvC&_nc_oc=AdlPZQ78vfKhpsZaq4z-7f1phmQtbBy42Z9-LgaFErT9vzB3HTM4Q9Jn3rrF_4F5ZXg&_nc_zt=23&_nc_ht=scontent.fcai19-7.fna&_nc_gid=YOE8oOZD-oTjlkjeuOZ2sA&oh=00_AfE6K5qoFhSmqWIutJJ00kYG0h4aQjHBBf4sRGCNTPfhQw&oe=6806E0D1",
+                    url: "https://i.ibb.co/WWBPM6GG/484804363-1069556495206781-5476304623000762204-n.jpg",
                     alt: "Nile University",
                     // description: "Nile University Campus"
                 },
                 {
-                    url: "https://scontent.fcai19-7.fna.fbcdn.net/v/t39.30808-6/483525641_1070070571822040_3631060112169135578_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=833d8c&_nc_ohc=DqR3PHrPgWoQ7kNvwF1c4TX&_nc_oc=Admq-2OmYR1nCDaPVkaTiJlhut_7vivZ9meVdz88Dl1m4r3G4cY69MqBzyi71JB37mI&_nc_zt=23&_nc_ht=scontent.fcai19-7.fna&_nc_gid=90rrrJijScH4H0TevbA3Cw&oh=00_AfHTggq_0CwOL5CQ0BRwqXYQQhRtsXgl8nzwxFN5DadeNg&oe=6806CEDF",
+                    url: "https://i.ibb.co/wNFg7VkR/484643522-1069479561881141-6397451359649224021-n.jpg",
                     alt: "Nile University",
                     // description: "Nile University Campus"
                 },
                 {
-                    url: "https://scontent.fcai19-7.fna.fbcdn.net/v/t39.30808-6/485055122_1070070671822030_1640814515474648675_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=833d8c&_nc_ohc=GyS1H1x8MHkQ7kNvwGklCsi&_nc_oc=AdlHtT1kfY5InidBwN_yOY-JA46ldkzNnBJrbZtALoPhCJrTSkCk8_9m_rm1ZzSJNag&_nc_zt=23&_nc_ht=scontent.fcai19-7.fna&_nc_gid=VoLqdNRCdfkKQVT_xPQh6A&oh=00_AfF7Zc8u9HyKvfMElbNQbgO1EMgqa42GsCC_vCo_NaUAIg&oe=6806F032",
+                    url: "https://i.ibb.co/ZR4dJLyv/482238905-1065269192302178-4747858326277637907-n.jpg",
                     alt: "NUICPC"
                 },
                 {
-                    url: "https://scontent.fcai19-7.fna.fbcdn.net/v/t39.30808-6/486627143_1081260057369758_4195012303656403802_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=833d8c&_nc_ohc=qsW4vGZfP0sQ7kNvwHySMfh&_nc_oc=Adlyz2BmQopTHD959nyiv-rbBawrPi6o1-KPz6ZnS5lvQPae7__2W3Sd8CHkFTYHZX8&_nc_zt=23&_nc_ht=scontent.fcai19-7.fna&_nc_gid=FB77Kf7kYt2BT42b5ZpZcA&oh=00_AfGC1HvMlR2suR_MjmcUZRlGG0EiQf-mOxcLzuftNuhfrg&oe=6806E581",
+                    url: "https://i.ibb.co/ymJN2v00/482246774-1065269122302185-3150232388297078773-n.jpg",
+                    alt: "NUICPC"
+                },
+                {
+                    url: "https://i.ibb.co/vxYBzH64/482027750-1063466179149146-4344066305683793822-n.jpg",
+                    alt: "NUICPC"
+                },
+                {
+                    url: "https://i.ibb.co/j9K3Smq8/481466571-1061263352702762-7633575959379424468-n.jpg",
+                    alt: "NUICPC"
+                },
+                {
+                    url: "https://i.ibb.co/S7R12bRy/484136881-1069556391873458-1395371296655723435-n.jpg",
+                    alt: "NUICPC"
+                },
+                {
+                    url: "https://i.ibb.co/zWVHwSPH/484516365-1070411428454621-8390835945290794938-n.jpg",
+                    alt: "NUICPC"
+                },
+                {
+                    url: "https://i.ibb.co/27L4bpQY/484381461-1069479998547764-3349306911678016045-n.jpg",
+                    alt: "NUICPC"
+                },
+                {
+                    url: "https://i.ibb.co/wNFg7VkR/484643522-1069479561881141-6397451359649224021-n.jpg",
+                    alt: "NUICPC"
+                },
+                {
+                    url: "https://i.ibb.co/MyFj8V6s/484140894-1069479545214476-3560564697839847145-n.jpg",
+                    alt: "NUICPC"
+                },
+                {
+                    url: "https://i.ibb.co/Sw9psfwX/484640131-1069484585213972-5052989750649951025-n.jpg",
+                    alt: "NUICPC"
+                },
+                {
+                    url: "https://i.ibb.co/v6QLXpqg/486627143-1081260057369758-4195012303656403802-n.jpg",
+                    alt: "NUICPC"
+                },
+                {
+                    
                 }
+
             ]
         },
         {
@@ -312,6 +348,19 @@ export const userConfig = {
             ]
         },
         {
+            title: "Dean's Honors",
+            description: "Dean's Honors",
+            achievement: "Made the Dean's List for the Fall 2024 semester",
+            year: "2024",
+            images: [
+                {
+                    url: "https://i.ibb.co/k2jWyBVz/468465943-17952654941854972-3647153475567609171-n.jpg",
+                    alt: "Dean's Honors",
+                    description: "Dean's Honors"
+                },
+            ]
+        },
+        {
             title: "Nile University Innovation Competition",
             description: "Nile University Innovation Competition",
             achievement: "Secured second place in the Nile University Innovation Competition hosted by Nile University - NilePreneurs and NU E-Club ! 🎉🏆",
@@ -336,7 +385,7 @@ export const userConfig = {
             year: "2024",
             images: [
                 {
-                    url: "https://scontent.fcai19-7.fna.fbcdn.net/v/t39.30808-6/486719077_1079195597576204_1921460299948979682_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=833d8c&_nc_ohc=-RBEyRf5DsYQ7kNvwGAPX-S&_nc_oc=AdlMHxnis_S-Az0hXGBmTDw80t0XfK55XbZe34IEHiG--zxYVpokw67Y8od9tx1aMqc&_nc_zt=23&_nc_ht=scontent.fcai19-7.fna&_nc_gid=_GCzZ5neQVOXIjZRMixipw&oh=00_AfGzvQexmtZqvequQ5QoaDe2FTOGWr6htKxg61MhXLXfwQ&oe=6806F4EE",
+                    url: "https://i.ibb.co/N2RZwmKT/487497338-1081518670677230-8143431170413885977-n.jpg",
                     alt: "ECPC",
                     description: "ECPC Certificate"
                 }
@@ -393,7 +442,7 @@ export const userConfig = {
             year: "2023",
             images: [
                 {
-                    url: "https://scontent.fcai19-7.fna.fbcdn.net/v/t39.30808-6/482246774_1065269122302185_3150232388297078773_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=127cfc&_nc_ohc=uSkoOkyXlgoQ7kNvwF7dpvx&_nc_oc=AdlwvxORgxB2CpGKJ7oWdrvXvDJjV9sZaCxYfQak3b8PIutXe8oZoFqxb0Gqd4bjQZY&_nc_zt=23&_nc_ht=scontent.fcai19-7.fna&_nc_gid=0fQEIbG-WDz2VKt4Hf6-SA&oh=00_AfHqV1k-2n2xGo_HUDL_r1ed6sGi8l9u7ZenWHdbiqooHw&oe=680705EC",
+                    url: "https://i.ibb.co/NnWkjG8g/486719077-1079195597576204-1921460299948979682-n.jpg",
                     alt: "ECPC",
                     // description: "ECPC Certificate"
                 }

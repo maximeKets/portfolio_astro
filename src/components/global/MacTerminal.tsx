@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { FaRegFolderClosed } from 'react-icons/fa6';
 import { userConfig } from '../../config/userConfig';
+import DraggableWindow from './DraggableWindow';
 
 type Message = {
   role: 'system' | 'user' | 'assistant';
@@ -13,6 +14,7 @@ type ChatHistory = {
 };
 
 interface MacTerminalProps {
+  isOpen: boolean;
   onClose: () => void;
 }
 
@@ -24,7 +26,7 @@ const PLACEHOLDER_MESSAGES = [
   'What projects have you worked on?',
 ];
 
-export default function MacTerminal({ onClose }: MacTerminalProps) {
+export default function MacTerminal({ isOpen, onClose }: MacTerminalProps) {
   const [chatHistory, setChatHistory] = useState<ChatHistory>({
     messages: [],
     input: '',
@@ -205,43 +207,48 @@ If a question is unrelated to my work or portfolio, say: "That's outside my area
     }
   };
 
+  if (!isOpen) return null;
+
   return (
-    <div className='bg-black/85 w-[700px] h-[500px] rounded-lg overflow-hidden shadow-lg mx-4 sm:mx-0'>
-      <div className='bg-gray-800 h-6 flex items-center space-x-2 px-4 sticky top-0 left-0 right-0 z-10'>
-        <button
-          onClick={onClose}
-          className='w-3 h-3 rounded-full bg-red-500 hover:bg-red-600 transition-colors'
-        />
-        <div className='w-3 h-3 rounded-full bg-yellow-500'></div>
-        <div className='w-3 h-3 rounded-full bg-green-500'></div>
-        <span className='text-sm text-gray-500 flex-grow text-center font-semibold flex items-center justify-center gap-2'>
-          <FaRegFolderClosed size={14} className='text-gray-300' />
-          {userConfig.website} ⸺ zsh
-        </span>
-      </div>
-      <div className='p-4 text-gray-200 font-mono text-s h-[calc(500px-1.5rem)] flex flex-col overflow-hidden'>
-        <div className='flex-1 overflow-y-auto'>
+    <DraggableWindow
+      title={`${userConfig.website} ⸺ zsh`}
+      onClose={onClose}
+      initialPosition={{ 
+        x: Math.floor(window.innerWidth * 0.1), 
+        y: Math.floor(window.innerHeight * 0.1) 
+      }}
+      initialSize={{ width: 700, height: 500 }}
+      className="bg-black/80 backdrop-blur-sm"
+    >
+      <div className='p-4 text-gray-200 font-mono text-sm h-full flex flex-col overflow-hidden'>
+        <div className='flex-1 overflow-y-auto bg-black/50 rounded-lg p-4'>
           {chatHistory.messages.map((msg, index) => (
             <div key={index} className='mb-2'>
               {msg.role === 'user' ? (
                 <div className='flex items-start space-x-2'>
-                  <span className='text-green-400'>{'>'}</span>
+                  <span className='text-green-400 font-bold'>{'>'}</span>
                   <pre className='whitespace-pre-wrap'>{msg.content}</pre>
                 </div>
               ) : (
                 <div className='flex items-start space-x-2'>
-                  <span className='text-green-400'>${userConfig.website}:</span>
+                  <span className='text-green-400 font-bold'>${userConfig.website}:</span>
                   <pre className='whitespace-pre-wrap'>{msg.content}</pre>
                 </div>
               )}
             </div>
           ))}
-          {isTyping && <div className='animate-pulse'>...</div>}
+          {isTyping && (
+            <div className='flex items-center space-x-1'>
+              <div className='w-2 h-2 bg-green-400 rounded-full animate-bounce' style={{ animationDelay: '0ms' }}></div>
+              <div className='w-2 h-2 bg-green-400 rounded-full animate-bounce' style={{ animationDelay: '150ms' }}></div>
+              <div className='w-2 h-2 bg-green-400 rounded-full animate-bounce' style={{ animationDelay: '300ms' }}></div>
+            </div>
+          )}
           <div ref={messagesEndRef} />
         </div>
-        <form onSubmit={handleSubmit} className='mt-2'>
+        <form onSubmit={handleSubmit} className='mt-2 bg-black/50 rounded-lg p-2'>
           <div className='flex flex-col sm:flex-row items-start sm:items-center space-y-2 sm:space-y-0 sm:space-x-2'>
-            <span className='whitespace-nowrap'>{userConfig.website} root %</span>
+            <span className='whitespace-nowrap text-green-400 font-bold'>{userConfig.website} root %</span>
             <input
               type='text'
               value={chatHistory.input}
@@ -252,6 +259,6 @@ If a question is unrelated to my work or portfolio, say: "That's outside my area
           </div>
         </form>
       </div>
-    </div>
+    </DraggableWindow>
   );
 }

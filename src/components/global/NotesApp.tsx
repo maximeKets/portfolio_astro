@@ -4,6 +4,7 @@ import {
     FaCode, FaUsers, FaPalette, FaTrophy
 } from 'react-icons/fa';
 import { userConfig } from '../../config/userConfig';
+import DraggableWindow from './DraggableWindow';
 
 interface NotesAppProps {
     isOpen: boolean;
@@ -391,32 +392,27 @@ const NotesApp = ({ isOpen, onClose }: NotesAppProps) => {
     };
 
     return (
-        <div className="fixed inset-0 bg-black/75 flex items-center justify-center z-50">
-            <div className="bg-[#1d1d1f] rounded-lg shadow-xl max-w-4xl w-full max-h-[90vh] overflow-hidden p-0 relative">
-                <div className="bg-gray-800 h-6 flex items-center space-x-2 px-4 rounded-t-lg sticky top-0 left-0 right-0 z-10">
-                    <button
-                        onClick={onClose}
-                        className="w-3 h-3 rounded-full bg-red-500 hover:bg-red-600 transition-colors"
-                    />
-                    <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
-                    <div className="w-3 h-3 rounded-full bg-green-500"></div>
-                    <span className="text-sm text-gray-300 flex-grow text-center font-semibold">
-                        {getWindowTitle()}
-                    </span>
-                </div>
-
-                <div className="overflow-y-auto p-6" style={{ maxHeight: 'calc(90vh - 1.5rem)' }}>
-                    {activeSection === 'menu' && renderMenu()}
-                    {activeSection === 'education' && renderEducation()}
-                    {activeSection === 'experience' && renderExperience()}
-                    {activeSection === 'courses' && renderCourses()}
-                    {activeSection === 'skills' && renderSkills()}
-                    {activeSection === 'roles' && renderExtraCurricularRoles()}
-                    {activeSection === 'activities' && renderExtraCurricularActivities()}
-                    {activeSection === 'competitions' && renderCompetitions()}
-                </div>
+        <DraggableWindow
+            title={getWindowTitle()}
+            onClose={onClose}
+            initialPosition={{ 
+                x: Math.floor(window.innerWidth * 0.3), 
+                y: Math.floor(window.innerHeight * 0.2) 
+            }}
+            className="w-[93vw] md:max-w-4xl max-h-[90vh]"
+            initialSize={{ width: 700, height: 600 }}
+        >
+            <div className="overflow-y-auto p-4 md:p-6" style={{ maxHeight: 'calc(90vh - 1.5rem)' }}>
+                {activeSection === 'menu' && renderMenu()}
+                {activeSection === 'education' && renderEducation()}
+                {activeSection === 'experience' && renderExperience()}
+                {activeSection === 'courses' && renderCourses()}
+                {activeSection === 'skills' && renderSkills()}
+                {activeSection === 'roles' && renderExtraCurricularRoles()}
+                {activeSection === 'activities' && renderExtraCurricularActivities()}
+                {activeSection === 'competitions' && renderCompetitions()}
             </div>
-        </div>
+        </DraggableWindow>
     );
 };
 

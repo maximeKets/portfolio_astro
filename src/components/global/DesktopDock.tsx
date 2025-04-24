@@ -11,9 +11,16 @@ interface DesktopDockProps {
   onTerminalClick: () => void;
   onNotesClick: () => void;
   onGitHubClick: () => void;
+  activeApps: {
+    terminal: boolean;
+    notes: boolean;
+    github: boolean;
+    resume: boolean;
+    spotify: boolean;
+  };
 }
 
-const DesktopDock = ({ onTerminalClick, onNotesClick, onGitHubClick }: DesktopDockProps) => {
+const DesktopDock = ({ onTerminalClick, onNotesClick, onGitHubClick, activeApps }: DesktopDockProps) => {
   const [hoveredIcon, setHoveredIcon] = useState<string | null>(null);
   const [showResume, setShowResume] = useState(false);
   const [showSpotify, setShowSpotify] = useState(false);
@@ -107,7 +114,7 @@ const DesktopDock = ({ onTerminalClick, onNotesClick, onGitHubClick }: DesktopDo
 
   return (
     <>
-      <div className="fixed bottom-0 left-0 right-0 hidden md:flex justify-center pb-4 z-50">
+      <div className="fixed bottom-0 left-0 right-0 hidden md:flex justify-center pb-4 z-0">
         <div className="bg-gray-600/50 backdrop-blur-sm rounded-2xl p-2 shadow-xl">
           <div className="flex space-x-2">
             {/* GitHub */}
@@ -117,7 +124,7 @@ const DesktopDock = ({ onTerminalClick, onNotesClick, onGitHubClick }: DesktopDo
               onMouseLeave={() => setHoveredIcon(null)}
               className="relative group"
             >
-              <div className='w-12 h-12 bg-gradient-to-t from-black to-black/60 rounded-xl flex items-center justify-center shadow-lg transition-transform duration-300 ease-out'>
+              <div className={`w-12 h-12 bg-gradient-to-t from-black to-black/60 rounded-xl flex items-center justify-center shadow-lg transition-all duration-300 ease-out hover:scale-110 active:scale-95 ${activeApps.github ? 'ring-2 ring-white/50' : ''}`}>
                 <BsGithub size={35} className='text-gray-100' />
               </div>
               {hoveredIcon === 'github' && <Tooltip text='My Projects' />}
@@ -130,7 +137,7 @@ const DesktopDock = ({ onTerminalClick, onNotesClick, onGitHubClick }: DesktopDo
               onMouseLeave={() => setHoveredIcon(null)}
               className="relative group"
             >
-              <div className='w-12 h-12 bg-gradient-to-t from-yellow-600 to-yellow-400 rounded-xl flex items-center justify-center shadow-lg transition-transform duration-300 ease-out'>
+              <div className={`w-12 h-12 bg-gradient-to-t from-yellow-600 to-yellow-400 rounded-xl flex items-center justify-center shadow-lg transition-all duration-300 ease-out hover:scale-110 active:scale-95 ${activeApps.notes ? 'ring-2 ring-white/50' : ''}`}>
                 <BsStickyFill size={35} className='text-white' />
               </div>
               {hoveredIcon === 'notes' && <Tooltip text='Resume Notes' />}
@@ -143,7 +150,7 @@ const DesktopDock = ({ onTerminalClick, onNotesClick, onGitHubClick }: DesktopDo
               onMouseLeave={() => setHoveredIcon(null)}
               className="relative group"
             >
-              <div className='w-12 h-12 bg-gradient-to-t from-red-600 to-red-400 rounded-xl flex items-center justify-center shadow-lg transition-transform duration-300 ease-out'>
+              <div className={`w-12 h-12 bg-gradient-to-t from-red-600 to-red-400 rounded-xl flex items-center justify-center shadow-lg transition-all duration-300 ease-out hover:scale-110 active:scale-95 ${activeApps.resume ? 'ring-2 ring-white/50' : ''}`}>
                 <BsFilePdf size={35} className='text-white' />
               </div>
               {hoveredIcon === 'resume' && <Tooltip text='View Resume' />}
@@ -156,7 +163,7 @@ const DesktopDock = ({ onTerminalClick, onNotesClick, onGitHubClick }: DesktopDo
               onMouseLeave={() => setHoveredIcon(null)}
               className="relative"
             >
-              <div className='w-12 h-12 bg-gradient-to-t from-blue-600 to-blue-400 rounded-xl flex items-center justify-center shadow-lg transition-transform duration-300 ease-out'>
+              <div className='w-12 h-12 bg-gradient-to-t from-blue-600 to-blue-400 rounded-xl flex items-center justify-center shadow-lg transition-all duration-300 ease-out hover:scale-110 active:scale-95'>
                 <BsCalendar size={35} className='text-white' />
               </div>
               {hoveredIcon === 'calendar' && <Tooltip text='Schedule a Call' />}
@@ -169,7 +176,7 @@ const DesktopDock = ({ onTerminalClick, onNotesClick, onGitHubClick }: DesktopDo
               onMouseLeave={() => setHoveredIcon(null)}
               className="relative"
             >
-              <div className='w-12 h-12 bg-gradient-to-t from-green-600 to-green-400 rounded-xl flex items-center justify-center shadow-lg transition-transform duration-300 ease-out'>
+              <div className={`w-12 h-12 bg-gradient-to-t from-green-600 to-green-400 rounded-xl flex items-center justify-center shadow-lg transition-all duration-300 ease-out hover:scale-110 active:scale-95 ${activeApps.spotify ? 'ring-2 ring-white/50' : ''}`}>
                 <BsSpotify size={35} className='text-white' />
               </div>
               {hoveredIcon === 'spotify' && <Tooltip text='Spotify Playlist' />}
@@ -182,7 +189,7 @@ const DesktopDock = ({ onTerminalClick, onNotesClick, onGitHubClick }: DesktopDo
               onMouseLeave={() => setHoveredIcon(null)}
               className="relative"
             >
-              <div className='w-12 h-12 bg-gradient-to-t from-purple-600 to-purple-400 rounded-xl flex items-center justify-center shadow-lg transition-transform duration-300 ease-out'>
+              <div className='w-12 h-12 bg-gradient-to-t from-purple-600 to-purple-400 rounded-xl flex items-center justify-center shadow-lg transition-all duration-300 ease-out hover:scale-110 active:scale-95'>
                 <FaLink size={35} className='text-white' />
               </div>
               {hoveredIcon === 'links' && <Tooltip text='Contact Links' />}
@@ -196,7 +203,7 @@ const DesktopDock = ({ onTerminalClick, onNotesClick, onGitHubClick }: DesktopDo
               onMouseLeave={() => setHoveredIcon(null)}
               className="relative"
             >
-              <div className='w-12 h-12 bg-gradient-to-t from-black to-black/60 rounded-xl flex items-center justify-center shadow-lg transition-transform duration-300 ease-out'>
+              <div className={`w-12 h-12 bg-gradient-to-t from-black to-black/60 rounded-xl flex items-center justify-center shadow-lg transition-all duration-300 ease-out hover:scale-110 active:scale-95 ${activeApps.terminal ? 'ring-2 ring-white/50' : ''}`}>
                 <RiTerminalFill size={35} className='text-white' />
               </div>
               {hoveredIcon === 'terminal' && <Tooltip text='Terminal' />}
