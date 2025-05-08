@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { BsGithub, BsSpotify, BsFilePdf, BsStickyFill, BsLinkedin, BsCalendar } from 'react-icons/bs';
 import { IoIosCall, IoIosMail } from 'react-icons/io';
-import { FaLink } from 'react-icons/fa';
+import { FaLink, FaEnvelope } from 'react-icons/fa';
 import ResumeViewer from './ResumeViewer';
 import SpotifyPlayer from './SpotifyPlayer';
 import { userConfig } from '../../config/userConfig';
@@ -49,6 +49,10 @@ const DesktopDock = ({ onTerminalClick, onNotesClick, onGitHubClick, activeApps 
 
   const handleCloseSpotify = () => {
     setShowSpotify(false);
+  };
+
+  const handleEmailClick = () => {
+    window.open(`mailto:${userConfig.contact.email}`, '_blank');
   };
 
   useEffect(() => {
@@ -114,7 +118,7 @@ const DesktopDock = ({ onTerminalClick, onNotesClick, onGitHubClick, activeApps 
 
   return (
     <>
-      <div className="fixed bottom-0 left-0 right-0 hidden md:flex justify-center pb-4 z-0">
+      <div className="fixed bottom-0 left-0 right-0 hidden md:flex justify-center pb-4 z-100">
         <div className="bg-gray-600/50 backdrop-blur-sm rounded-2xl p-2 shadow-xl">
           <div className="flex space-x-2">
             {/* GitHub */}
@@ -164,7 +168,7 @@ const DesktopDock = ({ onTerminalClick, onNotesClick, onGitHubClick, activeApps 
               className="relative"
             >
               <div className='w-12 h-12 bg-gradient-to-t from-blue-600 to-blue-400 rounded-xl flex items-center justify-center shadow-lg transition-all duration-300 ease-out hover:scale-110 active:scale-95'>
-                <BsCalendar size={35} className='text-white' />
+                <BsCalendar size={30} className='text-white' />
               </div>
               {hoveredIcon === 'calendar' && <Tooltip text='Schedule a Call' />}
             </button>
@@ -182,6 +186,19 @@ const DesktopDock = ({ onTerminalClick, onNotesClick, onGitHubClick, activeApps 
               {hoveredIcon === 'spotify' && <Tooltip text='Spotify Playlist' />}
             </button>
 
+            {/* Email */}
+            <button
+              onClick={handleEmailClick}
+              onMouseEnter={() => setHoveredIcon('email')}
+              onMouseLeave={() => setHoveredIcon(null)}
+              className="relative"
+            >
+              <div className='w-12 h-12 bg-gradient-to-t from-blue-600 to-blue-400 rounded-xl flex items-center justify-center shadow-lg transition-all duration-300 ease-out hover:scale-110 active:scale-95'>
+                <IoIosMail size={40} className='text-white' />
+              </div>
+              {hoveredIcon === 'email' && <Tooltip text='Email' />}
+            </button>
+
             {/* Links */}
             <button
               onClick={handleLinksClick}
@@ -190,7 +207,7 @@ const DesktopDock = ({ onTerminalClick, onNotesClick, onGitHubClick, activeApps 
               className="relative"
             >
               <div className='w-12 h-12 bg-gradient-to-t from-purple-600 to-purple-400 rounded-xl flex items-center justify-center shadow-lg transition-all duration-300 ease-out hover:scale-110 active:scale-95'>
-                <FaLink size={35} className='text-white' />
+                <FaLink size={30} className='text-white' />
               </div>
               {hoveredIcon === 'links' && <Tooltip text='Contact Links' />}
               {showLinksPopup && <LinksPopup />}
@@ -213,9 +230,9 @@ const DesktopDock = ({ onTerminalClick, onNotesClick, onGitHubClick, activeApps 
       </div>
 
       <ResumeViewer isOpen={showResume} onClose={handleCloseResume} />
-      <SpotifyPlayer 
-        isOpen={showSpotify} 
-        onClose={handleCloseSpotify} 
+      <SpotifyPlayer
+        isOpen={showSpotify}
+        onClose={handleCloseSpotify}
         playlistId={userConfig.spotify.playlistId}
       />
     </>

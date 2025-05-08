@@ -399,18 +399,20 @@ const NotesApp = ({ isOpen, onClose }: NotesAppProps) => {
                 x: Math.floor(window.innerWidth * 0.3), 
                 y: Math.floor(window.innerHeight * 0.2) 
             }}
-            className="w-[93vw] md:max-w-4xl max-h-[90vh]"
+            className="w-[93vw] md:max-w-4xl max-h-[90vh] flex flex-col"
             initialSize={{ width: 700, height: 600 }}
         >
-            <div className="overflow-y-auto p-4 md:p-6" style={{ maxHeight: 'calc(90vh - 1.5rem)' }}>
-                {activeSection === 'menu' && renderMenu()}
-                {activeSection === 'education' && renderEducation()}
-                {activeSection === 'experience' && renderExperience()}
-                {activeSection === 'courses' && renderCourses()}
-                {activeSection === 'skills' && renderSkills()}
-                {activeSection === 'roles' && renderExtraCurricularRoles()}
-                {activeSection === 'activities' && renderExtraCurricularActivities()}
-                {activeSection === 'competitions' && renderCompetitions()}
+            <div className="flex flex-col flex-grow min-h-0 h-full">
+                <div className="overflow-y-auto flex-grow min-h-0 p-4 md:p-6">
+                    {activeSection === 'menu' && renderMenu()}
+                    {activeSection === 'education' && renderEducation()}
+                    {activeSection === 'experience' && renderExperience()}
+                    {activeSection === 'courses' && renderCourses()}
+                    {activeSection === 'skills' && renderSkills()}
+                    {activeSection === 'roles' && renderExtraCurricularRoles()}
+                    {activeSection === 'activities' && renderExtraCurricularActivities()}
+                    {activeSection === 'competitions' && renderCompetitions()}
+                </div>
             </div>
         </DraggableWindow>
     );

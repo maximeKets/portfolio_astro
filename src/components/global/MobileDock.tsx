@@ -17,16 +17,12 @@ export default function MobileDock({ onGitHubClick, onNotesClick, onResumeClick,
     window.location.href = `mailto:${userConfig.contact.email}`;
   };
 
-  const handleGithubClick = () => {
-    window.open(userConfig.social.github, '_blank');
-  };
-
   const handleSpotifyClick = () => {
     window.open(`https://open.spotify.com/playlist/${userConfig.spotify.playlistId}`, '_blank');
   };
 
   return (
-    <div className='fixed bottom-0 left-0 right-0 md:hidden flex flex-col items-center z-50 space-y-2'>
+    <div className='fixed bottom-0 left-0 right-0 md:hidden flex flex-col items-center z-10 space-y-2'>
       {/* Top row: viewer icons */}
       <div className='mx-4 mb-4 p-3 rounded-3xl space-x-4 flex justify-around items-center max-w-[400px] mx-auto'>
         <button

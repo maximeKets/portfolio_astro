@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 
 // Global z-index counter
-let globalZIndex = 1000;
+let globalZIndex = 10;
 
 // Minimum window dimensions
 const MIN_WIDTH = 400;
@@ -28,7 +28,7 @@ export default function DraggableWindow({
   const [size, setSize] = useState(initialSize);
   const [isDragging, setIsDragging] = useState(false);
   const [isResizing, setIsResizing] = useState(false);
-  const [resizeDirection, setResizeDirection] = useState<'bottom' | 'right' | 'bottom-right' | null>(null);
+  const [resizeDirection, setResizeDirection] = useState<'bottom' | 'right' | 'bottom-right' | 'left' | 'bottom-left' | null>(null);
   const [dragOffset, setDragOffset] = useState({ x: 0, y: 0 });
   const [zIndex, setZIndex] = useState(globalZIndex);
   const [isMobile, setIsMobile] = useState(false);
@@ -68,7 +68,7 @@ export default function DraggableWindow({
         e.preventDefault();
       } else if (e.target.closest('.resize-handle')) {
         setIsResizing(true);
-        setResizeDirection(e.target.getAttribute('data-direction') as 'bottom' | 'right' | 'bottom-right');
+        setResizeDirection(e.target.getAttribute('data-direction') as 'bottom' | 'right' | 'bottom-right' | 'left' | 'bottom-left');
         e.preventDefault();
       }
     }
@@ -87,7 +87,7 @@ export default function DraggableWindow({
       const maxX = window.innerWidth - (windowWidth / 2);
       const maxY = window.innerHeight - (windowHeight / 2);
       const minX = -windowWidth / 2;
-      const minY = -windowHeight / 2;
+      const minY = 24;
       
       setPosition({
         x: Math.max(minX, Math.min(newX, maxX)),
@@ -97,16 +97,31 @@ export default function DraggableWindow({
       const rect = windowRef.current?.getBoundingClientRect();
       if (rect) {
         const newSize = { ...size };
+        const newPosition = { ...position };
         
-        if (resizeDirection === 'right' || resizeDirection === 'bottom-right') {
+        if (resizeDirection?.includes('right')) {
           newSize.width = Math.max(MIN_WIDTH, e.clientX - rect.left);
         }
         
-        if (resizeDirection === 'bottom' || resizeDirection === 'bottom-right') {
+        if (resizeDirection?.includes('left')) {
+          const newWidth = Math.max(MIN_WIDTH, rect.right - e.clientX);
+          newSize.width = newWidth;
+          newPosition.x = rect.right - newWidth;
+        }
+        
+        if (resizeDirection?.includes('bottom')) {
+          newSize.height = Math.max(MIN_HEIGHT, e.clientY - rect.top);
+        }
+        
+        if (resizeDirection?.includes('bottom-left')) {
+          const newWidth = Math.max(MIN_WIDTH, rect.right - e.clientX);
+          newSize.width = newWidth;
+          newPosition.x = rect.right - newWidth;
           newSize.height = Math.max(MIN_HEIGHT, e.clientY - rect.top);
         }
         
         setSize(newSize);
+        setPosition(newPosition);
       }
     }
   };
@@ -119,6 +134,7 @@ export default function DraggableWindow({
   };
 
   useEffect(() => {
+    bringToFront();
     if (isMobile) return;
     
     if (isDragging || isResizing) {
@@ -180,8 +196,16 @@ export default function DraggableWindow({
               data-direction="right"
             />
             <div 
+              className="resize-handle absolute left-0 top-0 bottom-0 w-2 cursor-ew-resize"
+              data-direction="left"
+            />
+            <div 
               className="resize-handle absolute bottom-0 right-0 w-3 h-3 cursor-nwse-resize"
               data-direction="bottom-right"
+            />
+            <div 
+              className="resize-handle absolute bottom-0 left-0 w-3 h-3 cursor-nesw-resize"
+              data-direction="bottom-left"
             />
           </>
         )}

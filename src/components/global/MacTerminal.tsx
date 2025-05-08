@@ -218,10 +218,10 @@ If a question is unrelated to my work or portfolio, say: "That's outside my area
         y: Math.floor(window.innerHeight * 0.1) 
       }}
       initialSize={{ width: 700, height: 500 }}
-      className="bg-black/80 backdrop-blur-sm"
+      className="bg-black/90 backdrop-blur-sm"
     >
-      <div className='p-4 text-gray-200 font-mono text-sm h-full flex flex-col overflow-hidden'>
-        <div className='flex-1 overflow-y-auto bg-black/50 rounded-lg p-4'>
+      <div className='p-1 text-gray-200 font-mono text-sm h-full flex flex-col overflow-hidden'>
+        <div className='flex-1 overflow-y-auto rounded-lg p-1'>
           {chatHistory.messages.map((msg, index) => (
             <div key={index} className='mb-2'>
               {msg.role === 'user' ? (
@@ -231,7 +231,7 @@ If a question is unrelated to my work or portfolio, say: "That's outside my area
                 </div>
               ) : (
                 <div className='flex items-start space-x-2'>
-                  <span className='text-green-400 font-bold'>${userConfig.website}:</span>
+                  <span className='text-green-400 font-bold'>${userConfig.website}</span>
                   <pre className='whitespace-pre-wrap'>{msg.content}</pre>
                 </div>
               )}
@@ -246,7 +246,7 @@ If a question is unrelated to my work or portfolio, say: "That's outside my area
           )}
           <div ref={messagesEndRef} />
         </div>
-        <form onSubmit={handleSubmit} className='mt-2 bg-black/50 rounded-lg p-2'>
+        <form onSubmit={handleSubmit} className='mt-2 rounded-lg p-2'>
           <div className='flex flex-col sm:flex-row items-start sm:items-center space-y-2 sm:space-y-0 sm:space-x-2'>
             <span className='whitespace-nowrap text-green-400 font-bold'>{userConfig.website} root %</span>
             <input
