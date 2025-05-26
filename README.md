@@ -72,6 +72,18 @@ To preview the production build:
 npm run preview
 ```
 
+## Deploy to vercel:
+```bash
+npx vercel deploy --prod
+```
+or 
+```bash
+npx vercel deploy
+```
+and select the image from the vercel dashboard.
+
+There is a bug with direct deployment from github, i can't seem to figure it out tbf, so for the time being use the above commands after running ```npm run build```.
+
 ## 📁 Project Structure
 
 ```
