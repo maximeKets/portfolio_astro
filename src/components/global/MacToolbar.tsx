@@ -7,15 +7,12 @@ import {
   IoCellular,
   IoDocumentText,
   IoCodeSlash,
-  IoPerson,
-  IoBriefcase,
-  IoSchool,
   IoMail,
   IoCall,
   IoHelpCircle,
 } from 'react-icons/io5';
 import { VscVscode } from 'react-icons/vsc';
-import { userConfig } from '../../config/userConfig';
+import { userConfig } from '../../config/index';
 import HelpModal from './HelpModal';
 
 type MenuItem = {
@@ -164,22 +161,24 @@ export default function MacToolbar({
   };
 
   const renderMenu = (menuItems: MenuItem[]) => (
-    <div className="absolute top-full left-0 mt-1 bg-gray-800/90 backdrop-blur-sm rounded-lg shadow-xl py-1 min-w-[200px]">
+    <div className="absolute top-full left-0 mt-1 bg-gray-800/90 backdrop-blur-sm rounded-lg shadow-xl py-1 min-w-[200px]" role="menu">
       {menuItems.map((item, index) => (
         <div key={index}>
           <button
             onClick={() => handleAction(item.action)}
+            role="menuitem"
             className="w-full px-4 py-2 text-left text-sm text-gray-200 hover:bg-gray-700/50 flex items-center gap-2"
           >
             {item.icon}
             {item.label}
           </button>
           {item.submenu && (
-            <div className="absolute left-full top-0 ml-1 bg-gray-800/90 backdrop-blur-sm rounded-lg shadow-xl py-1 min-w-[200px]">
+            <div className="absolute left-full top-0 ml-1 bg-gray-800/90 backdrop-blur-sm rounded-lg shadow-xl py-1 min-w-[200px]" role="menu">
               {item.submenu.map((subItem, subIndex) => (
                 <button
                   key={subIndex}
                   onClick={() => handleAction(subItem.action)}
+                  role="menuitem"
                   className="w-full px-4 py-2 text-left text-sm text-gray-200 hover:bg-gray-700/50 flex items-center gap-2"
                 >
                   {subItem.icon}
@@ -211,7 +210,7 @@ export default function MacToolbar({
         </div>
       </div>
 
-      <div className='sticky top-0 z-50 hidden md:flex bg-black/20 backdrop-blur-md text-white h-6 px-4 items-center justify-between text-sm'>
+      <div className='sticky top-0 z-50 hidden md:flex bg-black/20 backdrop-blur-md text-white h-6 px-4 items-center justify-between text-sm' role="menubar" aria-label="Application menu bar">
         <div className='flex items-center space-x-4' ref={menuRef}>
           <FaApple size={16} />
           <div className="relative">
@@ -234,13 +233,21 @@ export default function MacToolbar({
           </div>
           {Object.entries(menus).map(([menu, items]) => (
             <div key={menu} className="relative">
-              <span 
+              <button 
                 className='cursor-pointer hover:text-gray-300 transition-colors'
                 onClick={() => handleMenuClick(menu)}
+                aria-haspopup="menu"
+                aria-expanded={activeMenu === menu}
+                aria-controls={`menu-${menu}`}
+                role="menuitem"
               >
                 {menu}
-              </span>
-              {activeMenu === menu && renderMenu(items)}
+              </button>
+              {activeMenu === menu && (
+                <div id={`menu-${menu}`}>
+                  {renderMenu(items)}
+                </div>
+              )}
             </div>
           ))}
         </div>

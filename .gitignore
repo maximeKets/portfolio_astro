@@ -28,8 +28,3 @@ pnpm-debug.log*
 
 # vercel setting folder
 .vercel/
-
-
-.vercel
-
-src/config/userConfig.ts

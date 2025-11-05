@@ -3,7 +3,7 @@ import {
     FaGraduationCap, FaBriefcase, FaChevronLeft, FaBookOpen,
     FaCode, FaUsers, FaPalette, FaTrophy
 } from 'react-icons/fa';
-import { userConfig } from '../../config/userConfig';
+import { userConfig } from '../../config/index';
 import DraggableWindow from './DraggableWindow';
 
 interface NotesAppProps {
@@ -74,6 +74,7 @@ const NotesApp = ({ isOpen, onClose }: NotesAppProps) => {
     const renderBackButton = () => (
         <button
             onClick={handleBackClick}
+            aria-label="Back to Notes menu"
             className="flex items-center gap-2 text-gray-300 hover:text-gray-100 mb-4"
         >
             <FaChevronLeft />
@@ -93,12 +94,14 @@ const NotesApp = ({ isOpen, onClose }: NotesAppProps) => {
                 <div className="rounded-lg overflow-hidden mb-2">
                     <img
                         src={images[currentIndex].url}
-                        alt={images[currentIndex].alt}
+                        alt={images[currentIndex].alt || 'Screenshot'}
+                        decoding="async"
+                        loading="lazy"
                         className="w-full h-48 object-contain bg-gray-900 rounded-lg"
                     />
                 </div>
 
-                <div className="text-sm text-gray-400 mb-3">
+                <div className="text-sm text-gray-400 mb-3" aria-live="polite">
                     {images[currentIndex].description}
                 </div>
 
@@ -106,6 +109,7 @@ const NotesApp = ({ isOpen, onClose }: NotesAppProps) => {
                     <div className="flex justify-between mt-2">
                         <button
                             onClick={() => handlePrevImage(itemId, images)}
+                            aria-label="Previous image"
                             className="bg-gray-700 hover:bg-gray-600 text-white rounded-full w-8 h-8 flex items-center justify-center"
                         >
                             ←
@@ -115,6 +119,7 @@ const NotesApp = ({ isOpen, onClose }: NotesAppProps) => {
                         </span>
                         <button
                             onClick={() => handleNextImage(itemId, images)}
+                            aria-label="Next image"
                             className="bg-gray-700 hover:bg-gray-600 text-white rounded-full w-8 h-8 flex items-center justify-center"
                         >
                             →
@@ -279,9 +284,11 @@ const NotesApp = ({ isOpen, onClose }: NotesAppProps) => {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {/* Competitions */}
-                <div
-                    className="bg-gray-800/50 p-4 rounded-lg cursor-pointer hover:bg-gray-700/50 transition-colors"
+                <button
+                    type="button"
+                    className="bg-gray-800/50 p-4 rounded-lg hover:bg-gray-700/50 transition-colors text-left"
                     onClick={() => handleSectionClick('competitions')}
+                    aria-label="Open Competitions section"
                 >
                     <div className="flex items-center gap-3 mb-2">
                         <div className="w-12 h-12 bg-orange-600 rounded-xl flex items-center justify-center">
@@ -290,12 +297,14 @@ const NotesApp = ({ isOpen, onClose }: NotesAppProps) => {
                         <h3 className="text-xl font-semibold text-gray-200">Competitions</h3>
                     </div>
                     <p className="text-gray-400">View my competition history and achievements</p>
-                </div>
+                </button>
 
                 {/* Education */}
-                <div
-                    className="bg-gray-800/50 p-4 rounded-lg cursor-pointer hover:bg-gray-700/50 transition-colors"
+                <button
+                    type="button"
+                    className="bg-gray-800/50 p-4 rounded-lg hover:bg-gray-700/50 transition-colors text-left"
                     onClick={() => handleSectionClick('education')}
+                    aria-label="Open Education section"
                 >
                     <div className="flex items-center gap-3 mb-2">
                         <div className="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center">
@@ -304,12 +313,14 @@ const NotesApp = ({ isOpen, onClose }: NotesAppProps) => {
                         <h3 className="text-xl font-semibold text-gray-200">Education</h3>
                     </div>
                     <p className="text-gray-400">View my educational background and qualifications</p>
-                </div>
+                </button>
 
                 {/* Experience */}
-                <div
-                    className="bg-gray-800/50 p-4 rounded-lg cursor-pointer hover:bg-gray-700/50 transition-colors"
+                <button
+                    type="button"
+                    className="bg-gray-800/50 p-4 rounded-lg hover:bg-gray-700/50 transition-colors text-left"
                     onClick={() => handleSectionClick('experience')}
+                    aria-label="Open Professional Experience section"
                 >
                     <div className="flex items-center gap-3 mb-2">
                         <div className="w-12 h-12 bg-green-600 rounded-xl flex items-center justify-center">
@@ -318,11 +329,13 @@ const NotesApp = ({ isOpen, onClose }: NotesAppProps) => {
                         <h3 className="text-xl font-semibold text-gray-200">Professional Experience</h3>
                     </div>
                     <p className="text-gray-400">Explore my professional work experience</p>
-                </div>
+                </button>
                 {/* Extracurricular Roles */}
-                <div
-                    className="bg-gray-800/50 p-4 rounded-lg cursor-pointer hover:bg-gray-700/50 transition-colors"
+                <button
+                    type="button"
+                    className="bg-gray-800/50 p-4 rounded-lg hover:bg-gray-700/50 transition-colors text-left"
                     onClick={() => handleSectionClick('roles')}
+                    aria-label="Open Extracurricular Roles section"
                 >
                     <div className="flex items-center gap-3 mb-2">
                         <div className="w-12 h-12 bg-indigo-600 rounded-xl flex items-center justify-center">
@@ -331,12 +344,14 @@ const NotesApp = ({ isOpen, onClose }: NotesAppProps) => {
                         <h3 className="text-xl font-semibold text-gray-200">Extracurricular Roles</h3>
                     </div>
                     <p className="text-gray-400">My involvement in student activities and roles</p>
-                </div>
+                </button>
 
                 {/* Extracurricular Activities */}
-                <div
-                    className="bg-gray-800/50 p-4 rounded-lg cursor-pointer hover:bg-gray-700/50 transition-colors"
+                <button
+                    type="button"
+                    className="bg-gray-800/50 p-4 rounded-lg hover:bg-gray-700/50 transition-colors text-left"
                     onClick={() => handleSectionClick('activities')}
+                    aria-label="Open Extracurricular Activities section"
                 >
                     <div className="flex items-center gap-3 mb-2">
                         <div className="w-12 h-12 bg-pink-600 rounded-xl flex items-center justify-center">
@@ -345,11 +360,13 @@ const NotesApp = ({ isOpen, onClose }: NotesAppProps) => {
                         <h3 className="text-xl font-semibold text-gray-200">Extracurricular Activities</h3>
                     </div>
                     <p className="text-gray-400">My participation in events and activities</p>
-                </div>
+                </button>
                 {/* Courses */}
-                <div
-                    className="bg-gray-800/50 p-4 rounded-lg cursor-pointer hover:bg-gray-700/50 transition-colors"
+                <button
+                    type="button"
+                    className="bg-gray-800/50 p-4 rounded-lg hover:bg-gray-700/50 transition-colors text-left"
                     onClick={() => handleSectionClick('courses')}
+                    aria-label="Open Courses section"
                 >
                     <div className="flex items-center gap-3 mb-2">
                         <div className="w-12 h-12 bg-purple-600 rounded-xl flex items-center justify-center">
@@ -358,12 +375,14 @@ const NotesApp = ({ isOpen, onClose }: NotesAppProps) => {
                         <h3 className="text-xl font-semibold text-gray-200">Courses</h3>
                     </div>
                     <p className="text-gray-400">Check out courses I have completed</p>
-                </div>
+                </button>
 
                 {/* Skills */}
-                <div
-                    className="bg-gray-800/50 p-4 rounded-lg cursor-pointer hover:bg-gray-700/50 transition-colors"
+                <button
+                    type="button"
+                    className="bg-gray-800/50 p-4 rounded-lg hover:bg-gray-700/50 transition-colors text-left"
                     onClick={() => handleSectionClick('skills')}
+                    aria-label="Open Skills section"
                 >
                     <div className="flex items-center gap-3 mb-2">
                         <div className="w-12 h-12 bg-red-600 rounded-xl flex items-center justify-center">
@@ -372,7 +391,7 @@ const NotesApp = ({ isOpen, onClose }: NotesAppProps) => {
                         <h3 className="text-xl font-semibold text-gray-200">Skills</h3>
                     </div>
                     <p className="text-gray-400">See my technical skills and expertise</p>
-                </div>
+                </button>
             </div>
         </div>
     );

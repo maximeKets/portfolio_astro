@@ -86,7 +86,7 @@ export default function HelpModal({
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center overflow-hidden">
+    <div className="fixed inset-0 z-[100] flex items-center justify-center overflow-hidden" role="dialog" aria-modal="true" aria-labelledby="help-modal-title">
       <div 
         className="absolute inset-0 bg-black/50 backdrop-blur-sm transition-opacity duration-300"
         style={{ opacity: isVisible ? 1 : 0 }}
@@ -99,13 +99,14 @@ export default function HelpModal({
       >
         <button
           onClick={handleClose}
+          aria-label="Close help"
           className="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors"
         >
           <IoClose size={24} />
         </button>
         
         <div className={`${steps[activeStep].animation} mb-4`}>
-          <h2 className="text-2xl font-bold text-white mb-2">{steps[activeStep].title}</h2>
+          <h2 id="help-modal-title" className="text-2xl font-bold text-white mb-2">{steps[activeStep].title}</h2>
           <p className="text-gray-300 mb-4">{steps[activeStep].content}</p>
           
           {steps[activeStep].features && (
@@ -126,6 +127,7 @@ export default function HelpModal({
               <button
                 key={index}
                 onClick={() => setActiveStep(index)}
+                aria-label={`Go to step ${index + 1}`}
                 className={`w-2 h-2 rounded-full transition-colors ${
                   index === activeStep ? 'bg-white' : 'bg-gray-600'
                 }`}
@@ -136,6 +138,7 @@ export default function HelpModal({
             {steps[activeStep].button && (
               <button
                 onClick={steps[activeStep].button?.onClick}
+                aria-label={steps[activeStep].button?.text}
                 className="px-4 py-2 bg-gray-700 text-white rounded hover:bg-gray-600 transition-colors flex items-center gap-2"
               >
                 {steps[activeStep].button?.icon}
@@ -144,6 +147,7 @@ export default function HelpModal({
             )}
             <button
               onClick={handleNext}
+              aria-label={activeStep === steps.length - 1 ? 'Close help' : 'Next tip'}
               className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors"
             >
               {activeStep === steps.length - 1 ? 'Got it!' : 'Next'}

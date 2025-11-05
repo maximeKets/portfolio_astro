@@ -4,7 +4,7 @@ import { IoIosCall, IoIosMail } from 'react-icons/io';
 import { FaLink, FaEnvelope } from 'react-icons/fa';
 import ResumeViewer from './ResumeViewer';
 import SpotifyPlayer from './SpotifyPlayer';
-import { userConfig } from '../../config/userConfig';
+import { userConfig } from '../../config/index';
 import { RiTerminalFill } from 'react-icons/ri';
 
 interface DesktopDockProps {
@@ -118,12 +118,14 @@ const DesktopDock = ({ onTerminalClick, onNotesClick, onGitHubClick, activeApps 
 
   return (
     <>
-      <div className="fixed bottom-0 left-0 right-0 hidden md:flex justify-center pb-4 z-100">
+      <nav aria-label="Dock" className="fixed bottom-0 left-0 right-0 hidden md:flex justify-center pb-4 z-100">
         <div className="bg-gray-600/50 backdrop-blur-sm rounded-2xl p-2 shadow-xl">
-          <div className="flex space-x-2">
+          <div className="flex space-x-2" role="menubar">
             {/* GitHub */}
             <button
               onClick={onGitHubClick}
+              aria-label="Open GitHub Projects"
+              onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onGitHubClick(); } }}
               onMouseEnter={() => setHoveredIcon('github')}
               onMouseLeave={() => setHoveredIcon(null)}
               className="relative group"
@@ -137,6 +139,8 @@ const DesktopDock = ({ onTerminalClick, onNotesClick, onGitHubClick, activeApps 
             {/* Notes */}
             <button
               onClick={onNotesClick}
+              aria-label="Open Notes"
+              onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onNotesClick(); } }}
               onMouseEnter={() => setHoveredIcon('notes')}
               onMouseLeave={() => setHoveredIcon(null)}
               className="relative group"
@@ -150,6 +154,8 @@ const DesktopDock = ({ onTerminalClick, onNotesClick, onGitHubClick, activeApps 
             {/* Resume */}
             <button
               onClick={handleResumeClick}
+              aria-label="View Resume"
+              onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); handleResumeClick(); } }}
               onMouseEnter={() => setHoveredIcon('resume')}
               onMouseLeave={() => setHoveredIcon(null)}
               className="relative group"
@@ -163,6 +169,8 @@ const DesktopDock = ({ onTerminalClick, onNotesClick, onGitHubClick, activeApps 
             {/* Calendar */}
             <button
               onClick={handleCalendarClick}
+              aria-label="Schedule a Call"
+              onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); handleCalendarClick(); } }}
               onMouseEnter={() => setHoveredIcon('calendar')}
               onMouseLeave={() => setHoveredIcon(null)}
               className="relative"
@@ -176,6 +184,8 @@ const DesktopDock = ({ onTerminalClick, onNotesClick, onGitHubClick, activeApps 
             {/* Spotify */}
             <button
               onClick={handleSpotifyClick}
+              aria-label="Open Spotify Playlist"
+              onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); handleSpotifyClick(); } }}
               onMouseEnter={() => setHoveredIcon('spotify')}
               onMouseLeave={() => setHoveredIcon(null)}
               className="relative"
@@ -189,6 +199,8 @@ const DesktopDock = ({ onTerminalClick, onNotesClick, onGitHubClick, activeApps 
             {/* Email */}
             <button
               onClick={handleEmailClick}
+              aria-label="Send Email"
+              onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); handleEmailClick(); } }}
               onMouseEnter={() => setHoveredIcon('email')}
               onMouseLeave={() => setHoveredIcon(null)}
               className="relative"
@@ -202,6 +214,11 @@ const DesktopDock = ({ onTerminalClick, onNotesClick, onGitHubClick, activeApps 
             {/* Links */}
             <button
               onClick={handleLinksClick}
+              aria-label="Open Contact Links"
+              aria-haspopup="menu"
+              aria-expanded={showLinksPopup}
+              aria-controls="dock-links-menu"
+              onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); handleLinksClick(); } }}
               onMouseEnter={() => setHoveredIcon('links')}
               onMouseLeave={() => setHoveredIcon(null)}
               className="relative"
@@ -216,6 +233,8 @@ const DesktopDock = ({ onTerminalClick, onNotesClick, onGitHubClick, activeApps 
             {/* Terminal */}
             <button
               onClick={onTerminalClick}
+              aria-label="Open Terminal"
+              onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onTerminalClick(); } }}
               onMouseEnter={() => setHoveredIcon('terminal')}
               onMouseLeave={() => setHoveredIcon(null)}
               className="relative"
@@ -227,7 +246,7 @@ const DesktopDock = ({ onTerminalClick, onNotesClick, onGitHubClick, activeApps 
             </button>
           </div>
         </div>
-      </div>
+      </nav>
 
       <ResumeViewer isOpen={showResume} onClose={handleCloseResume} />
       <SpotifyPlayer

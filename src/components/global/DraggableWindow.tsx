@@ -45,6 +45,17 @@ export default function DraggableWindow({
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
+  // Focus the window when it mounts for better keyboard accessibility
+  useEffect(() => {
+    windowRef.current?.focus();
+  }, []);
+
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
+    if (e.key === 'Escape') {
+      onClose();
+    }
+  };
+
   const bringToFront = () => {
     globalZIndex += 1;
     setZIndex(globalZIndex);
@@ -153,6 +164,10 @@ export default function DraggableWindow({
   return (
     <div
       ref={windowRef}
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="window-title"
+      tabIndex={0}
       className={`${
         isMobile 
           ? 'fixed inset-0 m-4 rounded-xl' 
@@ -171,15 +186,18 @@ export default function DraggableWindow({
         transition: (isDragging || isResizing) ? 'none' : 'all 0.2s ease-out',
       }}
       onMouseDown={handleMouseDown}
+      onKeyDown={handleKeyDown}
     >
       <div className="window-header bg-gray-800 h-6 flex items-center space-x-2 px-4 rounded-t-xl sticky top-0 left-0 right-0 z-10">
         <button
           onClick={onClose}
+          aria-label={`Close ${title}`}
+          title="Close"
           className="w-3 h-3 rounded-full bg-red-500 hover:bg-red-600 transition-colors"
         />
         <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
         <div className="w-3 h-3 rounded-full bg-green-500"></div>
-        <span className="text-sm text-gray-300 flex-grow text-center font-semibold">
+        <span id="window-title" className="text-sm text-gray-300 flex-grow text-center font-semibold">
           {title}
         </span>
       </div>
