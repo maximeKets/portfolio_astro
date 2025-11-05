@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { FaGithub, FaExternalLinkAlt, FaFolder, FaFile, FaChevronLeft, FaLink } from 'react-icons/fa';
 import { userConfig } from '../../config/index';
 import DraggableWindow from './DraggableWindow';
@@ -19,13 +19,15 @@ type Project = typeof userConfig.projects[0];
 interface GitHubViewerProps {
   isOpen: boolean;
   onClose: () => void;
+  selectedProjectId?: string;
 }
 
-const GitHubViewer = ({ isOpen, onClose }: GitHubViewerProps) => {
+const GitHubViewer = ({ isOpen, onClose, selectedProjectId }: GitHubViewerProps) => {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [expandedNodes, setExpandedNodes] = useState<Set<string>>(new Set());
   const [showStructure, setShowStructure] = useState(false);
   const [activeImageIndex, setActiveImageIndex] = useState(0);
+  const [quickLook, setQuickLook] = useState<Project | null>(null);
 
   const toggleNode = (path: string) => {
     const newExpandedNodes = new Set(expandedNodes);
@@ -114,19 +116,33 @@ const GitHubViewer = ({ isOpen, onClose }: GitHubViewerProps) => {
     }
   };
 
+  // Deep-link support: open a project directly when prop changes
+  useEffect(() => {
+    if (!isOpen) return;
+    if (selectedProjectId) {
+      const proj = userConfig.projects.find(p => p.id === selectedProjectId) || null;
+      if (proj) {
+        setSelectedProject(proj);
+        setShowStructure(true);
+        setActiveImageIndex(0);
+      }
+    }
+  }, [selectedProjectId, isOpen]);
+
   if (!isOpen) return null;
 
   return (
-    <DraggableWindow
-      title={showStructure ? selectedProject?.title || 'GitHub Projects' : 'GitHub Projects'}
-      onClose={onClose}
-      initialPosition={{ 
-        x: Math.floor(window.innerWidth * 0.2), 
-        y: Math.floor(window.innerHeight * 0.2) 
-      }}
-      className="w-[93vw] md:max-w-4xl max-h-[90vh] flex flex-col"
-      initialSize={{ width: 800, height: 600 }}
-    >
+    <>
+      <DraggableWindow
+        title={showStructure ? selectedProject?.title || 'GitHub Projects' : 'GitHub Projects'}
+        onClose={onClose}
+        initialPosition={{ 
+          x: Math.floor(window.innerWidth * 0.2), 
+          y: Math.floor(window.innerHeight * 0.2) 
+        }}
+        className="w-[93vw] md:max-w-4xl max-h-[90vh] flex flex-col"
+        initialSize={{ width: 800, height: 600 }}
+      >
       <div className="flex flex-col flex-grow min-h-0 h-full">
         <div className="overflow-y-auto flex-grow min-h-0 p-4 md:p-6">
           {!showStructure ? (
@@ -136,16 +152,27 @@ const GitHubViewer = ({ isOpen, onClose }: GitHubViewerProps) => {
                 {userConfig.projects.map((project) => (
                   <div
                     key={project.id}
-                    className="bg-gray-800/50 p-4 rounded-lg cursor-pointer transition-colors hover:bg-gray-700/50"
+                    className="bg-gray-800/50 p-4 rounded-lg cursor-pointer transition-colors hover:bg-gray-700/50 focus:outline-none focus:ring-2 focus:ring-white/30"
                     onClick={() => handleProjectClick(project)}
+                    tabIndex={0}
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter') { e.preventDefault(); handleProjectClick(project); }
+                      if (e.key === ' ') { e.preventDefault(); setQuickLook(project); }
+                    }}
                   >
                     {project.images && project.images.length > 0 && (
-                      <div className="w-full h-48 mb-3 overflow-hidden rounded-lg">
+                      <div className="relative w-full h-48 mb-3 overflow-hidden rounded-lg">
                         <img 
                           src={project.images[0].url} 
                           alt={project.images[0].alt} 
                           className="w-full h-full object-cover"
                         />
+                        <button
+                          className="absolute bottom-2 right-2 text-xs bg-white/10 text-white border border-white/20 rounded px-2 py-1 hover:bg-white/20"
+                          onClick={(e) => { e.stopPropagation(); setQuickLook(project); }}
+                        >
+                          Quick Look
+                        </button>
                       </div>
                     )}
                     <h3 className="text-xl font-semibold mb-2 text-gray-200">{project.title}</h3>
@@ -279,6 +306,58 @@ const GitHubViewer = ({ isOpen, onClose }: GitHubViewerProps) => {
         </div>
       </div>
     </DraggableWindow>
+
+    {quickLook && (
+      <div className="fixed inset-0 z-[70]" role="dialog" aria-modal="true" aria-label="Quick Look">
+        <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={() => setQuickLook(null)} />
+        <div className="relative mx-auto mt-16 w-[92%] max-w-3xl rounded-xl border border-white/10 bg-gray-900/95 shadow-2xl">
+          <div className="p-4 md:p-6">
+            <div className="flex items-start justify-between mb-3">
+              <h3 className="text-xl font-semibold text-white">{quickLook!.title}</h3>
+              <button className="text-gray-400 hover:text-gray-200" onClick={() => setQuickLook(null)}>✕</button>
+            </div>
+            {quickLook!.images && quickLook!.images.length > 0 && (
+              <div className="rounded-lg overflow-hidden mb-3">
+                <img src={quickLook!.images[0].url} alt={quickLook!.images[0].alt} className="w-full object-cover" />
+              </div>
+            )}
+            <p className="text-gray-300 mb-3">{quickLook!.description}</p>
+            <div className="flex flex-wrap gap-2 mb-4">
+              {quickLook!.techStack.map((tech) => (
+                <span key={tech} className="px-2 py-1 bg-gray-700 rounded text-xs text-gray-300">{tech}</span>
+              ))}
+            </div>
+            <div className="flex gap-3">
+              <button
+                className="text-sm text-blue-400 hover:text-blue-300"
+                onClick={() => { setSelectedProject(quickLook!); setShowStructure(true); setQuickLook(null); }}
+              >
+                Open Details
+              </button>
+              <a
+                href={quickLook!.repoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm text-gray-300 hover:text-blue-400"
+              >
+                Open Repo
+              </a>
+              {quickLook!.liveUrl && (
+                <a
+                  href={quickLook!.liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-green-400 hover:text-green-300"
+                >
+                  Open Live
+                </a>
+              )}
+            </div>
+          </div>
+        </div>
+      </div>
+    )}
+    </>
   );
 };
 

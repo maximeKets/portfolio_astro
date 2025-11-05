@@ -11,6 +11,7 @@ interface DesktopDockProps {
   onTerminalClick: () => void;
   onNotesClick: () => void;
   onGitHubClick: () => void;
+  onContactClick: () => void;
   activeApps: {
     terminal: boolean;
     notes: boolean;
@@ -20,11 +21,13 @@ interface DesktopDockProps {
   };
 }
 
-const DesktopDock = ({ onTerminalClick, onNotesClick, onGitHubClick, activeApps }: DesktopDockProps) => {
+const DesktopDock = ({ onTerminalClick, onNotesClick, onGitHubClick, onContactClick, activeApps }: DesktopDockProps) => {
   const [hoveredIcon, setHoveredIcon] = useState<string | null>(null);
   const [showResume, setShowResume] = useState(false);
   const [showSpotify, setShowSpotify] = useState(false);
   const [showLinksPopup, setShowLinksPopup] = useState(false);
+  const [mouseX, setMouseX] = useState<number | null>(null);
+  const dockRef = useRef<HTMLDivElement>(null);
   const linksPopupRef = useRef<HTMLDivElement>(null);
 
   const handleLinksClick = () => {
@@ -51,9 +54,7 @@ const DesktopDock = ({ onTerminalClick, onNotesClick, onGitHubClick, activeApps 
     setShowSpotify(false);
   };
 
-  const handleEmailClick = () => {
-    window.open(`mailto:${userConfig.contact.email}`, '_blank');
-  };
+  // Email is handled via Contact widget now; direct mail link remains in Links popup
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
@@ -62,11 +63,42 @@ const DesktopDock = ({ onTerminalClick, onNotesClick, onGitHubClick, activeApps 
       }
     }
 
+    const handleMouseMove = (e: MouseEvent) => {
+      if (dockRef.current) {
+        const rect = dockRef.current.getBoundingClientRect();
+        if (e.clientY >= rect.top - 50 && e.clientY <= rect.bottom + 50) {
+          setMouseX(e.clientX);
+        } else {
+          setMouseX(null);
+        }
+      }
+    };
+
+    const handleMouseLeave = () => {
+      setMouseX(null);
+    };
+
     document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener('mousemove', handleMouseMove);
+    document.addEventListener('mouseleave', handleMouseLeave);
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('mousemove', handleMouseMove);
+      document.removeEventListener('mouseleave', handleMouseLeave);
     };
   }, []);
+
+  const calculateScale = (iconIndex: number, totalIcons: number) => {
+    if (mouseX === null || !dockRef.current) return 1;
+    const rect = dockRef.current.getBoundingClientRect();
+    const iconWidth = rect.width / totalIcons;
+    const iconCenter = rect.left + iconIndex * iconWidth + iconWidth / 2;
+    const distance = Math.abs(mouseX - iconCenter);
+    const maxDistance = iconWidth * 2;
+    if (distance > maxDistance) return 1;
+    const proximity = 1 - distance / maxDistance;
+    return 1 + proximity * 0.4; // Scale up to 1.4x
+  };
 
   const Tooltip = ({ text }: { text: string }) => (
     <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-black/80 text-white px-2 py-1 rounded text-sm whitespace-nowrap">
@@ -116,134 +148,47 @@ const DesktopDock = ({ onTerminalClick, onNotesClick, onGitHubClick, activeApps 
     </div>
   );
 
+  const icons = [
+    { id: 'github', label: 'My Projects', onClick: onGitHubClick, icon: BsGithub, color: 'from-black to-black/60', active: activeApps.github },
+    { id: 'notes', label: 'Resume Notes', onClick: onNotesClick, icon: BsStickyFill, color: 'from-yellow-600 to-yellow-400', active: activeApps.notes },
+    { id: 'resume', label: 'View Resume', onClick: handleResumeClick, icon: BsFilePdf, color: 'from-red-600 to-red-400', active: activeApps.resume },
+    { id: 'calendar', label: 'Schedule a Call', onClick: handleCalendarClick, icon: BsCalendar, color: 'from-blue-600 to-blue-400', active: false },
+    { id: 'spotify', label: 'Spotify Playlist', onClick: handleSpotifyClick, icon: BsSpotify, color: 'from-green-600 to-green-400', active: activeApps.spotify },
+    { id: 'email', label: 'Contact', onClick: onContactClick, icon: IoIosMail, color: 'from-blue-600 to-blue-400', active: false },
+    { id: 'links', label: 'Contact Links', onClick: handleLinksClick, icon: FaLink, color: 'from-purple-600 to-purple-400', active: false },
+    { id: 'terminal', label: 'Terminal', onClick: onTerminalClick, icon: RiTerminalFill, color: 'from-black to-black/60', active: activeApps.terminal },
+  ];
+
   return (
     <>
       <nav aria-label="Dock" className="fixed bottom-0 left-0 right-0 hidden md:flex justify-center pb-4 z-100">
-        <div className="bg-gray-600/50 backdrop-blur-sm rounded-2xl p-2 shadow-xl">
+        <div ref={dockRef} className="bg-gray-600/50 backdrop-blur-sm rounded-2xl p-2 shadow-xl">
           <div className="flex space-x-2" role="menubar">
-            {/* GitHub */}
-            <button
-              onClick={onGitHubClick}
-              aria-label="Open GitHub Projects"
-              onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onGitHubClick(); } }}
-              onMouseEnter={() => setHoveredIcon('github')}
-              onMouseLeave={() => setHoveredIcon(null)}
-              className="relative group"
-            >
-              <div className={`w-12 h-12 bg-gradient-to-t from-black to-black/60 rounded-xl flex items-center justify-center shadow-lg transition-all duration-300 ease-out hover:scale-110 active:scale-95 ${activeApps.github ? 'ring-2 ring-white/50' : ''}`}>
-                <BsGithub size={35} className='text-gray-100' />
-              </div>
-              {hoveredIcon === 'github' && <Tooltip text='My Projects' />}
-            </button>
-
-            {/* Notes */}
-            <button
-              onClick={onNotesClick}
-              aria-label="Open Notes"
-              onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onNotesClick(); } }}
-              onMouseEnter={() => setHoveredIcon('notes')}
-              onMouseLeave={() => setHoveredIcon(null)}
-              className="relative group"
-            >
-              <div className={`w-12 h-12 bg-gradient-to-t from-yellow-600 to-yellow-400 rounded-xl flex items-center justify-center shadow-lg transition-all duration-300 ease-out hover:scale-110 active:scale-95 ${activeApps.notes ? 'ring-2 ring-white/50' : ''}`}>
-                <BsStickyFill size={35} className='text-white' />
-              </div>
-              {hoveredIcon === 'notes' && <Tooltip text='Resume Notes' />}
-            </button>
-
-            {/* Resume */}
-            <button
-              onClick={handleResumeClick}
-              aria-label="View Resume"
-              onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); handleResumeClick(); } }}
-              onMouseEnter={() => setHoveredIcon('resume')}
-              onMouseLeave={() => setHoveredIcon(null)}
-              className="relative group"
-            >
-              <div className={`w-12 h-12 bg-gradient-to-t from-red-600 to-red-400 rounded-xl flex items-center justify-center shadow-lg transition-all duration-300 ease-out hover:scale-110 active:scale-95 ${activeApps.resume ? 'ring-2 ring-white/50' : ''}`}>
-                <BsFilePdf size={35} className='text-white' />
-              </div>
-              {hoveredIcon === 'resume' && <Tooltip text='View Resume' />}
-            </button>
-
-            {/* Calendar */}
-            <button
-              onClick={handleCalendarClick}
-              aria-label="Schedule a Call"
-              onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); handleCalendarClick(); } }}
-              onMouseEnter={() => setHoveredIcon('calendar')}
-              onMouseLeave={() => setHoveredIcon(null)}
-              className="relative"
-            >
-              <div className='w-12 h-12 bg-gradient-to-t from-blue-600 to-blue-400 rounded-xl flex items-center justify-center shadow-lg transition-all duration-300 ease-out hover:scale-110 active:scale-95'>
-                <BsCalendar size={30} className='text-white' />
-              </div>
-              {hoveredIcon === 'calendar' && <Tooltip text='Schedule a Call' />}
-            </button>
-
-            {/* Spotify */}
-            <button
-              onClick={handleSpotifyClick}
-              aria-label="Open Spotify Playlist"
-              onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); handleSpotifyClick(); } }}
-              onMouseEnter={() => setHoveredIcon('spotify')}
-              onMouseLeave={() => setHoveredIcon(null)}
-              className="relative"
-            >
-              <div className={`w-12 h-12 bg-gradient-to-t from-green-600 to-green-400 rounded-xl flex items-center justify-center shadow-lg transition-all duration-300 ease-out hover:scale-110 active:scale-95 ${activeApps.spotify ? 'ring-2 ring-white/50' : ''}`}>
-                <BsSpotify size={35} className='text-white' />
-              </div>
-              {hoveredIcon === 'spotify' && <Tooltip text='Spotify Playlist' />}
-            </button>
-
-            {/* Email */}
-            <button
-              onClick={handleEmailClick}
-              aria-label="Send Email"
-              onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); handleEmailClick(); } }}
-              onMouseEnter={() => setHoveredIcon('email')}
-              onMouseLeave={() => setHoveredIcon(null)}
-              className="relative"
-            >
-              <div className='w-12 h-12 bg-gradient-to-t from-blue-600 to-blue-400 rounded-xl flex items-center justify-center shadow-lg transition-all duration-300 ease-out hover:scale-110 active:scale-95'>
-                <IoIosMail size={40} className='text-white' />
-              </div>
-              {hoveredIcon === 'email' && <Tooltip text='Email' />}
-            </button>
-
-            {/* Links */}
-            <button
-              onClick={handleLinksClick}
-              aria-label="Open Contact Links"
-              aria-haspopup="menu"
-              aria-expanded={showLinksPopup}
-              aria-controls="dock-links-menu"
-              onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); handleLinksClick(); } }}
-              onMouseEnter={() => setHoveredIcon('links')}
-              onMouseLeave={() => setHoveredIcon(null)}
-              className="relative"
-            >
-              <div className='w-12 h-12 bg-gradient-to-t from-purple-600 to-purple-400 rounded-xl flex items-center justify-center shadow-lg transition-all duration-300 ease-out hover:scale-110 active:scale-95'>
-                <FaLink size={30} className='text-white' />
-              </div>
-              {hoveredIcon === 'links' && <Tooltip text='Contact Links' />}
-              {showLinksPopup && <LinksPopup />}
-            </button>
-
-            {/* Terminal */}
-            <button
-              onClick={onTerminalClick}
-              aria-label="Open Terminal"
-              onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onTerminalClick(); } }}
-              onMouseEnter={() => setHoveredIcon('terminal')}
-              onMouseLeave={() => setHoveredIcon(null)}
-              className="relative"
-            >
-              <div className={`w-12 h-12 bg-gradient-to-t from-black to-black/60 rounded-xl flex items-center justify-center shadow-lg transition-all duration-300 ease-out hover:scale-110 active:scale-95 ${activeApps.terminal ? 'ring-2 ring-white/50' : ''}`}>
-                <RiTerminalFill size={35} className='text-white' />
-              </div>
-              {hoveredIcon === 'terminal' && <Tooltip text='Terminal' />}
-            </button>
+            {icons.map((item, index) => {
+              const Icon = item.icon;
+              const scale = calculateScale(index, icons.length);
+              return (
+                <button
+                  key={item.id}
+                  onClick={item.onClick}
+                  aria-label={item.label}
+                  aria-haspopup={item.id === 'links' ? 'menu' : undefined}
+                  aria-expanded={item.id === 'links' ? showLinksPopup : undefined}
+                  onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); item.onClick(); } }}
+                  onMouseEnter={() => setHoveredIcon(item.id)}
+                  onMouseLeave={() => setHoveredIcon(null)}
+                  className="relative group"
+                  style={{ transform: `scale(${scale})`, transition: 'transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1)' }}
+                >
+                  <div className={`relative w-12 h-12 bg-gradient-to-t ${item.color} rounded-xl flex items-center justify-center shadow-lg active:scale-95 ${item.active ? 'ring-2 ring-white/50' : ''}`}>
+                    <Icon size={item.id === 'email' ? 40 : item.id === 'calendar' || item.id === 'links' ? 30 : 35} className='text-white' />
+                    {item.active && <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-white rounded-full" aria-hidden="true" />}
+                  </div>
+                  {hoveredIcon === item.id && <Tooltip text={item.label} />}
+                  {item.id === 'links' && showLinksPopup && <LinksPopup />}
+                </button>
+              );
+            })}
           </div>
         </div>
       </nav>

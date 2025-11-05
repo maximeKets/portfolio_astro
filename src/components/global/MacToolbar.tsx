@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { MdWifi } from 'react-icons/md';
-import { FaApple, FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
+import { FaApple, FaGithub, FaLinkedin, FaEnvelope, FaWindowRestore } from 'react-icons/fa';
 import {
   IoSearchSharp,
   IoBatteryHalfOutline,
@@ -13,7 +13,6 @@ import {
 } from 'react-icons/io5';
 import { VscVscode } from 'react-icons/vsc';
 import { userConfig } from '../../config/index';
-import HelpModal from './HelpModal';
 
 type MenuItem = {
   label: string;
@@ -23,13 +22,25 @@ type MenuItem = {
 };
 
 interface MacToolbarProps {
-  onTerminalClick?: () => void;
   onShowTutorial?: () => void;
+  onOpenSpotlight?: () => void;
+  onOpenMissionControl?: () => void;
+  onOpenContact?: () => void;
+  onToggleShortcuts?: () => void;
+  onCloseAllWindows?: () => void;
+  onShuffleBackground?: () => void;
+  onOpenAdmin?: () => void;
 }
 
 export default function MacToolbar({
-  onTerminalClick,
   onShowTutorial,
+  onOpenSpotlight,
+  onOpenMissionControl,
+  onOpenContact,
+  onToggleShortcuts,
+  onCloseAllWindows,
+  onShuffleBackground,
+  onOpenAdmin,
 }: MacToolbarProps) {
   const [currentDateTime, setCurrentDateTime] = useState(new Date());
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
@@ -101,14 +112,75 @@ export default function MacToolbar({
   const menus: Record<string, MenuItem[]> = {
     File: [
       {
-        label: 'Resume',
+        label: 'Resume (PDF)',
         icon: <IoDocumentText size={16} />,
         action: () => window.open(userConfig.resume.url, '_blank'),
       },
       {
-        label: 'Projects',
+        label: 'Projects (GitHub)',
         icon: <IoCodeSlash size={16} />,
         action: () => window.open(userConfig.social.github, '_blank'),
+      },
+      {
+        label: 'Admin Dashboard',
+        icon: <FaWindowRestore size={16} />,
+        action: () => onOpenAdmin ? onOpenAdmin() : (window.location.href = '/admin'),
+      },
+    ],
+    View: [
+      {
+        label: 'Spotlight Search…',
+        icon: <IoSearchSharp size={16} />,
+        action: () => onOpenSpotlight?.(),
+      },
+      {
+        label: 'Mission Control',
+        icon: <FaWindowRestore size={16} />,
+        action: () => onOpenMissionControl?.(),
+      },
+      {
+        label: 'Shortcuts Overlay',
+        icon: <IoHelpCircle size={16} />,
+        action: () => onToggleShortcuts?.(),
+      },
+      {
+        label: 'Reset Tutorial',
+        icon: <IoHelpCircle size={16} />,
+        action: () => onShowTutorial?.(),
+      },
+    ],
+    Window: [
+      {
+        label: 'Contact…',
+        icon: <IoMail size={16} />,
+        action: () => onOpenContact?.(),
+      },
+      {
+        label: 'Close All Windows',
+        icon: <IoDocumentText size={16} />,
+        action: () => onCloseAllWindows?.(),
+      },
+      {
+        label: 'Shuffle Background',
+        icon: <IoDocumentText size={16} />,
+        action: () => onShuffleBackground?.(),
+      },
+    ],
+    Go: [
+      {
+        label: 'GitHub',
+        icon: <FaGithub size={16} />,
+        action: () => window.open(userConfig.social.github, '_blank'),
+      },
+      {
+        label: 'LinkedIn',
+        icon: <FaLinkedin size={16} />,
+        action: () => window.open(userConfig.social.linkedin, '_blank'),
+      },
+      {
+        label: 'Email',
+        icon: <FaEnvelope size={16} />,
+        action: () => window.open(`mailto:${userConfig.contact.email}`),
       },
     ],
     Edit: [
@@ -129,23 +201,6 @@ export default function MacToolbar({
         },
       },
     ],
-    Go: [
-      {
-        label: 'GitHub',
-        icon: <FaGithub size={16} />,
-        action: () => window.open(userConfig.social.github, '_blank'),
-      },
-      {
-        label: 'LinkedIn',
-        icon: <FaLinkedin size={16} />,
-        action: () => window.open(userConfig.social.linkedin, '_blank'),
-      },
-      {
-        label: 'Email',
-        icon: <FaEnvelope size={16} />,
-        action: () => window.open(`mailto:${userConfig.contact.email}`),
-      },
-    ],
     Help: [
       {
         label: 'Show Help',
@@ -153,9 +208,9 @@ export default function MacToolbar({
         action: () => setShowHelp(true),
       },
       {
-        label: 'Show Tutorial',
+        label: 'Keyboard Shortcuts',
         icon: <IoHelpCircle size={16} />,
-        action: () => onShowTutorial?.(),
+        action: () => onToggleShortcuts?.(),
       },
     ],
   };
@@ -194,11 +249,6 @@ export default function MacToolbar({
 
   return (
     <>
-      <HelpModal 
-        isOpen={showHelp} 
-        onClose={() => setShowHelp(false)}
-        onTerminalClick={onTerminalClick}
-      />
       <div className='sticky top-0 z-50 md:hidden bg-transparent text-white h-12 px-8 flex items-center justify-between text-base font-medium'>
         <span className='font-semibold'>
           {formatIPhoneTime(currentDateTime)}
@@ -259,7 +309,14 @@ export default function MacToolbar({
             title='Open in VSCode'
           />
           <MdWifi size={16} />
-          <IoSearchSharp size={16} />
+          <IoSearchSharp
+            size={16}
+            className='cursor-pointer hover:opacity-80 transition-opacity'
+            onClick={() => onOpenSpotlight?.()}
+            title='Search (Ctrl/Cmd+K)'
+            role='button'
+            aria-label='Open search'
+          />
           <span className='cursor-default'>
             {formatMacDate(currentDateTime)}
           </span>

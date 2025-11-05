@@ -5,8 +5,14 @@ A modern, interactive portfolio built with Astro, React, and Tailwind CSS, featu
 ## 🚀 Features
 
 - Modern Stack: Astro 5, React, Tailwind CSS
-- macOS-style UI: Dock, toolbar, draggable windows, notes app, GitHub project viewer
+- macOS-style UI: Dock, toolbar, draggable windows, Notes app, GitHub project viewer
+- Spotlight: Global search with fuzzy matching (Fuse.js), grouped results, power commands, and deep-linking (Notes sections & Projects)
+- Mission Control: Grid of open windows for quick switching (Ctrl/Cmd+↑ or F3)
+- Dock polish: Activity badges and subtle magnification on hover
 - AI Terminal: Chat endpoint powered by Groq (GROQ_API_KEY)
+- Contact: In-app contact form modal that saves messages to Supabase Postgres
+- Admin Dashboard: Dedicated `/admin` route with username/password login to review messages
+- Shortcuts: Overlay via `?` and a subtle fixed shortcut hint on the desktop
 - Modular configuration: Edit content via files in `src/config/` (no code changes required)
 - Accessibility: Keyboard navigation and ARIA semantics across key components
 - SEO: `@astrolib/seo`, sitemap, Twitter cards, JSON-LD, canonical from `PUBLIC_SITE_URL`
@@ -21,6 +27,7 @@ A modern, interactive portfolio built with Astro, React, and Tailwind CSS, featu
 - [Tailwind CSS](https://tailwindcss.com/) — Utility-first styling
 - [TypeScript](https://www.typescriptlang.org/) — Types and DX
 - [Vercel](https://vercel.com/) — Hosting/analytics
+- [Supabase](https://supabase.com/) — Postgres + RLS for contact storage
 
 ## 📦 Installation
 
@@ -42,12 +49,42 @@ npm install
 Copy `.env.example` to `.env` and fill in:
 
 ```
+# AI Terminal
 GROQ_API_KEY=your_groq_api_key_here
-# Optional but recommended for SEO/canonical URLs
+
+# Site
 # PUBLIC_SITE_URL=https://your-domain.tld
+
+# Supabase (server-only; do NOT expose in PUBLIC_ vars)
+SUPABASE_URL=https://YOUR-PROJECT.supabase.co
+SUPABASE_SERVICE_ROLE_KEY=your_service_role_key
+
+# Admin dashboard credentials (server-only)
+ADMIN_USERNAME=admin
+ADMIN_PASSWORD=change_me
 ```
 
-4) Add your content
+4) Create the database table (Supabase)
+
+Run this SQL in the Supabase SQL editor:
+
+```
+create table if not exists public.contact_messages (
+    id uuid primary key default gen_random_uuid(),
+    created_at timestamptz not null default now(),
+    name text not null,
+    email text not null,
+    message text not null,
+    time_on_page int,
+    ip text,
+    user_agent text
+);
+
+-- Enable RLS and do NOT add anon policies (server-only access via service_role)
+alter table public.contact_messages enable row level security;
+```
+
+5) Add your content
 
 Configuration is modular under `src/config/`:
 
@@ -62,7 +99,7 @@ Configuration is modular under `src/config/`:
 
 All types are defined in `src/types` and aggregated as `userConfig` in `src/config/index.ts`.
 
-5) (Optional) Generate project JSON from GitHub
+6) (Optional) Generate project JSON from GitHub
 
 See `util/github_repo_parser.py`. To reduce rate limiting, pass a token in the script (personal access token):
 
@@ -110,6 +147,7 @@ There is a bug with direct deployment from github, i can't seem to figure it out
 Tips:
 - In Vercel Project Settings → Environment Variables, set `PUBLIC_SITE_URL` (e.g., `https://your-domain.tld`) so canonical/OG links are correct.
 - Also set `GROQ_API_KEY` for the Terminal chat.
+- Add Supabase + Admin envs (server-only): `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`, `ADMIN_USERNAME`, `ADMIN_PASSWORD`.
 
 ## 📁 Project Structure
 
@@ -135,9 +173,19 @@ Tips:
 - `src/config/*`: All user content and site/theme config
 - `src/types`: Shared types for config and components
 - `src/pages/api/chat.ts`: Serverless API route using Groq (requires `GROQ_API_KEY`)
+- `src/pages/api/contact.ts`: Saves contact messages to Supabase (`contact_messages`)
+- `src/pages/admin.astro`: Admin dashboard route (React on Astro)
+- `src/pages/api/admin/login.ts`: Admin login endpoint (username/password from env)
+- `src/pages/api/admin/messages.ts`: Admin messages list (requires session token)
 
 State management:
 - `AppLayout.tsx` uses a reducer to manage app windows (`terminal`, `notes`, `github`, `resume`, `spotify`) instead of multiple booleans.
+
+Shortcuts:
+- Cmd/Ctrl+K: Spotlight search
+- ?: Shortcuts overlay
+- Ctrl/Cmd+↑ or F3: Mission Control
+- Cmd/Ctrl+C: Open Contact form
 
 Accessibility:
 - Menubar, dialog, tree, and toolbar semantics; keyboard activation for dock/menu; labelled controls; `aria-live` for terminal/messages.
@@ -153,6 +201,9 @@ The project is configured for deployment on Vercel.
 2. In Project Settings → Environment Variables set:
     - `PUBLIC_SITE_URL` = your production URL (e.g., https://your-domain.tld)
     - `GROQ_API_KEY` = your key
+    - `SUPABASE_URL` = your Supabase project URL
+    - `SUPABASE_SERVICE_ROLE_KEY` = service role key (server-only)
+    - `ADMIN_USERNAME`, `ADMIN_PASSWORD` = creds for `/admin`
 3. Vercel will deploy automatically. If auto-deploy fails, use the CLI commands above.
 
 ## 📝 License
@@ -168,6 +219,10 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 ## 📞 Contact
 
 For questions or support, please open an issue on GitHub.
+
+Admin & data notes:
+- The contact form stores submissions in Supabase; RLS is enabled and only the server API (service role) can read/write.
+- The Admin Dashboard lives at `/admin` and uses username/password from env. It fetches messages via a server API secured by a short-lived session token.
 
 Original version made with ❤️ in Austin, TX by Johnny Culbreth
 Modified with ❤️ in Giza, Egypt by aabdoo23

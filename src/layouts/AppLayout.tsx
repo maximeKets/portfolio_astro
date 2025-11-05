@@ -1,11 +1,18 @@
 import { useEffect, useReducer, useState } from 'react';
+import Spotlight from '../components/global/Spotlight';
 import MacToolbar from '../components/global/MacToolbar';
 import MacTerminal from '../components/global/MacTerminal';
 import MobileDock from '../components/global/MobileDock';
 import DesktopDock from '../components/global/DesktopDock';
 import NotesApp from '../components/global/NotesApp';
+import type { Section as NotesSection } from '../components/global/NotesApp';
 import GitHubViewer from '../components/global/GitHubViewer';
 import ResumeViewer from '../components/global/ResumeViewer';
+import ShortcutsOverlay from '../components/global/ShortcutsOverlay';
+import MissionControl from '../components/global/MissionControl';
+import ContactWidget from '../components/global/ContactWidget';
+import ShortcutHint from '../components/global/ShortcutHint';
+import WelcomeTour from '../components/global/WelcomeTour';
 
 interface AppLayoutProps {
   initialBg: string;
@@ -43,8 +50,13 @@ export default function Desktop({ initialBg, backgroundMap }: AppLayoutProps) {
   const [state, dispatch] = useReducer(reducer, {
     windows: { terminal: false, notes: false, github: false, resume: false, spotify: false },
   });
-  const [currentTutorialStep, setCurrentTutorialStep] = useState(0);
   const [showTutorial, setShowTutorial] = useState(false);
+  const [isSpotlightOpen, setIsSpotlightOpen] = useState(false);
+  const [showShortcuts, setShowShortcuts] = useState(false);
+  const [isMissionControlOpen, setIsMissionControlOpen] = useState(false);
+  const [isContactOpen, setIsContactOpen] = useState(false);
+  const [notesSection, setNotesSection] = useState<NotesSection | undefined>(undefined);
+  const [selectedProjectId, setSelectedProjectId] = useState<string | undefined>(undefined);
 
   const activeApps = state.windows;
 
@@ -68,68 +80,56 @@ export default function Desktop({ initialBg, backgroundMap }: AppLayoutProps) {
     localStorage.setItem('lastBackground', currentBg);
   }, [initialBg, backgroundMap]);
 
+  // Spotlight keyboard shortcut (Cmd/Ctrl + K), help overlay (?), and Mission Control (Ctrl/Cmd+Up or F3)
+  useEffect(() => {
+    const handler = (e: KeyboardEvent) => {
+      const isMac = navigator.platform.toUpperCase().includes('MAC');
+      const cmdOrCtrl = isMac ? e.metaKey : e.ctrlKey;
+      if (cmdOrCtrl && (e.key === 'k' || e.key === 'K')) {
+        e.preventDefault();
+        setIsSpotlightOpen(true);
+      } else if (e.key === '?' || (e.key === '/' && e.shiftKey) || (cmdOrCtrl && (e.key === 'h' || e.key === 'H'))) {
+        e.preventDefault();
+        setShowShortcuts((s) => !s);
+      } else if ((cmdOrCtrl && e.key === 'ArrowUp') || e.key === 'F3' || (cmdOrCtrl && (e.key === 'm' || e.key === 'M'))) {
+        e.preventDefault();
+        setIsMissionControlOpen((m) => !m);
+      } else if (cmdOrCtrl && (e.key === 'c' || e.key === 'C')) {
+        // Quick open contact with `ctrl+c`
+        e.preventDefault();
+        setIsContactOpen((o) => !o);
+      }
+    };
+    window.addEventListener('keydown', handler);
+    return () => window.removeEventListener('keydown', handler);
+  }, []);
+
   // Add this function to reset tutorial
   const resetTutorial = () => {
-    setCurrentTutorialStep(0);
     setShowTutorial(true);
     localStorage.setItem('hasCompletedTutorial', 'false');
   };
 
-  const tutorialSteps: TutorialStep[] = [
-    {
-      title: "Welcome to My Portfolio! 👋",
-      content: "This is a macOS-inspired portfolio where you can explore my work and experience. Let me guide you through some of the features!",
-      action: () => handleAppOpen('notes'),
-      buttonText: "Let's Begin"
-    },
-    {
-      title: "Notes App",
-      content: "This is my Notes app where you can find detailed information about my education, experience, and skills. Feel free to explore!",
-      action: () => {
-        handleAppClose('notes');
-        handleAppOpen('github');
-      },
-      buttonText: "Next: Projects"
-    },
-    {
-      title: "GitHub Projects",
-      content: "Here you can browse through my projects, see their structure, and check out the code. Each project has screenshots and links to the repository.",
-      action: () => {
-        handleAppClose('github');
-        handleAppOpen('terminal');
-      },
-      buttonText: "Next: Terminal"
-    },
-    {
-      title: "Terminal",
-      content: "The terminal is an interactive way to learn more about me. Try asking questions like 'What are your skills?' or 'Tell me about your experience'",
-      action: () => {
-        handleAppClose('terminal');
-      },
-      buttonText: "Next: Explore"
-    },
-    {
-      title: "Explore",
-      content: "Now that you've seen the basics, feel free to explore the rest of the portfolio from the dock below. I've got some cool projects and information waiting for you!",
-      action: () => {
-        setShowTutorial(false);
-      },
-      buttonText: "Thanks! I Got it from here!"
-    }
-  ];
-
-  const handleTutorialAction = () => {
-    if (tutorialSteps[currentTutorialStep].action) {
-      tutorialSteps[currentTutorialStep].action!();
-    }
-
-    if (currentTutorialStep < tutorialSteps.length - 1) {
-      setCurrentTutorialStep(prev => prev + 1);
-    } else {
-      setShowTutorial(false);
-      localStorage.setItem('hasCompletedTutorial', 'true');
-    }
+  // Helper actions for Spotlight
+  const openNotesSection = (section: NotesSection) => {
+    setNotesSection(section);
+    handleAppOpen('notes');
   };
+  const closeAllWindows = () => dispatch({ type: 'CLOSE_ALL' });
+  const shuffleBackground = () => {
+    const bgKeys = Object.keys(backgroundMap);
+    const availableBgs = bgKeys.filter((bg) => bg !== currentBg);
+    const newBg = availableBgs[Math.floor(Math.random() * availableBgs.length)];
+    setCurrentBg(newBg);
+    localStorage.setItem('lastBackground', newBg);
+  };
+
+  const openProjectById = (id: string) => {
+    setSelectedProjectId(id);
+    handleAppOpen('github');
+  };
+
+  // Replaced legacy tutorial with WelcomeTour overlay
 
   const handleAppOpen = (app: App) => dispatch({ type: 'OPEN', app });
   const handleAppClose = (app: App) => dispatch({ type: 'CLOSE', app });
@@ -143,8 +143,14 @@ export default function Desktop({ initialBg, backgroundMap }: AppLayoutProps) {
 
       <div className='relative z-10'>
         <MacToolbar 
-          onTerminalClick={() => handleAppOpen('terminal')} 
           onShowTutorial={resetTutorial}
+          onOpenSpotlight={() => setIsSpotlightOpen(true)}
+          onOpenMissionControl={() => setIsMissionControlOpen(true)}
+          onOpenContact={() => setIsContactOpen(true)}
+          onToggleShortcuts={() => setShowShortcuts((s) => !s)}
+          onCloseAllWindows={closeAllWindows}
+          onShuffleBackground={shuffleBackground}
+          onOpenAdmin={() => { window.location.href = '/admin'; }}
         />
       </div>
 
@@ -175,42 +181,60 @@ export default function Desktop({ initialBg, backgroundMap }: AppLayoutProps) {
         onGitHubClick={() => {
           handleAppOpen('github');
         }}
+        onContactClick={() => setIsContactOpen(true)}
         activeApps={activeApps}
       />
 
       <NotesApp isOpen={state.windows.notes} onClose={() => {
         handleAppClose('notes');
-      }} />
+      }} section={notesSection} />
       <GitHubViewer isOpen={state.windows.github} onClose={() => {
         handleAppClose('github');
-      }} />
+      }} selectedProjectId={selectedProjectId} />
       <ResumeViewer isOpen={state.windows.resume} onClose={() => {
         handleAppClose('resume');
       }} />
       <MacTerminal isOpen={state.windows.terminal} onClose={() => {
         handleAppClose('terminal');
       }} />
-      {showTutorial && (
-        <div className="fixed right-4 top-1/2 transform -translate-y-1/2 z-50">
-          <div className="bg-gray-800/90 backdrop-blur-sm text-white p-4 rounded-lg shadow-xl max-w-xs animate-fade-in">
-            <h3 className="text-lg font-semibold mb-2">{tutorialSteps[currentTutorialStep].title}</h3>
-            <p className="text-sm text-gray-300 mb-4">
-              {tutorialSteps[currentTutorialStep].content}
-            </p>
-            <div className="flex justify-between items-center">
-              <span className="text-xs text-gray-400">
-                {currentTutorialStep + 1} of {tutorialSteps.length}
-              </span>
-              <button
-                onClick={handleTutorialAction}
-                className="text-sm text-blue-400 hover:text-blue-300"
-              >
-                {tutorialSteps[currentTutorialStep].buttonText}
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
+      <Spotlight
+        isOpen={isSpotlightOpen}
+        onClose={() => setIsSpotlightOpen(false)}
+        actions={{
+          openTerminal: () => handleAppOpen('terminal'),
+          openNotes: () => handleAppOpen('notes'),
+          openContact: () => setIsContactOpen(true),
+          openNotesSection: (s) => openNotesSection(s as NotesSection),
+          openGitHub: () => handleAppOpen('github'),
+          openResume: () => handleAppOpen('resume'),
+          showTutorial: resetTutorial,
+          closeAllWindows,
+          shuffleBackground,
+          openProjectById,
+        }}
+      />
+      <WelcomeTour
+        open={showTutorial}
+        onClose={() => { setShowTutorial(false); localStorage.setItem('hasCompletedTutorial', 'true'); }}
+        actions={{
+          openSpotlight: () => setIsSpotlightOpen(true),
+          openMissionControl: () => setIsMissionControlOpen(true),
+          openNotes: () => handleAppOpen('notes'),
+          openGitHub: () => handleAppOpen('github'),
+          openContact: () => setIsContactOpen(true),
+          closeAll: closeAllWindows,
+        }}
+      />
+      <ShortcutsOverlay open={showShortcuts} onClose={() => setShowShortcuts(false)} />
+      <ShortcutHint />
+      <ContactWidget open={isContactOpen} onClose={() => setIsContactOpen(false)} />
+      <MissionControl
+        isOpen={isMissionControlOpen}
+        onClose={() => setIsMissionControlOpen(false)}
+        activeApps={activeApps}
+        onAppClick={(app) => handleAppOpen(app)}
+        onAppClose={(app) => handleAppClose(app)}
+      />
     </div>
   );
 }
