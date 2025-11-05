@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import {
     FaGraduationCap, FaBriefcase, FaChevronLeft, FaBookOpen,
     FaCode, FaUsers, FaPalette, FaTrophy
@@ -6,12 +6,7 @@ import {
 import { userConfig } from '../../config/index';
 import DraggableWindow from './DraggableWindow';
 
-interface NotesAppProps {
-    isOpen: boolean;
-    onClose: () => void;
-}
-
-type Section =
+export type Section =
     | 'menu'
     | 'education'
     | 'experience'
@@ -20,6 +15,12 @@ type Section =
     | 'roles'
     | 'activities'
     | 'competitions';
+
+interface NotesAppProps {
+    isOpen: boolean;
+    onClose: () => void;
+    section?: Section; // external control of active section
+}
 
 // Type for storing image indices per item
 type ImageIndicesState = Record<string, number>;
@@ -30,7 +31,7 @@ interface Image {
     description?: string;
 }
 
-const NotesApp = ({ isOpen, onClose }: NotesAppProps) => {
+const NotesApp = ({ isOpen, onClose, section }: NotesAppProps) => {
     const [activeSection, setActiveSection] = useState<Section>('menu');
     // Store image indices in an object: { 'itemId': index }
     const [activeImageIndices, setActiveImageIndices] = useState<ImageIndicesState>({});
@@ -60,6 +61,13 @@ const NotesApp = ({ isOpen, onClose }: NotesAppProps) => {
             [itemId]: ((prevIndices[itemId] ?? 0) - 1 + images.length) % images.length
         }));
     };
+
+    // Sync external section prop to internal state
+    useEffect(() => {
+        if (section && section !== activeSection) {
+            setActiveSection(section);
+        }
+    }, [section]);
 
     if (!isOpen) return null;
 
@@ -202,21 +210,48 @@ const NotesApp = ({ isOpen, onClose }: NotesAppProps) => {
         </div>
     );
 
-    const renderSkills = () => (
-        <div className="space-y-6">
-            {renderBackButton()}
-            <h2 className="text-2xl font-bold text-gray-200 mb-6">Skills</h2>
-            <div className="bg-gray-800/50 p-6 rounded-xl shadow-lg">
-                <div className="flex flex-wrap gap-2">
-                    {skills.map((skill, index) => (
-                        <span key={index} className="px-3 py-1 bg-gray-700 rounded text-sm text-gray-300">
-                            {skill}
-                        </span>
-                    ))}
+    const renderSkills = () => {
+        // Build a simple frequency map of how many projects use each skill
+        const freq: Record<string, number> = {};
+        for (const p of (userConfig.projects || [])) {
+            for (const t of p.techStack) {
+                freq[t] = (freq[t] || 0) + 1;
+            }
+        }
+        const max = Object.values(freq).reduce((a, b) => Math.max(a, b), 1);
+        const getIntensity = (skill: string) => {
+            const f = freq[skill] || 0;
+            const ratio = Math.min(1, f / max);
+            // Interpolate from gray-700 to green-600
+            const base = 'bg-gray-700';
+            if (ratio > 0.66) return 'bg-green-600/70';
+            if (ratio > 0.33) return 'bg-green-600/40';
+            if (ratio > 0) return 'bg-green-600/20';
+            return base;
+        };
+        return (
+            <div className="space-y-6">
+                {renderBackButton()}
+                <h2 className="text-2xl font-bold text-gray-200 mb-2">Skills</h2>
+                <p className="text-sm text-gray-400 mb-4">Intensity shows how often a skill appears across my projects.</p>
+                <div className="bg-gray-800/50 p-6 rounded-xl shadow-lg">
+                    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">
+                        {skills.map((skill, index) => (
+                            <button
+                                key={index}
+                                className={`px-3 py-2 rounded text-sm text-gray-100 text-left transition-colors ${getIntensity(skill)} hover:bg-green-500/60`}
+                                title={`Used in ${freq[skill] || 0} project(s)`}
+                                onClick={() => {/* future: filter projects by skill */}}
+                            >
+                                <span className="font-medium">{skill}</span>
+                                <span className="ml-2 text-xs text-gray-200/70">{freq[skill] || 0}</span>
+                            </button>
+                        ))}
+                    </div>
                 </div>
             </div>
-        </div>
-    );
+        );
+    };
 
     const renderExtraCurricularRoles = () => (
         <div className="space-y-6">
