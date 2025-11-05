@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { FaGithub, FaExternalLinkAlt, FaFolder, FaFile, FaChevronLeft, FaLink } from 'react-icons/fa';
-import { userConfig } from '../../config/userConfig';
+import { userConfig } from '../../config/index';
 import DraggableWindow from './DraggableWindow';
 
 type FileNode = {
@@ -45,6 +45,15 @@ const GitHubViewer = ({ isOpen, onClose }: GitHubViewerProps) => {
       <div key={currentPath} className="ml-4">
         <div
           className="flex items-center cursor-pointer hover:bg-gray-700/50 p-1 rounded"
+          role="treeitem"
+          aria-expanded={node.type === 'directory' ? isExpanded : undefined}
+          tabIndex={0}
+          onKeyDown={(e) => {
+            if ((e.key === 'Enter' || e.key === ' ') && node.type === 'directory') {
+              e.preventDefault();
+              toggleNode(currentPath);
+            }
+          }}
           onClick={() => node.type === 'directory' && toggleNode(currentPath)}
         >
           {node.type === 'directory' ? (
@@ -55,7 +64,7 @@ const GitHubViewer = ({ isOpen, onClose }: GitHubViewerProps) => {
           <span className="text-gray-200">{node.name}</span>
         </div>
         {node.type === 'directory' && isExpanded && node.children && (
-          <div className="ml-4">
+          <div className="ml-4" role="group">
             {node.children.map((child) => renderFileTree(child, currentPath))}
           </div>
         )}
@@ -66,7 +75,7 @@ const GitHubViewer = ({ isOpen, onClose }: GitHubViewerProps) => {
   const renderProjectStructure = (projectStructure: ProjectStructure) => {
     // Create the root node first
     return (
-      <div>
+      <div role="tree" aria-label="Project structure">
         <div className="flex items-center p-1 rounded">
           <FaFolder className="text-yellow-500 mr-2" />
           <span className="text-gray-200 font-bold">{projectStructure.root}</span>
@@ -183,6 +192,7 @@ const GitHubViewer = ({ isOpen, onClose }: GitHubViewerProps) => {
             <div>
               <button
                 onClick={handleBackClick}
+                aria-label="Back to Projects"
                 className="flex items-center gap-2 text-gray-300 hover:text-gray-100 mb-4"
               >
                 <FaChevronLeft />
@@ -217,6 +227,7 @@ const GitHubViewer = ({ isOpen, onClose }: GitHubViewerProps) => {
                         <div className="flex justify-between mt-2">
                           <button 
                             onClick={handlePrevImage}
+                            aria-label="Previous screenshot"
                             className="bg-gray-700 hover:bg-gray-600 text-white rounded-full w-8 h-8 flex items-center justify-center"
                           >
                             ←
@@ -226,6 +237,7 @@ const GitHubViewer = ({ isOpen, onClose }: GitHubViewerProps) => {
                           </span>
                           <button 
                             onClick={handleNextImage}
+                            aria-label="Next screenshot"
                             className="bg-gray-700 hover:bg-gray-600 text-white rounded-full w-8 h-8 flex items-center justify-center"
                           >
                             →

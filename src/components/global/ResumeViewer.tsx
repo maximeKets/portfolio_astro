@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import { userConfig } from '../../config/userConfig';
+import { userConfig } from '../../config/index';
 import DraggableWindow from './DraggableWindow';
 
 interface ResumeViewerProps {
@@ -36,7 +36,21 @@ export default function ResumeViewer({ isOpen, onClose }: ResumeViewerProps) {
     >
       <div className="h-full bg-white">
         <figure className="h-full">
-          <object data={userConfig.resume.localPath} type="application/pdf" width="100%" className="h-full"></object>
+          <object 
+            data={userConfig.resume.localPath} 
+            type="application/pdf" 
+            width="100%" 
+            className="h-full"
+            aria-label="Embedded resume PDF"
+            title="Resume PDF"
+          >
+            <p className="p-4 text-sm text-gray-700">
+              Your browser can’t display this PDF. 
+              <a href={userConfig.resume.url} target="_blank" rel="noreferrer noopener" className="text-blue-600 underline">
+                Open the resume in a new tab
+              </a>.
+            </p>
+          </object>
         </figure>
       </div>
     </DraggableWindow>

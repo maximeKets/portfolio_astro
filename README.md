@@ -1,51 +1,74 @@
 # macOS User-friendly Portfolio
 
-A modern, interactive portfolio website built with Astro, React, and Tailwind CSS, featuring a macOS-inspired interface.
+A modern, interactive portfolio built with Astro, React, and Tailwind CSS, featuring a macOS-inspired interface and an AI terminal.
 
 ## 🚀 Features
 
-- **Modern Tech Stack**: Built with Astro, React, and Tailwind CSS
-- **Terminal Interface**: macOS terminal-inspired UI integrating a chatbot for a unique user experience
-- **Easily customizable user data**: The user can easily create their own version by editing the data in the `userconfig.ts` file.
-- **Projects' Summary**: The user can add all their project for a project structure preview, in addition to the screenshots and github links.
-- **Notes App**: The user can add all their related data in user-friendly story-telling way.
-- **Responsive Design**: Fully responsive layout that works on all devices
-- **SEO Optimized**: Built-in sitemap generation and SEO tools
-- **TypeScript Support**: Full TypeScript integration for better development experience
-- **Vercel Deployment**: Optimized for deployment on Vercel
+- Modern Stack: Astro 5, React, Tailwind CSS
+- macOS-style UI: Dock, toolbar, draggable windows, notes app, GitHub project viewer
+- AI Terminal: Chat endpoint powered by Groq (GROQ_API_KEY)
+- Modular configuration: Edit content via files in `src/config/` (no code changes required)
+- Accessibility: Keyboard navigation and ARIA semantics across key components
+- SEO: `@astrolib/seo`, sitemap, Twitter cards, JSON-LD, canonical from `PUBLIC_SITE_URL`
+- Image performance: `astro:assets` for backgrounds, lazy/async loading for content images
+- TypeScript first: Strong shared types in `src/types`
+- Vercel-ready: Deploy easily with environment config
 
 ## 🛠️ Tech Stack
 
-- [Astro](https://astro.build/) - Modern static site builder
-- [React](https://reactjs.org/) - UI component library
-- [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS framework
-- [TypeScript](https://www.typescriptlang.org/) - Type-safe JavaScript
-- [Vercel](https://vercel.com/) - Deployment platform
+- [Astro](https://astro.build/) — Content-focused web framework
+- [React](https://reactjs.org/) — UI interactivity
+- [Tailwind CSS](https://tailwindcss.com/) — Utility-first styling
+- [TypeScript](https://www.typescriptlang.org/) — Types and DX
+- [Vercel](https://vercel.com/) — Hosting/analytics
 
 ## 📦 Installation
 
-1. Clone the repository:
+1) Clone the repository
+
 ```bash
 git clone https://github.com/aabdoo23/portfolio
 cd portfolio
 ```
 
-2. Install dependencies:
+2) Install dependencies
+
 ```bash
 npm install
 ```
 
-3. Create a `.env` file in the root directory and add your environment variables:
-```env
-GROQ_API_KEY = YOUR_GROQ_API_KEY
-```
-4. Access the `userconfig.ts` file and start putting in your data.
+3) Configure environment variables
 
-5. To generate json files for your projects, I have provided a `github_repo_parser.py` file in the `util` folder, you can provide a github token to avoid rate limiting to the call of the parser in the main
+Copy `.env.example` to `.env` and fill in:
+
+```
+GROQ_API_KEY=your_groq_api_key_here
+# Optional but recommended for SEO/canonical URLs
+# PUBLIC_SITE_URL=https://your-domain.tld
+```
+
+4) Add your content
+
+Configuration is modular under `src/config/`:
+
+- `personal.ts` — Name, role, website, brief focus
+- `social.ts` — GitHub, LinkedIn links
+- `contact.ts` — Email, phone, Calendly
+- `education.ts`, `experience.ts`, `skills.ts` — Main profile content
+- `extracurricular.ts`, `competitions.ts` — Optional extras
+- `projects.ts` — Portfolio projects (structure, screenshots, repo links)
+- `apps.ts` — Resume and Spotify playlist IDs/URLs
+- `site.ts` — SEO (title/description/keywords) and theme colors
+
+All types are defined in `src/types` and aggregated as `userConfig` in `src/config/index.ts`.
+
+5) (Optional) Generate project JSON from GitHub
+
+See `util/github_repo_parser.py`. To reduce rate limiting, pass a token in the script (personal access token):
+
 ```python
 def main():
     parser = GitHubRepoParser('ghp_YOUR_TOKEN_HERE')
-    
 ```
 
 ## 🚀 Development
@@ -84,37 +107,53 @@ and select the image from the vercel dashboard.
 
 There is a bug with direct deployment from github, i can't seem to figure it out tbf, so for the time being use the above commands after running ```npm run build```.
 
+Tips:
+- In Vercel Project Settings → Environment Variables, set `PUBLIC_SITE_URL` (e.g., `https://your-domain.tld`) so canonical/OG links are correct.
+- Also set `GROQ_API_KEY` for the Terminal chat.
+
 ## 📁 Project Structure
 
 ```
 ├── src/
-│   ├── components/     # React components
-│   ├── layouts/        # Layout components
-│   ├── pages/          # Astro pages
-│   ├── styles/         # Global styles
-│   ├── config/         # Configuration files
-│   └── assets/         # Static assets
+│   ├── components/      # React components
+│   ├── layouts/         # Astro/React layouts
+│   ├── pages/           # Astro pages (includes API routes)
+│   ├── styles/          # Global styles
+│   ├── config/          # Modular user/site config (see files listed above)
+│   ├── types/           # Shared TypeScript types
+│   └── assets/          # Images and static assets
 ├── public/             # Public assets
 ├── .astro/             # Astro build files
 ├── util/               # Utility functions
 └── astro.config.mjs    # Astro configuration
 ```
 
-## 🔧 Configuration
+## 🔧 Configuration & Architecture
 
-The project is configured through several key files:
+- `astro.config.mjs`: Astro config; `site` can be set via `PUBLIC_SITE_URL`
+- `src/components/global/BaseHead.astro`: Central SEO (AstroSeo) + JSON-LD and OG defaults
+- `src/config/*`: All user content and site/theme config
+- `src/types`: Shared types for config and components
+- `src/pages/api/chat.ts`: Serverless API route using Groq (requires `GROQ_API_KEY`)
 
-- `astro.config.mjs`: Main Astro configuration
-- `tsconfig.json`: TypeScript configuration
-- `tailwind.config.js`: Tailwind CSS configuration
+State management:
+- `AppLayout.tsx` uses a reducer to manage app windows (`terminal`, `notes`, `github`, `resume`, `spotify`) instead of multiple booleans.
+
+Accessibility:
+- Menubar, dialog, tree, and toolbar semantics; keyboard activation for dock/menu; labelled controls; `aria-live` for terminal/messages.
+
+SEO:
+- `@astrolib/seo` provides meta, Twitter cards, openGraph with a safe fallback image; JSON-LD for WebSite and Person.
 
 ## 🚀 Deployment
 
-The project is configured for deployment on Vercel. To deploy:
+The project is configured for deployment on Vercel.
 
-1. Push your changes to your GitHub repository
-2. Connect your repository to Vercel
-3. Vercel will automatically deploy your site
+1. Push to GitHub and connect the repo in Vercel
+2. In Project Settings → Environment Variables set:
+    - `PUBLIC_SITE_URL` = your production URL (e.g., https://your-domain.tld)
+    - `GROQ_API_KEY` = your key
+3. Vercel will deploy automatically. If auto-deploy fails, use the CLI commands above.
 
 ## 📝 License
 

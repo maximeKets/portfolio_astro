@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useReducer, useState } from 'react';
 import MacToolbar from '../components/global/MacToolbar';
 import MacTerminal from '../components/global/MacTerminal';
 import MobileDock from '../components/global/MobileDock';
@@ -21,21 +21,32 @@ type TutorialStep = {
 
 export default function Desktop({ initialBg, backgroundMap }: AppLayoutProps) {
   const [currentBg, setCurrentBg] = useState<string>(initialBg);
-  const [showTerminal, setShowTerminal] = useState(false);
-  const [showNotes, setShowNotes] = useState(false);
-  const [showGitHub, setShowGitHub] = useState(false);
-  const [showResume, setShowResume] = useState(false);
-  const [showSpotify, setShowSpotify] = useState(false);
+  type App = 'terminal' | 'notes' | 'github' | 'resume' | 'spotify';
+  type State = { windows: Record<App, boolean> };
+  type Action = { type: 'OPEN' | 'CLOSE' | 'TOGGLE'; app: App } | { type: 'CLOSE_ALL' };
+
+  const reducer = (state: State, action: Action): State => {
+    switch (action.type) {
+      case 'OPEN':
+        return { windows: { ...state.windows, [action.app]: true } };
+      case 'CLOSE':
+        return { windows: { ...state.windows, [action.app]: false } };
+      case 'TOGGLE':
+        return { windows: { ...state.windows, [action.app]: !state.windows[action.app] } };
+      case 'CLOSE_ALL':
+        return { windows: { terminal: false, notes: false, github: false, resume: false, spotify: false } };
+      default:
+        return state;
+    }
+  };
+
+  const [state, dispatch] = useReducer(reducer, {
+    windows: { terminal: false, notes: false, github: false, resume: false, spotify: false },
+  });
   const [currentTutorialStep, setCurrentTutorialStep] = useState(0);
   const [showTutorial, setShowTutorial] = useState(false);
 
-  const [activeApps, setActiveApps] = useState({
-    terminal: false,
-    notes: false,
-    github: false,
-    resume: false,
-    spotify: false,
-  });
+  const activeApps = state.windows;
 
   useEffect(() => {
     const lastBg = localStorage.getItem('lastBackground');
@@ -68,15 +79,15 @@ export default function Desktop({ initialBg, backgroundMap }: AppLayoutProps) {
     {
       title: "Welcome to My Portfolio! 👋",
       content: "This is a macOS-inspired portfolio where you can explore my work and experience. Let me guide you through some of the features!",
-      action: () => setShowNotes(true),
+      action: () => handleAppOpen('notes'),
       buttonText: "Let's Begin"
     },
     {
       title: "Notes App",
       content: "This is my Notes app where you can find detailed information about my education, experience, and skills. Feel free to explore!",
       action: () => {
-        setShowNotes(false);
-        setShowGitHub(true);
+        handleAppClose('notes');
+        handleAppOpen('github');
       },
       buttonText: "Next: Projects"
     },
@@ -84,8 +95,8 @@ export default function Desktop({ initialBg, backgroundMap }: AppLayoutProps) {
       title: "GitHub Projects",
       content: "Here you can browse through my projects, see their structure, and check out the code. Each project has screenshots and links to the repository.",
       action: () => {
-        setShowGitHub(false);
-        setShowTerminal(true);
+        handleAppClose('github');
+        handleAppOpen('terminal');
       },
       buttonText: "Next: Terminal"
     },
@@ -93,7 +104,7 @@ export default function Desktop({ initialBg, backgroundMap }: AppLayoutProps) {
       title: "Terminal",
       content: "The terminal is an interactive way to learn more about me. Try asking questions like 'What are your skills?' or 'Tell me about your experience'",
       action: () => {
-        setShowTerminal(false);
+        handleAppClose('terminal');
       },
       buttonText: "Next: Explore"
     },
@@ -120,19 +131,8 @@ export default function Desktop({ initialBg, backgroundMap }: AppLayoutProps) {
     }
   };
 
-  const handleAppOpen = (app: keyof typeof activeApps) => {
-    setActiveApps(prev => ({
-      ...prev,
-      [app]: true
-    }));
-  };
-
-  const handleAppClose = (app: keyof typeof activeApps) => {
-    setActiveApps(prev => ({
-      ...prev,
-      [app]: false
-    }));
-  };
+  const handleAppOpen = (app: App) => dispatch({ type: 'OPEN', app });
+  const handleAppClose = (app: App) => dispatch({ type: 'CLOSE', app });
 
   return (
     <div className='relative w-screen h-screen overflow-hidden'>
@@ -143,7 +143,7 @@ export default function Desktop({ initialBg, backgroundMap }: AppLayoutProps) {
 
       <div className='relative z-10'>
         <MacToolbar 
-          onTerminalClick={() => setShowTerminal(true)} 
+          onTerminalClick={() => handleAppOpen('terminal')} 
           onShowTutorial={resetTutorial}
         />
       </div>
@@ -153,52 +153,41 @@ export default function Desktop({ initialBg, backgroundMap }: AppLayoutProps) {
 
       <MobileDock
         onGitHubClick={() => {
-          setShowGitHub(true);
           handleAppOpen('github');
         }}
         onNotesClick={() => {
-          setShowNotes(true);
           handleAppOpen('notes');
         }}
         onResumeClick={() => {
-          setShowResume(true);
           handleAppOpen('resume');
         }}
         onTerminalClick={() => {
-          setShowTerminal(true);
           handleAppOpen('terminal');
         }}
       />
       <DesktopDock
         onTerminalClick={() => {
-          setShowTerminal(true);
           handleAppOpen('terminal');
         }}
         onNotesClick={() => {
-          setShowNotes(true);
           handleAppOpen('notes');
         }}
         onGitHubClick={() => {
-          setShowGitHub(true);
           handleAppOpen('github');
         }}
         activeApps={activeApps}
       />
 
-      <NotesApp isOpen={showNotes} onClose={() => {
-        setShowNotes(false);
+      <NotesApp isOpen={state.windows.notes} onClose={() => {
         handleAppClose('notes');
       }} />
-      <GitHubViewer isOpen={showGitHub} onClose={() => {
-        setShowGitHub(false);
+      <GitHubViewer isOpen={state.windows.github} onClose={() => {
         handleAppClose('github');
       }} />
-      <ResumeViewer isOpen={showResume} onClose={() => {
-        setShowResume(false);
+      <ResumeViewer isOpen={state.windows.resume} onClose={() => {
         handleAppClose('resume');
       }} />
-      <MacTerminal isOpen={showTerminal} onClose={() => {
-        setShowTerminal(false);
+      <MacTerminal isOpen={state.windows.terminal} onClose={() => {
         handleAppClose('terminal');
       }} />
       {showTutorial && (

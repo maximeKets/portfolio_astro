@@ -1,6 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { FaRegFolderClosed } from 'react-icons/fa6';
-import { userConfig } from '../../config/userConfig';
+import { userConfig } from '../../config/index';
 import DraggableWindow from './DraggableWindow';
 
 type Message = {
@@ -27,6 +26,14 @@ const PLACEHOLDER_MESSAGES = [
 ];
 
 export default function MacTerminal({ isOpen, onClose }: MacTerminalProps) {
+  const currentDate = new Date();
+  const formattedDate = currentDate.toLocaleDateString('en-US', {
+    month: 'long',
+    day: 'numeric',
+    year: 'numeric',
+  });
+  const computedAge = currentDate.getFullYear() - userConfig.yearOfBirth;
+
   const [chatHistory, setChatHistory] = useState<ChatHistory>({
     messages: [],
     input: '',
@@ -81,13 +88,6 @@ GitHub: ${userConfig.social.github}
 Ask me anything!
 `;
 
-  const currentDate = new Date();
-  const formattedDate = currentDate.toLocaleDateString('en-US', {
-    month: 'long',
-    day: 'numeric',
-    year: 'numeric',
-  });
-
   // Customize the system prompt with your personal information
   const systemPrompt = `IMPORTANT: You ARE ${userConfig.name} themselves. You must always speak in first-person ("I", "my", "me"). Never refer to "${userConfig.name}" in third-person.
 CURRENT DATE: ${formattedDate} - Always use this exact date when discussing the current date/year.
@@ -100,14 +100,14 @@ Q: "What's your background?"
 A: "I'm a ${userConfig.role} with a focus for ${userConfig.roleFocus}"
 
 Q: "How old are you?"
-A: "I'm ${userConfig.age} years old"
+A: "I'm ${computedAge} years old"
 
 Core details about me:
-- I'm ${userConfig.age} years old
+- I'm ${computedAge} years old
 - I live in ${userConfig.location}
 - I'm a ${userConfig.role}
 - My email is ${userConfig.contact.email}
-- I was born in ${userConfig.location}
+- I was born in ${userConfig.yearOfBirth}
 
 My technical expertise:
 ${userConfig.skills.map(skill => `- ${skill}`).join('\n')}
@@ -221,7 +221,7 @@ If a question is unrelated to my work or portfolio, say: "That's outside my area
       className="bg-black/90 backdrop-blur-sm"
     >
       <div className='p-1 text-gray-200 font-mono text-sm h-full flex flex-col overflow-hidden'>
-        <div className='flex-1 overflow-y-auto rounded-lg p-1'>
+        <div className='flex-1 overflow-y-auto rounded-lg p-1' aria-live="polite" aria-atomic="false">
           {chatHistory.messages.map((msg, index) => (
             <div key={index} className='mb-2'>
               {msg.role === 'user' ? (
@@ -255,6 +255,9 @@ If a question is unrelated to my work or portfolio, say: "That's outside my area
               onChange={handleInputChange}
               className='w-full sm:flex-1 bg-transparent outline-none text-white placeholder-gray-400'
               placeholder={placeholder}
+              aria-label="Terminal input"
+              name="terminal-input"
+              autoComplete="off"
             />
           </div>
         </form>

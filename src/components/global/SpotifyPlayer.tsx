@@ -42,6 +42,8 @@ export default function SpotifyPlayer({ isOpen, onClose, playlistId }: SpotifyPl
           allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
           loading="lazy"
           className="border-0"
+            title="Spotify playlist player"
+            aria-label="Spotify playlist player"
         />
       </div>
     </DraggableWindow>

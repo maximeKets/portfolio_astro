@@ -1,17 +1,27 @@
 ---
 import '../../styles/global.css';
+// @ts-ignore - package exports named AstroSeo but types may not resolve correctly in some setups
 import { AstroSeo } from '@astrolib/seo';
 import { getImage } from 'astro:assets';
 import macBackground1 from '../../assets/images/mac-background1.jpg';
-import macBackground2 from '../../assets/images/mac-background3.jpg';
+import macBackground2 from '../../assets/images/mac-background2.jpg';
 import macBackground3 from '../../assets/images/mac-background3.jpg';
-import { userConfig } from '../../config/userConfig';
+import { userConfig } from '../../config/index';
 
 const backgrounds = await Promise.all([
   getImage({ src: macBackground1, width: 3500 }),
   getImage({ src: macBackground2, width: 3500 }),
   getImage({ src: macBackground3, width: 3500 }),
 ]);
+
+// Build safe defaults for SEO
+const siteOrigin = Astro.site ? new URL('/', Astro.site).origin : undefined;
+const canonicalUrl = Astro.props.canonical || siteOrigin;
+const ogUrl = Astro.props.openGraph?.url || siteOrigin;
+// Use first background as a basic OG image if available and site is known
+const ogImageUrl = siteOrigin && backgrounds[0]?.src
+  ? new URL(backgrounds[0].src, siteOrigin).toString()
+  : undefined;
 ---
 
 <!-- Core meta tags -->
@@ -27,20 +37,43 @@ const backgrounds = await Promise.all([
 <AstroSeo
   title={Astro.props.title || userConfig.seo.title}
   description={Astro.props.description || userConfig.seo.description}
-  canonical={Astro.props.canonical || userConfig.website}
+  canonical={canonicalUrl}
   openGraph={{
-    url: Astro.props.openGraph?.url || userConfig.website,
+    url: ogUrl,
     title: Astro.props.openGraph?.title || userConfig.seo.title,
     description: Astro.props.openGraph?.description || userConfig.seo.description,
-    images: [
-      {
-        url: '',
-        // og image here
-      },
-    ],
+    ...(ogImageUrl ? { images: [{ url: ogImageUrl }] } : {}),
     site_name: Astro.props.openGraph?.site_name || userConfig.name,
   }}
+  twitter={{
+    cardType: 'summary_large_image',
+  }}
 />
+
+<!-- JSON-LD Schema.org -->
+{siteOrigin && (
+  <script type="application/ld+json">
+    {JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'WebSite',
+      url: siteOrigin,
+      name: userConfig.name,
+      description: userConfig.seo.description,
+    })}
+  </script>
+)}
+{siteOrigin && (
+  <script type="application/ld+json">
+    {JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'Person',
+      name: userConfig.name,
+      jobTitle: userConfig.role,
+      url: siteOrigin,
+      sameAs: [userConfig.social.github, userConfig.social.linkedin].filter(Boolean),
+    })}
+  </script>
+)}
 
 <!-- Add your favicon files in public/images/ -->
 <link rel='apple-touch-icon' sizes='180x180' href='https://avatars.githubusercontent.com/u/97130221?s=400&u=aaa4eb0bf9d07b901f0b15df8540fefea2fca729&v=4' />
