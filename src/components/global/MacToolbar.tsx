@@ -45,7 +45,6 @@ export default function MacToolbar({
   const [currentDateTime, setCurrentDateTime] = useState(new Date());
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const [showSignature, setShowSignature] = useState(false);
-  const [showHelp, setShowHelp] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -202,11 +201,6 @@ export default function MacToolbar({
       },
     ],
     Help: [
-      {
-        label: 'Show Help',
-        icon: <IoHelpCircle size={16} />,
-        action: () => setShowHelp(true),
-      },
       {
         label: 'Keyboard Shortcuts',
         icon: <IoHelpCircle size={16} />,
