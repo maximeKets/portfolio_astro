@@ -12,5 +12,5 @@ export const personal: PersonalInfo = {
   email: 'maximekets80@gmail.com',
   website: 'maximekets.me',
   roleFocus: 'Développement Web Full-Stack et Intégration de briques IA (Modèles prédictifs, Automatisation, Assistants virtuels).',
-  yearOfBirth: 1995, // Estimation d'après le baccalauréat en 2013
+  yearOfBirth: 1994,
 };

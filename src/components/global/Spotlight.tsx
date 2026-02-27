@@ -190,14 +190,6 @@ export default function Spotlight({ isOpen, onClose, actions }: SpotlightProps) 
         action: () => window.open(userConfig.website, '_blank'),
       },
       {
-        id: 'action:calendly',
-        title: 'Open Calendly',
-        subtitle: userConfig.contact.calendly,
-        category: 'Actions',
-        icon: <IoDocumentTextOutline className="text-gray-300" />,
-        action: () => window.open(userConfig.contact.calendly, '_blank'),
-      },
-      {
         id: 'action:github',
         title: 'Open GitHub Viewer',
         subtitle: 'Browse featured repositories',
