@@ -6,11 +6,11 @@
 import type { PersonalInfo } from '../types';
 
 export const personal: PersonalInfo = {
-  name: 'Abdelrahman Saleh',
-  role: 'Software Developer - Backend Developer',
-  location: 'Giza, Egypt',
-  email: 'aabdoo2304@gmail.com',
-  website: 'aabdoo23',
-  roleFocus: 'Backend Development using .NET, C#, Entity Framework, SQL Server, and Bootstrap. Can also work with Angular, React, and Node.js.',
-  yearOfBirth: 2002,
+  name: 'Maxime Kets',
+  role: 'Développeur Web & Intelligence Artificielle | Freelance',
+  location: 'Montpellier, France',
+  email: 'maximekets80@gmail.com',
+  website: 'maximekets.me',
+  roleFocus: 'Développement Web Full-Stack et Intégration de briques IA (Modèles prédictifs, Automatisation, Assistants virtuels).',
+  yearOfBirth: 1995, // Estimation d'après le baccalauréat en 2013
 };
