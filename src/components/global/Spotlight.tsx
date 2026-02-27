@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import Fuse from 'fuse.js';
 import type { FuseResult } from 'fuse.js';
-import { userConfig } from '../../config/index';
+import { userConfig } from '../../config';
 import { FaGithub, FaLinkedin, FaRegFileAlt } from 'react-icons/fa';
 import { IoTerminalOutline, IoBookOutline, IoDocumentTextOutline, IoSearch } from 'react-icons/io5';
 
@@ -188,14 +188,6 @@ export default function Spotlight({ isOpen, onClose, actions }: SpotlightProps) 
         category: 'Actions',
         icon: <IoDocumentTextOutline className="text-gray-300" />,
         action: () => window.open(userConfig.website, '_blank'),
-      },
-      {
-        id: 'action:calendly',
-        title: 'Open Calendly',
-        subtitle: userConfig.contact.calendly,
-        category: 'Actions',
-        icon: <IoDocumentTextOutline className="text-gray-300" />,
-        action: () => window.open(userConfig.contact.calendly, '_blank'),
       },
       {
         id: 'action:github',

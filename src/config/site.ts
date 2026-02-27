@@ -5,9 +5,9 @@
 import type { SEOConfig, ThemeConfig } from '../types';
 
 export const seo: SEOConfig = {
-  title: 'Abdelrahman Saleh - Software Developer',
-  description: 'Software Developer based in Egypt specializing in React, Node.js, and modern web technologies',
-  keywords: ['Software Developer', 'React', 'Node.js', 'Web Development', 'Egypt'],
+  title: 'Maxime Kets - Développeur Web & IA | Freelance',
+  description: 'Développeur Web et IA basé à Montpellier. Spécialisé en React, Node.js, Python/Django, analyse de données et automatisation de processus par intelligence artificielle.',
+  keywords: ['Développeur Web', 'Freelance', 'Intelligence Artificielle', 'React', 'Node.js', 'Montpellier', 'Python'],
 };
 
 export const theme: ThemeConfig = {

@@ -6,6 +6,6 @@
 import type { SocialLinks } from '../types';
 
 export const social: SocialLinks = {
-  github: 'https://github.com/aabdoo23',
-  linkedin: 'https://www.linkedin.com/in/aabdoo23/',
+  github: 'https://github.com/maximeKets',
+  linkedin: 'https://www.linkedin.com/in/maxime-kets',
 };
