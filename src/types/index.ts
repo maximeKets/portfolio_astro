@@ -124,7 +124,6 @@ export interface SocialLinks {
 export interface ContactInfo {
   email: string;
   phone: string;
-  calendly: string;
 }
 
 // ============================================
