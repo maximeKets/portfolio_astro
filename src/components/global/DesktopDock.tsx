@@ -1,10 +1,10 @@
 import { useState, useEffect, useRef } from 'react';
-import { BsGithub, BsSpotify, BsFilePdf, BsStickyFill, BsLinkedin, BsCalendar } from 'react-icons/bs';
+import { BsGithub, BsSpotify, BsFilePdf, BsStickyFill, BsLinkedin } from 'react-icons/bs';
 import { IoIosCall, IoIosMail } from 'react-icons/io';
-import { FaLink, FaEnvelope } from 'react-icons/fa';
+import { FaLink } from 'react-icons/fa';
 import ResumeViewer from './ResumeViewer';
 import SpotifyPlayer from './SpotifyPlayer';
-import { userConfig } from '../../config/index';
+import { userConfig } from '../../config';
 import { RiTerminalFill } from 'react-icons/ri';
 
 interface DesktopDockProps {
