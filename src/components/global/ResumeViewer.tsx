@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import { userConfig } from '../../config/index';
+import { userConfig } from '../../config';
 import DraggableWindow from './DraggableWindow';
 import { useI18n } from '../../store/i18n';
 
@@ -10,8 +10,6 @@ interface ResumeViewerProps {
 
 export default function ResumeViewer({ isOpen, onClose }: ResumeViewerProps) {
   const t = useI18n();
-  const iframeRef = useRef<HTMLIFrameElement>(null);
-
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden';
