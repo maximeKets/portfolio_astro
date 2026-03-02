@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { BsGithub, BsStickyFill, BsFilePdf } from 'react-icons/bs';
 import { RiTerminalFill } from 'react-icons/ri';
 import { BsSpotify } from 'react-icons/bs';
+import { useI18n } from '../../store/i18n';
 
 interface MissionControlProps {
   isOpen: boolean;
@@ -18,6 +19,8 @@ interface MissionControlProps {
 }
 
 export default function MissionControl({ isOpen, onClose, activeApps, onAppClick, onAppClose }: MissionControlProps) {
+  const t = useI18n();
+
   useEffect(() => {
     if (!isOpen) return;
 
@@ -36,11 +39,11 @@ export default function MissionControl({ isOpen, onClose, activeApps, onAppClick
   if (!isOpen) return null;
 
   const apps = [
-    { id: 'github' as const, name: 'GitHub Projects', icon: BsGithub, color: 'from-black to-black/60', active: activeApps.github },
-    { id: 'notes' as const, name: 'Notes', icon: BsStickyFill, color: 'from-yellow-600 to-yellow-400', active: activeApps.notes },
-    { id: 'terminal' as const, name: 'Terminal', icon: RiTerminalFill, color: 'from-black to-black/60', active: activeApps.terminal },
-    { id: 'resume' as const, name: 'Resume', icon: BsFilePdf, color: 'from-red-600 to-red-400', active: activeApps.resume },
-    { id: 'spotify' as const, name: 'Spotify', icon: BsSpotify, color: 'from-green-600 to-green-400', active: activeApps.spotify },
+    { id: 'github' as const, name: t('app.github'), icon: BsGithub, color: 'from-black to-black/60', active: activeApps.github },
+    { id: 'notes' as const, name: t('app.notes'), icon: BsStickyFill, color: 'from-yellow-600 to-yellow-400', active: activeApps.notes },
+    { id: 'terminal' as const, name: t('app.terminal'), icon: RiTerminalFill, color: 'from-black to-black/60', active: activeApps.terminal },
+    { id: 'resume' as const, name: t('app.resume'), icon: BsFilePdf, color: 'from-red-600 to-red-400', active: activeApps.resume },
+    { id: 'spotify' as const, name: t('app.spotify'), icon: BsSpotify, color: 'from-green-600 to-green-400', active: activeApps.spotify },
   ];
 
   const activeWindows = apps.filter((app) => app.active);
@@ -54,9 +57,9 @@ export default function MissionControl({ isOpen, onClose, activeApps, onAppClick
     <div className="fixed inset-0 z-[90]" role="dialog" aria-modal="true" aria-label="Mission Control">
       <div className="absolute inset-0 bg-black/70 backdrop-blur-md" onClick={onClose} />
       <div className="relative h-full flex flex-col items-center justify-center p-8">
-        <h2 className="text-white text-2xl font-semibold mb-8">Mission Control</h2>
+        <h2 className="text-white text-2xl font-semibold mb-8">{t('mission.title')}</h2>
         {activeWindows.length === 0 ? (
-          <p className="text-gray-400 text-lg">No open windows</p>
+          <p className="text-gray-400 text-lg">{t('mission.noWindows')}</p>
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl">
             {activeWindows.map((app) => {
@@ -91,7 +94,7 @@ export default function MissionControl({ isOpen, onClose, activeApps, onAppClick
             })}
           </div>
         )}
-        <p className="text-gray-400 text-sm mt-8">Press Esc or click outside to close</p>
+        <p className="text-gray-400 text-sm mt-8">{t('mission.closeHint')}</p>
       </div>
     </div>
   );

@@ -6,6 +6,7 @@ import ResumeViewer from './ResumeViewer';
 import SpotifyPlayer from './SpotifyPlayer';
 import { userConfig } from '../../config';
 import { RiTerminalFill } from 'react-icons/ri';
+import { useI18n } from '../../store/i18n';
 
 interface DesktopDockProps {
   onTerminalClick: () => void;
@@ -22,6 +23,7 @@ interface DesktopDockProps {
 }
 
 const DesktopDock = ({ onTerminalClick, onNotesClick, onGitHubClick, onContactClick, activeApps }: DesktopDockProps) => {
+  const t = useI18n();
   const [hoveredIcon, setHoveredIcon] = useState<string | null>(null);
   const [showResume, setShowResume] = useState(false);
   const [showSpotify, setShowSpotify] = useState(false);
@@ -145,13 +147,13 @@ const DesktopDock = ({ onTerminalClick, onNotesClick, onGitHubClick, onContactCl
   );
 
   const icons = [
-    { id: 'github', label: 'My Projects', onClick: onGitHubClick, icon: BsGithub, color: 'from-black to-black/60', active: activeApps.github },
-    { id: 'notes', label: 'Resume Notes', onClick: onNotesClick, icon: BsStickyFill, color: 'from-yellow-600 to-yellow-400', active: activeApps.notes },
-    { id: 'resume', label: 'View Resume', onClick: handleResumeClick, icon: BsFilePdf, color: 'from-red-600 to-red-400', active: activeApps.resume },
-    { id: 'spotify', label: 'Spotify Playlist', onClick: handleSpotifyClick, icon: BsSpotify, color: 'from-green-600 to-green-400', active: activeApps.spotify },
-    { id: 'email', label: 'Contact', onClick: onContactClick, icon: IoIosMail, color: 'from-blue-600 to-blue-400', active: false },
-    { id: 'links', label: 'Contact Links', onClick: handleLinksClick, icon: FaLink, color: 'from-purple-600 to-purple-400', active: false },
-    { id: 'terminal', label: 'Terminal', onClick: onTerminalClick, icon: RiTerminalFill, color: 'from-black to-black/60', active: activeApps.terminal },
+    { id: 'github', label: t('dock.myProjects'), onClick: onGitHubClick, icon: BsGithub, color: 'from-black to-black/60', active: activeApps.github },
+    { id: 'notes', label: t('dock.resumeNotes'), onClick: onNotesClick, icon: BsStickyFill, color: 'from-yellow-600 to-yellow-400', active: activeApps.notes },
+    { id: 'resume', label: t('dock.viewResume'), onClick: handleResumeClick, icon: BsFilePdf, color: 'from-red-600 to-red-400', active: activeApps.resume },
+    { id: 'spotify', label: t('dock.spotifyPlaylist'), onClick: handleSpotifyClick, icon: BsSpotify, color: 'from-green-600 to-green-400', active: activeApps.spotify },
+    { id: 'email', label: t('dock.contact'), onClick: onContactClick, icon: IoIosMail, color: 'from-blue-600 to-blue-400', active: false },
+    { id: 'links', label: t('dock.contactLinks'), onClick: handleLinksClick, icon: FaLink, color: 'from-purple-600 to-purple-400', active: false },
+    { id: 'terminal', label: t('dock.terminal'), onClick: onTerminalClick, icon: RiTerminalFill, color: 'from-black to-black/60', active: activeApps.terminal },
   ];
 
   return (
