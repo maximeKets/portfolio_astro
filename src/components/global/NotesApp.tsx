@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
 import {
     FaGraduationCap, FaBriefcase, FaChevronLeft, FaBookOpen,
-    FaCode, FaUsers, FaPalette
+    FaCode, FaUsers,
+    // FaPalette
     // FaTrophy
 } from 'react-icons/fa';
 import { userConfig } from '../../config';
@@ -14,7 +15,7 @@ export type Section =
     | 'courses'
     | 'skills'
     | 'roles'
-    | 'activities'
+    // | 'activities'
     // | 'competitions'
     ;
 
@@ -78,7 +79,7 @@ const NotesApp = ({ isOpen, onClose, section }: NotesAppProps) => {
     const courses = userConfig.courses || [];
     const skills = userConfig.skills || [];
     const roles = userConfig.extraCurricularRoles || [];
-    const activities = userConfig.extraCurricularActivities || [];
+    // const activities = userConfig.extraCurricularActivities || [];
     // const competitions = userConfig.competitions || [];
 
     const renderBackButton = () => (
@@ -267,25 +268,25 @@ const NotesApp = ({ isOpen, onClose, section }: NotesAppProps) => {
         </div>
     );
 
-    const renderExtraCurricularActivities = () => (
-        <div className="space-y-6">
-            {renderBackButton()}
-            <h2 className="text-2xl font-bold text-gray-200 mb-6">Extracurricular Activities</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {activities.map((item, index) => {
-                    const itemId = `activities-${index}`;
-                    return (
-                        <div key={itemId} className="bg-gray-800/50 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
-                            <h3 className="text-xl font-semibold text-gray-200 mb-2">{item.title}</h3>
-                            <div className="text-gray-300 mb-2">{item.institution}, {item.location}</div>
-                            <div className="text-gray-400 mb-3">{item.year}</div>
-                            {item.images && item.images.length > 0 && renderImageCarousel(itemId, item.images)}
-                        </div>
-                    );
-                })}
-            </div>
-        </div>
-    );
+    // const renderExtraCurricularActivities = () => (
+    //     <div className="space-y-6">
+    //         {renderBackButton()}
+    //         <h2 className="text-2xl font-bold text-gray-200 mb-6">Extracurricular Activities</h2>
+    //         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+    //             {activities.map((item, index) => {
+    //                 const itemId = `activities-${index}`;
+    //                 return (
+    //                     <div key={itemId} className="bg-gray-800/50 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+    //                         <h3 className="text-xl font-semibold text-gray-200 mb-2">{item.title}</h3>
+    //                         <div className="text-gray-300 mb-2">{item.institution}, {item.location}</div>
+    //                         <div className="text-gray-400 mb-3">{item.year}</div>
+    //                         {item.images && item.images.length > 0 && renderImageCarousel(itemId, item.images)}
+    //                     </div>
+    //                 );
+    //             })}
+    //         </div>
+    //     </div>
+    // );
 
     // const renderCompetitions = () => (
     //     <div className="space-y-6">
@@ -376,20 +377,20 @@ const NotesApp = ({ isOpen, onClose, section }: NotesAppProps) => {
                 </button>
 
                 {/* Extracurricular Activities */}
-                <button
-                    type="button"
-                    className="bg-gray-800/50 p-4 rounded-lg hover:bg-gray-700/50 transition-colors text-left"
-                    onClick={() => handleSectionClick('activities')}
-                    aria-label="Open Extracurricular Activities section"
-                >
-                    <div className="flex items-center gap-3 mb-2">
-                        <div className="w-12 h-12 bg-pink-600 rounded-xl flex items-center justify-center">
-                            <FaPalette size={28} className="text-white" />
-                        </div>
-                        <h3 className="text-xl font-semibold text-gray-200">Extracurricular Activities</h3>
-                    </div>
-                    <p className="text-gray-400">My participation in events and activities</p>
-                </button>
+                {/*<button*/}
+                {/*    type="button"*/}
+                {/*    className="bg-gray-800/50 p-4 rounded-lg hover:bg-gray-700/50 transition-colors text-left"*/}
+                {/*    onClick={() => handleSectionClick('activities')}*/}
+                {/*    aria-label="Open Extracurricular Activities section"*/}
+                {/*>*/}
+                {/*    <div className="flex items-center gap-3 mb-2">*/}
+                {/*        <div className="w-12 h-12 bg-pink-600 rounded-xl flex items-center justify-center">*/}
+                {/*            <FaPalette size={28} className="text-white" />*/}
+                {/*        </div>*/}
+                {/*        <h3 className="text-xl font-semibold text-gray-200">Extracurricular Activities</h3>*/}
+                {/*    </div>*/}
+                {/*    <p className="text-gray-400">My participation in events and activities</p>*/}
+                {/*</button>*/}
                 {/* Courses */}
                 <button
                     type="button"
@@ -433,7 +434,7 @@ const NotesApp = ({ isOpen, onClose, section }: NotesAppProps) => {
             case 'courses': return 'Courses Notes';
             case 'skills': return 'Skills Notes';
             case 'roles': return 'Extracurricular Roles Notes';
-            case 'activities': return 'Extracurricular Activities Notes';
+            // case 'activities': return 'Extracurricular Activities Notes';
             // case 'competitions': return 'Competitions Notes';
             default: return 'Notes';
         }
@@ -458,7 +459,7 @@ const NotesApp = ({ isOpen, onClose, section }: NotesAppProps) => {
                     {activeSection === 'courses' && renderCourses()}
                     {activeSection === 'skills' && renderSkills()}
                     {activeSection === 'roles' && renderExtraCurricularRoles()}
-                    {activeSection === 'activities' && renderExtraCurricularActivities()}
+                    {/*{activeSection === 'activities' && renderExtraCurricularActivities()}*/}
                     {/*{activeSection === 'competitions' && renderCompetitions()}*/}
                 </div>
             </div>
