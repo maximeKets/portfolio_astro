@@ -2,6 +2,7 @@ import React, { useEffect, useMemo, useState } from 'react';
 import { IoSearch, IoBookmarksOutline, IoDocumentTextOutline } from 'react-icons/io5';
 import { FaWindowRestore, FaMousePointer } from 'react-icons/fa';
 import { BsGithub, BsStickyFill } from 'react-icons/bs';
+import { useI18n } from '../../store/i18n';
 
 type Actions = {
   openSpotlight: () => void;
@@ -19,62 +20,64 @@ interface WelcomeTourProps {
 }
 
 export default function WelcomeTour({ open, onClose, actions }: WelcomeTourProps) {
+  const t = useI18n();
+
   const slides = useMemo(() => [
     {
       id: 'welcome',
-      title: 'Welcome to my macOS-style portfolio',
-      desc: 'Explore projects, experience, and more through a familiar desktop interface.',
+      title: t('tour.welcome.title'),
+      desc: t('tour.welcome.desc'),
       icon: <FaWindowRestore className="text-white/90" size={28} />,
-      cta: { label: 'Start tour', onClick: undefined as undefined | (() => void) },
+      cta: { label: t('tour.welcome.cta'), onClick: undefined as undefined | (() => void) },
     },
     {
       id: 'spotlight',
-      title: 'Spotlight Search',
-      desc: 'Cmd/Ctrl+K to search projects, actions, skills, and links. Use arrows, Enter, and Shift+Enter (Live).',
+      title: t('tour.spotlight.title'),
+      desc: t('tour.spotlight.desc'),
       icon: <IoSearch className="text-white/90" size={28} />,
-      cta: { label: 'Try Spotlight', onClick: actions.openSpotlight },
-      tip: 'Pinned actions appear first. Type to fuzzy-search across everything.'
+      cta: { label: t('tour.spotlight.cta'), onClick: actions.openSpotlight },
+      tip: t('tour.spotlight.tip')
     },
     {
       id: 'mission',
-      title: 'Mission Control',
-      desc: 'View and switch between open windows. Use Ctrl/Cmd+↑ or F3.',
+      title: t('tour.mission.title'),
+      desc: t('tour.mission.desc'),
       icon: <FaWindowRestore className="text-white/90" size={28} />,
-      cta: { label: 'Open Mission Control', onClick: actions.openMissionControl },
-      tip: 'Click a window to focus it; close windows right from the grid.'
+      cta: { label: t('tour.mission.cta'), onClick: actions.openMissionControl },
+      tip: t('tour.mission.tip')
     },
     {
       id: 'dock',
-      title: 'Dock with magnification',
-      desc: 'Hover the dock to smoothly magnify icons. Click to open Notes, Projects, Terminal, and more.',
+      title: t('tour.dock.title'),
+      desc: t('tour.dock.desc'),
       icon: <FaMousePointer className="text-white/90" size={28} />,
       cta: undefined,
-      tip: 'Active apps show a white indicator dot.'
+      tip: t('tour.dock.tip')
     },
     {
       id: 'projects-notes',
-      title: 'Projects & Notes',
-      desc: 'Deep-link into Projects and Notes sections directly from Spotlight or the dock.',
+      title: t('tour.projects.title'),
+      desc: t('tour.projects.desc'),
       icon: <BsGithub className="text-white/90" size={28} />,
-      cta: { label: 'Open Projects', onClick: actions.openGitHub },
-      altCta: { label: 'Open Notes', onClick: actions.openNotes },
-      tip: 'Use Space on a project to Quick Look; Enter to open.'
+      cta: { label: t('tour.projects.cta'), onClick: actions.openGitHub },
+      altCta: { label: t('tour.projects.altCta'), onClick: actions.openNotes },
+      tip: t('tour.projects.tip')
     },
     {
       id: 'contact',
-      title: 'Contact',
-      desc: 'Reach out directly via the built-in contact form (stored securely in Supabase).',
+      title: t('tour.contact.title'),
+      desc: t('tour.contact.desc'),
       icon: <IoDocumentTextOutline className="text-white/90" size={28} />,
-      cta: { label: 'Open Contact', onClick: actions.openContact },
-      tip: 'You can also press C or find it in Spotlight.'
+      cta: { label: t('tour.contact.cta'), onClick: actions.openContact },
+      tip: t('tour.contact.tip')
     },
     {
       id: 'shortcuts',
-      title: 'Shortcuts',
-      desc: 'Press ? at any time for a list of keyboard shortcuts and tips.',
+      title: t('tour.shortcuts.title'),
+      desc: t('tour.shortcuts.desc'),
       icon: <IoBookmarksOutline className="text-white/90" size={28} />,
-      cta: { label: 'Finish', onClick: onClose },
-      tip: 'Prefer the keyboard? Most features are just a keystroke away.'
+      cta: { label: t('tour.shortcuts.cta'), onClick: onClose },
+      tip: t('tour.shortcuts.tip')
     },
   ], [actions, onClose]);
 
@@ -140,12 +143,12 @@ export default function WelcomeTour({ open, onClose, actions }: WelcomeTourProps
               ))}
             </div>
             <div className="flex items-center gap-2">
-              <button onClick={onClose} className="text-sm text-gray-400 hover:text-white">Skip</button>
+              <button onClick={onClose} className="text-sm text-gray-400 hover:text-white">{t('tour.btn.skip')}</button>
               <button
                 onClick={handlePrimary}
                 className="px-4 py-2 rounded-lg bg-blue-600 hover:bg-blue-500 text-white text-sm"
               >
-                {slide.cta?.label ?? 'Next'}
+                {slide.cta?.label ?? t('tour.btn.next')}
               </button>
             </div>
           </div>
