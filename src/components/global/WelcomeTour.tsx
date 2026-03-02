@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { IoSearch, IoBookmarksOutline, IoDocumentTextOutline } from 'react-icons/io5';
 import { FaWindowRestore, FaMousePointer } from 'react-icons/fa';
-import { BsGithub, BsStickyFill } from 'react-icons/bs';
+import { BsGithub } from 'react-icons/bs';
 import { useI18n } from '../../store/i18n';
 
 type Actions = {
