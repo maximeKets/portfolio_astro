@@ -140,6 +140,21 @@ export const translations = {
         'spotlight.search.showLess': 'Show less',
         'spotlight.search.showMore': 'Show {count} more',
         'spotlight.search.live': 'Live',
+
+        // GitHubViewer
+        'github.title': 'GitHub Projects',
+        'github.myProjects': 'My Projects',
+        'github.quickLook': 'Quick Look',
+        'github.repository': 'Repository',
+        'github.liveDemo': 'Live Demo',
+        'github.backToProjects': 'Back to Projects',
+        'github.projectStructure': 'Project Structure',
+        'github.screenshots': 'Screenshots',
+        'github.visitRepo': 'Visit GitHub Repository',
+        'github.visitLive': 'Visit Live Site',
+        'github.openDetails': 'Open Details',
+        'github.openRepo': 'Open Repo',
+        'github.openLive': 'Open Live',
     },
     fr: {
         'contact.title': 'Contactez-moi',
@@ -259,6 +274,21 @@ export const translations = {
         'spotlight.search.showLess': 'Voir moins',
         'spotlight.search.showMore': 'Voir {count} de plus',
         'spotlight.search.live': 'En direct',
+
+        // GitHubViewer
+        'github.title': 'Projets GitHub',
+        'github.myProjects': 'Mes Projets',
+        'github.quickLook': 'Aperçu rapide',
+        'github.repository': 'Code Source',
+        'github.liveDemo': 'Site en ligne',
+        'github.backToProjects': 'Retour aux projets',
+        'github.projectStructure': 'Structure du projet',
+        'github.screenshots': 'Captures d\'écran',
+        'github.visitRepo': 'Le code sur GitHub',
+        'github.visitLive': 'Visiter le site',
+        'github.openDetails': 'Voir les détails',
+        'github.openRepo': 'Code Source',
+        'github.openLive': 'Site en ligne',
     }
 } as const;
 
