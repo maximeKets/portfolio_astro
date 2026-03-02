@@ -4,6 +4,7 @@ import { userConfig } from '../../config';
 import { BsStickyFill } from 'react-icons/bs';
 import { RiTerminalFill } from 'react-icons/ri';
 import { BsFilePdf } from 'react-icons/bs';
+import { useI18n } from '../../store/i18n';
 
 interface MobileDockProps {
   onGitHubClick: () => void;
@@ -13,6 +14,8 @@ interface MobileDockProps {
 }
 
 export default function MobileDock({ onGitHubClick, onNotesClick, onResumeClick, onTerminalClick }: MobileDockProps) {
+  const t = useI18n();
+
   const handleEmailClick = () => {
     window.location.href = `mailto:${userConfig.contact.email}`;
   };
@@ -27,7 +30,7 @@ export default function MobileDock({ onGitHubClick, onNotesClick, onResumeClick,
       <div className='mx-4 mb-4 p-3 rounded-3xl space-x-4 flex justify-around items-center max-w-[400px] mx-auto' role="toolbar" aria-label="Apps">
         <button
           onClick={onGitHubClick}
-          aria-label='Open GitHub projects'
+          aria-label={t('dock.mobile.github')}
           className='flex flex-col items-center cursor-pointer'
         >
           <div className='w-18 h-18 bg-black rounded-2xl flex items-center justify-center'>
@@ -36,7 +39,7 @@ export default function MobileDock({ onGitHubClick, onNotesClick, onResumeClick,
         </button>
         <button
           onClick={onNotesClick}
-          aria-label='Open Notes'
+          aria-label={t('dock.mobile.notes')}
           className='flex flex-col items-center cursor-pointer'
         >
           <div className='w-18 h-18 bg-gradient-to-t from-yellow-600 to-yellow-400 rounded-2xl flex items-center justify-center'>
@@ -45,7 +48,7 @@ export default function MobileDock({ onGitHubClick, onNotesClick, onResumeClick,
         </button>
         <button
           onClick={onResumeClick}
-          aria-label='Open Resume'
+          aria-label={t('dock.mobile.resume')}
           className='flex flex-col items-center cursor-pointer'
         >
           <div className='w-18 h-18 bg-gradient-to-t from-red-600 to-red-400 rounded-2xl flex items-center justify-center'>
@@ -54,7 +57,7 @@ export default function MobileDock({ onGitHubClick, onNotesClick, onResumeClick,
         </button>
         <button
           onClick={onTerminalClick}
-          aria-label='Open Terminal'
+          aria-label={t('dock.mobile.terminal')}
           className='flex flex-col items-center cursor-pointer'
         >
           <div className='w-18 h-18 bg-black rounded-2xl flex items-center justify-center'>
@@ -65,7 +68,7 @@ export default function MobileDock({ onGitHubClick, onNotesClick, onResumeClick,
 
       {/* Bottom row: contact shortcuts */}
       <div className='mx-4 mb-4 p-3 bg-gradient-to-t from-gray-700 to-gray-800 backdrop-blur-xl rounded-3xl space-x-4 flex justify-around items-center max-w-[400px] mx-auto' role="toolbar" aria-label="Contact shortcuts">
-        <a href={`tel:${userConfig.contact.phone}`} className='flex flex-col items-center' aria-label={`Call ${userConfig.contact.phone}`}>
+        <a href={`tel:${userConfig.contact.phone}`} className='flex flex-col items-center' aria-label={`${t('dock.mobile.call')} ${userConfig.contact.phone}`}>
           <div className='w-18 h-18 bg-gradient-to-t from-green-600 to-green-400 rounded-2xl flex items-center justify-center'>
             <IoIosCall size={55} className='text-white' />
           </div>
@@ -73,7 +76,7 @@ export default function MobileDock({ onGitHubClick, onNotesClick, onResumeClick,
 
         <button
           onClick={handleEmailClick}
-          aria-label={`Email ${userConfig.contact.email}`}
+          aria-label={`${t('dock.mobile.email')} ${userConfig.contact.email}`}
           className='flex flex-col items-center cursor-pointer'
         >
           <div className='w-18 h-18 bg-gradient-to-t from-blue-600 to-blue-400 rounded-2xl flex items-center justify-center'>
@@ -81,7 +84,7 @@ export default function MobileDock({ onGitHubClick, onNotesClick, onResumeClick,
           </div>
         </button>
 
-        <a href={userConfig.social.linkedin} className='flex flex-col items-center' aria-label='Open LinkedIn profile' target="_blank" rel="noreferrer noopener">
+        <a href={userConfig.social.linkedin} className='flex flex-col items-center' aria-label={t('dock.mobile.linkedin')} target="_blank" rel="noreferrer noopener">
           <div className='w-18 h-18 bg-[#0a66c2] rounded-2xl flex items-center justify-center'>
             <BsLinkedin size={50} className='text-white' />
           </div>
@@ -89,7 +92,7 @@ export default function MobileDock({ onGitHubClick, onNotesClick, onResumeClick,
 
         <button
           onClick={handleSpotifyClick}
-          aria-label='Open Spotify playlist in new tab'
+          aria-label={t('dock.mobile.spotify')}
           className='flex flex-col items-center cursor-pointer'
         >
           <div className='w-18 h-18 bg-gradient-to-t from-black to-black/55 rounded-2xl flex items-center justify-center'>
