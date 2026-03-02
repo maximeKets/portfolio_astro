@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { userConfig } from '../../config/index';
 import DraggableWindow from './DraggableWindow';
+import { useI18n } from '../../store/i18n';
 
 interface ResumeViewerProps {
   isOpen: boolean;
@@ -8,6 +9,7 @@ interface ResumeViewerProps {
 }
 
 export default function ResumeViewer({ isOpen, onClose }: ResumeViewerProps) {
+  const t = useI18n();
   const iframeRef = useRef<HTMLIFrameElement>(null);
 
   useEffect(() => {
@@ -25,29 +27,29 @@ export default function ResumeViewer({ isOpen, onClose }: ResumeViewerProps) {
 
   return (
     <DraggableWindow
-      title="Resume.pdf"
+      title={t('resume.title')}
       onClose={onClose}
-      initialPosition={{ 
-        x: Math.floor(window.innerWidth * 0.4), 
-        y: Math.floor(window.innerHeight * 0.2) 
+      initialPosition={{
+        x: Math.floor(window.innerWidth * 0.4),
+        y: Math.floor(window.innerHeight * 0.2)
       }}
       className="w-[90%] h-[90%] max-w-5xl"
       initialSize={{ width: 800, height: 600 }}
     >
       <div className="h-full bg-white">
         <figure className="h-full">
-          <object 
-            data={userConfig.resume.localPath} 
-            type="application/pdf" 
-            width="100%" 
+          <object
+            data={userConfig.resume.localPath}
+            type="application/pdf"
+            width="100%"
             className="h-full"
-            aria-label="Embedded resume PDF"
-            title="Resume PDF"
+            aria-label={t('resume.ariaLabel')}
+            title={t('resume.pdfTitle')}
           >
             <p className="p-4 text-sm text-gray-700">
-              Your browser can’t display this PDF. 
-              <a href={userConfig.resume.url} target="_blank" rel="noreferrer noopener" className="text-blue-600 underline">
-                Open the resume in a new tab
+              {t('resume.noPdfSupport')}
+              <a href={userConfig.resume.url} target="_blank" rel="noreferrer noopener" className="text-blue-600 underline ml-1">
+                {t('resume.openNewTab')}
               </a>.
             </p>
           </object>

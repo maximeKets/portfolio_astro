@@ -187,6 +187,13 @@ export const translations = {
         'notes.window.experience': 'Experience Notes',
         'notes.window.courses': 'Courses Notes',
         'notes.window.skills': 'Skills Notes',
+
+        // ResumeViewer
+        'resume.title': 'Resume.pdf',
+        'resume.ariaLabel': 'Embedded resume PDF',
+        'resume.pdfTitle': 'Resume PDF',
+        'resume.noPdfSupport': 'Your browser can’t display this PDF.',
+        'resume.openNewTab': 'Open the resume in a new tab',
     },
     fr: {
         'contact.title': 'Contactez-moi',
@@ -353,6 +360,13 @@ export const translations = {
         'notes.window.experience': 'Notes : Expérience',
         'notes.window.courses': 'Notes : Formations',
         'notes.window.skills': 'Notes : Compétences',
+
+        // ResumeViewer
+        'resume.title': 'CV.pdf',
+        'resume.ariaLabel': 'CV en PDF intégré',
+        'resume.pdfTitle': 'CV PDF',
+        'resume.noPdfSupport': 'Votre navigateur ne peut pas afficher ce PDF.',
+        'resume.openNewTab': 'Ouvrir le CV dans un nouvel onglet',
     }
 } as const;
 
