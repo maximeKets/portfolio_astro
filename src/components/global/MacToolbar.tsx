@@ -3,8 +3,6 @@ import { MdWifi } from 'react-icons/md';
 import { FaApple, FaGithub, FaLinkedin, FaEnvelope, FaWindowRestore } from 'react-icons/fa';
 import {
   IoSearchSharp,
-  IoBatteryHalfOutline,
-  IoCellular,
   IoDocumentText,
   IoCodeSlash,
   IoMail,
@@ -91,15 +89,15 @@ export default function MacToolbar({
     )}:${minute} ${period}`;
   };
 
-  const formatIPhoneTime = (date: Date) => {
-    let hour = date.getHours();
-    const minute = date.getMinutes().toString().padStart(2, '0');
-
-    hour = hour % 12;
-    hour = hour ? hour : 12;
-
-    return `${hour}:${minute}`;
-  };
+  // const formatIPhoneTime = (date: Date) => {
+  //   let hour = date.getHours();
+  //   const minute = date.getMinutes().toString().padStart(2, '0');
+  //
+  //   hour = hour % 12;
+  //   hour = hour ? hour : 12;
+  //
+  //   return `${hour}:${minute}`;
+  // };
 
   const handleMenuClick = (menu: string) => {
     setActiveMenu(activeMenu === menu ? null : menu);
