@@ -167,6 +167,26 @@ export const translations = {
         'mission.title': 'Mission Control',
         'mission.noWindows': 'No open windows',
         'mission.closeHint': 'Press Esc or click outside to close',
+
+        // NotesApp
+        'notes.backToMenu': 'Back to Menu',
+        'notes.screenshot': 'Screenshot',
+        'notes.prevImage': 'Previous image',
+        'notes.nextImage': 'Next image',
+        'notes.education.title': 'Education',
+        'notes.education.desc': 'View my educational background and qualifications',
+        'notes.experience.title': 'Professional Experience',
+        'notes.experience.desc': 'Explore my professional work experience',
+        'notes.courses.title': 'Courses',
+        'notes.courses.desc': 'Check out courses I have completed',
+        'notes.skills.title': 'Skills',
+        'notes.skills.desc': 'See my technical skills and expertise',
+        'notes.myNotes': 'My Notes',
+        'notes.window.menu': 'Notes',
+        'notes.window.education': 'Education Notes',
+        'notes.window.experience': 'Experience Notes',
+        'notes.window.courses': 'Courses Notes',
+        'notes.window.skills': 'Skills Notes',
     },
     fr: {
         'contact.title': 'Contactez-moi',
@@ -313,6 +333,26 @@ export const translations = {
         'mission.title': 'Mission Control',
         'mission.noWindows': 'Aucune fenêtre ouverte',
         'mission.closeHint': 'Appuyez sur Échap ou cliquez à l\'extérieur pour fermer',
+
+        // NotesApp
+        'notes.backToMenu': 'Retour au menu',
+        'notes.screenshot': 'Capture d\'écran',
+        'notes.prevImage': 'Image précédente',
+        'notes.nextImage': 'Image suivante',
+        'notes.education.title': 'Formation',
+        'notes.education.desc': 'Voir mon parcours scolaire et mes diplômes',
+        'notes.experience.title': 'Expérience Professionnelle',
+        'notes.experience.desc': 'Explorer mes expériences professionnelles',
+        'notes.courses.title': 'Formations & Certificats',
+        'notes.courses.desc': 'Découvrir les formations que j\'ai suivies',
+        'notes.skills.title': 'Compétences',
+        'notes.skills.desc': 'Voir mes compétences techniques et mon expertise',
+        'notes.myNotes': 'Mes Notes',
+        'notes.window.menu': 'Notes',
+        'notes.window.education': 'Notes : Formation',
+        'notes.window.experience': 'Notes : Expérience',
+        'notes.window.courses': 'Notes : Formations',
+        'notes.window.skills': 'Notes : Compétences',
     }
 } as const;
 
