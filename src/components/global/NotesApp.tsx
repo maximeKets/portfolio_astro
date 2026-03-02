@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
 import {
     FaGraduationCap, FaBriefcase, FaChevronLeft, FaBookOpen,
-    FaCode, FaUsers, FaPalette, FaTrophy
+    FaCode, FaUsers, FaPalette
+    // FaTrophy
 } from 'react-icons/fa';
-import { userConfig } from '../../config/index';
+import { userConfig } from '../../config';
 import DraggableWindow from './DraggableWindow';
 
 export type Section =
@@ -14,12 +15,13 @@ export type Section =
     | 'skills'
     | 'roles'
     | 'activities'
-    | 'competitions';
+    // | 'competitions'
+    ;
 
 interface NotesAppProps {
     isOpen: boolean;
     onClose: () => void;
-    section?: Section; // external control of active section
+    section?: Section; // external control of an active section
 }
 
 // Type for storing image indices per item
@@ -77,7 +79,7 @@ const NotesApp = ({ isOpen, onClose, section }: NotesAppProps) => {
     const skills = userConfig.skills || [];
     const roles = userConfig.extraCurricularRoles || [];
     const activities = userConfig.extraCurricularActivities || [];
-    const competitions = userConfig.competitions || [];
+    // const competitions = userConfig.competitions || [];
 
     const renderBackButton = () => (
         <button
@@ -285,25 +287,25 @@ const NotesApp = ({ isOpen, onClose, section }: NotesAppProps) => {
         </div>
     );
 
-    const renderCompetitions = () => (
-        <div className="space-y-6">
-            {renderBackButton()}
-            <h2 className="text-2xl font-bold text-gray-200 mb-6">Competitions</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {competitions.map((item, index) => {
-                    const itemId = `competitions-${index}`;
-                    return (
-                        <div key={itemId} className="bg-gray-800/50 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
-                            <h3 className="text-xl font-semibold text-gray-200 mb-2">{item.title}</h3>
-                            <div className="text-gray-300 mb-2">{item.description}</div>
-                            <div className="text-gray-400 mb-3">Achievement: {item.achievement} ({item.year})</div>
-                            {item.images && item.images.length > 0 && renderImageCarousel(itemId, item.images)}
-                        </div>
-                    );
-                })}
-            </div>
-        </div>
-    );
+    // const renderCompetitions = () => (
+    //     <div className="space-y-6">
+    //         {renderBackButton()}
+    //         <h2 className="text-2xl font-bold text-gray-200 mb-6">Competitions</h2>
+    //         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+    //             {competitions.map((item, index) => {
+    //                 const itemId = `competitions-${index}`;
+    //                 return (
+    //                     <div key={itemId} className="bg-gray-800/50 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+    //                         <h3 className="text-xl font-semibold text-gray-200 mb-2">{item.title}</h3>
+    //                         <div className="text-gray-300 mb-2">{item.description}</div>
+    //                         <div className="text-gray-400 mb-3">Achievement: {item.achievement} ({item.year})</div>
+    //                         {item.images && item.images.length > 0 && renderImageCarousel(itemId, item.images)}
+    //                     </div>
+    //                 );
+    //             })}
+    //         </div>
+    //     </div>
+    // );
 
     const renderMenu = () => (
         <div>
@@ -311,20 +313,20 @@ const NotesApp = ({ isOpen, onClose, section }: NotesAppProps) => {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {/* Competitions */}
-                <button
-                    type="button"
-                    className="bg-gray-800/50 p-4 rounded-lg hover:bg-gray-700/50 transition-colors text-left"
-                    onClick={() => handleSectionClick('competitions')}
-                    aria-label="Open Competitions section"
-                >
-                    <div className="flex items-center gap-3 mb-2">
-                        <div className="w-12 h-12 bg-orange-600 rounded-xl flex items-center justify-center">
-                            <FaTrophy size={28} className="text-white" />
-                        </div>
-                        <h3 className="text-xl font-semibold text-gray-200">Competitions</h3>
-                    </div>
-                    <p className="text-gray-400">View my competition history and achievements</p>
-                </button>
+                {/*<button*/}
+                {/*    type="button"*/}
+                {/*    className="bg-gray-800/50 p-4 rounded-lg hover:bg-gray-700/50 transition-colors text-left"*/}
+                {/*    onClick={() => handleSectionClick('competitions')}*/}
+                {/*    aria-label="Open Competitions section"*/}
+                {/*>*/}
+                {/*    <div className="flex items-center gap-3 mb-2">*/}
+                {/*        <div className="w-12 h-12 bg-orange-600 rounded-xl flex items-center justify-center">*/}
+                {/*            <FaTrophy size={28} className="text-white" />*/}
+                {/*        </div>*/}
+                {/*        <h3 className="text-xl font-semibold text-gray-200">Competitions</h3>*/}
+                {/*    </div>*/}
+                {/*    <p className="text-gray-400">View my competition history and achievements</p>*/}
+                {/*</button>*/}
 
                 {/* Education */}
                 <button
@@ -432,7 +434,7 @@ const NotesApp = ({ isOpen, onClose, section }: NotesAppProps) => {
             case 'skills': return 'Skills Notes';
             case 'roles': return 'Extracurricular Roles Notes';
             case 'activities': return 'Extracurricular Activities Notes';
-            case 'competitions': return 'Competitions Notes';
+            // case 'competitions': return 'Competitions Notes';
             default: return 'Notes';
         }
     };
@@ -457,7 +459,7 @@ const NotesApp = ({ isOpen, onClose, section }: NotesAppProps) => {
                     {activeSection === 'skills' && renderSkills()}
                     {activeSection === 'roles' && renderExtraCurricularRoles()}
                     {activeSection === 'activities' && renderExtraCurricularActivities()}
-                    {activeSection === 'competitions' && renderCompetitions()}
+                    {/*{activeSection === 'competitions' && renderCompetitions()}*/}
                 </div>
             </div>
         </DraggableWindow>
