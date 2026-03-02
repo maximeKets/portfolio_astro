@@ -135,14 +135,14 @@ export default function Desktop({ initialBg, backgroundMap }: AppLayoutProps) {
   const handleAppClose = (app: App) => dispatch({ type: 'CLOSE', app });
 
   return (
-    <div className='relative w-screen h-screen overflow-hidden'>
+    <div className='fixed inset-0 w-full h-[100dvh] overflow-hidden'>
       <div
         className='absolute inset-0 bg-cover bg-center'
         style={{ backgroundImage: `url(${backgroundMap[currentBg]})` }}
       />
 
       <div className='relative z-10'>
-        <MacToolbar 
+        <MacToolbar
           onShowTutorial={resetTutorial}
           onOpenSpotlight={() => setIsSpotlightOpen(true)}
           onOpenMissionControl={() => setIsMissionControlOpen(true)}
