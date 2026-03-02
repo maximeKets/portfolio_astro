@@ -194,6 +194,25 @@ export const translations = {
         'resume.pdfTitle': 'Resume PDF',
         'resume.noPdfSupport': 'Your browser can’t display this PDF.',
         'resume.openNewTab': 'Open the resume in a new tab',
+
+        // Dock
+        'dock.myProjects': 'My Projects',
+        'dock.resumeNotes': 'Resume Notes',
+        'dock.viewResume': 'View Resume',
+        'dock.spotifyPlaylist': 'Spotify Playlist',
+        'dock.contact': 'Contact',
+        'dock.contactLinks': 'Contact Links',
+        'dock.terminal': 'Terminal',
+
+        // Mobile Dock Aria Labels
+        'dock.mobile.github': 'Open GitHub projects',
+        'dock.mobile.notes': 'Open Notes',
+        'dock.mobile.resume': 'Open Resume',
+        'dock.mobile.terminal': 'Open Terminal',
+        'dock.mobile.call': 'Call',
+        'dock.mobile.email': 'Email',
+        'dock.mobile.linkedin': 'Open LinkedIn profile',
+        'dock.mobile.spotify': 'Open Spotify playlist in new tab',
     },
     fr: {
         'contact.title': 'Contactez-moi',
@@ -367,6 +386,25 @@ export const translations = {
         'resume.pdfTitle': 'CV PDF',
         'resume.noPdfSupport': 'Votre navigateur ne peut pas afficher ce PDF.',
         'resume.openNewTab': 'Ouvrir le CV dans un nouvel onglet',
+
+        // Dock
+        'dock.myProjects': 'Mes Projets',
+        'dock.resumeNotes': 'Notes',
+        'dock.viewResume': 'Voir le CV',
+        'dock.spotifyPlaylist': 'Playlist Spotify',
+        'dock.contact': 'Contact',
+        'dock.contactLinks': 'Réseaux & Contact',
+        'dock.terminal': 'Terminal',
+
+        // Mobile Dock Aria Labels
+        'dock.mobile.github': 'Ouvrir les projets GitHub',
+        'dock.mobile.notes': 'Ouvrir les notes',
+        'dock.mobile.resume': 'Ouvrir le CV',
+        'dock.mobile.terminal': 'Ouvrir le Terminal',
+        'dock.mobile.call': 'Appeler',
+        'dock.mobile.email': 'Envoyer un Email',
+        'dock.mobile.linkedin': 'Ouvrir le profil LinkedIn',
+        'dock.mobile.spotify': 'Ouvrir la playlist Spotify',
     }
 } as const;
 
