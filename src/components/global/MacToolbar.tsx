@@ -12,7 +12,7 @@ import {
 } from 'react-icons/io5';
 import { userConfig } from '../../config';
 import { useStore } from '@nanostores/react';
-import { languageStore } from '../../store/i18n';
+import { languageStore, useI18n } from '../../store/i18n';
 
 type MenuItem = {
   label: string;
@@ -43,6 +43,7 @@ export default function MacToolbar({
   onOpenAdmin,
 }: MacToolbarProps) {
   const currentLang = useStore(languageStore);
+  const t = useI18n();
 
   const [currentDateTime, setCurrentDateTime] = useState(new Date());
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
@@ -111,100 +112,100 @@ export default function MacToolbar({
   };
 
   const menus: Record<string, MenuItem[]> = {
-    File: [
+    [t('toolbar.menu.file')]: [
       {
-        label: 'Resume (PDF)',
+        label: t('toolbar.menu.resume'),
         icon: <IoDocumentText size={16} />,
         action: () => window.open(userConfig.resume.url, '_blank'),
       },
       {
-        label: 'Projects (GitHub)',
+        label: t('toolbar.menu.projects'),
         icon: <IoCodeSlash size={16} />,
         action: () => window.open(userConfig.social.github, '_blank'),
       },
       {
-        label: 'Admin Dashboard',
+        label: t('toolbar.menu.admin'),
         icon: <FaWindowRestore size={16} />,
         action: () => onOpenAdmin ? onOpenAdmin() : (window.location.href = '/admin'),
       },
     ],
-    View: [
+    [t('toolbar.menu.view')]: [
       {
-        label: 'Spotlight Search…',
+        label: t('toolbar.menu.spotlight'),
         icon: <IoSearchSharp size={16} />,
         action: () => onOpenSpotlight?.(),
       },
       {
-        label: 'Mission Control',
+        label: t('toolbar.menu.missionControl'),
         icon: <FaWindowRestore size={16} />,
         action: () => onOpenMissionControl?.(),
       },
       {
-        label: 'Shortcuts Overlay',
+        label: t('toolbar.menu.shortcutsOverlay'),
         icon: <IoHelpCircle size={16} />,
         action: () => onToggleShortcuts?.(),
       },
       {
-        label: 'Reset Tutorial',
+        label: t('toolbar.menu.resetTutorial'),
         icon: <IoHelpCircle size={16} />,
         action: () => onShowTutorial?.(),
       },
     ],
-    Window: [
+    [t('toolbar.menu.window')]: [
       {
-        label: 'Contact…',
+        label: t('toolbar.menu.contact'),
         icon: <IoMail size={16} />,
         action: () => onOpenContact?.(),
       },
       {
-        label: 'Close All Windows',
+        label: t('toolbar.menu.closeAll'),
         icon: <IoDocumentText size={16} />,
         action: () => onCloseAllWindows?.(),
       },
       {
-        label: 'Shuffle Background',
+        label: t('toolbar.menu.shuffleBg'),
         icon: <IoDocumentText size={16} />,
         action: () => onShuffleBackground?.(),
       },
     ],
-    Go: [
+    [t('toolbar.menu.go')]: [
       {
-        label: 'GitHub',
+        label: t('toolbar.menu.github'),
         icon: <FaGithub size={16} />,
         action: () => window.open(userConfig.social.github, '_blank'),
       },
       {
-        label: 'LinkedIn',
+        label: t('toolbar.menu.linkedin'),
         icon: <FaLinkedin size={16} />,
         action: () => window.open(userConfig.social.linkedin, '_blank'),
       },
       {
-        label: 'Email',
+        label: t('toolbar.menu.email'),
         icon: <FaEnvelope size={16} />,
         action: () => window.open(`mailto:${userConfig.contact.email}`),
       },
     ],
-    Edit: [
+    [t('toolbar.menu.edit')]: [
       {
-        label: 'Copy Email',
+        label: t('toolbar.menu.copyEmail'),
         icon: <IoMail size={16} />,
         action: () => {
           navigator.clipboard.writeText(userConfig.contact.email);
-          alert('Email copied to clipboard!');
+          alert(t('toolbar.alert.emailCopied'));
         },
       },
       {
-        label: 'Copy Phone',
+        label: t('toolbar.menu.copyPhone'),
         icon: <IoCall size={16} />,
         action: () => {
           navigator.clipboard.writeText(userConfig.contact.phone);
-          alert('Phone number copied to clipboard!');
+          alert(t('toolbar.alert.phoneCopied'));
         },
       },
     ],
-    Help: [
+    [t('toolbar.menu.help')]: [
       {
-        label: 'Keyboard Shortcuts',
+        label: t('toolbar.menu.shortcuts'),
         icon: <IoHelpCircle size={16} />,
         action: () => onToggleShortcuts?.(),
       },
@@ -246,14 +247,14 @@ export default function MacToolbar({
   return (
     <>
       <div className='sticky top-0 z-50 md:hidden bg-transparent text-white h-12 px-4 flex items-center justify-end text-base font-medium'>
-          <button
-              onClick={toggleLanguage}
-              className='flex items-center gap-1 cursor-pointer hover:text-gray-300 transition-colors uppercase font-bold text-lg mr-2'
-              title='Toggle Language'
-          >
-              <IoLanguage size={20} />
-              {currentLang}
-          </button>
+        <button
+          onClick={toggleLanguage}
+          className='flex items-center gap-1 cursor-pointer hover:text-gray-300 transition-colors uppercase font-bold text-lg mr-2'
+          title='Toggle Language'
+        >
+          <IoLanguage size={20} />
+          {currentLang}
+        </button>
         {/*<span className='font-semibold'>*/}
         {/*  {formatIPhoneTime(currentDateTime)}*/}
         {/*</span>*/}
