@@ -3,51 +3,71 @@
  * Add your educational background and courses here
  */
 
-import type { Education, Course } from '../types';
+import type {Education, Course} from '../types';
 
 export const education: readonly Education[] = [
-  {
-    degree: 'Bachelor of Computer Science',
-    major: 'Biomedical Informatics',
-    institution: 'Nile University',
-    location: 'Giza, Egypt',
-    year: '2021-2025',
-    description: 'Relevant coursework: Data Structures, Algorithms, Database Management, Software Engineering, Biomedical Informatics, Artificial Intelligence, Machine Learning, Deep Learning, Computer Vision, Natural Language Processing, Computer Networks, Operating Systems, Computer Architecture, Computer Organization, Computer Security, Computer Graphics, Computer Systems, Computer Networks, Operating Systems, Computer Architecture, Computer Organization, Computer Security, Computer Graphics, Computer Systems',
-    images: [
-      {
-        url: 'https://www.nu.edu.eg/sites/default/files/2024-06/whatsapp_image_2024-06-25_at_1.33.17_pm.jpeg',
-        alt: 'Nile University',
-        description: 'Nile University Campus',
-      },
-    ],
-  },
+    {
+        degree: 'Bachelor\'s degree',
+        major: 'Développeur en intelligence artificielle',
+        institution: 'EPSI - L\'école d\'ingénierie informatique',
+        location: 'France',
+        year: '2024 - 2025',
+        description: 'Développement IA & Data (Bac +3)\n' +
+            'Conception et déploiement de modèles Machine Learning, Manipulation de données (Big Data), Développement Fullstack (Front/Back) et intégration IA sous architecture DevOps. Certification RNCP Niveau 6.',
+        images: [
+            {
+                url: '/images/epsi.webp',
+                alt: 'EPSI',
+                description: 'EPSI',
+            },
+        ],
+    },
+    {
+        degree: 'Titre Professionnel',
+        major: 'Développeur Web et Mobile',
+        institution: 'Campus Numérique in the Alps',
+        location: 'France',
+        year: '2021 - 2023',
+        description: 'Développement Logiciel Fullstack & Systèmes\n' +
+            'Programmation (Java, Python, PHP, Js), Algorithmique, Bases de données, Architecture réseaux, Méthodes Agiles (analyse/tests/UI) et Auto-formation continue.',
+        images: [
+            {
+                url: '/images/logo_campusnum.webp',
+                alt: 'Campus Numérique in the Alps',
+                description: 'Campus Numérique',
+            },
+        ],
+    },
+    {
+        degree: 'DUT Techniques de Commercialisation',
+        major: 'Commerce International',
+        institution: 'IUT Amiens',
+        location: 'Amiens, France',
+        year: '2013 - 2015',
+        description: 'Niveau : Diplôme validé',
+        images: [
+            {
+                url: '/images/IUT.png',
+                alt: 'IUT d\'Amiens',
+                description: 'IUT d\'Amiens',
+            },
+        ],
+    },
+    {
+        degree: 'Baccalauréat',
+        major: 'Marketing',
+        institution: 'Lycée Pierre d\'Ailly',
+        location: 'Compiègne, France',
+        year: '2011 - 2013',
+        description: 'Niveau : Mention Bien',
+        images: [
+            {
+                url: '/images/PierreDailly.png',
+                alt: 'Lycée Pierre d\'Ailly',
+                description: 'Campus Numérique',
+            },
+        ],
+    }
 ] as const;
 
-export const courses: readonly Course[] = [
-  {
-    title: 'IOT',
-    description: 'IOT course',
-    institution: 'ITI',
-    location: 'Cairo, Egypt',
-    year: '2023-2024',
-    images: [
-      {
-        url: 'https://iti.gov.eg/assets/images/ColoredLogo.svg',
-        alt: 'ITI',
-      },
-    ],
-  },
-  {
-    title: '.NET full stack course',
-    description: '.NET full stack course',
-    institution: 'Digital Egypt Pioneers Initiative - DEPI',
-    location: 'Cairo, Egypt',
-    year: '2024',
-    images: [
-      {
-        url: 'https://depi.gov.eg/assets/images/proAr.png',
-        alt: 'DEPI',
-      },
-    ],
-  },
-] as const;
+export const courses: readonly Course[] = [] as const;
