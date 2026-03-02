@@ -155,6 +155,18 @@ export const translations = {
         'github.openDetails': 'Open Details',
         'github.openRepo': 'Open Repo',
         'github.openLive': 'Open Live',
+
+        // App Names
+        'app.github': 'GitHub Projects',
+        'app.notes': 'Notes',
+        'app.terminal': 'Terminal',
+        'app.resume': 'Resume',
+        'app.spotify': 'Spotify',
+
+        // Mission Control
+        'mission.title': 'Mission Control',
+        'mission.noWindows': 'No open windows',
+        'mission.closeHint': 'Press Esc or click outside to close',
     },
     fr: {
         'contact.title': 'Contactez-moi',
@@ -289,6 +301,18 @@ export const translations = {
         'github.openDetails': 'Voir les détails',
         'github.openRepo': 'Code Source',
         'github.openLive': 'Site en ligne',
+
+        // App Names
+        'app.github': 'Projets GitHub',
+        'app.notes': 'Notes',
+        'app.terminal': 'Terminal',
+        'app.resume': 'CV',
+        'app.spotify': 'Spotify',
+
+        // Mission Control
+        'mission.title': 'Mission Control',
+        'mission.noWindows': 'Aucune fenêtre ouverte',
+        'mission.closeHint': 'Appuyez sur Échap ou cliquez à l\'extérieur pour fermer',
     }
 } as const;
 
