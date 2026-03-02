@@ -227,6 +227,37 @@ export const translations = {
         'terminal.welcome.location': 'Location',
         'terminal.welcome.contact': 'Contact',
         'terminal.welcome.ask': 'Ask me anything!',
+
+        // Shortcuts
+        'shortcuts.title': 'Keyboard Shortcuts',
+        'shortcuts.openSpotlight': 'Open Spotlight',
+        'shortcuts.closeModal': 'Close modal/menu',
+        'shortcuts.navigateList': 'Navigate list',
+        'shortcuts.select': 'Select',
+        'shortcuts.quickLook': 'Quick Look (Projects)',
+        'shortcuts.shuffleWallpaper': 'Shuffle wallpaper',
+        'shortcuts.closeWindows': 'Close all windows',
+        'shortcuts.missionControl': 'Mission Control',
+        'shortcuts.showOverlay': 'Show this overlay',
+        'shortcuts.tip': 'Tip: Projects in Spotlight support Shift+Enter to open Live links.',
+
+        // ShortcutHint
+        'shortcutHint.search': 'Search',
+
+        // AdminInbox
+        'admin.title': 'Admin Inbox',
+        'admin.desc': 'View contact submissions stored in Supabase.',
+        'admin.close': 'Close',
+        'admin.tokenLabel': 'Access token',
+        'admin.tokenPlaceholder': 'Enter ADMIN_DASHBOARD_TOKEN',
+        'admin.loadButton': 'Load',
+        'admin.loading': 'Loading…',
+        'admin.error': 'Error fetching messages',
+        'admin.noMessages': 'No messages yet.',
+
+        // SpotifyPlayer
+        'spotify.title': 'Spotify Player',
+        'spotify.playerAria': 'Spotify playlist player',
     },
     fr: {
         'contact.title': 'Contactez-moi',
@@ -433,6 +464,37 @@ export const translations = {
         'terminal.welcome.location': 'Localisation',
         'terminal.welcome.contact': 'Contact',
         'terminal.welcome.ask': 'Posez-moi n\'importe quelle question !',
+
+        // Shortcuts
+        'shortcuts.title': 'Raccourcis Clavier',
+        'shortcuts.openSpotlight': 'Ouvrir Spotlight',
+        'shortcuts.closeModal': 'Fermer la fenêtre/le menu',
+        'shortcuts.navigateList': 'Naviguer dans la liste',
+        'shortcuts.select': 'Sélectionner',
+        'shortcuts.quickLook': 'Aperçu Rapide (Projets)',
+        'shortcuts.shuffleWallpaper': 'Changer le fond d\'écran',
+        'shortcuts.closeWindows': 'Fermer toutes les fenêtres',
+        'shortcuts.missionControl': 'Mission Control',
+        'shortcuts.showOverlay': 'Afficher cette aide',
+        'shortcuts.tip': 'Astuce : Dans Spotlight, Shift+Entrée ouvre le site web d\'un projet.',
+
+        // ShortcutHint
+        'shortcutHint.search': 'Recherche',
+
+        // AdminInbox
+        'admin.title': 'Boîte de Réception Admin',
+        'admin.desc': 'Voir les messages de contact stockés dans Supabase.',
+        'admin.close': 'Fermer',
+        'admin.tokenLabel': 'Jeton d\'accès',
+        'admin.tokenPlaceholder': 'Entrez le ADMIN_DASHBOARD_TOKEN',
+        'admin.loadButton': 'Charger',
+        'admin.loading': 'Chargement…',
+        'admin.error': 'Erreur lors de la récupération des messages',
+        'admin.noMessages': 'Aucun message pour le moment.',
+
+        // SpotifyPlayer
+        'spotify.title': 'Lecteur Spotify',
+        'spotify.playerAria': 'Lecteur de playlist Spotify',
     }
 } as const;
 
