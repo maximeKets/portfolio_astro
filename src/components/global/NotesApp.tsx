@@ -8,6 +8,7 @@ import {
 } from 'react-icons/fa';
 import { userConfig } from '../../config';
 import DraggableWindow from './DraggableWindow';
+import { useI18n } from '../../store/i18n';
 
 export type Section =
     | 'menu'
@@ -36,6 +37,8 @@ interface Image {
 }
 
 const NotesApp = ({ isOpen, onClose, section }: NotesAppProps) => {
+    const t = useI18n();
+
     const [activeSection, setActiveSection] = useState<Section>('menu');
     // Store image indices in an object: { 'itemId': index }
     const [activeImageIndices, setActiveImageIndices] = useState<ImageIndicesState>({});
@@ -86,11 +89,11 @@ const NotesApp = ({ isOpen, onClose, section }: NotesAppProps) => {
     const renderBackButton = () => (
         <button
             onClick={handleBackClick}
-            aria-label="Back to Notes menu"
+            aria-label={t('notes.backToMenu')}
             className="flex items-center gap-2 text-gray-300 hover:text-gray-100 mb-4"
         >
             <FaChevronLeft />
-            <span>Back to Menu</span>
+            <span>{t('notes.backToMenu')}</span>
         </button>
     );
 
@@ -106,7 +109,7 @@ const NotesApp = ({ isOpen, onClose, section }: NotesAppProps) => {
                 <div className="rounded-lg overflow-hidden mb-2">
                     <img
                         src={images[currentIndex].url}
-                        alt={images[currentIndex].alt || 'Screenshot'}
+                        alt={images[currentIndex].alt || t('notes.screenshot')}
                         decoding="async"
                         loading="lazy"
                         className=" bg-white w-full h-48 object-contain  rounded-lg"
@@ -121,7 +124,7 @@ const NotesApp = ({ isOpen, onClose, section }: NotesAppProps) => {
                     <div className="flex justify-between mt-2">
                         <button
                             onClick={() => handlePrevImage(itemId, images)}
-                            aria-label="Previous image"
+                            aria-label={t('notes.prevImage')}
                             className="bg-gray-700 hover:bg-gray-600 text-white rounded-full w-8 h-8 flex items-center justify-center"
                         >
                             ←
@@ -131,7 +134,7 @@ const NotesApp = ({ isOpen, onClose, section }: NotesAppProps) => {
                         </span>
                         <button
                             onClick={() => handleNextImage(itemId, images)}
-                            aria-label="Next image"
+                            aria-label={t('notes.nextImage')}
                             className="bg-gray-700 hover:bg-gray-600 text-white rounded-full w-8 h-8 flex items-center justify-center"
                         >
                             →
@@ -145,7 +148,7 @@ const NotesApp = ({ isOpen, onClose, section }: NotesAppProps) => {
     const renderEducation = () => (
         <div className="space-y-6">
             {renderBackButton()}
-            <h2 className="text-2xl font-bold text-gray-200 mb-6">Education</h2>
+            <h2 className="text-2xl font-bold text-gray-200 mb-6">{t('notes.education.title')}</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {education.map((item, index) => {
                     const itemId = `education-${index}`;
@@ -166,7 +169,7 @@ const NotesApp = ({ isOpen, onClose, section }: NotesAppProps) => {
     const renderExperience = () => (
         <div className="space-y-6">
             {renderBackButton()}
-            <h2 className="text-2xl font-bold text-gray-200 mb-6">Professional Experience</h2>
+            <h2 className="text-2xl font-bold text-gray-200 mb-6">{t('notes.experience.title')}</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {experience.map((item, index) => {
                     const itemId = `experience-${index}`;
@@ -196,7 +199,7 @@ const NotesApp = ({ isOpen, onClose, section }: NotesAppProps) => {
     const renderCourses = () => (
         <div className="space-y-6">
             {renderBackButton()}
-            <h2 className="text-2xl font-bold text-gray-200 mb-6">Courses</h2>
+            <h2 className="text-2xl font-bold text-gray-200 mb-6">{t('notes.courses.title')}</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {courses.map((item, index) => {
                     const itemId = `courses-${index}`;
@@ -218,7 +221,7 @@ const NotesApp = ({ isOpen, onClose, section }: NotesAppProps) => {
         return (
             <div className="space-y-6">
                 {renderBackButton()}
-                <h2 className="text-2xl font-bold text-gray-200 mb-6">Skills</h2>
+                <h2 className="text-2xl font-bold text-gray-200 mb-6">{t('notes.skills.title')}</h2>
 
                 <div className="space-y-8">
                     {skills.map((category: any, catIndex: number) => (
@@ -311,7 +314,7 @@ const NotesApp = ({ isOpen, onClose, section }: NotesAppProps) => {
 
     const renderMenu = () => (
         <div>
-            <h2 className="text-2xl font-bold text-gray-200 mb-6">My Notes</h2>
+            <h2 className="text-2xl font-bold text-gray-200 mb-6">{t('notes.myNotes')}</h2>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {/* Competitions */}
@@ -335,15 +338,15 @@ const NotesApp = ({ isOpen, onClose, section }: NotesAppProps) => {
                     type="button"
                     className="bg-gray-800/50 p-4 rounded-lg hover:bg-gray-700/50 transition-colors text-left"
                     onClick={() => handleSectionClick('education')}
-                    aria-label="Open Education section"
+                    aria-label={t('notes.education.desc')}
                 >
                     <div className="flex items-center gap-3 mb-2">
                         <div className="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center">
                             <FaGraduationCap size={28} className="text-white" />
                         </div>
-                        <h3 className="text-xl font-semibold text-gray-200">Education</h3>
+                        <h3 className="text-xl font-semibold text-gray-200">{t('notes.education.title')}</h3>
                     </div>
-                    <p className="text-gray-400">View my educational background and qualifications</p>
+                    <p className="text-gray-400">{t('notes.education.desc')}</p>
                 </button>
 
                 {/* Experience */}
@@ -351,15 +354,15 @@ const NotesApp = ({ isOpen, onClose, section }: NotesAppProps) => {
                     type="button"
                     className="bg-gray-800/50 p-4 rounded-lg hover:bg-gray-700/50 transition-colors text-left"
                     onClick={() => handleSectionClick('experience')}
-                    aria-label="Open Professional Experience section"
+                    aria-label={t('notes.experience.desc')}
                 >
                     <div className="flex items-center gap-3 mb-2">
                         <div className="w-12 h-12 bg-green-600 rounded-xl flex items-center justify-center">
                             <FaBriefcase size={28} className="text-white" />
                         </div>
-                        <h3 className="text-xl font-semibold text-gray-200">Professional Experience</h3>
+                        <h3 className="text-xl font-semibold text-gray-200">{t('notes.experience.title')}</h3>
                     </div>
-                    <p className="text-gray-400">Explore my professional work experience</p>
+                    <p className="text-gray-400">{t('notes.experience.desc')}</p>
                 </button>
                 {/* Extracurricular Roles */}
                 {/*<button*/}
@@ -397,15 +400,15 @@ const NotesApp = ({ isOpen, onClose, section }: NotesAppProps) => {
                     type="button"
                     className="bg-gray-800/50 p-4 rounded-lg hover:bg-gray-700/50 transition-colors text-left"
                     onClick={() => handleSectionClick('courses')}
-                    aria-label="Open Courses section"
+                    aria-label={t('notes.courses.desc')}
                 >
                     <div className="flex items-center gap-3 mb-2">
                         <div className="w-12 h-12 bg-purple-600 rounded-xl flex items-center justify-center">
                             <FaBookOpen size={28} className="text-white" />
                         </div>
-                        <h3 className="text-xl font-semibold text-gray-200">Courses</h3>
+                        <h3 className="text-xl font-semibold text-gray-200">{t('notes.courses.title')}</h3>
                     </div>
-                    <p className="text-gray-400">Check out courses I have completed</p>
+                    <p className="text-gray-400">{t('notes.courses.desc')}</p>
                 </button>
 
                 {/* Skills */}
@@ -413,15 +416,15 @@ const NotesApp = ({ isOpen, onClose, section }: NotesAppProps) => {
                     type="button"
                     className="bg-gray-800/50 p-4 rounded-lg hover:bg-gray-700/50 transition-colors text-left"
                     onClick={() => handleSectionClick('skills')}
-                    aria-label="Open Skills section"
+                    aria-label={t('notes.skills.desc')}
                 >
                     <div className="flex items-center gap-3 mb-2">
                         <div className="w-12 h-12 bg-red-600 rounded-xl flex items-center justify-center">
                             <FaCode size={28} className="text-white" />
                         </div>
-                        <h3 className="text-xl font-semibold text-gray-200">Skills</h3>
+                        <h3 className="text-xl font-semibold text-gray-200">{t('notes.skills.title')}</h3>
                     </div>
-                    <p className="text-gray-400">See my technical skills and expertise</p>
+                    <p className="text-gray-400">{t('notes.skills.desc')}</p>
                 </button>
             </div>
         </div>
@@ -429,15 +432,15 @@ const NotesApp = ({ isOpen, onClose, section }: NotesAppProps) => {
 
     const getWindowTitle = () => {
         switch (activeSection) {
-            case 'menu': return 'Notes';
-            case 'education': return 'Education Notes';
-            case 'experience': return 'Experience Notes';
-            case 'courses': return 'Courses Notes';
-            case 'skills': return 'Skills Notes';
+            case 'menu': return t('notes.window.menu');
+            case 'education': return t('notes.window.education');
+            case 'experience': return t('notes.window.experience');
+            case 'courses': return t('notes.window.courses');
+            case 'skills': return t('notes.window.skills');
             // case 'roles': return 'Extracurricular Roles Notes';
             // case 'activities': return 'Extracurricular Activities Notes';
             // case 'competitions': return 'Competitions Notes';
-            default: return 'Notes';
+            default: return t('notes.window.menu');
         }
     };
 

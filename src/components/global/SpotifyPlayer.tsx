@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import DraggableWindow from './DraggableWindow';
+import { useI18n } from '../../store/i18n';
 
 interface SpotifyPlayerProps {
   isOpen: boolean;
@@ -8,6 +9,7 @@ interface SpotifyPlayerProps {
 }
 
 export default function SpotifyPlayer({ isOpen, onClose, playlistId }: SpotifyPlayerProps) {
+  const t = useI18n();
   const [isMinimized, setIsMinimized] = useState(false);
 
   useEffect(() => {
@@ -25,11 +27,11 @@ export default function SpotifyPlayer({ isOpen, onClose, playlistId }: SpotifyPl
 
   return (
     <DraggableWindow
-      title="Spotify Player"
+      title={t('spotify.title')}
       onClose={onClose}
-      initialPosition={{ 
-        x: Math.floor(window.innerWidth * 0.1), 
-        y: Math.floor(window.innerHeight * 0.2) 
+      initialPosition={{
+        x: Math.floor(window.innerWidth * 0.1),
+        y: Math.floor(window.innerHeight * 0.2)
       }}
       className={`w-[90%] max-w-md transition-all duration-300 ${isMinimized ? 'h-16' : 'h-[300px]'}`}
       initialSize={{ width: 800, height: 600 }}
@@ -42,8 +44,8 @@ export default function SpotifyPlayer({ isOpen, onClose, playlistId }: SpotifyPl
           allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
           loading="lazy"
           className="border-0"
-            title="Spotify playlist player"
-            aria-label="Spotify playlist player"
+          title={t('spotify.playerAria')}
+          aria-label={t('spotify.playerAria')}
         />
       </div>
     </DraggableWindow>
