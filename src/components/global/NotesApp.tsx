@@ -105,7 +105,7 @@ const NotesApp = ({ isOpen, onClose, section }: NotesAppProps) => {
                         alt={images[currentIndex].alt || 'Screenshot'}
                         decoding="async"
                         loading="lazy"
-                        className="w-full h-48 object-contain bg-gray-900 rounded-lg"
+                        className=" bg-white w-full h-48 object-contain  rounded-lg"
                     />
                 </div>
 
@@ -211,43 +211,35 @@ const NotesApp = ({ isOpen, onClose, section }: NotesAppProps) => {
     );
 
     const renderSkills = () => {
-        // Build a simple frequency map of how many projects use each skill
-        const freq: Record<string, number> = {};
-        for (const p of (userConfig.projects || [])) {
-            for (const t of p.techStack) {
-                freq[t] = (freq[t] || 0) + 1;
-            }
-        }
-        const max = Object.values(freq).reduce((a, b) => Math.max(a, b), 1);
-        const getIntensity = (skill: string) => {
-            const f = freq[skill] || 0;
-            const ratio = Math.min(1, f / max);
-            // Interpolate from gray-700 to green-600
-            const base = 'bg-gray-700';
-            if (ratio > 0.66) return 'bg-green-600/70';
-            if (ratio > 0.33) return 'bg-green-600/40';
-            if (ratio > 0) return 'bg-green-600/20';
-            return base;
-        };
         return (
             <div className="space-y-6">
                 {renderBackButton()}
-                <h2 className="text-2xl font-bold text-gray-200 mb-2">Skills</h2>
-                <p className="text-sm text-gray-400 mb-4">Intensity shows how often a skill appears across my projects.</p>
-                <div className="bg-gray-800/50 p-6 rounded-xl shadow-lg">
-                    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">
-                        {skills.map((skill, index) => (
-                            <button
-                                key={index}
-                                className={`px-3 py-2 rounded text-sm text-gray-100 text-left transition-colors ${getIntensity(skill)} hover:bg-green-500/60`}
-                                title={`Used in ${freq[skill] || 0} project(s)`}
-                                onClick={() => {/* future: filter projects by skill */}}
-                            >
-                                <span className="font-medium">{skill}</span>
-                                <span className="ml-2 text-xs text-gray-200/70">{freq[skill] || 0}</span>
-                            </button>
-                        ))}
-                    </div>
+                <h2 className="text-2xl font-bold text-gray-200 mb-6">Skills</h2>
+
+                <div className="space-y-8">
+                    {skills.map((category: any, catIndex: number) => (
+                        <div key={catIndex} className="bg-gray-800/50 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+                            <h3 className="text-xl font-semibold text-gray-200 mb-4 pb-2 border-b border-gray-700">
+                                {category.title}
+                            </h3>
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                {category.skills.map((skill: any, skillIndex: number) => {
+                                    const IconComponent = skill.icon;
+                                    return (
+                                        <div key={skillIndex} className="p-4 bg-gray-700/30 rounded-lg flex items-start gap-4 hover:bg-gray-700/50 transition-colors">
+                                            <div className="w-12 h-12 flex-shrink-0 bg-gray-800 rounded-lg flex items-center justify-center text-green-500">
+                                                {IconComponent && <IconComponent size={24} />}
+                                            </div>
+                                            <div>
+                                                <h4 className="text-lg font-medium text-gray-200 mb-1">{skill.name}</h4>
+                                                <p className="text-sm text-gray-400 leading-relaxed">{skill.description}</p>
+                                            </div>
+                                        </div>
+                                    );
+                                })}
+                            </div>
+                        </div>
+                    ))}
                 </div>
             </div>
         );
@@ -449,9 +441,9 @@ const NotesApp = ({ isOpen, onClose, section }: NotesAppProps) => {
         <DraggableWindow
             title={getWindowTitle()}
             onClose={onClose}
-            initialPosition={{ 
-                x: Math.floor(window.innerWidth * 0.3), 
-                y: Math.floor(window.innerHeight * 0.2) 
+            initialPosition={{
+                x: Math.floor(window.innerWidth * 0.3),
+                y: Math.floor(window.innerHeight * 0.2)
             }}
             className="w-[93vw] md:max-w-4xl max-h-[90vh] flex flex-col"
             initialSize={{ width: 700, height: 600 }}
