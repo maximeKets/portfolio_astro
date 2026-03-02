@@ -21,6 +21,24 @@ Ce dépôt démontre concrètement ma façon de gérer un projet technique :
 
 *(Recruteurs : N'hésitez pas à consulter l'onglet `Projects`, `Issues` et `Pull Requests` de ce dépôt pour constater mon approche méthodique du développement logiciel).*
 
+## 🌍 Internationalisation (i18n)
+
+Ce projet intègre un système de traduction sur-mesure pour passer du Français (FR) à l'Anglais (EN) de manière instantanée, sans rechargement de page.
+
+L'état de la langue est géré globalement via `nanostores` et est persistant gràce au `localStorage`.
+Pour traduire un composant React (`.tsx`), un Hook personnalisé simplifié a été créé :
+
+```tsx
+import { useI18n } from '../../store/i18n';
+
+export default function MonComposant() {
+  const t = useI18n(); // S'abonne automatiquement aux changements de langue
+
+  return <h1>{t('ma_cle_de_traduction')}</h1>;
+}
+```
+*Toutes les clés de traduction se trouvent dans le dictionnaire `src/store/i18n.ts`.*
+
 ## 🚀 Installation Locale
 
 Si vous souhaitez faire tourner ce projet en local pour tester le code :
