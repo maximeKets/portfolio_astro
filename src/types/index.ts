@@ -66,6 +66,21 @@ export interface Course {
 }
 
 // ============================================
+// Skills Types
+// ============================================
+
+export interface SkillItem {
+  name: string;
+  description: string;
+  icon: any; // We use 'any' to avoid strict coupling to react-icons types here, allowing flexibility
+}
+
+export interface SkillCategory {
+  title: string;
+  skills: readonly SkillItem[];
+}
+
+// ============================================
 // Experience Types
 // ============================================
 
@@ -189,7 +204,7 @@ export interface UserConfig {
   // Content
   education: readonly Education[];
   courses: readonly Course[];
-  skills: readonly string[];
+  skills: readonly SkillCategory[];
   extraCurricularRoles: readonly ExtraCurricularRole[];
   extraCurricularActivities: readonly ExtraCurricularActivity[];
   competitions: readonly Competition[];

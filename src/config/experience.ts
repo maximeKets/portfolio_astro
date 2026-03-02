@@ -3,63 +3,77 @@
  * Add your work experience here
  */
 
-import type { Experience } from '../types';
+import type {Experience} from '../types';
 
 export const experience: readonly Experience[] = [
     {
-        title: 'Software Engineer',
-        company: 'Proteinea',
-        location: 'Cairo, Egypt',
-        period: 'August 2025 - Present',
-        description: 'Working on a full stack web application for a client using Angular, React, .NET, Entity Framework, SQL Server, Bootstrap, and jQuery.',
-        technologies: ['Django', 'Flask', 'FastAPI', 'PostgreSQL', 'React', 'Docker', 'AWS', 'Cloud Computing'],
+        title: 'Développeur Web & Intelligence Artificielle | Freelance',
+        company: 'Maxime Kets',
+        location: 'Montpellier, Occitanie, France · Hybride',
+        period: 'sept. 2025 - aujourd’hui',
+        description: 'Ce que je fais :\n- Développement Web Full-Stack – création d’applications web sur mesure (Front : React/Blade/html, Back : Node.js, PHP, Python/Django)\n- Intégration de briques IA – modèles prédictifs, automatisation, assistants virtuels\n- Collecte & valorisation de données – mise en place de pipelines de données, scraping, enrichissement et visualisation\n- API & interconnexions – conception, refactorisation et sécurisation d’API internes\n- Déploiement & maintenance – hébergement, monitoring, CI/CD, amélioration continue\n\n🤝 Ce que je propose :\nJe collabore avec des entreprises, startups et écoles souhaitant développer des applications web intelligentes, des outils d’automatisation ou d’analyse de données, ou des assistants virtuels sur mesure.',
+        technologies: ['Conception de logiciels', 'Intelligence artificielle (IA)', 'LLM', 'Embedding', 'React.js', 'Laravel', 'FastAPI', 'API REST', 'Ingénierie du web'],
         images: [
             {
-                url: 'https://indiebio.co/wp-content/uploads/2025/04/proteinea-logo.png',
-                alt: 'Proteinea',
-            },
+                url: '/images/code.jpg',
+                alt: 'Inmind',
+            }
         ],
     },
     {
-        title: 'Academy Full Stack Developer',
-        company: 'Luftborn',
-        location: 'Cairo, Egypt',
-        period: 'July 2024 - October 2024',
-        description: 'Working on a full stack web application for a client using Angular, React, .NET, Entity Framework, SQL Server, Bootstrap, and jQuery.',
-        technologies: ['.NET', 'Entity Framework', 'SQL Server', 'Angular', 'React', 'Bootstrap', 'jQuery'],
+        title: 'Développeur en intelligence artificielle',
+        company: 'Inmind',
+        location: 'Ville de Paris, Île-de-France, France · À distance',
+        period: 'sept. 2024 - sept. 2025',
+        description: 'FoxJob : Conception et développement d’un assistant virtuel (speech-to-text, formulaires interactifs) pour aider les étudiants.\nAPI interne : Refonte et optimisation d’une API de partage de données. \nProjet de collecte et d’enrichissement de données : Développement d’un système automatisé d’extraction.\nCampusFlow : Module Prospection et Module Événements intégrés à l’écosystème CampusFlow.',
+        technologies: ['Intelligence Artificielle', 'LLM', 'Embedding', 'React.js', 'base de données vectoriels', 'Laravel', 'FastAPI', 'API REST'],
         images: [
             {
-                url: 'https://www.luftborn.com/_nuxt/NavLogo.DsLRihGN.svg',
-                alt: 'Luftborn',
-            },
+                url: '/images/Inmind Logo.png',
+                alt: 'Inmind',
+            }
         ],
     },
     {
-        title: 'Junior Research Assistant',
-        company: 'Nile University',
-        location: 'Cairo, Egypt',
-        period: 'Summer 2023',
-        description: 'Assisted in the development of internal software tools using ASP.NET Core. Implemented new features and fixed bugs in existing applications.',
-        technologies: ['C#', 'ASP.NET Core', 'Entity Framework', 'SQL Server', 'Bootstrap'],
+        title: 'Développeur web freelance',
+        company: 'Freelance',
+        location: 'Valence, Auvergne-Rhône-Alpes, France · À distance',
+        period: 'juin 2023 - mai 2024',
+        description: 'Projet GestImmo :\nCréation d\'un site web pour agence immobilière avec extranet. Conception d\'interface responsive (Wagtail).\nProjet d’Automatisation de Facturation :\nDéveloppement d\'un système de génération automatique de factures (normes internationales) avec l\'API Zoho Invoice.',
+        technologies: ['Python', 'JavaScript', 'SQL', 'HTML', 'CSS', 'Bash', 'Django', 'Wagtail', 'GitHub', 'Node.js', 'Tailwind', 'PHP', 'WordPress'],
         images: [
             {
-                url: 'https://top50women.com/wp-content/uploads/2023/08/Nile-university-1.jpg',
-                alt: 'NU Research',
-            },
+                url: '/images/code.jpg',
+                alt: 'Code',
+            }
         ],
     },
     {
-        title: 'Junior Teaching Assistant',
-        company: 'Nile University',
-        location: 'Cairo, Egypt',
-        period: 'Spring 2022, Fall 2022, Spring 2023, Fall 2023, Spring 2024',
-        description: 'Assisted in teaching courses to students, helped them with their assignments and projects, and graded their exams and assignments.',
-        technologies: ['C++', 'C#', 'Java', 'Python', 'SQL', 'HTML', 'CSS', 'JavaScript', 'React', 'MongoDB', 'MySQL', 'Docker'],
+        title: 'Développeur web & mobile',
+        company: 'park4night',
+        location: 'Saint-Péray, Auvergne-Rhône-Alpes, France · Sur site',
+        period: 'juin 2022 - juin 2023',
+        description: 'Développeur web fullstack contribuant à plusieurs projets clés : Plateforme Business partenaires, Plateforme Premium, Application Apple CarPlay (Bêta), et module W3crew (plateforme type Malt blockchainisée). Conception d\'un système de gestion de factures interne.',
+        technologies: ['PHP', 'JavaScript', 'Python', 'Bash', 'Git', 'HTML5', 'CSS', 'Laravel', 'Swift'],
         images: [
             {
-                url: 'https://top50women.com/wp-content/uploads/2023/08/Nile-university-1.jpg',
-                alt: 'Nile University',
-            },
+                url: '/images/park4night.png',
+                alt: 'park4night',
+            }
         ],
     },
+    {
+        title: 'Commercial Spécialisé en Pompes à Chaleur',
+        company: 'RHONE AVENIR ENERGIE',
+        location: 'Lyon, France',
+        period: 'nov. 2020 - nov. 2021',
+        description: 'Prospection BtoC, vente de solutions énergétiques (Pompes à chaleur), suivi client.',
+        technologies: ['Vente', 'Prospection', 'Gestion de la relation client'],
+        images: [
+            {
+                url: '/images/rhone-avenir-energie.png',
+                alt: 'Rhone-avenir-energie',
+            }
+        ],
+    }
 ] as const;
