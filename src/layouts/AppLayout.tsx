@@ -19,13 +19,6 @@ interface AppLayoutProps {
   backgroundMap: Record<string, string>;
 }
 
-type TutorialStep = {
-  title: string;
-  content: string;
-  action?: () => void;
-  buttonText?: string;
-};
-
 export default function Desktop({ initialBg, backgroundMap }: AppLayoutProps) {
   const [currentBg, setCurrentBg] = useState<string>(initialBg);
   type App = 'terminal' | 'notes' | 'github' | 'resume' | 'spotify';
