@@ -213,6 +213,20 @@ export const translations = {
         'dock.mobile.email': 'Email',
         'dock.mobile.linkedin': 'Open LinkedIn profile',
         'dock.mobile.spotify': 'Open Spotify playlist in new tab',
+
+        // MacTerminal
+        'terminal.placeholder.1': 'Type your question...',
+        'terminal.placeholder.2': 'What are your skills?',
+        'terminal.placeholder.3': 'Where are you located?',
+        'terminal.placeholder.4': 'What projects have you worked on?',
+        'terminal.error': 'I\'m having trouble processing that. Please email me at',
+        'terminal.inputAria': 'Terminal input',
+        'terminal.welcome.title': 'Welcome to My Portfolio',
+        'terminal.welcome.name': 'Name',
+        'terminal.welcome.role': 'Role',
+        'terminal.welcome.location': 'Location',
+        'terminal.welcome.contact': 'Contact',
+        'terminal.welcome.ask': 'Ask me anything!',
     },
     fr: {
         'contact.title': 'Contactez-moi',
@@ -405,6 +419,20 @@ export const translations = {
         'dock.mobile.email': 'Envoyer un Email',
         'dock.mobile.linkedin': 'Ouvrir le profil LinkedIn',
         'dock.mobile.spotify': 'Ouvrir la playlist Spotify',
+
+        // MacTerminal
+        'terminal.placeholder.1': 'Posez votre question...',
+        'terminal.placeholder.2': 'Quelles sont vos compétences ?',
+        'terminal.placeholder.3': 'Où habitez-vous ?',
+        'terminal.placeholder.4': 'Sur quels projets avez-vous travaillé ?',
+        'terminal.error': 'J\'ai du mal à traiter cette demande. Veuillez m\'envoyer un email à',
+        'terminal.inputAria': 'Entrée du terminal',
+        'terminal.welcome.title': 'Bienvenue sur mon Portfolio',
+        'terminal.welcome.name': 'Nom',
+        'terminal.welcome.role': 'Rôle',
+        'terminal.welcome.location': 'Localisation',
+        'terminal.welcome.contact': 'Contact',
+        'terminal.welcome.ask': 'Posez-moi n\'importe quelle question !',
     }
 } as const;
 

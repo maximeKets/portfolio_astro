@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { userConfig } from '../../config';
 import DraggableWindow from './DraggableWindow';
+import { useI18n } from '../../store/i18n';
 
 type Message = {
   role: 'system' | 'user' | 'assistant';
@@ -17,15 +18,16 @@ interface MacTerminalProps {
   onClose: () => void;
 }
 
-// Customize these placeholder messages for the input field
-const PLACEHOLDER_MESSAGES = [
-  'Type your question...',
-  'What are your skills?',
-  'Where are you located?',
-  'What projects have you worked on?',
-];
-
 export default function MacTerminal({ isOpen, onClose }: MacTerminalProps) {
+  const t = useI18n();
+
+  // Customize these placeholder messages for the input field
+  const PLACEHOLDER_MESSAGES = [
+    t('terminal.placeholder.1'),
+    t('terminal.placeholder.2'),
+    t('terminal.placeholder.3'),
+    t('terminal.placeholder.4'),
+  ];
   const currentDate = new Date();
   const formattedDate = currentDate.toLocaleDateString('en-US', {
     month: 'long',
@@ -76,16 +78,16 @@ export default function MacTerminal({ isOpen, onClose }: MacTerminalProps) {
   }, [placeholder, isDeleting, currentPlaceholderIndex]);
 
   // Customize this welcome message with your information
-  const welcomeMessage = `Welcome to My Portfolio
+  const welcomeMessage = `${t('terminal.welcome.title')}
 
-Name: ${userConfig.name}
-Role: ${userConfig.role}
-Location: ${userConfig.location}
+${t('terminal.welcome.name')}: ${userConfig.name}
+${t('terminal.welcome.role')}: ${userConfig.role}
+${t('terminal.welcome.location')}: ${userConfig.location}
 
-Contact: ${userConfig.contact.email}
+${t('terminal.welcome.contact')}: ${userConfig.contact.email}
 GitHub: ${userConfig.social.github}
 
-Ask me anything!
+${t('terminal.welcome.ask')}
 `;
 
   // Customize the system prompt with your personal information
@@ -198,7 +200,7 @@ If a question is unrelated to my work or portfolio, say: "That's outside my area
           ...prev.messages,
           {
             role: 'assistant',
-            content: `I'm having trouble processing that. Please email me at ${userConfig.contact.email}`,
+            content: `${t('terminal.error')} ${userConfig.contact.email}`,
           },
         ],
       }));
@@ -213,9 +215,9 @@ If a question is unrelated to my work or portfolio, say: "That's outside my area
     <DraggableWindow
       title={`${userConfig.website} ⸺ zsh`}
       onClose={onClose}
-      initialPosition={{ 
-        x: Math.floor(window.innerWidth * 0.1), 
-        y: Math.floor(window.innerHeight * 0.1) 
+      initialPosition={{
+        x: Math.floor(window.innerWidth * 0.1),
+        y: Math.floor(window.innerHeight * 0.1)
       }}
       initialSize={{ width: 700, height: 500 }}
       className="bg-black/90 backdrop-blur-sm"
@@ -255,7 +257,7 @@ If a question is unrelated to my work or portfolio, say: "That's outside my area
               onChange={handleInputChange}
               className='w-full sm:flex-1 bg-transparent outline-none text-white placeholder-gray-400'
               placeholder={placeholder}
-              aria-label="Terminal input"
+              aria-label={t('terminal.inputAria')}
               name="terminal-input"
               autoComplete="off"
             />
