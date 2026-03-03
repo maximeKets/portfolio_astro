@@ -28,6 +28,7 @@ import { skills } from './skills';
 import { extraCurricularRoles, extraCurricularActivities } from './extracurricular';
 import { competitions } from './competitions';
 import { projects } from './projects';
+import { starProjects } from './starprojects';
 import { spotify, resume } from './apps';
 import { seo, theme } from './site';
 
@@ -58,7 +59,8 @@ export const userConfig: UserConfig = {
   competitions,
   experience,
   projects,
+  starProjects,
 } as const;
 
 // Export individual modules for granular imports if needed
-export { personal, social, contact, education, courses, experience, skills, extraCurricularRoles, extraCurricularActivities, competitions, projects, spotify, resume, seo, theme };
+export { personal, social, contact, education, courses, experience, skills, extraCurricularRoles, extraCurricularActivities, competitions, projects, starProjects, spotify, resume, seo, theme };
