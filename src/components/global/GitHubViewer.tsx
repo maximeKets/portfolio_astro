@@ -166,7 +166,7 @@ const GitHubViewer = ({ isOpen, onClose, selectedProjectId }: GitHubViewerProps)
                       {project.images && project.images.length > 0 && (
                         <div className="relative w-full h-48 mb-3 overflow-hidden rounded-lg">
                           <img
-                            src={project.images[0].url}
+                            src={typeof project.images[0].url === 'string' ? project.images[0].url : project.images[0].url.src}
                             alt={project.images[0].alt}
                             className="w-full h-full object-cover"
                           />
@@ -243,7 +243,7 @@ const GitHubViewer = ({ isOpen, onClose, selectedProjectId }: GitHubViewerProps)
                       <div className="relative">
                         <div className="rounded-lg overflow-hidden mb-2">
                           <img
-                            src={selectedProject.images[activeImageIndex].url}
+                            src={typeof selectedProject.images[activeImageIndex].url === 'string' ? selectedProject.images[activeImageIndex].url : selectedProject.images[activeImageIndex].url.src}
                             alt={selectedProject.images[activeImageIndex].alt}
                             className="w-full object-cover"
                           />
@@ -321,7 +321,7 @@ const GitHubViewer = ({ isOpen, onClose, selectedProjectId }: GitHubViewerProps)
               </div>
               {quickLook!.images && quickLook!.images.length > 0 && (
                 <div className="rounded-lg overflow-hidden mb-3">
-                  <img src={quickLook!.images[0].url} alt={quickLook!.images[0].alt} className="w-full object-cover" />
+                  <img src={typeof quickLook!.images[0].url === 'string' ? quickLook!.images[0].url : quickLook!.images[0].url.src} alt={quickLook!.images[0].alt} className="w-full object-cover" />
                 </div>
               )}
               <p className="text-gray-300 mb-3">{quickLook!.description}</p>

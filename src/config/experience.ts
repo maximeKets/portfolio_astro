@@ -3,7 +3,11 @@
  * Add your work experience here
  */
 
-import type {Experience} from '../types';
+import type { Experience } from '../types';
+import codeImg from '../assets/images/code.jpg';
+import inmindImg from '../assets/images/Inmind Logo.png';
+import park4nightImg from '../assets/images/park4night.png';
+import rhoneImg from '../assets/images/rhone-avenir-energie.png';
 
 export const experience: readonly Experience[] = [
     {
@@ -15,8 +19,8 @@ export const experience: readonly Experience[] = [
         technologies: ['Conception de logiciels', 'Intelligence artificielle (IA)', 'LLM', 'Embedding', 'React.js', 'Laravel', 'FastAPI', 'API REST', 'Ingénierie du web'],
         images: [
             {
-                url: '/images/code.jpg',
-                alt: 'Inmind',
+                url: codeImg,
+                alt: 'Code',
             }
         ],
     },
@@ -29,7 +33,7 @@ export const experience: readonly Experience[] = [
         technologies: ['Intelligence Artificielle', 'LLM', 'Embedding', 'React.js', 'base de données vectoriels', 'Laravel', 'FastAPI', 'API REST'],
         images: [
             {
-                url: '/images/Inmind Logo.png',
+                url: inmindImg,
                 alt: 'Inmind',
             }
         ],
@@ -43,7 +47,7 @@ export const experience: readonly Experience[] = [
         technologies: ['Python', 'JavaScript', 'SQL', 'HTML', 'CSS', 'Bash', 'Django', 'Wagtail', 'GitHub', 'Node.js', 'Tailwind', 'PHP', 'WordPress'],
         images: [
             {
-                url: '/images/code.jpg',
+                url: codeImg,
                 alt: 'Code',
             }
         ],
@@ -57,7 +61,7 @@ export const experience: readonly Experience[] = [
         technologies: ['PHP', 'JavaScript', 'Python', 'Bash', 'Git', 'HTML5', 'CSS', 'Laravel', 'Swift'],
         images: [
             {
-                url: '/images/park4night.png',
+                url: park4nightImg,
                 alt: 'park4night',
             }
         ],
@@ -71,9 +75,9 @@ export const experience: readonly Experience[] = [
         technologies: ['Vente', 'Prospection', 'Gestion de la relation client'],
         images: [
             {
-                url: '/images/rhone-avenir-energie.png',
+                url: rhoneImg,
                 alt: 'Rhone-avenir-energie',
             }
         ],
     }
-] as const;
+];

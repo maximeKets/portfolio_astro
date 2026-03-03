@@ -30,11 +30,7 @@ interface NotesAppProps {
 // Type for storing image indices per item
 type ImageIndicesState = Record<string, number>;
 
-interface Image {
-    url: string;
-    alt?: string;
-    description?: string;
-}
+import type { Image } from '../../types';
 
 const NotesApp = ({ isOpen, onClose, section }: NotesAppProps) => {
     const t = useI18n();
@@ -104,12 +100,19 @@ const NotesApp = ({ isOpen, onClose, section }: NotesAppProps) => {
             return null;
         }
 
+        const currentImage = images[currentIndex];
+        const imgSrc = typeof currentImage.url === 'string' ? currentImage.url : currentImage.url.src;
+        const imgWidth = typeof currentImage.url === 'string' ? undefined : currentImage.url.width;
+        const imgHeight = typeof currentImage.url === 'string' ? undefined : currentImage.url.height;
+
         return (
             <div className="mt-4">
                 <div className="rounded-lg overflow-hidden mb-2">
                     <img
-                        src={images[currentIndex].url}
-                        alt={images[currentIndex].alt || t('notes.screenshot')}
+                        src={imgSrc}
+                        width={imgWidth}
+                        height={imgHeight}
+                        alt={currentImage.alt || t('notes.screenshot')}
                         decoding="async"
                         loading="lazy"
                         className=" bg-white w-full h-48 object-contain  rounded-lg"
@@ -117,7 +120,7 @@ const NotesApp = ({ isOpen, onClose, section }: NotesAppProps) => {
                 </div>
 
                 <div className="text-sm text-gray-400 mb-3" aria-live="polite">
-                    {images[currentIndex].description}
+                    {currentImage.description}
                 </div>
 
                 {images.length > 1 && (
