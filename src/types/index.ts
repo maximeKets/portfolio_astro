@@ -7,9 +7,17 @@
 // Image & Media Types
 // ============================================
 
+export interface ImageMetadata {
+  src: string;
+  width: number;
+  height: number;
+  format: string;
+  orientation?: number;
+}
+
 export interface Image {
-  /** Image URL (can be external or local path) */
-  url: string;
+  /** Image URL (can be external or local path, or ImageMetadata from import) */
+  url: string | ImageMetadata;
   /** Alt text for accessibility */
   alt?: string;
   /** Optional description displayed below the image */
