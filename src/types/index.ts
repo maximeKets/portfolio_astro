@@ -139,6 +139,18 @@ export interface Competition {
 // Contact & Social Types
 // ============================================
 
+export interface StarProject {
+  id: string;
+  title: string;
+  context: string;
+  situation: string;
+  task: string;
+  action: string;
+  result: string;
+  technologies?: readonly string[];
+  images?: readonly Image[];
+}
+
 export interface SocialLinks {
   github: string;
   linkedin: string;
@@ -218,6 +230,7 @@ export interface UserConfig {
   competitions: readonly Competition[];
   experience: readonly Experience[];
   projects: readonly Project[];
+  starProjects: readonly StarProject[];
 }
 
 // ============================================

@@ -187,6 +187,14 @@ export const translations = {
         'notes.window.experience': 'Experience Notes',
         'notes.window.courses': 'Courses Notes',
         'notes.window.skills': 'Skills Notes',
+        'notes.starProjects.title': 'Key Projects',
+        'notes.starProjects.desc': 'Explore my projects using the STAR method',
+        'notes.window.starProjects': 'STAR Projects Notes',
+        'notes.star.context': 'Context',
+        'notes.star.situation': 'Situation',
+        'notes.star.task': 'Task',
+        'notes.star.action': 'Action',
+        'notes.star.result': 'Result',
 
         // ResumeViewer
         'resume.title': 'Resume.pdf',
@@ -424,6 +432,14 @@ export const translations = {
         'notes.window.experience': 'Notes : Expérience',
         'notes.window.courses': 'Notes : Formations',
         'notes.window.skills': 'Notes : Compétences',
+        'notes.starProjects.title': 'Projets Clés',
+        'notes.starProjects.desc': 'Découvrir mes projets avec la méthode STAR',
+        'notes.window.starProjects': 'Notes : Projets STAR',
+        'notes.star.context': 'Contexte',
+        'notes.star.situation': 'Situation',
+        'notes.star.task': 'Tâche',
+        'notes.star.action': 'Action',
+        'notes.star.result': 'Résultat',
 
         // ResumeViewer
         'resume.title': 'CV.pdf',
