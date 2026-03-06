@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 interface AdminInboxProps {
   open: boolean;
@@ -16,7 +16,10 @@ type Message = {
   user_agent?: string | null;
 };
 
+import { useI18n } from '../../store/i18n';
+
 export default function AdminInbox({ open, onClose }: AdminInboxProps) {
+  const t = useI18n();
   const [token, setToken] = useState('');
   const [messages, setMessages] = useState<Message[] | null>(null);
   const [loading, setLoading] = useState(false);
@@ -47,7 +50,7 @@ export default function AdminInbox({ open, onClose }: AdminInboxProps) {
       setMessages(data.data || []);
       sessionStorage.setItem('admin_token', token);
     } catch (e: any) {
-      setError(e.message || 'Error fetching messages');
+      setError(e.message || t('admin.error'));
       setMessages(null);
     } finally {
       setLoading(false);
@@ -62,26 +65,26 @@ export default function AdminInbox({ open, onClose }: AdminInboxProps) {
       <div ref={dialogRef} className="relative mx-auto mt-10 w-[92%] max-w-3xl rounded-xl border border-white/10 bg-gray-900/95 text-white shadow-2xl p-6">
         <div className="flex items-start justify-between gap-4">
           <div>
-            <h3 className="text-xl font-semibold">Admin Inbox</h3>
-            <p className="text-sm text-gray-300">View contact submissions stored in Supabase.</p>
+            <h3 className="text-xl font-semibold">{t('admin.title')}</h3>
+            <p className="text-sm text-gray-300">{t('admin.desc')}</p>
           </div>
-          <button onClick={onClose} className="text-gray-400 hover:text-white" aria-label="Close">✕</button>
+          <button onClick={onClose} className="text-gray-400 hover:text-white" aria-label={t('admin.close')}>✕</button>
         </div>
 
         <div className="mt-4 flex items-end gap-2">
           <div className="flex-1">
-            <label className="text-xs text-gray-400">Access token</label>
-            <input value={token} onChange={(e) => setToken(e.target.value)} className="mt-1 w-full rounded-md bg-white/5 border border-white/10 px-3 py-2 outline-none focus:ring-2 focus:ring-white/30" placeholder="Enter ADMIN_DASHBOARD_TOKEN" />
+            <label className="text-xs text-gray-400">{t('admin.tokenLabel')}</label>
+            <input value={token} onChange={(e) => setToken(e.target.value)} className="mt-1 w-full rounded-md bg-white/5 border border-white/10 px-3 py-2 outline-none focus:ring-2 focus:ring-white/30" placeholder={t('admin.tokenPlaceholder')} />
           </div>
-          <button onClick={fetchMessages} className="px-3 py-2 rounded-md bg-blue-600 hover:bg-blue-500">Load</button>
+          <button onClick={fetchMessages} className="px-3 py-2 rounded-md bg-blue-600 hover:bg-blue-500">{t('admin.loadButton')}</button>
         </div>
 
-        {loading && <div className="mt-4 text-sm text-gray-300">Loading…</div>}
+        {loading && <div className="mt-4 text-sm text-gray-300">{t('admin.loading')}</div>}
         {error && <div className="mt-4 text-sm text-red-300">{error}</div>}
 
         {messages && (
           <div className="mt-4 max-h-[60vh] overflow-y-auto divide-y divide-white/10">
-            {messages.length === 0 && <div className="py-6 text-sm text-gray-400">No messages yet.</div>}
+            {messages.length === 0 && <div className="py-6 text-sm text-gray-400">{t('admin.noMessages')}</div>}
             {messages.map((m, idx) => (
               <div key={(m.id || idx) as any} className="py-4">
                 <div className="flex items-center justify-between text-sm">
