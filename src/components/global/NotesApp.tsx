@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import {
     FaGraduationCap, FaBriefcase, FaChevronLeft, FaBookOpen,
-    FaCode,
+    FaCode, FaStar,
     // FaUsers,
     // FaPalette,
     // FaTrophy
@@ -16,6 +16,7 @@ export type Section =
     | 'experience'
     | 'courses'
     | 'skills'
+    | 'starprojects'
     // | 'roles'
     // | 'activities'
     // | 'competitions'
@@ -78,6 +79,7 @@ const NotesApp = ({ isOpen, onClose, section }: NotesAppProps) => {
     const experience = userConfig.experience || [];
     const courses = userConfig.courses || [];
     const skills = userConfig.skills || [];
+    const starProjects = userConfig.starProjects || [];
     // const roles = userConfig.extraCurricularRoles || [];
     // const activities = userConfig.extraCurricularActivities || [];
     // const competitions = userConfig.competitions || [];
@@ -255,6 +257,65 @@ const NotesApp = ({ isOpen, onClose, section }: NotesAppProps) => {
         );
     };
 
+    const renderStarProjects = () => (
+        <div className="space-y-6">
+            {renderBackButton()}
+            <h2 className="text-2xl font-bold text-gray-200 mb-6">{t('notes.starProjects.title')}</h2>
+            <div className="grid grid-cols-1 gap-8">
+                {starProjects.map((item, index) => {
+                    const itemId = `star-${index}`;
+                    return (
+                        <div key={itemId} className="bg-gray-800/50 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow border border-gray-700/50">
+                            <h3 className="text-2xl font-bold text-gray-100 mb-4 pb-2 border-b border-gray-700/50">{item.title}</h3>
+
+                            {item.context && (
+                                <div className="mb-4">
+                                    <h4 className="text-sm font-semibold text-blue-400 uppercase tracking-wider mb-1">{t('notes.star.context')}</h4>
+                                    <p className="text-gray-300 italic">{item.context}</p>
+                                </div>
+                            )}
+
+                            <div className="space-y-4">
+                                <div>
+                                    <h4 className="text-sm font-semibold text-pink-400 uppercase tracking-wider mb-1">S - {t('notes.star.situation')}</h4>
+                                    <p className="text-gray-300">{item.situation}</p>
+                                </div>
+
+                                <div>
+                                    <h4 className="text-sm font-semibold text-orange-400 uppercase tracking-wider mb-1">T - {t('notes.star.task')}</h4>
+                                    <p className="text-gray-300">{item.task}</p>
+                                </div>
+
+                                <div className="bg-green-900/10 p-4 rounded-lg border border-green-500/10">
+                                    <h4 className="text-sm font-semibold text-green-400 uppercase tracking-wider mb-1">A - {t('notes.star.action')}</h4>
+                                    <p className="text-gray-300">{item.action}</p>
+                                </div>
+
+                                <div className="bg-purple-900/10 p-4 rounded-lg border border-purple-500/10">
+                                    <h4 className="text-sm font-semibold text-purple-400 uppercase tracking-wider mb-1">R - {t('notes.star.result')}</h4>
+                                    <p className="text-gray-300 font-medium">{item.result}</p>
+                                </div>
+                            </div>
+
+                            {item.technologies && (
+                                <div className="mt-6 pt-4 border-t border-gray-700/50">
+                                    <div className="flex flex-wrap gap-2">
+                                        {item.technologies.map((tech, i) => (
+                                            <span key={i} className="px-3 py-1 bg-gray-700/50 rounded-full text-xs font-medium text-gray-300 border border-gray-600">
+                                                {tech}
+                                            </span>
+                                        ))}
+                                    </div>
+                                </div>
+                            )}
+                            {item.images && item.images.length > 0 && renderImageCarousel(itemId, item.images)}
+                        </div>
+                    );
+                })}
+            </div>
+        </div>
+    );
+
     // const renderExtraCurricularRoles = () => (
     //     <div className="space-y-6">
     //         {renderBackButton()}
@@ -429,6 +490,22 @@ const NotesApp = ({ isOpen, onClose, section }: NotesAppProps) => {
                     </div>
                     <p className="text-gray-400">{t('notes.skills.desc')}</p>
                 </button>
+
+                {/* STAR Projects */}
+                <button
+                    type="button"
+                    className="bg-gray-800/50 p-4 rounded-lg hover:bg-gray-700/50 transition-colors text-left sm:col-span-2"
+                    onClick={() => handleSectionClick('starprojects')}
+                    aria-label={t('notes.starProjects.desc')}
+                >
+                    <div className="flex items-center gap-3 mb-2">
+                        <div className="w-12 h-12 bg-amber-500 rounded-xl flex items-center justify-center">
+                            <FaStar size={28} className="text-white" />
+                        </div>
+                        <h3 className="text-xl font-semibold text-gray-200">{t('notes.starProjects.title')}</h3>
+                    </div>
+                    <p className="text-gray-400">{t('notes.starProjects.desc')}</p>
+                </button>
             </div>
         </div>
     );
@@ -440,6 +517,7 @@ const NotesApp = ({ isOpen, onClose, section }: NotesAppProps) => {
             case 'experience': return t('notes.window.experience');
             case 'courses': return t('notes.window.courses');
             case 'skills': return t('notes.window.skills');
+            case 'starprojects': return t('notes.window.starProjects');
             // case 'roles': return 'Extracurricular Roles Notes';
             // case 'activities': return 'Extracurricular Activities Notes';
             // case 'competitions': return 'Competitions Notes';
@@ -465,6 +543,7 @@ const NotesApp = ({ isOpen, onClose, section }: NotesAppProps) => {
                     {activeSection === 'experience' && renderExperience()}
                     {activeSection === 'courses' && renderCourses()}
                     {activeSection === 'skills' && renderSkills()}
+                    {activeSection === 'starprojects' && renderStarProjects()}
                     {/*{activeSection === 'roles' && renderExtraCurricularRoles()}*/}
                     {/*{activeSection === 'activities' && renderExtraCurricularActivities()}*/}
                     {/*{activeSection === 'competitions' && renderCompetitions()}*/}
