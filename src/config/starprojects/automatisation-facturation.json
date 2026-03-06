@@ -1,0 +1,11 @@
+{
+    "id": "automatisation-facturation",
+    "title": "Automatisation de la Facturation Internationale B2B/B2C",
+    "context": "Mission freelance pour park4night visant à automatiser le flux comptable entre leurs plateformes de vente (Prestashop, Abonnements web) et leur logiciel comptable Zoho Invoice.",
+    "situation": "L'entreprise gérait manuellement l'agrégation mensuelle de multiples sources de ventes (matériel physique, abonnements virtuels). Ce processus très chronophage était sujet aux erreurs humaines, compte tenu de la complexité des normes fiscales selon la typologie du produit et la zone géographique (France, UE, Hors UE).",
+    "task": "Concevoir et développer un orchestrateur logiciel robuste capable de synchroniser deux bases de données distinctes, d'appliquer dynamiquement les règles de TVA internationales, et de générer automatiquement des factures agrégées via l'API de Zoho Invoice.",
+    "action": "J'ai développé un outil intermédiaire backend en Django (Python). J'ai mis en place des requêtes SQL personnalisées via des tunnels SSH pour extraire et ventiler (par pays/type de bien) les données de Prestashop et du site d'abonnements en toute sécurité. J'ai modélisé un moteur de règles fiscales (SQLite) pour recalculer précisément le HT et la TVA (régimes FR, intra-UE, export HORS-UE). Enfin, j'ai géré l'authentification OAuth2 et l'orchestration des appels API REST vers Zoho Invoice pour déclencher la création et l'envoi des factures de synthèse.",
+    "result": "L'automatisation a drastiquement réduit le temps de traitement de la facturation, transformant une tâche mensuelle fastidieuse en un processus fluide. Les erreurs de saisie ont été supprimées, et la conformité aux législations fiscales internationales est désormais garantie par le moteur de règles de l'application.",
+    "technologies": ["Python", "Django", "Zoho Invoice API", "Prestashop / MySQL", "SQLite", "Tunnels SSH", "Memcached"],
+    "images": []
+}

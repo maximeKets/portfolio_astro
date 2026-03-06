@@ -1,0 +1,11 @@
+{
+    "id": "foxjob",
+    "title": "FoxJob - Plateforme B2B2C & Web Scraping Intelligent",
+    "context": "VirtualExpo souhaitait créer une plateforme dédiée (B2B2C) pour centraliser les recherches de stages, alternances et premiers emplois pour les écoles partenaires et leurs étudiants.",
+    "situation": "Les plateformes généralistes (LinkedIn, Indeed) offraient des opportunités redondantes et manquaient de focus sur les contrats étudiants. La base de données interne était limitée et obsolète, freinant le développement commercial.",
+    "task": "Concevoir et développer un système de web scraping robuste pour constituer une base de données exclusive en ciblant directement les sites carrières de 2000 grandes entreprises, tout en s'affranchissant des agrégateurs classiques.",
+    "action": "J'ai développé une architecture backend en Python avec Django 5.1 et un pipeline en 4 étapes. J'ai intégré Playwright et l'API OpenAI (GPT-4o Vision) pour naviguer intelligemment (ex: gestion des bannières cookies) et contourner les protections anti-bot. Pour extraire les données malgré l'hétérogénéité des sites, j'ai créé un système hybride combinant analyse visuelle et textuelle générant dynamiquement des sélecteurs XPath robustes. J'ai également géré la détection et l'automatisation de différents types de paginations (scroll infini, load more, pages).",
+    "result": "Le système a traité avec succès les 2000 entreprises cibles, atteignant un taux de collecte de ~50% (génération d'URL et extraction de contenu), un résultat très honorable vu la complexité des sites corporate. Ce projet a doté l'entreprise d'une vraie barrière à l'entrée technologique et d'une base de données exclusive.",
+    "technologies": ["Python", "Django 5.1", "Playwright", "OpenAI (GPT-4o Vision)", "Trafilatura", "SQLite", "Asyncio"],
+    "images": []
+}
