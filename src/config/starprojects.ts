@@ -6,7 +6,12 @@
 
 import type { StarProject } from '../types';
 
+import foxjob from './starprojects/foxjob.json';
+import matching from './starprojects/matching.json';
+import facturation from './starprojects/automatisation-facturation.json';
 
 export const starProjects: readonly StarProject[] = [
-
+    foxjob,
+    matching,
+    facturation,
 ] as StarProject[];

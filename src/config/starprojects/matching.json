@@ -1,0 +1,11 @@
+{
+    "id": "matching",
+    "title": "Moteur de Matching Sémantique par IA",
+    "context": "Optimisation du développement commercial pour des organismes de formation confrontés à un marché de 4.5 millions d'entreprises françaises.",
+    "situation": "Les équipes commerciales perdaient un temps considérable à qualifier manuellement des prospects via des annuaires obsolètes. L'approche traditionnelle par mots-clés limitait le ciblage et la proactivité face à la concurrence.",
+    "task": "Créer une solution logicielle performante capable d'analyser automatiquement des milliers d'entreprises pour identifier leurs besoins en formation et les faire correspondre (matcher) avec des programmes spécifiques de manière intelligente et sémantique.",
+    "action": "J'ai conçu un pipeline d'enrichissement de données exploitant GPT-4o, Claude 3.5 Sonnet et SerpAPI. J'ai mis en place une base de données hybride associant SQLite (données structurées) et Pinecone (recherche vectorielle). J'ai développé un algorithme de matching en 5 étapes, convertissant les offres de formation en embeddings (text-embedding-3-small), effectuant une requête large sur Pinecone, puis utilisant Claude pour un filtrage contextuel et sémantique de haute précision. Le tout a été optimisé par du multithreading (ThreadPoolExecutor) et gRPC.",
+    "result": "Le système a transformé une tâche manuelle de plusieurs heures en un processus automatisé de quelques minutes, générant d'énormes gains de productivité. La solution est devenue un argument commercial différenciant majeur, permettant de justifier une hausse des tarifs et générant un vif enthousiasme chez les écoles partenaires.",
+    "technologies": ["Python", "Pinecone (Vector DB)", "OpenAI Embeddings", "Claude 3.5 Sonnet", "SQLite", "ThreadPoolExecutor", "gRPC"],
+    "images": []
+}
