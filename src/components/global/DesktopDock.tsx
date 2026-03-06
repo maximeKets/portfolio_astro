@@ -6,6 +6,7 @@ import ResumeViewer from './ResumeViewer';
 import SpotifyPlayer from './SpotifyPlayer';
 import { userConfig } from '../../config';
 import { RiTerminalFill } from 'react-icons/ri';
+import { useI18n } from '../../store/i18n';
 
 interface DesktopDockProps {
   onTerminalClick: () => void;
@@ -22,6 +23,7 @@ interface DesktopDockProps {
 }
 
 const DesktopDock = ({ onTerminalClick, onNotesClick, onGitHubClick, onContactClick, activeApps }: DesktopDockProps) => {
+  const t = useI18n();
   const [hoveredIcon, setHoveredIcon] = useState<string | null>(null);
   const [showResume, setShowResume] = useState(false);
   const [showSpotify, setShowSpotify] = useState(false);

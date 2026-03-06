@@ -1,15 +1,17 @@
 import React from 'react';
 import { IoSearch } from 'react-icons/io5';
+import { useI18n } from '../../store/i18n';
 
 export default function ShortcutHint() {
+  const t = useI18n();
 
   const shortcuts = [
-    { key: '(CTRL/⌘)+K', label: 'Search', icon: <IoSearch size={18} /> },
+    { key: '(CTRL/⌘)+K', label: t('shortcutHint.search'), icon: <IoSearch size={18} /> },
     // { key: '(CTRL/⌘)+C', label: 'Contact', icon: <IoMail size={14} /> },
     // { key: '? or (CTRL/⌘)+H', label: 'Help', icon: <FaRegKeyboard size={14} /> },
     // { key: '(CTRL/⌘)+M or (CTRL/⌘)+Up', label: 'Mission Control', icon: <IoDocumentTextOutline size={14} /> },
   ];
-  
+
   return (
     <div className="hidden md:block fixed top-10 right-4 z-[1] animate-fade-in">
       <div className="bg-gray-900/90 backdrop-blur-sm border border-white/10 rounded-lg px-3 py-2 shadow-xl">

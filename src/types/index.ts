@@ -7,9 +7,17 @@
 // Image & Media Types
 // ============================================
 
+export interface ImageMetadata {
+  src: string;
+  width: number;
+  height: number;
+  format: string;
+  orientation?: number;
+}
+
 export interface Image {
-  /** Image URL (can be external or local path) */
-  url: string;
+  /** Image URL (can be external or local path, or ImageMetadata from import) */
+  url: string | ImageMetadata;
   /** Alt text for accessibility */
   alt?: string;
   /** Optional description displayed below the image */
@@ -131,6 +139,18 @@ export interface Competition {
 // Contact & Social Types
 // ============================================
 
+export interface StarProject {
+  id: string;
+  title: string;
+  context: string;
+  situation: string;
+  task: string;
+  action: string;
+  result: string;
+  technologies?: readonly string[];
+  images?: readonly Image[];
+}
+
 export interface SocialLinks {
   github: string;
   linkedin: string;
@@ -210,6 +230,7 @@ export interface UserConfig {
   competitions: readonly Competition[];
   experience: readonly Experience[];
   projects: readonly Project[];
+  starProjects: readonly StarProject[];
 }
 
 // ============================================

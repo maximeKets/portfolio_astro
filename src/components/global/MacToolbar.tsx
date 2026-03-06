@@ -1,18 +1,19 @@
-import { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { MdWifi } from 'react-icons/md';
 import { FaApple, FaGithub, FaLinkedin, FaEnvelope, FaWindowRestore } from 'react-icons/fa';
 import {
   IoSearchSharp,
-  IoBatteryHalfOutline,
-  IoCellular,
   IoDocumentText,
   IoCodeSlash,
   IoMail,
   IoCall,
   IoHelpCircle,
+  IoLanguage,
 } from 'react-icons/io5';
-import { VscVscode } from 'react-icons/vsc';
-import { userConfig } from '../../config/index';
+import { userConfig } from '../../config';
+import { useStore } from '@nanostores/react';
+import { languageStore, useI18n } from '../../store/i18n';
+import meImg from '../../assets/images/me.svg';
 
 type MenuItem = {
   label: string;
@@ -42,6 +43,9 @@ export default function MacToolbar({
   onShuffleBackground,
   onOpenAdmin,
 }: MacToolbarProps) {
+  const currentLang = useStore(languageStore);
+  const t = useI18n();
+
   const [currentDateTime, setCurrentDateTime] = useState(new Date());
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const [showSignature, setShowSignature] = useState(false);
@@ -66,6 +70,10 @@ export default function MacToolbar({
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
+  const toggleLanguage = () => {
+    languageStore.set(currentLang === 'en' ? 'fr' : 'en');
+  };
+
   const formatMacDate = (date: Date) => {
     const weekday = date.toLocaleString('en-US', { weekday: 'short' });
     const month = date.toLocaleString('en-US', { month: 'short' });
@@ -83,19 +91,15 @@ export default function MacToolbar({
     )}:${minute} ${period}`;
   };
 
-  const formatIPhoneTime = (date: Date) => {
-    let hour = date.getHours();
-    const minute = date.getMinutes().toString().padStart(2, '0');
-
-    hour = hour % 12;
-    hour = hour ? hour : 12;
-
-    return `${hour}:${minute}`;
-  };
-
-  const handleVSCodeClick = () => {
-    window.location.href = 'vscode:/';
-  };
+  // const formatIPhoneTime = (date: Date) => {
+  //   let hour = date.getHours();
+  //   const minute = date.getMinutes().toString().padStart(2, '0');
+  //
+  //   hour = hour % 12;
+  //   hour = hour ? hour : 12;
+  //
+  //   return `${hour}:${minute}`;
+  // };
 
   const handleMenuClick = (menu: string) => {
     setActiveMenu(activeMenu === menu ? null : menu);
@@ -109,100 +113,100 @@ export default function MacToolbar({
   };
 
   const menus: Record<string, MenuItem[]> = {
-    File: [
+    [t('toolbar.menu.file')]: [
       {
-        label: 'Resume (PDF)',
+        label: t('toolbar.menu.resume'),
         icon: <IoDocumentText size={16} />,
         action: () => window.open(userConfig.resume.url, '_blank'),
       },
       {
-        label: 'Projects (GitHub)',
+        label: t('toolbar.menu.projects'),
         icon: <IoCodeSlash size={16} />,
         action: () => window.open(userConfig.social.github, '_blank'),
       },
       {
-        label: 'Admin Dashboard',
+        label: t('toolbar.menu.admin'),
         icon: <FaWindowRestore size={16} />,
         action: () => onOpenAdmin ? onOpenAdmin() : (window.location.href = '/admin'),
       },
     ],
-    View: [
+    [t('toolbar.menu.view')]: [
       {
-        label: 'Spotlight Search…',
+        label: t('toolbar.menu.spotlight'),
         icon: <IoSearchSharp size={16} />,
         action: () => onOpenSpotlight?.(),
       },
       {
-        label: 'Mission Control',
+        label: t('toolbar.menu.missionControl'),
         icon: <FaWindowRestore size={16} />,
         action: () => onOpenMissionControl?.(),
       },
       {
-        label: 'Shortcuts Overlay',
+        label: t('toolbar.menu.shortcutsOverlay'),
         icon: <IoHelpCircle size={16} />,
         action: () => onToggleShortcuts?.(),
       },
       {
-        label: 'Reset Tutorial',
+        label: t('toolbar.menu.resetTutorial'),
         icon: <IoHelpCircle size={16} />,
         action: () => onShowTutorial?.(),
       },
     ],
-    Window: [
+    [t('toolbar.menu.window')]: [
       {
-        label: 'Contact…',
+        label: t('toolbar.menu.contact'),
         icon: <IoMail size={16} />,
         action: () => onOpenContact?.(),
       },
       {
-        label: 'Close All Windows',
+        label: t('toolbar.menu.closeAll'),
         icon: <IoDocumentText size={16} />,
         action: () => onCloseAllWindows?.(),
       },
       {
-        label: 'Shuffle Background',
+        label: t('toolbar.menu.shuffleBg'),
         icon: <IoDocumentText size={16} />,
         action: () => onShuffleBackground?.(),
       },
     ],
-    Go: [
+    [t('toolbar.menu.go')]: [
       {
-        label: 'GitHub',
+        label: t('toolbar.menu.github'),
         icon: <FaGithub size={16} />,
         action: () => window.open(userConfig.social.github, '_blank'),
       },
       {
-        label: 'LinkedIn',
+        label: t('toolbar.menu.linkedin'),
         icon: <FaLinkedin size={16} />,
         action: () => window.open(userConfig.social.linkedin, '_blank'),
       },
       {
-        label: 'Email',
+        label: t('toolbar.menu.email'),
         icon: <FaEnvelope size={16} />,
         action: () => window.open(`mailto:${userConfig.contact.email}`),
       },
     ],
-    Edit: [
+    [t('toolbar.menu.edit')]: [
       {
-        label: 'Copy Email',
+        label: t('toolbar.menu.copyEmail'),
         icon: <IoMail size={16} />,
         action: () => {
           navigator.clipboard.writeText(userConfig.contact.email);
-          alert('Email copied to clipboard!');
+          alert(t('toolbar.alert.emailCopied'));
         },
       },
       {
-        label: 'Copy Phone',
+        label: t('toolbar.menu.copyPhone'),
         icon: <IoCall size={16} />,
         action: () => {
           navigator.clipboard.writeText(userConfig.contact.phone);
-          alert('Phone number copied to clipboard!');
+          alert(t('toolbar.alert.phoneCopied'));
         },
       },
     ],
-    Help: [
+    [t('toolbar.menu.help')]: [
       {
-        label: 'Keyboard Shortcuts',
+        label: t('toolbar.menu.shortcuts'),
         icon: <IoHelpCircle size={16} />,
         action: () => onToggleShortcuts?.(),
       },
@@ -243,22 +247,31 @@ export default function MacToolbar({
 
   return (
     <>
-      <div className='sticky top-0 z-50 md:hidden bg-transparent text-white h-12 px-8 flex items-center justify-between text-base font-medium'>
-        <span className='font-semibold'>
-          {formatIPhoneTime(currentDateTime)}
-        </span>
-        <div className='flex items-center gap-1.5'>
-          <IoCellular size={20} />
-          <MdWifi size={20} />
-          <IoBatteryHalfOutline size={24} />
-        </div>
+      <div className='sticky top-0 z-50 md:hidden bg-transparent text-white h-12 px-4 flex items-center justify-end text-base font-medium'>
+        <button
+          onClick={toggleLanguage}
+          className='flex items-center gap-1 cursor-pointer hover:text-gray-300 transition-colors uppercase font-bold text-lg mr-2'
+          title='Toggle Language'
+        >
+          <IoLanguage size={20} />
+          {currentLang}
+        </button>
+        {/*<span className='font-semibold'>*/}
+        {/*  {formatIPhoneTime(currentDateTime)}*/}
+        {/*</span>*/}
+        {/*<div className='flex items-center gap-1.5'>*/}
+
+        {/*  <IoCellular size={20} />*/}
+        {/*  <MdWifi size={20} />*/}
+        {/*  <IoBatteryHalfOutline size={24} />*/}
+        {/*</div>*/}
       </div>
 
       <div className='sticky top-0 z-50 hidden md:flex bg-black/20 backdrop-blur-md text-white h-6 px-4 items-center justify-between text-sm' role="menubar" aria-label="Application menu bar">
         <div className='flex items-center space-x-4' ref={menuRef}>
           <FaApple size={16} />
           <div className="relative">
-            <span 
+            <span
               className='font-semibold hover:text-gray-300 transition-colors cursor-pointer'
               onMouseEnter={() => setShowSignature(true)}
               onMouseLeave={() => setShowSignature(false)}
@@ -267,17 +280,17 @@ export default function MacToolbar({
             </span>
             {showSignature && (
               <div className="absolute top-full left-0 mt-1 bg-white/98 backdrop-blur-sm rounded-lg p-4 shadow-xl z-[100]">
-                  <img 
-                    src="/src/assets/images/me.svg" 
-                    alt="Signature" 
-                    className="w-[100px] h-[100px]"
-                  />
+                <img
+                  src={meImg.src}
+                  alt="Signature"
+                  className="w-[100px] h-[100px]"
+                />
               </div>
             )}
           </div>
           {Object.entries(menus).map(([menu, items]) => (
             <div key={menu} className="relative">
-              <button 
+              <button
                 className='cursor-pointer hover:text-gray-300 transition-colors'
                 onClick={() => handleMenuClick(menu)}
                 aria-haspopup="menu"
@@ -296,12 +309,14 @@ export default function MacToolbar({
           ))}
         </div>
         <div className='flex items-center space-x-4'>
-          <VscVscode
-            size={16}
-            className='cursor-pointer hover:opacity-80 transition-opacity'
-            onClick={handleVSCodeClick}
-            title='Open in VSCode'
-          />
+          <button
+            onClick={toggleLanguage}
+            className='flex items-center gap-1 cursor-pointer hover:text-gray-300 transition-colors uppercase font-bold text-xs'
+            title='Toggle Language'
+          >
+            <IoLanguage size={16} />
+            {currentLang}
+          </button>
           <MdWifi size={16} />
           <IoSearchSharp
             size={16}

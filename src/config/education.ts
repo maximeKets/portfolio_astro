@@ -3,7 +3,11 @@
  * Add your educational background and courses here
  */
 
-import type {Education, Course} from '../types';
+import type { Education, Course } from '../types';
+import epsiImg from '../assets/images/epsi.webp';
+import campusNumImg from '../assets/images/logo_campusnum.webp';
+import iutImg from '../assets/images/IUT.png';
+import pierreDaillyImg from '../assets/images/PierreDailly.png';
 
 export const education: readonly Education[] = [
     {
@@ -16,7 +20,7 @@ export const education: readonly Education[] = [
             'Conception et déploiement de modèles Machine Learning, Manipulation de données (Big Data), Développement Fullstack (Front/Back) et intégration IA sous architecture DevOps. Certification RNCP Niveau 6.',
         images: [
             {
-                url: '/images/epsi.webp',
+                url: epsiImg,
                 alt: 'EPSI',
                 description: 'EPSI',
             },
@@ -32,7 +36,7 @@ export const education: readonly Education[] = [
             'Programmation (Java, Python, PHP, Js), Algorithmique, Bases de données, Architecture réseaux, Méthodes Agiles (analyse/tests/UI) et Auto-formation continue.',
         images: [
             {
-                url: '/images/logo_campusnum.webp',
+                url: campusNumImg,
                 alt: 'Campus Numérique in the Alps',
                 description: 'Campus Numérique',
             },
@@ -47,7 +51,7 @@ export const education: readonly Education[] = [
         description: 'Niveau : Diplôme validé',
         images: [
             {
-                url: '/images/IUT.png',
+                url: iutImg,
                 alt: 'IUT d\'Amiens',
                 description: 'IUT d\'Amiens',
             },
@@ -62,12 +66,12 @@ export const education: readonly Education[] = [
         description: 'Niveau : Mention Bien',
         images: [
             {
-                url: '/images/PierreDailly.png',
+                url: pierreDaillyImg,
                 alt: 'Lycée Pierre d\'Ailly',
                 description: 'Campus Numérique',
             },
         ],
     }
-] as const;
+];
 
 export const courses: readonly Course[] = [] as const;
