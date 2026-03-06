@@ -90,15 +90,15 @@ export default function MobileDock({ onGitHubClick, onNotesClick, onResumeClick,
           </div>
         </a>
 
-        <button
-          onClick={handleSpotifyClick}
-          aria-label={t('dock.mobile.spotify')}
-          className='flex flex-col items-center cursor-pointer'
-        >
-          <div className='w-18 h-18 bg-gradient-to-t from-black to-black/55 rounded-2xl flex items-center justify-center'>
-            <BsSpotify size={55} className='text-[#1ED760]' />
-          </div>
-        </button>
+        {/*<button*/}
+        {/*  onClick={handleSpotifyClick}*/}
+        {/*  aria-label='Open Spotify playlist in new tab'*/}
+        {/*  className='flex flex-col items-center cursor-pointer'*/}
+        {/*>*/}
+        {/*  <div className='w-18 h-18 bg-gradient-to-t from-black to-black/55 rounded-2xl flex items-center justify-center'>*/}
+        {/*    <BsSpotify size={55} className='text-[#1ED760]' />*/}
+        {/*  </div>*/}
+        {/*</button>*/}
       </div>
     </div>
   );
