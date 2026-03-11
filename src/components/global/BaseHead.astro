@@ -6,6 +6,7 @@ import { getImage } from 'astro:assets';
 import macBackground1 from '../../assets/images/the-beach.webp';
 import macBackground2 from '../../assets/images/the-cliffs.webp';
 import macBackground3 from '../../assets/images/the-lake.webp';
+import logo from '../../assets/images/logo.webp';
 import { userConfig } from '../../config';
 
 const backgrounds = await Promise.all([
@@ -76,18 +77,18 @@ const ogImageUrl = siteOrigin && backgrounds[0]?.src
 )}
 
 <!-- Add your favicon files in public/images/ -->
-<link rel='apple-touch-icon' sizes='180x180' href='https://avatars.githubusercontent.com/u/97130221?s=400&u=aaa4eb0bf9d07b901f0b15df8540fefea2fca729&v=4' />
+<link rel='apple-touch-icon' sizes='180x180' href={logo.src} />
 <link
   rel='icon'
-  type='image/png'
+  type='image/webp'
   sizes='32x32'
-  href='https://avatars.githubusercontent.com/u/97130221?s=400&u=aaa4eb0bf9d07b901f0b15df8540fefea2fca729&v=4'
+  href={logo.src}
 />
 <link
   rel='icon'
-  type='image/png'
+  type='image/webp'
   sizes='16x16'
-  href='https://avatars.githubusercontent.com/u/97130221?s=400&u=aaa4eb0bf9d07b901f0b15df8540fefea2fca729&v=4'
+  href={logo.src}
 />
 
 <!-- Theme colors for browsers -->
