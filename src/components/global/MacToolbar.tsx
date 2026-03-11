@@ -13,7 +13,7 @@ import {
 import { userConfig } from '../../config';
 import { useStore } from '@nanostores/react';
 import { languageStore, useI18n } from '../../store/i18n';
-import meImg from '../../assets/images/me.svg';
+import meImg from '../../assets/images/logo.webp';
 
 type MenuItem = {
   label: string;
@@ -283,7 +283,7 @@ export default function MacToolbar({
                 <img
                   src={meImg.src}
                   alt="Signature"
-                  className="w-[100px] h-[100px]"
+                  className="w-[100px] h-[50px] object-contain"
                 />
               </div>
             )}
