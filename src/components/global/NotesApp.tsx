@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import {useEffect, useState} from 'react';
 import {
     FaGraduationCap, FaBriefcase, FaChevronLeft, FaBookOpen,
     FaCode, FaStar,
@@ -6,9 +6,9 @@ import {
     // FaPalette,
     // FaTrophy
 } from 'react-icons/fa';
-import { userConfig } from '../../config';
+import {userConfig} from '../../config';
 import DraggableWindow from './DraggableWindow';
-import { useI18n } from '../../store/i18n';
+import {useI18n} from '../../store/i18n';
 
 export type Section =
     | 'menu'
@@ -17,9 +17,9 @@ export type Section =
     | 'courses'
     | 'skills'
     | 'starprojects'
-    // | 'roles'
-    // | 'activities'
-    // | 'competitions'
+// | 'roles'
+// | 'activities'
+// | 'competitions'
     ;
 
 interface NotesAppProps {
@@ -31,9 +31,9 @@ interface NotesAppProps {
 // Type for storing image indices per item
 type ImageIndicesState = Record<string, number>;
 
-import type { Image } from '../../types';
+import type {Image} from '../../types';
 
-const NotesApp = ({ isOpen, onClose, section }: NotesAppProps) => {
+const NotesApp = ({isOpen, onClose, section}: NotesAppProps) => {
     const t = useI18n();
 
     const [activeSection, setActiveSection] = useState<Section>('menu');
@@ -90,7 +90,7 @@ const NotesApp = ({ isOpen, onClose, section }: NotesAppProps) => {
             aria-label={t('notes.backToMenu')}
             className="flex items-center gap-2 text-gray-300 hover:text-gray-100 mb-4"
         >
-            <FaChevronLeft />
+            <FaChevronLeft/>
             <span>{t('notes.backToMenu')}</span>
         </button>
     );
@@ -240,7 +240,7 @@ const NotesApp = ({ isOpen, onClose, section }: NotesAppProps) => {
                                     return (
                                         <div key={skillIndex} className="p-4 bg-gray-700/30 rounded-lg flex items-start gap-4 hover:bg-gray-700/50 transition-colors">
                                             <div className="w-12 h-12 flex-shrink-0 bg-gray-800 rounded-lg flex items-center justify-center text-green-500">
-                                                {IconComponent && <IconComponent size={24} />}
+                                                {IconComponent && <IconComponent size={24}/>}
                                             </div>
                                             <div>
                                                 <h4 className="text-lg font-medium text-gray-200 mb-1">{skill.name}</h4>
@@ -266,46 +266,41 @@ const NotesApp = ({ isOpen, onClose, section }: NotesAppProps) => {
                     const itemId = `star-${index}`;
                     return (
                         <div key={itemId} className="bg-gray-800/50 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow border border-gray-700/50">
-                            <h3 className="text-2xl font-bold text-gray-100 mb-4 pb-2 border-b border-gray-700/50">{item.title}</h3>
+                            <h3 className="text-2xl font-bold text-gray-100 mb-8 pb-2 border-b border-gray-700/50">{item.title}</h3>
 
-                            {item.context && (
-                                <div className="mb-4">
-                                    <h4 className="text-sm font-semibold text-blue-400 uppercase tracking-wider mb-1">{t('notes.star.context')}</h4>
+                            <div className="space-y-8">
+                                <div >
+                                    <h4 className="text-sm font-semibold text-green-200 uppercase tracking-wider mb-2">{t('notes.star.context')}</h4>
                                     <p className="text-gray-300 italic">{item.context}</p>
                                 </div>
-                            )}
-
-                            <div className="space-y-4">
                                 <div>
-                                    <h4 className="text-sm font-semibold text-pink-400 uppercase tracking-wider mb-1">S - {t('notes.star.situation')}</h4>
+                                    <h4 className="text-sm font-semibold text-green-300 uppercase tracking-wider mb-2">S - {t('notes.star.situation')}</h4>
                                     <p className="text-gray-300">{item.situation}</p>
                                 </div>
 
                                 <div>
-                                    <h4 className="text-sm font-semibold text-orange-400 uppercase tracking-wider mb-1">T - {t('notes.star.task')}</h4>
+                                    <h4 className="text-sm font-semibold text-green-400 uppercase tracking-wider mb-2">T - {t('notes.star.task')}</h4>
                                     <p className="text-gray-300">{item.task}</p>
                                 </div>
 
-                                <div className="bg-green-900/10 p-4 rounded-lg border border-green-500/10">
-                                    <h4 className="text-sm font-semibold text-green-400 uppercase tracking-wider mb-1">A - {t('notes.star.action')}</h4>
+                                <div>
+                                    <h4 className="text-sm font-semibold text-green-500 uppercase tracking-wider mb-2">A - {t('notes.star.action')}</h4>
                                     <p className="text-gray-300">{item.action}</p>
                                 </div>
 
-                                <div className="bg-purple-900/10 p-4 rounded-lg border border-purple-500/10">
-                                    <h4 className="text-sm font-semibold text-purple-400 uppercase tracking-wider mb-1">R - {t('notes.star.result')}</h4>
+                                <div>
+                                    <h4 className="text-sm font-semibold text-green-600 uppercase tracking-wider mb-2">R - {t('notes.star.result')}</h4>
                                     <p className="text-gray-300 font-medium">{item.result}</p>
                                 </div>
                             </div>
 
                             {item.technologies && (
-                                <div className="mt-6 pt-4 border-t border-gray-700/50">
-                                    <div className="flex flex-wrap gap-2">
-                                        {item.technologies.map((tech, i) => (
-                                            <span key={i} className="px-3 py-1 bg-gray-700/50 rounded-full text-xs font-medium text-gray-300 border border-gray-600">
-                                                {tech}
-                                            </span>
-                                        ))}
-                                    </div>
+                                <div className="flex my-4 flex-wrap gap-2">
+                                    {item.technologies.map((tech, i) => (
+                                        <span key={i} className="px-2 py-1 bg-gray-700 rounded text-xs text-gray-300">
+                                            {tech}
+                                        </span>
+                                    ))}
                                 </div>
                             )}
                             {item.images && item.images.length > 0 && renderImageCarousel(itemId, item.images)}
@@ -406,7 +401,7 @@ const NotesApp = ({ isOpen, onClose, section }: NotesAppProps) => {
                 >
                     <div className="flex items-center gap-3 mb-2">
                         <div className="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center">
-                            <FaGraduationCap size={28} className="text-white" />
+                            <FaGraduationCap size={28} className="text-white"/>
                         </div>
                         <h3 className="text-xl font-semibold text-gray-200">{t('notes.education.title')}</h3>
                     </div>
@@ -422,7 +417,7 @@ const NotesApp = ({ isOpen, onClose, section }: NotesAppProps) => {
                 >
                     <div className="flex items-center gap-3 mb-2">
                         <div className="w-12 h-12 bg-green-600 rounded-xl flex items-center justify-center">
-                            <FaBriefcase size={28} className="text-white" />
+                            <FaBriefcase size={28} className="text-white"/>
                         </div>
                         <h3 className="text-xl font-semibold text-gray-200">{t('notes.experience.title')}</h3>
                     </div>
@@ -468,7 +463,7 @@ const NotesApp = ({ isOpen, onClose, section }: NotesAppProps) => {
                 >
                     <div className="flex items-center gap-3 mb-2">
                         <div className="w-12 h-12 bg-purple-600 rounded-xl flex items-center justify-center">
-                            <FaBookOpen size={28} className="text-white" />
+                            <FaBookOpen size={28} className="text-white"/>
                         </div>
                         <h3 className="text-xl font-semibold text-gray-200">{t('notes.courses.title')}</h3>
                     </div>
@@ -484,7 +479,7 @@ const NotesApp = ({ isOpen, onClose, section }: NotesAppProps) => {
                 >
                     <div className="flex items-center gap-3 mb-2">
                         <div className="w-12 h-12 bg-red-600 rounded-xl flex items-center justify-center">
-                            <FaCode size={28} className="text-white" />
+                            <FaCode size={28} className="text-white"/>
                         </div>
                         <h3 className="text-xl font-semibold text-gray-200">{t('notes.skills.title')}</h3>
                     </div>
@@ -500,7 +495,7 @@ const NotesApp = ({ isOpen, onClose, section }: NotesAppProps) => {
                 >
                     <div className="flex items-center gap-3 mb-2">
                         <div className="w-12 h-12 bg-amber-500 rounded-xl flex items-center justify-center">
-                            <FaStar size={28} className="text-white" />
+                            <FaStar size={28} className="text-white"/>
                         </div>
                         <h3 className="text-xl font-semibold text-gray-200">{t('notes.starProjects.title')}</h3>
                     </div>
@@ -512,16 +507,23 @@ const NotesApp = ({ isOpen, onClose, section }: NotesAppProps) => {
 
     const getWindowTitle = () => {
         switch (activeSection) {
-            case 'menu': return t('notes.window.menu');
-            case 'education': return t('notes.window.education');
-            case 'experience': return t('notes.window.experience');
-            case 'courses': return t('notes.window.courses');
-            case 'skills': return t('notes.window.skills');
-            case 'starprojects': return t('notes.window.starProjects');
+            case 'menu':
+                return t('notes.window.menu');
+            case 'education':
+                return t('notes.window.education');
+            case 'experience':
+                return t('notes.window.experience');
+            case 'courses':
+                return t('notes.window.courses');
+            case 'skills':
+                return t('notes.window.skills');
+            case 'starprojects':
+                return t('notes.window.starProjects');
             // case 'roles': return 'Extracurricular Roles Notes';
             // case 'activities': return 'Extracurricular Activities Notes';
             // case 'competitions': return 'Competitions Notes';
-            default: return t('notes.window.menu');
+            default:
+                return t('notes.window.menu');
         }
     };
 
@@ -534,7 +536,7 @@ const NotesApp = ({ isOpen, onClose, section }: NotesAppProps) => {
                 y: Math.floor(window.innerHeight * 0.2)
             }}
             className="w-[93vw] md:max-w-4xl max-h-[90vh] flex flex-col"
-            initialSize={{ width: 700, height: 600 }}
+            initialSize={{width: 700, height: 600}}
         >
             <div className="flex flex-col flex-grow min-h-0 h-full">
                 <div className="overflow-y-auto flex-grow min-h-0 p-4 md:p-6">
