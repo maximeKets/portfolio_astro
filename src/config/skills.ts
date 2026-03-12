@@ -83,7 +83,7 @@ export const skills: readonly SkillCategory[] = [
     ]
   },
   {
-    title: '💼 Compétences Business',
+    title: 'Compétences Business',
     skills: [
       {
         name: 'Vente & Négociation',

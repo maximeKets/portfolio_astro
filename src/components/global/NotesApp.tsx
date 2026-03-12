@@ -1,7 +1,8 @@
 import {useEffect, useState} from 'react';
 import {
-    FaGraduationCap, FaBriefcase, FaChevronLeft, FaBookOpen,
+    FaGraduationCap, FaBriefcase, FaChevronLeft,
     FaCode, FaStar,
+    // FaBookOpen,
     // FaUsers,
     // FaPalette,
     // FaTrophy
@@ -14,9 +15,9 @@ export type Section =
     | 'menu'
     | 'education'
     | 'experience'
-    | 'courses'
     | 'skills'
     | 'starprojects'
+// | 'courses'
 // | 'roles'
 // | 'activities'
 // | 'competitions'
@@ -77,9 +78,9 @@ const NotesApp = ({isOpen, onClose, section}: NotesAppProps) => {
 
     const education = userConfig.education || [];
     const experience = userConfig.experience || [];
-    const courses = userConfig.courses || [];
     const skills = userConfig.skills || [];
     const starProjects = userConfig.starProjects || [];
+    // const courses = userConfig.courses || [];
     // const roles = userConfig.extraCurricularRoles || [];
     // const activities = userConfig.extraCurricularActivities || [];
     // const competitions = userConfig.competitions || [];
@@ -200,27 +201,27 @@ const NotesApp = ({isOpen, onClose, section}: NotesAppProps) => {
             </div>
         </div>
     );
-
-    const renderCourses = () => (
-        <div className="space-y-6">
-            {renderBackButton()}
-            <h2 className="text-2xl font-bold text-gray-200 mb-6">{t('notes.courses.title')}</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {courses.map((item, index) => {
-                    const itemId = `courses-${index}`;
-                    return (
-                        <div key={itemId} className="bg-gray-800/50 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
-                            <h3 className="text-xl font-semibold text-gray-200 mb-2">{item.title}</h3>
-                            <div className="text-gray-300 mb-2">{item.institution}, {item.location}</div>
-                            <div className="text-gray-400 mb-3">{item.year}</div>
-                            <p className="text-gray-300 mb-4">{item.description}</p>
-                            {item.images && item.images.length > 0 && renderImageCarousel(itemId, item.images)}
-                        </div>
-                    );
-                })}
-            </div>
-        </div>
-    );
+    //
+    // const renderCourses = () => (
+    //     <div className="space-y-6">
+    //         {renderBackButton()}
+    //         <h2 className="text-2xl font-bold text-gray-200 mb-6">{t('notes.courses.title')}</h2>
+    //         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+    //             {courses.map((item, index) => {
+    //                 const itemId = `courses-${index}`;
+    //                 return (
+    //                     <div key={itemId} className="bg-gray-800/50 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+    //                         <h3 className="text-xl font-semibold text-gray-200 mb-2">{item.title}</h3>
+    //                         <div className="text-gray-300 mb-2">{item.institution}, {item.location}</div>
+    //                         <div className="text-gray-400 mb-3">{item.year}</div>
+    //                         <p className="text-gray-300 mb-4">{item.description}</p>
+    //                         {item.images && item.images.length > 0 && renderImageCarousel(itemId, item.images)}
+    //                     </div>
+    //                 );
+    //             })}
+    //         </div>
+    //     </div>
+    // );
 
     const renderSkills = () => {
         return (
@@ -228,27 +229,19 @@ const NotesApp = ({isOpen, onClose, section}: NotesAppProps) => {
                 {renderBackButton()}
                 <h2 className="text-2xl font-bold text-gray-200 mb-6">{t('notes.skills.title')}</h2>
 
-                <div className="space-y-8">
+                <div className="grid grid-cols-1 gap-6">
                     {skills.map((category: any, catIndex: number) => (
                         <div key={catIndex} className="bg-gray-800/50 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
-                            <h3 className="text-xl font-semibold text-gray-200 mb-4 pb-2 border-b border-gray-700">
+                            <h3 className="text-xl font-semibold text-gray-200 mb-4 pb-2 border-b border-gray-700/50">
                                 {category.title}
                             </h3>
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                {category.skills.map((skill: any, skillIndex: number) => {
-                                    const IconComponent = skill.icon;
-                                    return (
-                                        <div key={skillIndex} className="p-4 bg-gray-700/30 rounded-lg flex items-start gap-4 hover:bg-gray-700/50 transition-colors">
-                                            <div className="w-12 h-12 flex-shrink-0 bg-gray-800 rounded-lg flex items-center justify-center text-green-500">
-                                                {IconComponent && <IconComponent size={24}/>}
-                                            </div>
-                                            <div>
-                                                <h4 className="text-lg font-medium text-gray-200 mb-1">{skill.name}</h4>
-                                                <p className="text-sm text-gray-400 leading-relaxed">{skill.description}</p>
-                                            </div>
-                                        </div>
-                                    );
-                                })}
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                {category.skills.map((skill: any, skillIndex: number) => (
+                                    <div key={skillIndex} className="flex flex-col">
+                                        <h4 className="text-lg font-medium text-gray-200 mb-2">{skill.name}</h4>
+                                        <p className="text-gray-300 leading-relaxed">{skill.description}</p>
+                                    </div>
+                                ))}
                             </div>
                         </div>
                     ))}
@@ -454,21 +447,23 @@ const NotesApp = ({isOpen, onClose, section}: NotesAppProps) => {
                 {/*    </div>*/}
                 {/*    <p className="text-gray-400">My participation in events and activities</p>*/}
                 {/*</button>*/}
+
                 {/* Courses */}
-                <button
-                    type="button"
-                    className="bg-gray-800/50 p-4 rounded-lg hover:bg-gray-700/50 transition-colors text-left"
-                    onClick={() => handleSectionClick('courses')}
-                    aria-label={t('notes.courses.desc')}
-                >
-                    <div className="flex items-center gap-3 mb-2">
-                        <div className="w-12 h-12 bg-purple-600 rounded-xl flex items-center justify-center">
-                            <FaBookOpen size={28} className="text-white"/>
-                        </div>
-                        <h3 className="text-xl font-semibold text-gray-200">{t('notes.courses.title')}</h3>
-                    </div>
-                    <p className="text-gray-400">{t('notes.courses.desc')}</p>
-                </button>
+
+                {/*<button*/}
+                {/*    type="button"*/}
+                {/*    className="bg-gray-800/50 p-4 rounded-lg hover:bg-gray-700/50 transition-colors text-left"*/}
+                {/*    onClick={() => handleSectionClick('courses')}*/}
+                {/*    aria-label={t('notes.courses.desc')}*/}
+                {/*>*/}
+                {/*    <div className="flex items-center gap-3 mb-2">*/}
+                {/*        <div className="w-12 h-12 bg-purple-600 rounded-xl flex items-center justify-center">*/}
+                {/*            <FaBookOpen size={28} className="text-white"/>*/}
+                {/*        </div>*/}
+                {/*        <h3 className="text-xl font-semibold text-gray-200">{t('notes.courses.title')}</h3>*/}
+                {/*    </div>*/}
+                {/*    <p className="text-gray-400">{t('notes.courses.desc')}</p>*/}
+                {/*</button>*/}
 
                 {/* Skills */}
                 <button
@@ -489,7 +484,7 @@ const NotesApp = ({isOpen, onClose, section}: NotesAppProps) => {
                 {/* STAR Projects */}
                 <button
                     type="button"
-                    className="bg-gray-800/50 p-4 rounded-lg hover:bg-gray-700/50 transition-colors text-left sm:col-span-2"
+                    className="bg-gray-800/50 p-4 rounded-lg hover:bg-gray-700/50 transition-colors text-left "
                     onClick={() => handleSectionClick('starprojects')}
                     aria-label={t('notes.starProjects.desc')}
                 >
@@ -513,12 +508,11 @@ const NotesApp = ({isOpen, onClose, section}: NotesAppProps) => {
                 return t('notes.window.education');
             case 'experience':
                 return t('notes.window.experience');
-            case 'courses':
-                return t('notes.window.courses');
             case 'skills':
                 return t('notes.window.skills');
             case 'starprojects':
                 return t('notes.window.starProjects');
+            // case 'courses': return t('notes.window.courses');
             // case 'roles': return 'Extracurricular Roles Notes';
             // case 'activities': return 'Extracurricular Activities Notes';
             // case 'competitions': return 'Competitions Notes';
@@ -543,9 +537,9 @@ const NotesApp = ({isOpen, onClose, section}: NotesAppProps) => {
                     {activeSection === 'menu' && renderMenu()}
                     {activeSection === 'education' && renderEducation()}
                     {activeSection === 'experience' && renderExperience()}
-                    {activeSection === 'courses' && renderCourses()}
                     {activeSection === 'skills' && renderSkills()}
                     {activeSection === 'starprojects' && renderStarProjects()}
+                    {/*{activeSection === 'courses' && renderCourses()}*/}
                     {/*{activeSection === 'roles' && renderExtraCurricularRoles()}*/}
                     {/*{activeSection === 'activities' && renderExtraCurricularActivities()}*/}
                     {/*{activeSection === 'competitions' && renderCompetitions()}*/}
