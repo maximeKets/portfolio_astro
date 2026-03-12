@@ -10,6 +10,6 @@ export const spotify: SpotifyConfig = {
 };
 
 export const resume: ResumeConfig = {
-  url: 'https://drive.google.com/file/d/1ZyaeXLpdOtPUygFCu55yYCQSEdW3K4pm/view',
-  localPath: '/resume.pdf',
+  url: 'https://docs.google.com/document/d/1HZx8WkcOhaY1-Ansph0qUcGneNoiqKkOTSF02u4-DiA/edit?usp=sharing',
+  localPath: '/Resume_Maxime_Kets.pdf',
 };
