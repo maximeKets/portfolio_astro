@@ -26,6 +26,62 @@ interface GitHubViewerProps {
 const GitHubViewer = ({ isOpen, onClose, selectedProjectId }: GitHubViewerProps) => {
   const t = useI18n();
 
+  const renderMedia = (mediaItem: any, className: string) => {
+    if (!mediaItem) return null;
+    const srcUrl = typeof mediaItem.url === 'string' ? mediaItem.url : mediaItem.url?.src;
+    
+    if (mediaItem.type === 'video') {
+      // YouTube
+      const ytMatch = srcUrl.match(/(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/);
+      if (ytMatch && ytMatch[1]) {
+        const videoId = ytMatch[1];
+        // autoplay=1 (lecture auto), mute=1 (silencieux), loop=1 (boucle), playlist=videoId (requis pour loop sur YT), controls=0 (optionnel, pour cacher les contrôles)
+        return (
+          <iframe
+            src={`https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&loop=1&playlist=${videoId}&controls=0&modestbranding=1`}
+            className={className.replace('object-cover', 'border-0')}
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          />
+        );
+      }
+
+      // Google Drive
+      // Extract ID from variants like:
+      // https://drive.google.com/file/d/1x.../view
+      // https://drive.google.com/open?id=1x...
+      const gDriveMatch = srcUrl.match(/(?:drive\.google\.com\/(?:file\/d\/|open\?id=))([^/&?]+)/);
+      if (gDriveMatch && gDriveMatch[1]) {
+        const fileId = gDriveMatch[1];
+        // Google Drive preview doesn't strictly support standard autoplay URL params like YouTube,
+        // but adding them sometimes helps depending on browser policies. It usually requires interaction
+        // unless it's a direct stream link (which is harder to get reliably without API).
+        return (
+          <iframe
+            src={`https://drive.google.com/file/d/${fileId}/preview`}
+            className={className.replace('object-cover', 'border-0')}
+            allow="autoplay"
+            allowFullScreen
+          />
+        );
+      }
+
+      // Fallback for direct video files (.mp4, .webm...)
+      return (
+        <video 
+          src={srcUrl} 
+          className={className} 
+          autoPlay 
+          loop 
+          muted 
+          playsInline
+        />
+      );
+    }
+    
+    return <img src={srcUrl} alt={mediaItem.alt} className={className} />;
+  };
+
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [expandedNodes, setExpandedNodes] = useState<Set<string>>(new Set());
   const [showStructure, setShowStructure] = useState(false);
@@ -165,11 +221,7 @@ const GitHubViewer = ({ isOpen, onClose, selectedProjectId }: GitHubViewerProps)
                     >
                       {project.images && project.images.length > 0 && (
                         <div className="relative w-full h-48 mb-3 overflow-hidden rounded-lg">
-                          <img
-                            src={typeof project.images[0].url === 'string' ? project.images[0].url : project.images[0].url.src}
-                            alt={project.images[0].alt}
-                            className="w-full h-full object-cover"
-                          />
+                          {renderMedia(project.images[0], "w-full h-full object-cover")}
                           <button
                             className="absolute bottom-2 right-2 text-xs bg-white/10 text-white border border-white/20 rounded px-2 py-1 hover:bg-white/20"
                             onClick={(e) => { e.stopPropagation(); setQuickLook(project); }}
@@ -242,11 +294,7 @@ const GitHubViewer = ({ isOpen, onClose, selectedProjectId }: GitHubViewerProps)
                       <h3 className="text-xl font-semibold mb-4 text-gray-200">{t('github.screenshots')}</h3>
                       <div className="relative">
                         <div className="rounded-lg overflow-hidden mb-2">
-                          <img
-                            src={typeof selectedProject.images[activeImageIndex].url === 'string' ? selectedProject.images[activeImageIndex].url : selectedProject.images[activeImageIndex].url.src}
-                            alt={selectedProject.images[activeImageIndex].alt}
-                            className="w-full object-cover"
-                          />
+                          {renderMedia(selectedProject.images[activeImageIndex], "w-full object-cover")}
                         </div>
 
                         <div className="text-sm text-gray-300 mb-3">
@@ -321,7 +369,7 @@ const GitHubViewer = ({ isOpen, onClose, selectedProjectId }: GitHubViewerProps)
               </div>
               {quickLook!.images && quickLook!.images.length > 0 && (
                 <div className="rounded-lg overflow-hidden mb-3">
-                  <img src={typeof quickLook!.images[0].url === 'string' ? quickLook!.images[0].url : quickLook!.images[0].url.src} alt={quickLook!.images[0].alt} className="w-full object-cover" />
+                  {renderMedia(quickLook!.images[0], "w-full object-cover")}
                 </div>
               )}
               <p className="text-gray-300 mb-3">{quickLook!.description}</p>
