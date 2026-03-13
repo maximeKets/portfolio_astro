@@ -1,0 +1,89 @@
+{
+    "id": "ai-art",
+    "title": "AI Art",
+    "description": "PyTorch (and PyTorch Lightning) implementation of Neural Style Transfer, Pix2Pix, CycleGAN, and Deep Dream!",
+    "repoUrl": "https://github.com/maximeKets/AI-Art",
+    "liveUrl": "",
+    "techStack": [
+        "Python",
+        "PyTorch"
+    ],
+    "structure": {
+        "root": "AI-Art",
+        "children": [
+            {
+                "name": "LICENSE",
+                "type": "file"
+            },
+            {
+                "name": "README.md",
+                "type": "file"
+            },
+            {
+                "name": "src",
+                "type": "directory",
+                "children": [
+                    {
+                        "name": "CycleGAN",
+                        "type": "directory",
+                        "children": [
+                            {
+                                "name": "CycleGAN-PL.py",
+                                "type": "file"
+                            },
+                            {
+                                "name": "CycleGAN.py",
+                                "type": "file"
+                            },
+                            {
+                                "name": "Imports.py",
+                                "type": "file"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Pix2Pix",
+                        "type": "directory",
+                        "children": [
+                            {
+                                "name": "Imports.py",
+                                "type": "file"
+                            },
+                            {
+                                "name": "Pix2Pix-PL.py",
+                                "type": "file"
+                            },
+                            {
+                                "name": "Pix2Pix.py",
+                                "type": "file"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ReadMe",
+                        "type": "file"
+                    },
+                    {
+                        "name": "StyleTransfer",
+                        "type": "directory",
+                        "children": [
+                            {
+                                "name": "Imports.py",
+                                "type": "file"
+                            },
+                            {
+                                "name": "StyleTransfer-PL.py",
+                                "type": "file"
+                            },
+                            {
+                                "name": "Style_Transfer.py",
+                                "type": "file"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "images": []
+}

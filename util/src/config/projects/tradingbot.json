@@ -1,0 +1,234 @@
+{
+    "id": "tradingbot",
+    "title": "Trading Bot",
+    "description": "TradingBot algorithm",
+    "repoUrl": "",
+    "liveUrl": "",
+    "techStack": [
+        "Python"
+    ],
+    "structure": {
+        "root": "TradingBot",
+        "children": [
+            {
+                "name": ".idea",
+                "type": "directory",
+                "children": [
+                    {
+                        "name": ".gitignore",
+                        "type": "file"
+                    },
+                    {
+                        "name": "Django.iml",
+                        "type": "file"
+                    },
+                    {
+                        "name": "inspectionProfiles",
+                        "type": "directory",
+                        "children": [
+                            {
+                                "name": "Project_Default.xml",
+                                "type": "file"
+                            },
+                            {
+                                "name": "profiles_settings.xml",
+                                "type": "file"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "misc.xml",
+                        "type": "file"
+                    },
+                    {
+                        "name": "modules.xml",
+                        "type": "file"
+                    }
+                ]
+            },
+            {
+                "name": "Binance",
+                "type": "directory",
+                "children": [
+                    {
+                        "name": "__init__.py",
+                        "type": "file"
+                    },
+                    {
+                        "name": "admin.py",
+                        "type": "file"
+                    },
+                    {
+                        "name": "apps.py",
+                        "type": "file"
+                    },
+                    {
+                        "name": "migrations",
+                        "type": "directory",
+                        "children": [
+                            {
+                                "name": "__init__.py",
+                                "type": "file"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "models.py",
+                        "type": "file"
+                    },
+                    {
+                        "name": "templates",
+                        "type": "directory",
+                        "children": [
+                            {
+                                "name": "base.html",
+                                "type": "file"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "tests.py",
+                        "type": "file"
+                    },
+                    {
+                        "name": "urls.py",
+                        "type": "file"
+                    },
+                    {
+                        "name": "views.py",
+                        "type": "file"
+                    }
+                ]
+            },
+            {
+                "name": "Django",
+                "type": "directory",
+                "children": [
+                    {
+                        "name": "__init__.py",
+                        "type": "file"
+                    },
+                    {
+                        "name": "asgi.py",
+                        "type": "file"
+                    },
+                    {
+                        "name": "settings.py",
+                        "type": "file"
+                    },
+                    {
+                        "name": "urls.py",
+                        "type": "file"
+                    },
+                    {
+                        "name": "wsgi.py",
+                        "type": "file"
+                    }
+                ]
+            },
+            {
+                "name": "README.md",
+                "type": "file"
+            },
+            {
+                "name": "classic",
+                "type": "directory",
+                "children": [
+                    {
+                        "name": "__init__.py",
+                        "type": "file"
+                    },
+                    {
+                        "name": "apps.py",
+                        "type": "file"
+                    },
+                    {
+                        "name": "static",
+                        "type": "directory",
+                        "children": [
+                            {
+                                "name": "css",
+                                "type": "directory",
+                                "children": [
+                                    {
+                                        "name": "dist",
+                                        "type": "directory",
+                                        "children": [
+                                            {
+                                                "name": "styles.css",
+                                                "type": "file"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "name": "static_src",
+                        "type": "directory",
+                        "children": [
+                            {
+                                "name": ".gitignore",
+                                "type": "file"
+                            },
+                            {
+                                "name": "bs.config.js",
+                                "type": "file"
+                            },
+                            {
+                                "name": "package-lock.json",
+                                "type": "file"
+                            },
+                            {
+                                "name": "package.json",
+                                "type": "file"
+                            },
+                            {
+                                "name": "postcss.config.js",
+                                "type": "file"
+                            },
+                            {
+                                "name": "src",
+                                "type": "directory",
+                                "children": [
+                                    {
+                                        "name": "styles.css",
+                                        "type": "file"
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "tailwind.config.js",
+                                "type": "file"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "templates",
+                        "type": "directory",
+                        "children": [
+                            {
+                                "name": "base.html",
+                                "type": "file"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "db.sqlite3",
+                "type": "file"
+            },
+            {
+                "name": "manage.py",
+                "type": "file"
+            },
+            {
+                "name": "tailwind.config.js",
+                "type": "file"
+            }
+        ]
+    },
+    "images": []
+}

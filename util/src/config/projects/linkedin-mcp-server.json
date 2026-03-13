@@ -1,0 +1,274 @@
+{
+    "id": "linkedin-mcp-server",
+    "title": "LinkedIn MCP Server",
+    "description": "This MCP server allows Claude and other AI assistants to access your LinkedIn. Scrape LinkedIn profiles and companies, get your recommended jobs, and perform job searches.",
+    "repoUrl": "https://github.com/maximeKets/linkedin-mcp-server",
+    "liveUrl": "",
+    "techStack": [
+        "Python",
+        "MCP",
+        "AI"
+    ],
+    "structure": {
+        "root": "linkedin-mcp-server",
+        "children": [
+            {
+                "name": ".dockerignore",
+                "type": "file"
+            },
+            {
+                "name": ".gemini",
+                "type": "directory",
+                "children": [
+                    {
+                        "name": "settings.json",
+                        "type": "file"
+                    }
+                ]
+            },
+            {
+                "name": ".github",
+                "type": "directory",
+                "children": [
+                    {
+                        "name": "ISSUE_TEMPLATE",
+                        "type": "directory",
+                        "children": [
+                            {
+                                "name": "bug_report.md",
+                                "type": "file"
+                            },
+                            {
+                                "name": "config.yml",
+                                "type": "file"
+                            },
+                            {
+                                "name": "documentation_issue.md",
+                                "type": "file"
+                            },
+                            {
+                                "name": "feature_request.md",
+                                "type": "file"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "workflows",
+                        "type": "directory",
+                        "children": [
+                            {
+                                "name": "ci.yml",
+                                "type": "file"
+                            },
+                            {
+                                "name": "claude-code-review.yml",
+                                "type": "file"
+                            },
+                            {
+                                "name": "claude.yml",
+                                "type": "file"
+                            },
+                            {
+                                "name": "release.yml",
+                                "type": "file"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": ".gitignore",
+                "type": "file"
+            },
+            {
+                "name": ".pre-commit-config.yaml",
+                "type": "file"
+            },
+            {
+                "name": ".python-version",
+                "type": "file"
+            },
+            {
+                "name": ".vscode",
+                "type": "directory",
+                "children": [
+                    {
+                        "name": "settings.json",
+                        "type": "file"
+                    },
+                    {
+                        "name": "tasks.json",
+                        "type": "file"
+                    }
+                ]
+            },
+            {
+                "name": "Dockerfile",
+                "type": "file"
+            },
+            {
+                "name": "LICENSE",
+                "type": "file"
+            },
+            {
+                "name": "README.md",
+                "type": "file"
+            },
+            {
+                "name": "RELEASE_NOTES_TEMPLATE.md",
+                "type": "file"
+            },
+            {
+                "name": "assets",
+                "type": "directory",
+                "children": [
+                    {
+                        "name": "icons",
+                        "type": "directory",
+                        "children": [
+                            {
+                                "name": "linkedin.svg",
+                                "type": "file"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "screenshots",
+                        "type": "directory",
+                        "children": [
+                            {
+                                "name": "screenshot.png",
+                                "type": "file"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "linkedin_mcp_server",
+                "type": "directory",
+                "children": [
+                    {
+                        "name": "__init__.py",
+                        "type": "file"
+                    },
+                    {
+                        "name": "__main__.py",
+                        "type": "file"
+                    },
+                    {
+                        "name": "authentication.py",
+                        "type": "file"
+                    },
+                    {
+                        "name": "cli.py",
+                        "type": "file"
+                    },
+                    {
+                        "name": "cli_main.py",
+                        "type": "file"
+                    },
+                    {
+                        "name": "config",
+                        "type": "directory",
+                        "children": [
+                            {
+                                "name": "__init__.py",
+                                "type": "file"
+                            },
+                            {
+                                "name": "loaders.py",
+                                "type": "file"
+                            },
+                            {
+                                "name": "messages.py",
+                                "type": "file"
+                            },
+                            {
+                                "name": "providers.py",
+                                "type": "file"
+                            },
+                            {
+                                "name": "schema.py",
+                                "type": "file"
+                            },
+                            {
+                                "name": "secrets.py",
+                                "type": "file"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "drivers",
+                        "type": "directory",
+                        "children": [
+                            {
+                                "name": "__init__.py",
+                                "type": "file"
+                            },
+                            {
+                                "name": "chrome.py",
+                                "type": "file"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "error_handler.py",
+                        "type": "file"
+                    },
+                    {
+                        "name": "exceptions.py",
+                        "type": "file"
+                    },
+                    {
+                        "name": "logging_config.py",
+                        "type": "file"
+                    },
+                    {
+                        "name": "server.py",
+                        "type": "file"
+                    },
+                    {
+                        "name": "setup.py",
+                        "type": "file"
+                    },
+                    {
+                        "name": "tools",
+                        "type": "directory",
+                        "children": [
+                            {
+                                "name": "__init__.py",
+                                "type": "file"
+                            },
+                            {
+                                "name": "company.py",
+                                "type": "file"
+                            },
+                            {
+                                "name": "job.py",
+                                "type": "file"
+                            },
+                            {
+                                "name": "person.py",
+                                "type": "file"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "manifest.json",
+                "type": "file"
+            },
+            {
+                "name": "pyproject.toml",
+                "type": "file"
+            },
+            {
+                "name": "uv.lock",
+                "type": "file"
+            }
+        ]
+    },
+    "images": []
+}

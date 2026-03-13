@@ -1,0 +1,659 @@
+{
+    "id": "zoho_billing_generator",
+    "title": "Zoho Billing Generator",
+    "description": "R\u00e9cupere les informations de la base de donn\u00e9e pour cr\u00e9er un facture en apellant l'api Zoho Invoice",
+    "repoUrl": "",
+    "liveUrl": "",
+    "techStack": [
+        "Python",
+        "Zoho API"
+    ],
+    "structure": {
+        "root": "Zoho_billing_generator",
+        "children": [
+            {
+                "name": ".env-template",
+                "type": "file"
+            },
+            {
+                "name": ".idea",
+                "type": "directory",
+                "children": [
+                    {
+                        "name": ".gitignore",
+                        "type": "file"
+                    },
+                    {
+                        "name": "dataSources.xml",
+                        "type": "file"
+                    },
+                    {
+                        "name": "facturation_api.iml",
+                        "type": "file"
+                    },
+                    {
+                        "name": "inspectionProfiles",
+                        "type": "directory",
+                        "children": [
+                            {
+                                "name": "Project_Default.xml",
+                                "type": "file"
+                            },
+                            {
+                                "name": "profiles_settings.xml",
+                                "type": "file"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "jsLibraryMappings.xml",
+                        "type": "file"
+                    },
+                    {
+                        "name": "misc.xml",
+                        "type": "file"
+                    },
+                    {
+                        "name": "modules.xml",
+                        "type": "file"
+                    },
+                    {
+                        "name": "vcs.xml",
+                        "type": "file"
+                    }
+                ]
+            },
+            {
+                "name": "Dockerfile",
+                "type": "file"
+            },
+            {
+                "name": "IMPORT_TAX.md",
+                "type": "file"
+            },
+            {
+                "name": "README.md",
+                "type": "file"
+            },
+            {
+                "name": "REGISTER_API.md",
+                "type": "file"
+            },
+            {
+                "name": "abonnement",
+                "type": "directory",
+                "children": [
+                    {
+                        "name": "__init__.py",
+                        "type": "file"
+                    },
+                    {
+                        "name": "admin.py",
+                        "type": "file"
+                    },
+                    {
+                        "name": "apps.py",
+                        "type": "file"
+                    },
+                    {
+                        "name": "management",
+                        "type": "directory",
+                        "children": [
+                            {
+                                "name": "__init__.py",
+                                "type": "file"
+                            },
+                            {
+                                "name": "commands",
+                                "type": "directory",
+                                "children": [
+                                    {
+                                        "name": "__init__.py",
+                                        "type": "file"
+                                    },
+                                    {
+                                        "name": "get_abonnement.py",
+                                        "type": "file"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "name": "migrations",
+                        "type": "directory",
+                        "children": [
+                            {
+                                "name": "__init__.py",
+                                "type": "file"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "models.py",
+                        "type": "file"
+                    },
+                    {
+                        "name": "sql.py",
+                        "type": "file"
+                    },
+                    {
+                        "name": "tests.py",
+                        "type": "file"
+                    },
+                    {
+                        "name": "utils.py",
+                        "type": "file"
+                    },
+                    {
+                        "name": "views.py",
+                        "type": "file"
+                    }
+                ]
+            },
+            {
+                "name": "authentification",
+                "type": "directory",
+                "children": [
+                    {
+                        "name": "__init__.py",
+                        "type": "file"
+                    },
+                    {
+                        "name": "admin.py",
+                        "type": "file"
+                    },
+                    {
+                        "name": "apps.py",
+                        "type": "file"
+                    },
+                    {
+                        "name": "migrations",
+                        "type": "directory",
+                        "children": [
+                            {
+                                "name": "__init__.py",
+                                "type": "file"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "models.py",
+                        "type": "file"
+                    },
+                    {
+                        "name": "tests.py",
+                        "type": "file"
+                    },
+                    {
+                        "name": "views.py",
+                        "type": "file"
+                    }
+                ]
+            },
+            {
+                "name": "docker-compose.yml",
+                "type": "file"
+            },
+            {
+                "name": "entrypoint.sh",
+                "type": "file"
+            },
+            {
+                "name": "facturation_api",
+                "type": "directory",
+                "children": [
+                    {
+                        "name": "__init__.py",
+                        "type": "file"
+                    },
+                    {
+                        "name": "asgi.py",
+                        "type": "file"
+                    },
+                    {
+                        "name": "middleware.py",
+                        "type": "file"
+                    },
+                    {
+                        "name": "router_facturation.py",
+                        "type": "file"
+                    },
+                    {
+                        "name": "settings.py",
+                        "type": "file"
+                    },
+                    {
+                        "name": "urls.py",
+                        "type": "file"
+                    },
+                    {
+                        "name": "utils.py",
+                        "type": "file"
+                    },
+                    {
+                        "name": "wsgi.py",
+                        "type": "file"
+                    }
+                ]
+            },
+            {
+                "name": "home",
+                "type": "directory",
+                "children": [
+                    {
+                        "name": "__init__.py",
+                        "type": "file"
+                    },
+                    {
+                        "name": "admin.py",
+                        "type": "file"
+                    },
+                    {
+                        "name": "apps.py",
+                        "type": "file"
+                    },
+                    {
+                        "name": "forms.py",
+                        "type": "file"
+                    },
+                    {
+                        "name": "migrations",
+                        "type": "directory",
+                        "children": [
+                            {
+                                "name": "__init__.py",
+                                "type": "file"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "models.py",
+                        "type": "file"
+                    },
+                    {
+                        "name": "tests.py",
+                        "type": "file"
+                    },
+                    {
+                        "name": "views.py",
+                        "type": "file"
+                    }
+                ]
+            },
+            {
+                "name": "manage.py",
+                "type": "file"
+            },
+            {
+                "name": "order",
+                "type": "directory",
+                "children": [
+                    {
+                        "name": "__init__.py",
+                        "type": "file"
+                    },
+                    {
+                        "name": "admin.py",
+                        "type": "file"
+                    },
+                    {
+                        "name": "apps.py",
+                        "type": "file"
+                    },
+                    {
+                        "name": "migrations",
+                        "type": "directory",
+                        "children": [
+                            {
+                                "name": "__init__.py",
+                                "type": "file"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "models.py",
+                        "type": "file"
+                    },
+                    {
+                        "name": "tests.py",
+                        "type": "file"
+                    },
+                    {
+                        "name": "utils.py",
+                        "type": "file"
+                    },
+                    {
+                        "name": "views.py",
+                        "type": "file"
+                    }
+                ]
+            },
+            {
+                "name": "prestashop",
+                "type": "directory",
+                "children": [
+                    {
+                        "name": "__init__.py",
+                        "type": "file"
+                    },
+                    {
+                        "name": "admin.py",
+                        "type": "file"
+                    },
+                    {
+                        "name": "apps.py",
+                        "type": "file"
+                    },
+                    {
+                        "name": "management",
+                        "type": "directory",
+                        "children": [
+                            {
+                                "name": "__init__.py",
+                                "type": "file"
+                            },
+                            {
+                                "name": "commands",
+                                "type": "directory",
+                                "children": [
+                                    {
+                                        "name": "__init__.py",
+                                        "type": "file"
+                                    },
+                                    {
+                                        "name": "get_ca_by_eu_country.py",
+                                        "type": "file"
+                                    },
+                                    {
+                                        "name": "get_ca_per_month.py",
+                                        "type": "file"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "name": "migrations",
+                        "type": "directory",
+                        "children": [
+                            {
+                                "name": "__init__.py",
+                                "type": "file"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "models.py",
+                        "type": "file"
+                    },
+                    {
+                        "name": "sql.py",
+                        "type": "file"
+                    },
+                    {
+                        "name": "tests.py",
+                        "type": "file"
+                    },
+                    {
+                        "name": "utils.py",
+                        "type": "file"
+                    },
+                    {
+                        "name": "views.py",
+                        "type": "file"
+                    }
+                ]
+            },
+            {
+                "name": "requirements.txt",
+                "type": "file"
+            },
+            {
+                "name": "static",
+                "type": "directory",
+                "children": [
+                    {
+                        "name": "django-browser-reload",
+                        "type": "directory",
+                        "children": [
+                            {
+                                "name": "reload-listener.js",
+                                "type": "file"
+                            },
+                            {
+                                "name": "reload-worker.js",
+                                "type": "file"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "img",
+                        "type": "directory",
+                        "children": [
+                            {
+                                "name": "logop4n.png",
+                                "type": "file"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "js",
+                        "type": "directory",
+                        "children": [
+                            {
+                                "name": "loading.js",
+                                "type": "file"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "tax_list.png",
+                "type": "file"
+            },
+            {
+                "name": "tax_menu.png",
+                "type": "file"
+            },
+            {
+                "name": "templates",
+                "type": "directory",
+                "children": [
+                    {
+                        "name": "components",
+                        "type": "directory",
+                        "children": [
+                            {
+                                "name": "alert_success.html",
+                                "type": "file"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "forms",
+                        "type": "directory",
+                        "children": [
+                            {
+                                "name": "facture_form.html",
+                                "type": "file"
+                            },
+                            {
+                                "name": "success_form.html",
+                                "type": "file"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "home",
+                        "type": "directory",
+                        "children": [
+                            {
+                                "name": "index.html",
+                                "type": "file"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "layout",
+                        "type": "directory",
+                        "children": [
+                            {
+                                "name": "navbar.html",
+                                "type": "file"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "registration",
+                        "type": "directory",
+                        "children": [
+                            {
+                                "name": "login.html",
+                                "type": "file"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "tunnel_ssh",
+                "type": "directory",
+                "children": [
+                    {
+                        "name": "__init__.py",
+                        "type": "file"
+                    },
+                    {
+                        "name": "admin.py",
+                        "type": "file"
+                    },
+                    {
+                        "name": "apps.py",
+                        "type": "file"
+                    },
+                    {
+                        "name": "migrations",
+                        "type": "directory",
+                        "children": [
+                            {
+                                "name": "__init__.py",
+                                "type": "file"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "models.py",
+                        "type": "file"
+                    },
+                    {
+                        "name": "tests.py",
+                        "type": "file"
+                    },
+                    {
+                        "name": "views.py",
+                        "type": "file"
+                    }
+                ]
+            },
+            {
+                "name": "zoho_api",
+                "type": "directory",
+                "children": [
+                    {
+                        "name": "__init__.py",
+                        "type": "file"
+                    },
+                    {
+                        "name": "admin.py",
+                        "type": "file"
+                    },
+                    {
+                        "name": "apps.py",
+                        "type": "file"
+                    },
+                    {
+                        "name": "invoice_creator.py",
+                        "type": "file"
+                    },
+                    {
+                        "name": "management",
+                        "type": "directory",
+                        "children": [
+                            {
+                                "name": "__init__.py",
+                                "type": "file"
+                            },
+                            {
+                                "name": "commands",
+                                "type": "directory",
+                                "children": [
+                                    {
+                                        "name": "__init__.py",
+                                        "type": "file"
+                                    },
+                                    {
+                                        "name": "create_invoice.py",
+                                        "type": "file"
+                                    },
+                                    {
+                                        "name": "create_product.py",
+                                        "type": "file"
+                                    },
+                                    {
+                                        "name": "get_client_list.py",
+                                        "type": "file"
+                                    },
+                                    {
+                                        "name": "get_pdf_invoice.py",
+                                        "type": "file"
+                                    },
+                                    {
+                                        "name": "get_product_list.py",
+                                        "type": "file"
+                                    },
+                                    {
+                                        "name": "get_template_list.py",
+                                        "type": "file"
+                                    },
+                                    {
+                                        "name": "load_taxes_from_api.py",
+                                        "type": "file"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "name": "migrations",
+                        "type": "directory",
+                        "children": [
+                            {
+                                "name": "__init__.py",
+                                "type": "file"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "models.py",
+                        "type": "file"
+                    },
+                    {
+                        "name": "tests.py",
+                        "type": "file"
+                    },
+                    {
+                        "name": "utils.py",
+                        "type": "file"
+                    },
+                    {
+                        "name": "views.py",
+                        "type": "file"
+                    }
+                ]
+            }
+        ]
+    },
+    "images": []
+}
