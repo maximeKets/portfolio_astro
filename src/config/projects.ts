@@ -5,24 +5,30 @@
 
 import type { Project } from '../types';
 
-import neurospeccompanionmerged from './projects/neurospeccompanionmerged.json';
-import scheds from './projects/scheds.json';
-import fadedTextRestoration from './projects/fadedtextrestoration.json';
-import clinicalmain from './projects/clinicalmain.json';
-import seatReservation from './projects/seatreservation.json';
-import nucpaBalloons from './projects/nucpa-balloons.json';
-import nucpaBalloonsApi from './projects/nucpaballoonsapi.json';
-import portfolio from './projects/portfolio.json';
-import foodies from './projects/foodies.json';
+import aiArt from './projects/ai-art.json';
+import cyrilPortfolio from './projects/cyril_portfolio.json';
+import djangoWagtailSnipcart from './projects/django_wagtail_snipcart.json';
+import laravelPhantomWallet from './projects/laravel-phantom-wallet.json';
+import linkedinMcpServer from './projects/linkedin-mcp-server.json';
+import machineLearningTd from './projects/machine_learning_td.json';
+import portfolioAstro from './projects/portfolio_astro.json';
+import reactBits from './projects/react-bits.json';
+import rentitJavaAvance from './projects/rentit_java_avance.json';
+import tradingbot from './projects/tradingbot.json';
+import wecrew from './projects/wecrew.json';
+import zohoBillingGenerator from './projects/zoho_billing_generator.json';
 
 export const projects: readonly Project[] = [
-  scheds,
-  portfolio,
-  foodies,
-  fadedTextRestoration,
-  nucpaBalloons,
-  nucpaBalloonsApi,
-  neurospeccompanionmerged,
-  clinicalmain,
-  seatReservation,
+  aiArt,
+  cyrilPortfolio,
+  djangoWagtailSnipcart,
+  laravelPhantomWallet,
+  linkedinMcpServer,
+  machineLearningTd,
+  portfolioAstro,
+  reactBits,
+  rentitJavaAvance,
+  tradingbot,
+  wecrew,
+  zohoBillingGenerator
 ] as Project[];

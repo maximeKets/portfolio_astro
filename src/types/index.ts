@@ -22,6 +22,8 @@ export interface Image {
   alt?: string;
   /** Optional description displayed below the image */
   description?: string;
+  /** Optional media type, defaults to 'image' if not specified */
+  type?: 'image' | 'video';
 }
 
 // ============================================
