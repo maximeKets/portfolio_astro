@@ -1,1276 +1,1286 @@
 {
-    "id": "wecrew",
-    "title": "wecrew",
-    "description": "W3CREW is an awesome platform for building teams in web3™.",
-    "repoUrl": "https://github.com/maximeKets/wecrew",
-    "liveUrl": "https://cosmic-crew.gitbook.io/cosmic-crew-whitepaper",
-    "techStack": ["php", "laravel", "tailwindcss", "webflow", "phantom-wallet"],
-    "structure": {
-        "root": "wecrew",
+  "id": "wecrew",
+  "title": "wecrew",
+  "description": "W3CREW is an awesome platform for building teams in web3™.",
+  "repoUrl": "https://github.com/maximeKets/wecrew",
+  "liveUrl": "https://cosmic-crew.gitbook.io/cosmic-crew-whitepaper",
+  "techStack": [
+    "php",
+    "laravel",
+    "tailwindcss",
+    "webflow",
+    "phantom-wallet"
+  ],
+  "structure": {
+    "root": "wecrew",
+    "children": [
+      {
+        "name": ".editorconfig",
+        "type": "file"
+      },
+      {
+        "name": ".env.example",
+        "type": "file"
+      },
+      {
+        "name": ".gitattributes",
+        "type": "file"
+      },
+      {
+        "name": ".gitignore",
+        "type": "file"
+      },
+      {
+        "name": "README.md",
+        "type": "file"
+      },
+      {
+        "name": "app",
+        "type": "directory",
         "children": [
-            {
-                "name": ".editorconfig",
+          {
+            "name": "Console",
+            "type": "directory",
+            "children": [
+              {
+                "name": "Kernel.php",
                 "type": "file"
-            },
-            {
-                "name": ".env.example",
+              }
+            ]
+          },
+          {
+            "name": "Exceptions",
+            "type": "directory",
+            "children": [
+              {
+                "name": "Handler.php",
                 "type": "file"
-            },
-            {
-                "name": ".gitattributes",
+              }
+            ]
+          },
+          {
+            "name": "Http",
+            "type": "directory",
+            "children": [
+              {
+                "name": "Controllers",
+                "type": "directory",
+                "children": [
+                  {
+                    "name": "Api",
+                    "type": "directory",
+                    "children": [
+                      {
+                        "name": "APIController.php",
+                        "type": "file"
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Auth",
+                    "type": "directory",
+                    "children": [
+                      {
+                        "name": "AuthenticatedSessionController.php",
+                        "type": "file"
+                      },
+                      {
+                        "name": "ConfirmablePasswordController.php",
+                        "type": "file"
+                      },
+                      {
+                        "name": "EmailVerificationNotificationController.php",
+                        "type": "file"
+                      },
+                      {
+                        "name": "EmailVerificationPromptController.php",
+                        "type": "file"
+                      },
+                      {
+                        "name": "NewPasswordController.php",
+                        "type": "file"
+                      },
+                      {
+                        "name": "PasswordController.php",
+                        "type": "file"
+                      },
+                      {
+                        "name": "PasswordResetLinkController.php",
+                        "type": "file"
+                      },
+                      {
+                        "name": "RegisteredUserController.php",
+                        "type": "file"
+                      },
+                      {
+                        "name": "VerifyEmailController.php",
+                        "type": "file"
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Controller.php",
+                    "type": "file"
+                  },
+                  {
+                    "name": "CreateProfileController.php",
+                    "type": "file"
+                  },
+                  {
+                    "name": "HomeController.php",
+                    "type": "file"
+                  },
+                  {
+                    "name": "ProfileController.php",
+                    "type": "file"
+                  },
+                  {
+                    "name": "ProjectController.php",
+                    "type": "file"
+                  }
+                ]
+              },
+              {
+                "name": "Kernel.php",
                 "type": "file"
-            },
-            {
+              },
+              {
+                "name": "Middleware",
+                "type": "directory",
+                "children": [
+                  {
+                    "name": "Authenticate.php",
+                    "type": "file"
+                  },
+                  {
+                    "name": "EncryptCookies.php",
+                    "type": "file"
+                  },
+                  {
+                    "name": "PreventRequestsDuringMaintenance.php",
+                    "type": "file"
+                  },
+                  {
+                    "name": "RedirectIfAuthenticated.php",
+                    "type": "file"
+                  },
+                  {
+                    "name": "TrimStrings.php",
+                    "type": "file"
+                  },
+                  {
+                    "name": "TrustHosts.php",
+                    "type": "file"
+                  },
+                  {
+                    "name": "TrustProxies.php",
+                    "type": "file"
+                  },
+                  {
+                    "name": "ValidateSignature.php",
+                    "type": "file"
+                  },
+                  {
+                    "name": "VerifyCsrfToken.php",
+                    "type": "file"
+                  }
+                ]
+              },
+              {
+                "name": "Requests",
+                "type": "directory",
+                "children": [
+                  {
+                    "name": "Auth",
+                    "type": "directory",
+                    "children": [
+                      {
+                        "name": "LoginRequest.php",
+                        "type": "file"
+                      }
+                    ]
+                  },
+                  {
+                    "name": "ProfileUpdateRequest.php",
+                    "type": "file"
+                  }
+                ]
+              },
+              {
+                "name": "Resources",
+                "type": "directory",
+                "children": [
+                  {
+                    "name": "SkillsResource.php",
+                    "type": "file"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Models",
+            "type": "directory",
+            "children": [
+              {
+                "name": "Category.php",
+                "type": "file"
+              },
+              {
+                "name": "Link.php",
+                "type": "file"
+              },
+              {
+                "name": "Project.php",
+                "type": "file"
+              },
+              {
+                "name": "Skill.php",
+                "type": "file"
+              },
+              {
+                "name": "User.php",
+                "type": "file"
+              }
+            ]
+          },
+          {
+            "name": "Providers",
+            "type": "directory",
+            "children": [
+              {
+                "name": "AppServiceProvider.php",
+                "type": "file"
+              },
+              {
+                "name": "AuthServiceProvider.php",
+                "type": "file"
+              },
+              {
+                "name": "BroadcastServiceProvider.php",
+                "type": "file"
+              },
+              {
+                "name": "EventServiceProvider.php",
+                "type": "file"
+              },
+              {
+                "name": "RouteServiceProvider.php",
+                "type": "file"
+              }
+            ]
+          },
+          {
+            "name": "View",
+            "type": "directory",
+            "children": [
+              {
+                "name": "Components",
+                "type": "directory",
+                "children": [
+                  {
+                    "name": "AppLayout.php",
+                    "type": "file"
+                  },
+                  {
+                    "name": "GuestLayout.php",
+                    "type": "file"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "artisan",
+        "type": "file"
+      },
+      {
+        "name": "bootstrap",
+        "type": "directory",
+        "children": [
+          {
+            "name": "app.php",
+            "type": "file"
+          },
+          {
+            "name": "cache",
+            "type": "directory",
+            "children": [
+              {
                 "name": ".gitignore",
                 "type": "file"
-            },
-            {
-                "name": "README.md",
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "composer.json",
+        "type": "file"
+      },
+      {
+        "name": "composer.lock",
+        "type": "file"
+      },
+      {
+        "name": "config",
+        "type": "directory",
+        "children": [
+          {
+            "name": "adminer.php",
+            "type": "file"
+          },
+          {
+            "name": "app.php",
+            "type": "file"
+          },
+          {
+            "name": "auth.php",
+            "type": "file"
+          },
+          {
+            "name": "broadcasting.php",
+            "type": "file"
+          },
+          {
+            "name": "cache.php",
+            "type": "file"
+          },
+          {
+            "name": "cors.php",
+            "type": "file"
+          },
+          {
+            "name": "database.php",
+            "type": "file"
+          },
+          {
+            "name": "filesystems.php",
+            "type": "file"
+          },
+          {
+            "name": "hashing.php",
+            "type": "file"
+          },
+          {
+            "name": "logging.php",
+            "type": "file"
+          },
+          {
+            "name": "mail.php",
+            "type": "file"
+          },
+          {
+            "name": "queue.php",
+            "type": "file"
+          },
+          {
+            "name": "sanctum.php",
+            "type": "file"
+          },
+          {
+            "name": "services.php",
+            "type": "file"
+          },
+          {
+            "name": "session.php",
+            "type": "file"
+          },
+          {
+            "name": "view.php",
+            "type": "file"
+          }
+        ]
+      },
+      {
+        "name": "database",
+        "type": "directory",
+        "children": [
+          {
+            "name": ".gitignore",
+            "type": "file"
+          },
+          {
+            "name": "factories",
+            "type": "directory",
+            "children": [
+              {
+                "name": "CategoryFactory.php",
                 "type": "file"
-            },
-            {
-                "name": "app",
+              },
+              {
+                "name": "ProjectFactory.php",
+                "type": "file"
+              },
+              {
+                "name": "SkillFactory.php",
+                "type": "file"
+              },
+              {
+                "name": "UserFactory.php",
+                "type": "file"
+              }
+            ]
+          },
+          {
+            "name": "migrations",
+            "type": "directory",
+            "children": [
+              {
+                "name": "2012_11_19_174841_create_categories_table.php",
+                "type": "file"
+              },
+              {
+                "name": "2014_10_12_000000_create_users_table.php",
+                "type": "file"
+              },
+              {
+                "name": "2014_10_12_100000_create_password_resets_table.php",
+                "type": "file"
+              },
+              {
+                "name": "2019_08_19_000000_create_failed_jobs_table.php",
+                "type": "file"
+              },
+              {
+                "name": "2019_12_14_000001_create_personal_access_tokens_table.php",
+                "type": "file"
+              },
+              {
+                "name": "2022_11_19_174854_create_skills_table.php",
+                "type": "file"
+              },
+              {
+                "name": "2022_11_19_174903_create_projects_table.php",
+                "type": "file"
+              },
+              {
+                "name": "2022_11_19_174925_create_skill_user_table.php",
+                "type": "file"
+              },
+              {
+                "name": "2022_11_28_082106_create_links_table.php",
+                "type": "file"
+              }
+            ]
+          },
+          {
+            "name": "seeders",
+            "type": "directory",
+            "children": [
+              {
+                "name": "CategoriesSeeder.php",
+                "type": "file"
+              },
+              {
+                "name": "DatabaseSeeder.php",
+                "type": "file"
+              },
+              {
+                "name": "ProjectSeeder.php",
+                "type": "file"
+              },
+              {
+                "name": "SkillSeeder.php",
+                "type": "file"
+              },
+              {
+                "name": "UserSeeder.php",
+                "type": "file"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "lang",
+        "type": "directory",
+        "children": [
+          {
+            "name": "en",
+            "type": "directory",
+            "children": [
+              {
+                "name": "auth.php",
+                "type": "file"
+              },
+              {
+                "name": "pagination.php",
+                "type": "file"
+              },
+              {
+                "name": "passwords.php",
+                "type": "file"
+              },
+              {
+                "name": "validation.php",
+                "type": "file"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "package-lock.json",
+        "type": "file"
+      },
+      {
+        "name": "package.json",
+        "type": "file"
+      },
+      {
+        "name": "package.xml",
+        "type": "file"
+      },
+      {
+        "name": "phpunit.xml",
+        "type": "file"
+      },
+      {
+        "name": "postcss.config.js",
+        "type": "file"
+      },
+      {
+        "name": "public",
+        "type": "directory",
+        "children": [
+          {
+            "name": ".htaccess",
+            "type": "file"
+          },
+          {
+            "name": "adminer.css",
+            "type": "file"
+          },
+          {
+            "name": "css",
+            "type": "directory",
+            "children": [
+              {
+                "name": "normalize.css",
+                "type": "file"
+              },
+              {
+                "name": "w3crew.webflow.css",
+                "type": "file"
+              },
+              {
+                "name": "webflow.css",
+                "type": "file"
+              }
+            ]
+          },
+          {
+            "name": "favicon.ico",
+            "type": "file"
+          },
+          {
+            "name": "icons",
+            "type": "file"
+          },
+          {
+            "name": "images",
+            "type": "directory",
+            "children": [
+              {
+                "name": "CC_Website_16_9-p-500.png",
+                "type": "file"
+              },
+              {
+                "name": "CC_Website_16_9.png",
+                "type": "file"
+              },
+              {
+                "name": "Clouds.svg",
+                "type": "file"
+              },
+              {
+                "name": "Group-222.svg",
+                "type": "file"
+              },
+              {
+                "name": "Group-88.svg",
+                "type": "file"
+              },
+              {
+                "name": "WECrEW_Colour.svg",
+                "type": "file"
+              },
+              {
+                "name": "avatar.jpeg",
+                "type": "file"
+              },
+              {
+                "name": "background.png",
+                "type": "file"
+              },
+              {
+                "name": "default-background.png",
+                "type": "file"
+              },
+              {
+                "name": "favicon.ico",
+                "type": "file"
+              },
+              {
+                "name": "favicon.png",
+                "type": "file"
+              },
+              {
+                "name": "filtericon.svg",
+                "type": "file"
+              },
+              {
+                "name": "logo.svg",
+                "type": "file"
+              },
+              {
+                "name": "secured.svg",
+                "type": "file"
+              },
+              {
+                "name": "webclip.png",
+                "type": "file"
+              }
+            ]
+          },
+          {
+            "name": "index.php",
+            "type": "file"
+          },
+          {
+            "name": "js",
+            "type": "directory",
+            "children": [
+              {
+                "name": "webflow.js",
+                "type": "file"
+              }
+            ]
+          },
+          {
+            "name": "robots.txt",
+            "type": "file"
+          },
+          {
+            "name": "user",
+            "type": "file"
+          },
+          {
+            "name": "webflow.js",
+            "type": "file"
+          }
+        ]
+      },
+      {
+        "name": "resources",
+        "type": "directory",
+        "children": [
+          {
+            "name": "css",
+            "type": "directory",
+            "children": [
+              {
+                "name": "app.css",
+                "type": "file"
+              }
+            ]
+          },
+          {
+            "name": "js",
+            "type": "directory",
+            "children": [
+              {
+                "name": "app.js",
+                "type": "file"
+              },
+              {
+                "name": "bootstrap.js",
+                "type": "file"
+              }
+            ]
+          },
+          {
+            "name": "views",
+            "type": "directory",
+            "children": [
+              {
+                "name": "auth",
                 "type": "directory",
                 "children": [
-                    {
-                        "name": "Console",
-                        "type": "directory",
-                        "children": [
-                            {
-                                "name": "Kernel.php",
-                                "type": "file"
-                            }
-                        ]
-                    },
-                    {
-                        "name": "Exceptions",
-                        "type": "directory",
-                        "children": [
-                            {
-                                "name": "Handler.php",
-                                "type": "file"
-                            }
-                        ]
-                    },
-                    {
-                        "name": "Http",
-                        "type": "directory",
-                        "children": [
-                            {
-                                "name": "Controllers",
-                                "type": "directory",
-                                "children": [
-                                    {
-                                        "name": "Api",
-                                        "type": "directory",
-                                        "children": [
-                                            {
-                                                "name": "APIController.php",
-                                                "type": "file"
-                                            }
-                                        ]
-                                    },
-                                    {
-                                        "name": "Auth",
-                                        "type": "directory",
-                                        "children": [
-                                            {
-                                                "name": "AuthenticatedSessionController.php",
-                                                "type": "file"
-                                            },
-                                            {
-                                                "name": "ConfirmablePasswordController.php",
-                                                "type": "file"
-                                            },
-                                            {
-                                                "name": "EmailVerificationNotificationController.php",
-                                                "type": "file"
-                                            },
-                                            {
-                                                "name": "EmailVerificationPromptController.php",
-                                                "type": "file"
-                                            },
-                                            {
-                                                "name": "NewPasswordController.php",
-                                                "type": "file"
-                                            },
-                                            {
-                                                "name": "PasswordController.php",
-                                                "type": "file"
-                                            },
-                                            {
-                                                "name": "PasswordResetLinkController.php",
-                                                "type": "file"
-                                            },
-                                            {
-                                                "name": "RegisteredUserController.php",
-                                                "type": "file"
-                                            },
-                                            {
-                                                "name": "VerifyEmailController.php",
-                                                "type": "file"
-                                            }
-                                        ]
-                                    },
-                                    {
-                                        "name": "Controller.php",
-                                        "type": "file"
-                                    },
-                                    {
-                                        "name": "CreateProfileController.php",
-                                        "type": "file"
-                                    },
-                                    {
-                                        "name": "HomeController.php",
-                                        "type": "file"
-                                    },
-                                    {
-                                        "name": "ProfileController.php",
-                                        "type": "file"
-                                    },
-                                    {
-                                        "name": "ProjectController.php",
-                                        "type": "file"
-                                    }
-                                ]
-                            },
-                            {
-                                "name": "Kernel.php",
-                                "type": "file"
-                            },
-                            {
-                                "name": "Middleware",
-                                "type": "directory",
-                                "children": [
-                                    {
-                                        "name": "Authenticate.php",
-                                        "type": "file"
-                                    },
-                                    {
-                                        "name": "EncryptCookies.php",
-                                        "type": "file"
-                                    },
-                                    {
-                                        "name": "PreventRequestsDuringMaintenance.php",
-                                        "type": "file"
-                                    },
-                                    {
-                                        "name": "RedirectIfAuthenticated.php",
-                                        "type": "file"
-                                    },
-                                    {
-                                        "name": "TrimStrings.php",
-                                        "type": "file"
-                                    },
-                                    {
-                                        "name": "TrustHosts.php",
-                                        "type": "file"
-                                    },
-                                    {
-                                        "name": "TrustProxies.php",
-                                        "type": "file"
-                                    },
-                                    {
-                                        "name": "ValidateSignature.php",
-                                        "type": "file"
-                                    },
-                                    {
-                                        "name": "VerifyCsrfToken.php",
-                                        "type": "file"
-                                    }
-                                ]
-                            },
-                            {
-                                "name": "Requests",
-                                "type": "directory",
-                                "children": [
-                                    {
-                                        "name": "Auth",
-                                        "type": "directory",
-                                        "children": [
-                                            {
-                                                "name": "LoginRequest.php",
-                                                "type": "file"
-                                            }
-                                        ]
-                                    },
-                                    {
-                                        "name": "ProfileUpdateRequest.php",
-                                        "type": "file"
-                                    }
-                                ]
-                            },
-                            {
-                                "name": "Resources",
-                                "type": "directory",
-                                "children": [
-                                    {
-                                        "name": "SkillsResource.php",
-                                        "type": "file"
-                                    }
-                                ]
-                            }
-                        ]
-                    },
-                    {
-                        "name": "Models",
-                        "type": "directory",
-                        "children": [
-                            {
-                                "name": "Category.php",
-                                "type": "file"
-                            },
-                            {
-                                "name": "Link.php",
-                                "type": "file"
-                            },
-                            {
-                                "name": "Project.php",
-                                "type": "file"
-                            },
-                            {
-                                "name": "Skill.php",
-                                "type": "file"
-                            },
-                            {
-                                "name": "User.php",
-                                "type": "file"
-                            }
-                        ]
-                    },
-                    {
-                        "name": "Providers",
-                        "type": "directory",
-                        "children": [
-                            {
-                                "name": "AppServiceProvider.php",
-                                "type": "file"
-                            },
-                            {
-                                "name": "AuthServiceProvider.php",
-                                "type": "file"
-                            },
-                            {
-                                "name": "BroadcastServiceProvider.php",
-                                "type": "file"
-                            },
-                            {
-                                "name": "EventServiceProvider.php",
-                                "type": "file"
-                            },
-                            {
-                                "name": "RouteServiceProvider.php",
-                                "type": "file"
-                            }
-                        ]
-                    },
-                    {
-                        "name": "View",
-                        "type": "directory",
-                        "children": [
-                            {
-                                "name": "Components",
-                                "type": "directory",
-                                "children": [
-                                    {
-                                        "name": "AppLayout.php",
-                                        "type": "file"
-                                    },
-                                    {
-                                        "name": "GuestLayout.php",
-                                        "type": "file"
-                                    }
-                                ]
-                            }
-                        ]
-                    }
+                  {
+                    "name": "confirm-password.blade.php",
+                    "type": "file"
+                  },
+                  {
+                    "name": "forgot-password.blade.php",
+                    "type": "file"
+                  },
+                  {
+                    "name": "login.blade.php",
+                    "type": "file"
+                  },
+                  {
+                    "name": "register.blade.php",
+                    "type": "file"
+                  },
+                  {
+                    "name": "reset-password.blade.php",
+                    "type": "file"
+                  },
+                  {
+                    "name": "verify-email.blade.php",
+                    "type": "file"
+                  }
                 ]
-            },
-            {
-                "name": "artisan",
-                "type": "file"
-            },
-            {
-                "name": "bootstrap",
+              },
+              {
+                "name": "components",
                 "type": "directory",
                 "children": [
-                    {
-                        "name": "app.php",
-                        "type": "file"
-                    },
-                    {
-                        "name": "cache",
-                        "type": "directory",
-                        "children": [
-                            {
-                                "name": ".gitignore",
-                                "type": "file"
-                            }
-                        ]
-                    }
+                  {
+                    "name": "application-logo.blade.php",
+                    "type": "file"
+                  },
+                  {
+                    "name": "auth-session-status.blade.php",
+                    "type": "file"
+                  },
+                  {
+                    "name": "card-text.blade.php",
+                    "type": "file"
+                  },
+                  {
+                    "name": "card.blade.php",
+                    "type": "file"
+                  },
+                  {
+                    "name": "danger-button.blade.php",
+                    "type": "file"
+                  },
+                  {
+                    "name": "dropdown-link.blade.php",
+                    "type": "file"
+                  },
+                  {
+                    "name": "dropdown.blade.php",
+                    "type": "file"
+                  },
+                  {
+                    "name": "form-display.blade.php",
+                    "type": "file"
+                  },
+                  {
+                    "name": "form.blade.php",
+                    "type": "file"
+                  },
+                  {
+                    "name": "header-content.blade.php",
+                    "type": "file"
+                  },
+                  {
+                    "name": "icons.blade.php",
+                    "type": "file"
+                  },
+                  {
+                    "name": "input-error.blade.php",
+                    "type": "file"
+                  },
+                  {
+                    "name": "input-label.blade.php",
+                    "type": "file"
+                  },
+                  {
+                    "name": "input-title.blade.php",
+                    "type": "file"
+                  },
+                  {
+                    "name": "link.blade.php",
+                    "type": "file"
+                  },
+                  {
+                    "name": "modal.blade.php",
+                    "type": "file"
+                  },
+                  {
+                    "name": "nav-link.blade.php",
+                    "type": "file"
+                  },
+                  {
+                    "name": "primary-button.blade.php",
+                    "type": "file"
+                  },
+                  {
+                    "name": "responsive-nav-link.blade.php",
+                    "type": "file"
+                  },
+                  {
+                    "name": "secondary-button.blade.php",
+                    "type": "file"
+                  },
+                  {
+                    "name": "social.blade.php",
+                    "type": "file"
+                  },
+                  {
+                    "name": "text-input.blade.php",
+                    "type": "file"
+                  }
                 ]
-            },
-            {
-                "name": "composer.json",
-                "type": "file"
-            },
-            {
-                "name": "composer.lock",
-                "type": "file"
-            },
-            {
-                "name": "config",
+              },
+              {
+                "name": "createprofile",
                 "type": "directory",
                 "children": [
-                    {
-                        "name": "adminer.php",
-                        "type": "file"
-                    },
-                    {
-                        "name": "app.php",
-                        "type": "file"
-                    },
-                    {
-                        "name": "auth.php",
-                        "type": "file"
-                    },
-                    {
-                        "name": "broadcasting.php",
-                        "type": "file"
-                    },
-                    {
-                        "name": "cache.php",
-                        "type": "file"
-                    },
-                    {
-                        "name": "cors.php",
-                        "type": "file"
-                    },
-                    {
-                        "name": "database.php",
-                        "type": "file"
-                    },
-                    {
-                        "name": "filesystems.php",
-                        "type": "file"
-                    },
-                    {
-                        "name": "hashing.php",
-                        "type": "file"
-                    },
-                    {
-                        "name": "logging.php",
-                        "type": "file"
-                    },
-                    {
-                        "name": "mail.php",
-                        "type": "file"
-                    },
-                    {
-                        "name": "queue.php",
-                        "type": "file"
-                    },
-                    {
-                        "name": "sanctum.php",
-                        "type": "file"
-                    },
-                    {
-                        "name": "services.php",
-                        "type": "file"
-                    },
-                    {
-                        "name": "session.php",
-                        "type": "file"
-                    },
-                    {
-                        "name": "view.php",
-                        "type": "file"
-                    }
+                  {
+                    "name": "step1.blade.php",
+                    "type": "file"
+                  },
+                  {
+                    "name": "step2.blade.php",
+                    "type": "file"
+                  },
+                  {
+                    "name": "step3.blade.php",
+                    "type": "file"
+                  }
                 ]
-            },
-            {
-                "name": "database",
+              },
+              {
+                "name": "dashboard.blade.php",
+                "type": "file"
+              },
+              {
+                "name": "home",
                 "type": "directory",
                 "children": [
-                    {
-                        "name": ".gitignore",
-                        "type": "file"
-                    },
-                    {
-                        "name": "factories",
-                        "type": "directory",
-                        "children": [
-                            {
-                                "name": "CategoryFactory.php",
-                                "type": "file"
-                            },
-                            {
-                                "name": "ProjectFactory.php",
-                                "type": "file"
-                            },
-                            {
-                                "name": "SkillFactory.php",
-                                "type": "file"
-                            },
-                            {
-                                "name": "UserFactory.php",
-                                "type": "file"
-                            }
-                        ]
-                    },
-                    {
-                        "name": "migrations",
-                        "type": "directory",
-                        "children": [
-                            {
-                                "name": "2012_11_19_174841_create_categories_table.php",
-                                "type": "file"
-                            },
-                            {
-                                "name": "2014_10_12_000000_create_users_table.php",
-                                "type": "file"
-                            },
-                            {
-                                "name": "2014_10_12_100000_create_password_resets_table.php",
-                                "type": "file"
-                            },
-                            {
-                                "name": "2019_08_19_000000_create_failed_jobs_table.php",
-                                "type": "file"
-                            },
-                            {
-                                "name": "2019_12_14_000001_create_personal_access_tokens_table.php",
-                                "type": "file"
-                            },
-                            {
-                                "name": "2022_11_19_174854_create_skills_table.php",
-                                "type": "file"
-                            },
-                            {
-                                "name": "2022_11_19_174903_create_projects_table.php",
-                                "type": "file"
-                            },
-                            {
-                                "name": "2022_11_19_174925_create_skill_user_table.php",
-                                "type": "file"
-                            },
-                            {
-                                "name": "2022_11_28_082106_create_links_table.php",
-                                "type": "file"
-                            }
-                        ]
-                    },
-                    {
-                        "name": "seeders",
-                        "type": "directory",
-                        "children": [
-                            {
-                                "name": "CategoriesSeeder.php",
-                                "type": "file"
-                            },
-                            {
-                                "name": "DatabaseSeeder.php",
-                                "type": "file"
-                            },
-                            {
-                                "name": "ProjectSeeder.php",
-                                "type": "file"
-                            },
-                            {
-                                "name": "SkillSeeder.php",
-                                "type": "file"
-                            },
-                            {
-                                "name": "UserSeeder.php",
-                                "type": "file"
-                            }
-                        ]
-                    }
+                  {
+                    "name": "home.blade.php",
+                    "type": "file"
+                  }
                 ]
-            },
-            {
-                "name": "lang",
+              },
+              {
+                "name": "layouts",
                 "type": "directory",
                 "children": [
-                    {
-                        "name": "en",
+                  {
+                    "name": "app.blade.php",
+                    "type": "file"
+                  },
+                  {
+                    "name": "guest.blade.php",
+                    "type": "file"
+                  }
+                ]
+              },
+              {
+                "name": "navigation",
+                "type": "directory",
+                "children": [
+                  {
+                    "name": "footer.blade.php",
+                    "type": "file"
+                  },
+                  {
+                    "name": "header.blade.php",
+                    "type": "file"
+                  }
+                ]
+              },
+              {
+                "name": "profile",
+                "type": "directory",
+                "children": [
+                  {
+                    "name": "partials",
+                    "type": "directory",
+                    "children": [
+                      {
+                        "name": "delete-user-form.blade.php",
+                        "type": "file"
+                      },
+                      {
+                        "name": "update-password-form.blade.php",
+                        "type": "file"
+                      },
+                      {
+                        "name": "update-profile-information-form.blade.php",
+                        "type": "file"
+                      }
+                    ]
+                  },
+                  {
+                    "name": "show.blade.php",
+                    "type": "file"
+                  }
+                ]
+              },
+              {
+                "name": "user",
+                "type": "directory",
+                "children": [
+                  {
+                    "name": "list.blade.php",
+                    "type": "file"
+                  },
+                  {
+                    "name": "show.blade.php",
+                    "type": "file"
+                  }
+                ]
+              },
+              {
+                "name": "vendor",
+                "type": "directory",
+                "children": [
+                  {
+                    "name": "mail",
+                    "type": "directory",
+                    "children": [
+                      {
+                        "name": "html",
                         "type": "directory",
                         "children": [
-                            {
-                                "name": "auth.php",
+                          {
+                            "name": "button.blade.php",
+                            "type": "file"
+                          },
+                          {
+                            "name": "footer.blade.php",
+                            "type": "file"
+                          },
+                          {
+                            "name": "header.blade.php",
+                            "type": "file"
+                          },
+                          {
+                            "name": "layout.blade.php",
+                            "type": "file"
+                          },
+                          {
+                            "name": "message.blade.php",
+                            "type": "file"
+                          },
+                          {
+                            "name": "panel.blade.php",
+                            "type": "file"
+                          },
+                          {
+                            "name": "subcopy.blade.php",
+                            "type": "file"
+                          },
+                          {
+                            "name": "table.blade.php",
+                            "type": "file"
+                          },
+                          {
+                            "name": "themes",
+                            "type": "directory",
+                            "children": [
+                              {
+                                "name": "default.css",
                                 "type": "file"
-                            },
-                            {
-                                "name": "pagination.php",
-                                "type": "file"
-                            },
-                            {
-                                "name": "passwords.php",
-                                "type": "file"
-                            },
-                            {
-                                "name": "validation.php",
-                                "type": "file"
-                            }
+                              }
+                            ]
+                          }
                         ]
-                    }
+                      },
+                      {
+                        "name": "text",
+                        "type": "directory",
+                        "children": [
+                          {
+                            "name": "button.blade.php",
+                            "type": "file"
+                          },
+                          {
+                            "name": "footer.blade.php",
+                            "type": "file"
+                          },
+                          {
+                            "name": "header.blade.php",
+                            "type": "file"
+                          },
+                          {
+                            "name": "layout.blade.php",
+                            "type": "file"
+                          },
+                          {
+                            "name": "message.blade.php",
+                            "type": "file"
+                          },
+                          {
+                            "name": "panel.blade.php",
+                            "type": "file"
+                          },
+                          {
+                            "name": "subcopy.blade.php",
+                            "type": "file"
+                          },
+                          {
+                            "name": "table.blade.php",
+                            "type": "file"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "notifications",
+                    "type": "directory",
+                    "children": [
+                      {
+                        "name": "email.blade.php",
+                        "type": "file"
+                      }
+                    ]
+                  }
                 ]
-            },
-            {
-                "name": "package-lock.json",
+              },
+              {
+                "name": "welcome.blade.php",
                 "type": "file"
-            },
-            {
-                "name": "package.json",
-                "type": "file"
-            },
-            {
-                "name": "package.xml",
-                "type": "file"
-            },
-            {
-                "name": "phpunit.xml",
-                "type": "file"
-            },
-            {
-                "name": "postcss.config.js",
-                "type": "file"
-            },
-            {
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "routes",
+        "type": "directory",
+        "children": [
+          {
+            "name": "api.php",
+            "type": "file"
+          },
+          {
+            "name": "auth.php",
+            "type": "file"
+          },
+          {
+            "name": "channels.php",
+            "type": "file"
+          },
+          {
+            "name": "console.php",
+            "type": "file"
+          },
+          {
+            "name": "web.php",
+            "type": "file"
+          }
+        ]
+      },
+      {
+        "name": "storage",
+        "type": "directory",
+        "children": [
+          {
+            "name": "app",
+            "type": "directory",
+            "children": [
+              {
                 "name": "public",
                 "type": "directory",
                 "children": [
-                    {
-                        "name": ".htaccess",
+                  {
+                    "name": "Clouds.svg",
+                    "type": "file"
+                  },
+                  {
+                    "name": "WECrEW_Colour.svg",
+                    "type": "file"
+                  },
+                  {
+                    "name": "background.png",
+                    "type": "file"
+                  },
+                  {
+                    "name": "icons",
+                    "type": "directory",
+                    "children": [
+                      {
+                        "name": "Discord.svg",
                         "type": "file"
-                    },
-                    {
-                        "name": "adminer.css",
+                      },
+                      {
+                        "name": "LinkIcon.svg",
                         "type": "file"
-                    },
-                    {
-                        "name": "css",
-                        "type": "directory",
-                        "children": [
-                            {
-                                "name": "normalize.css",
-                                "type": "file"
-                            },
-                            {
-                                "name": "w3crew.webflow.css",
-                                "type": "file"
-                            },
-                            {
-                                "name": "webflow.css",
-                                "type": "file"
-                            }
-                        ]
-                    },
-                    {
-                        "name": "favicon.ico",
+                      },
+                      {
+                        "name": "Twitter.svg",
                         "type": "file"
-                    },
-                    {
-                        "name": "icons",
-                        "type": "file"
-                    },
-                    {
-                        "name": "images",
-                        "type": "directory",
-                        "children": [
-                            {
-                                "name": "CC_Website_16_9-p-500.png",
-                                "type": "file"
-                            },
-                            {
-                                "name": "CC_Website_16_9.png",
-                                "type": "file"
-                            },
-                            {
-                                "name": "Clouds.svg",
-                                "type": "file"
-                            },
-                            {
-                                "name": "Group-222.svg",
-                                "type": "file"
-                            },
-                            {
-                                "name": "Group-88.svg",
-                                "type": "file"
-                            },
-                            {
-                                "name": "WECrEW_Colour.svg",
-                                "type": "file"
-                            },
-                            {
-                                "name": "avatar.jpeg",
-                                "type": "file"
-                            },
-                            {
-                                "name": "background.png",
-                                "type": "file"
-                            },
-                            {
-                                "name": "default-background.png",
-                                "type": "file"
-                            },
-                            {
-                                "name": "favicon.ico",
-                                "type": "file"
-                            },
-                            {
-                                "name": "favicon.png",
-                                "type": "file"
-                            },
-                            {
-                                "name": "filtericon.svg",
-                                "type": "file"
-                            },
-                            {
-                                "name": "logo.svg",
-                                "type": "file"
-                            },
-                            {
-                                "name": "secured.svg",
-                                "type": "file"
-                            },
-                            {
-                                "name": "webclip.png",
-                                "type": "file"
-                            }
-                        ]
-                    },
-                    {
-                        "name": "index.php",
-                        "type": "file"
-                    },
-                    {
-                        "name": "js",
-                        "type": "directory",
-                        "children": [
-                            {
-                                "name": "webflow.js",
-                                "type": "file"
-                            }
-                        ]
-                    },
-                    {
-                        "name": "robots.txt",
-                        "type": "file"
-                    },
-                    {
-                        "name": "user",
-                        "type": "file"
-                    },
-                    {
-                        "name": "webflow.js",
-                        "type": "file"
-                    }
+                      }
+                    ]
+                  },
+                  {
+                    "name": "logo.svg",
+                    "type": "file"
+                  }
                 ]
-            },
-            {
-                "name": "resources",
-                "type": "directory",
-                "children": [
-                    {
-                        "name": "css",
-                        "type": "directory",
-                        "children": [
-                            {
-                                "name": "app.css",
-                                "type": "file"
-                            }
-                        ]
-                    },
-                    {
-                        "name": "js",
-                        "type": "directory",
-                        "children": [
-                            {
-                                "name": "app.js",
-                                "type": "file"
-                            },
-                            {
-                                "name": "bootstrap.js",
-                                "type": "file"
-                            }
-                        ]
-                    },
-                    {
-                        "name": "views",
-                        "type": "directory",
-                        "children": [
-                            {
-                                "name": "auth",
-                                "type": "directory",
-                                "children": [
-                                    {
-                                        "name": "confirm-password.blade.php",
-                                        "type": "file"
-                                    },
-                                    {
-                                        "name": "forgot-password.blade.php",
-                                        "type": "file"
-                                    },
-                                    {
-                                        "name": "login.blade.php",
-                                        "type": "file"
-                                    },
-                                    {
-                                        "name": "register.blade.php",
-                                        "type": "file"
-                                    },
-                                    {
-                                        "name": "reset-password.blade.php",
-                                        "type": "file"
-                                    },
-                                    {
-                                        "name": "verify-email.blade.php",
-                                        "type": "file"
-                                    }
-                                ]
-                            },
-                            {
-                                "name": "components",
-                                "type": "directory",
-                                "children": [
-                                    {
-                                        "name": "application-logo.blade.php",
-                                        "type": "file"
-                                    },
-                                    {
-                                        "name": "auth-session-status.blade.php",
-                                        "type": "file"
-                                    },
-                                    {
-                                        "name": "card-text.blade.php",
-                                        "type": "file"
-                                    },
-                                    {
-                                        "name": "card.blade.php",
-                                        "type": "file"
-                                    },
-                                    {
-                                        "name": "danger-button.blade.php",
-                                        "type": "file"
-                                    },
-                                    {
-                                        "name": "dropdown-link.blade.php",
-                                        "type": "file"
-                                    },
-                                    {
-                                        "name": "dropdown.blade.php",
-                                        "type": "file"
-                                    },
-                                    {
-                                        "name": "form-display.blade.php",
-                                        "type": "file"
-                                    },
-                                    {
-                                        "name": "form.blade.php",
-                                        "type": "file"
-                                    },
-                                    {
-                                        "name": "header-content.blade.php",
-                                        "type": "file"
-                                    },
-                                    {
-                                        "name": "icons.blade.php",
-                                        "type": "file"
-                                    },
-                                    {
-                                        "name": "input-error.blade.php",
-                                        "type": "file"
-                                    },
-                                    {
-                                        "name": "input-label.blade.php",
-                                        "type": "file"
-                                    },
-                                    {
-                                        "name": "input-title.blade.php",
-                                        "type": "file"
-                                    },
-                                    {
-                                        "name": "link.blade.php",
-                                        "type": "file"
-                                    },
-                                    {
-                                        "name": "modal.blade.php",
-                                        "type": "file"
-                                    },
-                                    {
-                                        "name": "nav-link.blade.php",
-                                        "type": "file"
-                                    },
-                                    {
-                                        "name": "primary-button.blade.php",
-                                        "type": "file"
-                                    },
-                                    {
-                                        "name": "responsive-nav-link.blade.php",
-                                        "type": "file"
-                                    },
-                                    {
-                                        "name": "secondary-button.blade.php",
-                                        "type": "file"
-                                    },
-                                    {
-                                        "name": "social.blade.php",
-                                        "type": "file"
-                                    },
-                                    {
-                                        "name": "text-input.blade.php",
-                                        "type": "file"
-                                    }
-                                ]
-                            },
-                            {
-                                "name": "createprofile",
-                                "type": "directory",
-                                "children": [
-                                    {
-                                        "name": "step1.blade.php",
-                                        "type": "file"
-                                    },
-                                    {
-                                        "name": "step2.blade.php",
-                                        "type": "file"
-                                    },
-                                    {
-                                        "name": "step3.blade.php",
-                                        "type": "file"
-                                    }
-                                ]
-                            },
-                            {
-                                "name": "dashboard.blade.php",
-                                "type": "file"
-                            },
-                            {
-                                "name": "home",
-                                "type": "directory",
-                                "children": [
-                                    {
-                                        "name": "home.blade.php",
-                                        "type": "file"
-                                    }
-                                ]
-                            },
-                            {
-                                "name": "layouts",
-                                "type": "directory",
-                                "children": [
-                                    {
-                                        "name": "app.blade.php",
-                                        "type": "file"
-                                    },
-                                    {
-                                        "name": "guest.blade.php",
-                                        "type": "file"
-                                    }
-                                ]
-                            },
-                            {
-                                "name": "navigation",
-                                "type": "directory",
-                                "children": [
-                                    {
-                                        "name": "footer.blade.php",
-                                        "type": "file"
-                                    },
-                                    {
-                                        "name": "header.blade.php",
-                                        "type": "file"
-                                    }
-                                ]
-                            },
-                            {
-                                "name": "profile",
-                                "type": "directory",
-                                "children": [
-                                    {
-                                        "name": "partials",
-                                        "type": "directory",
-                                        "children": [
-                                            {
-                                                "name": "delete-user-form.blade.php",
-                                                "type": "file"
-                                            },
-                                            {
-                                                "name": "update-password-form.blade.php",
-                                                "type": "file"
-                                            },
-                                            {
-                                                "name": "update-profile-information-form.blade.php",
-                                                "type": "file"
-                                            }
-                                        ]
-                                    },
-                                    {
-                                        "name": "show.blade.php",
-                                        "type": "file"
-                                    }
-                                ]
-                            },
-                            {
-                                "name": "user",
-                                "type": "directory",
-                                "children": [
-                                    {
-                                        "name": "list.blade.php",
-                                        "type": "file"
-                                    },
-                                    {
-                                        "name": "show.blade.php",
-                                        "type": "file"
-                                    }
-                                ]
-                            },
-                            {
-                                "name": "vendor",
-                                "type": "directory",
-                                "children": [
-                                    {
-                                        "name": "mail",
-                                        "type": "directory",
-                                        "children": [
-                                            {
-                                                "name": "html",
-                                                "type": "directory",
-                                                "children": [
-                                                    {
-                                                        "name": "button.blade.php",
-                                                        "type": "file"
-                                                    },
-                                                    {
-                                                        "name": "footer.blade.php",
-                                                        "type": "file"
-                                                    },
-                                                    {
-                                                        "name": "header.blade.php",
-                                                        "type": "file"
-                                                    },
-                                                    {
-                                                        "name": "layout.blade.php",
-                                                        "type": "file"
-                                                    },
-                                                    {
-                                                        "name": "message.blade.php",
-                                                        "type": "file"
-                                                    },
-                                                    {
-                                                        "name": "panel.blade.php",
-                                                        "type": "file"
-                                                    },
-                                                    {
-                                                        "name": "subcopy.blade.php",
-                                                        "type": "file"
-                                                    },
-                                                    {
-                                                        "name": "table.blade.php",
-                                                        "type": "file"
-                                                    },
-                                                    {
-                                                        "name": "themes",
-                                                        "type": "directory",
-                                                        "children": [
-                                                            {
-                                                                "name": "default.css",
-                                                                "type": "file"
-                                                            }
-                                                        ]
-                                                    }
-                                                ]
-                                            },
-                                            {
-                                                "name": "text",
-                                                "type": "directory",
-                                                "children": [
-                                                    {
-                                                        "name": "button.blade.php",
-                                                        "type": "file"
-                                                    },
-                                                    {
-                                                        "name": "footer.blade.php",
-                                                        "type": "file"
-                                                    },
-                                                    {
-                                                        "name": "header.blade.php",
-                                                        "type": "file"
-                                                    },
-                                                    {
-                                                        "name": "layout.blade.php",
-                                                        "type": "file"
-                                                    },
-                                                    {
-                                                        "name": "message.blade.php",
-                                                        "type": "file"
-                                                    },
-                                                    {
-                                                        "name": "panel.blade.php",
-                                                        "type": "file"
-                                                    },
-                                                    {
-                                                        "name": "subcopy.blade.php",
-                                                        "type": "file"
-                                                    },
-                                                    {
-                                                        "name": "table.blade.php",
-                                                        "type": "file"
-                                                    }
-                                                ]
-                                            }
-                                        ]
-                                    },
-                                    {
-                                        "name": "notifications",
-                                        "type": "directory",
-                                        "children": [
-                                            {
-                                                "name": "email.blade.php",
-                                                "type": "file"
-                                            }
-                                        ]
-                                    }
-                                ]
-                            },
-                            {
-                                "name": "welcome.blade.php",
-                                "type": "file"
-                            }
-                        ]
-                    }
-                ]
-            },
-            {
-                "name": "routes",
-                "type": "directory",
-                "children": [
-                    {
-                        "name": "api.php",
-                        "type": "file"
-                    },
-                    {
-                        "name": "auth.php",
-                        "type": "file"
-                    },
-                    {
-                        "name": "channels.php",
-                        "type": "file"
-                    },
-                    {
-                        "name": "console.php",
-                        "type": "file"
-                    },
-                    {
-                        "name": "web.php",
-                        "type": "file"
-                    }
-                ]
-            },
-            {
-                "name": "storage",
-                "type": "directory",
-                "children": [
-                    {
-                        "name": "app",
-                        "type": "directory",
-                        "children": [
-                            {
-                                "name": "public",
-                                "type": "directory",
-                                "children": [
-                                    {
-                                        "name": "Clouds.svg",
-                                        "type": "file"
-                                    },
-                                    {
-                                        "name": "WECrEW_Colour.svg",
-                                        "type": "file"
-                                    },
-                                    {
-                                        "name": "background.png",
-                                        "type": "file"
-                                    },
-                                    {
-                                        "name": "icons",
-                                        "type": "directory",
-                                        "children": [
-                                            {
-                                                "name": "Discord.svg",
-                                                "type": "file"
-                                            },
-                                            {
-                                                "name": "LinkIcon.svg",
-                                                "type": "file"
-                                            },
-                                            {
-                                                "name": "Twitter.svg",
-                                                "type": "file"
-                                            }
-                                        ]
-                                    },
-                                    {
-                                        "name": "logo.svg",
-                                        "type": "file"
-                                    }
-                                ]
-                            }
-                        ]
-                    },
-                    {
-                        "name": "framework",
-                        "type": "directory",
-                        "children": [
-                            {
-                                "name": ".gitignore",
-                                "type": "file"
-                            },
-                            {
-                                "name": "cache",
-                                "type": "directory",
-                                "children": [
-                                    {
-                                        "name": ".gitignore",
-                                        "type": "file"
-                                    },
-                                    {
-                                        "name": "data",
-                                        "type": "directory",
-                                        "children": [
-                                            {
-                                                "name": ".gitignore",
-                                                "type": "file"
-                                            }
-                                        ]
-                                    }
-                                ]
-                            },
-                            {
-                                "name": "sessions",
-                                "type": "directory",
-                                "children": [
-                                    {
-                                        "name": ".gitignore",
-                                        "type": "file"
-                                    }
-                                ]
-                            },
-                            {
-                                "name": "testing",
-                                "type": "directory",
-                                "children": [
-                                    {
-                                        "name": ".gitignore",
-                                        "type": "file"
-                                    }
-                                ]
-                            },
-                            {
-                                "name": "views",
-                                "type": "directory",
-                                "children": [
-                                    {
-                                        "name": ".gitignore",
-                                        "type": "file"
-                                    }
-                                ]
-                            }
-                        ]
-                    },
-                    {
-                        "name": "logs",
-                        "type": "directory",
-                        "children": [
-                            {
-                                "name": ".gitignore",
-                                "type": "file"
-                            }
-                        ]
-                    }
-                ]
-            },
-            {
-                "name": "tailwind.config.js",
+              }
+            ]
+          },
+          {
+            "name": "framework",
+            "type": "directory",
+            "children": [
+              {
+                "name": ".gitignore",
                 "type": "file"
-            },
-            {
-                "name": "tests",
+              },
+              {
+                "name": "cache",
                 "type": "directory",
                 "children": [
-                    {
-                        "name": "CreatesApplication.php",
+                  {
+                    "name": ".gitignore",
+                    "type": "file"
+                  },
+                  {
+                    "name": "data",
+                    "type": "directory",
+                    "children": [
+                      {
+                        "name": ".gitignore",
                         "type": "file"
-                    },
-                    {
-                        "name": "Feature",
-                        "type": "directory",
-                        "children": [
-                            {
-                                "name": "Auth",
-                                "type": "directory",
-                                "children": [
-                                    {
-                                        "name": "AuthenticationTest.php",
-                                        "type": "file"
-                                    },
-                                    {
-                                        "name": "EmailVerificationTest.php",
-                                        "type": "file"
-                                    },
-                                    {
-                                        "name": "PasswordConfirmationTest.php",
-                                        "type": "file"
-                                    },
-                                    {
-                                        "name": "PasswordResetTest.php",
-                                        "type": "file"
-                                    },
-                                    {
-                                        "name": "PasswordUpdateTest.php",
-                                        "type": "file"
-                                    },
-                                    {
-                                        "name": "RegistrationTest.php",
-                                        "type": "file"
-                                    }
-                                ]
-                            },
-                            {
-                                "name": "ExampleTest.php",
-                                "type": "file"
-                            },
-                            {
-                                "name": "ProfileTest.php",
-                                "type": "file"
-                            }
-                        ]
-                    },
-                    {
-                        "name": "TestCase.php",
-                        "type": "file"
-                    },
-                    {
-                        "name": "Unit",
-                        "type": "directory",
-                        "children": [
-                            {
-                                "name": "ExampleTest.php",
-                                "type": "file"
-                            },
-                            {
-                                "name": "HomeControllerTest.php",
-                                "type": "file"
-                            }
-                        ]
-                    }
+                      }
+                    ]
+                  }
                 ]
-            },
-            {
-                "name": "vite.config.js",
+              },
+              {
+                "name": "sessions",
+                "type": "directory",
+                "children": [
+                  {
+                    "name": ".gitignore",
+                    "type": "file"
+                  }
+                ]
+              },
+              {
+                "name": "testing",
+                "type": "directory",
+                "children": [
+                  {
+                    "name": ".gitignore",
+                    "type": "file"
+                  }
+                ]
+              },
+              {
+                "name": "views",
+                "type": "directory",
+                "children": [
+                  {
+                    "name": ".gitignore",
+                    "type": "file"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "logs",
+            "type": "directory",
+            "children": [
+              {
+                "name": ".gitignore",
                 "type": "file"
-            }
+              }
+            ]
+          }
         ]
-    },
-    "images": []
+      },
+      {
+        "name": "tailwind.config.js",
+        "type": "file"
+      },
+      {
+        "name": "tests",
+        "type": "directory",
+        "children": [
+          {
+            "name": "CreatesApplication.php",
+            "type": "file"
+          },
+          {
+            "name": "Feature",
+            "type": "directory",
+            "children": [
+              {
+                "name": "Auth",
+                "type": "directory",
+                "children": [
+                  {
+                    "name": "AuthenticationTest.php",
+                    "type": "file"
+                  },
+                  {
+                    "name": "EmailVerificationTest.php",
+                    "type": "file"
+                  },
+                  {
+                    "name": "PasswordConfirmationTest.php",
+                    "type": "file"
+                  },
+                  {
+                    "name": "PasswordResetTest.php",
+                    "type": "file"
+                  },
+                  {
+                    "name": "PasswordUpdateTest.php",
+                    "type": "file"
+                  },
+                  {
+                    "name": "RegistrationTest.php",
+                    "type": "file"
+                  }
+                ]
+              },
+              {
+                "name": "ExampleTest.php",
+                "type": "file"
+              },
+              {
+                "name": "ProfileTest.php",
+                "type": "file"
+              }
+            ]
+          },
+          {
+            "name": "TestCase.php",
+            "type": "file"
+          },
+          {
+            "name": "Unit",
+            "type": "directory",
+            "children": [
+              {
+                "name": "ExampleTest.php",
+                "type": "file"
+              },
+              {
+                "name": "HomeControllerTest.php",
+                "type": "file"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "vite.config.js",
+        "type": "file"
+      }
+    ]
+  },
+  "images": [
+    {
+      "url": "https://cosmic-crew.gitbook.io/cosmic-crew-whitepaper/~gitbook/image?url=https%3A%2F%2F2717103975-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252Fbx9TGNeC0hsOLqm4n8lb%252Fuploads%252FQOF7bPTBywUh9JW7oGeH%252FArchipelagoBook.png%3Falt%3Dmedia%26token%3D8df52cf2-91e9-44c1-98b7-ec59a16c8a46&width=768&dpr=1&quality=100&sign=7d4d9da&sv=2"
+    }
+  ]
 }
