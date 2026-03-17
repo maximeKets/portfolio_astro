@@ -1,0 +1,79 @@
+{
+    "id": "machine_learning_td",
+    "title": "Diamond Price Regression",
+    "description": "TP R\u00e9gression du prix des diamants",
+    "repoUrl": "https://github.com/maximeKets/Machine_learning_TD",
+    "liveUrl": "",
+    "techStack": [
+        "Jupyter Notebook",
+        "Python"
+    ],
+    "structure": {
+        "root": "Machine_learning_TD",
+        "children": [
+            {
+                "name": ".idea",
+                "type": "directory",
+                "children": [
+                    {
+                        "name": ".gitignore",
+                        "type": "file"
+                    },
+                    {
+                        "name": "Machine_learning.iml",
+                        "type": "file"
+                    },
+                    {
+                        "name": "inspectionProfiles",
+                        "type": "directory",
+                        "children": [
+                            {
+                                "name": "Project_Default.xml",
+                                "type": "file"
+                            },
+                            {
+                                "name": "profiles_settings.xml",
+                                "type": "file"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "material_theme_project_new.xml",
+                        "type": "file"
+                    },
+                    {
+                        "name": "modules.xml",
+                        "type": "file"
+                    },
+                    {
+                        "name": "vcs.xml",
+                        "type": "file"
+                    }
+                ]
+            },
+            {
+                "name": "README.md",
+                "type": "file"
+            },
+            {
+                "name": "TP_Diamonds_price_Participants.ipynb",
+                "type": "file"
+            },
+            {
+                "name": "data",
+                "type": "directory",
+                "children": [
+                    {
+                        "name": "diamonds.csv",
+                        "type": "file"
+                    }
+                ]
+            },
+            {
+                "name": "requirements.txt",
+                "type": "file"
+            }
+        ]
+    },
+    "images": []
+}

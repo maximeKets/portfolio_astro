@@ -3,7 +3,7 @@
     "title": "Portfolio (This Website)",
     "description": "An open source interactive portfolio website, with a clean and modern design, sections for education, experience, skills and more. Built with Astro.js, Tailwind CSS, TypeScript, React, and Vercel.",
     "repoUrl": "https://github.com/maximeKets/portfolio_astro",
-    "liveUrl": "https:/maximekets.com",
+    "liveUrl": "https://maximekets.com",
     "techStack": [
         "Astro.js",
         "Tailwind CSS",
