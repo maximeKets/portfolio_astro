@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useState } from 'react';
-import { IoSearch, IoBookmarksOutline, IoDocumentTextOutline } from 'react-icons/io5';
+import { IoSearch, IoBookmarksOutline, IoDocumentTextOutline, IoLanguage } from 'react-icons/io5';
 import { FaWindowRestore, FaMousePointer } from 'react-icons/fa';
 import { BsGithub } from 'react-icons/bs';
 import { useI18n } from '../../store/i18n';
@@ -37,6 +37,14 @@ export default function WelcomeTour({ open, onClose, actions }: WelcomeTourProps
       icon: <IoSearch className="text-white/90" size={28} />,
       cta: { label: t('tour.spotlight.cta'), onClick: actions.openSpotlight },
       tip: t('tour.spotlight.tip')
+    },
+    {
+      id: 'language',
+      title: t('tour.language.title'),
+      desc: t('tour.language.desc'),
+      icon: <IoLanguage className="text-white/90" size={28} />,
+      cta: undefined,
+      tip: t('tour.language.tip')
     },
     {
       id: 'mission',
