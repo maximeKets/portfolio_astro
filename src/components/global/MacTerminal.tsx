@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { userConfig } from '../../config';
 import DraggableWindow from './DraggableWindow';
 import { useI18n } from '../../store/i18n';
+import ReactMarkdown from 'react-markdown';
 
 type Message = {
   role: 'system' | 'user' | 'assistant';
@@ -211,7 +212,24 @@ Reste toujours dans ton personnage de ${userConfig.name}, sois naturel, concis (
               ) : (
                 <div className='flex items-start space-x-2'>
                   <span className='text-green-400 font-bold'>${userConfig.website}</span>
-                  <pre className='whitespace-pre-wrap'>{msg.content}</pre>
+                  <div className='whitespace-pre-wrap text-gray-300 w-full'>
+                    <ReactMarkdown
+                      components={{
+                        p: ({node, ...props}) => <p className="mb-2 last:mb-0" {...props} />,
+                        strong: ({node, ...props}) => <strong className="font-bold text-white" {...props} />,
+                        em: ({node, ...props}) => <em className="italic text-gray-400" {...props} />,
+                        ul: ({node, ...props}) => <ul className="list-disc ml-4 mb-2" {...props} />,
+                        ol: ({node, ...props}) => <ol className="list-decimal ml-4 mb-2" {...props} />,
+                        li: ({node, ...props}) => <li className="mb-1" {...props} />,
+                        a: ({node, ...props}) => <a className="text-blue-400 hover:text-blue-300 underline" target="_blank" rel="noopener noreferrer" {...props} />,
+                        code: ({node, inline, ...props}: any) => 
+                          inline ? <code className="bg-gray-800/80 px-1 py-0.5 rounded text-green-300" {...props} /> :
+                                   <code className="block bg-gray-800/80 p-2 rounded text-green-300 my-2 overflow-x-auto" {...props} />
+                      }}
+                    >
+                      {msg.content}
+                    </ReactMarkdown>
+                  </div>
                 </div>
               )}
             </div>
