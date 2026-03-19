@@ -54,7 +54,19 @@ cd portfolio_astro
 npm install
 ```
 
-3. Lancer le serveur de développement :
+3. Configurer les variables d'environnement :
+Copiez le fichier de configuration exemple pour créer votre propre fichier `.env` à la racine du projet :
+```bash
+cp .env.example .env
+```
+Ouvrez ensuite ce fichier `.env` et complétez les variables avec vos propres clés. Voici les services utilisés :
+- **[OpenAI (Cloud IA)](https://platform.openai.com/home)** *(Requis pour le Chatbot)* : Générez une clé API pour activer l'assistant IA intégré au terminal.
+- **[Supabase](https://supabase.com/)** *(Requis)* : Créez un projet pour obtenir votre `SUPABASE_URL` et `SUPABASE_ANON_KEY` pour la base de données Backend.
+- **[GitHub Tokens](https://github.com/settings/tokens)** *(Optionnel)* : Générez un *Personal Access Token* pour autoriser l'application à lister vos dépôts GitHub.
+- **[Pushover](https://pushover.net/)** *(Optionnel)* : Créez un compte et configurez une application pour obtenir votre `PUSHOVER_USER` et `PUSHOVER_TOKEN` afin de recevoir des alertes ou notifications sur vos appareils.
+- **[Vercel Analytics](https://vercel.com/docs/analytics)** *(Optionnel)* : Utilisé pour recueillir des statistiques sur les visiteurs du site.
+
+4. Lancer le serveur de développement :
 ```bash
 npm run dev
 ```
