@@ -1,7 +1,7 @@
 import type { APIRoute } from 'astro';
-import Groq from 'groq-sdk';
-
-const groq = new Groq({ apiKey: import.meta.env.GROQ_API_KEY });
+import OpenAI from 'openai';
+import fs from 'fs';
+import path from 'path';
 
 type ErrorCode =
   | 'CONFIG_ERROR'
@@ -21,14 +21,105 @@ const json = (data: unknown, status = 200) =>
 const err = (code: ErrorCode, message: string, status: number) =>
   json({ code, message, timestamp: ts() }, status);
 
+// Schema definitions
+const record_user_details_json = {
+  type: "function",
+  function: {
+    name: "record_user_details",
+    description: "Use this tool to record that a user is interested in being in touch and provided an email address",
+    parameters: {
+      type: "object",
+      properties: {
+        email: { type: "string", description: "The email address of this user" },
+        name: { type: "string", description: "The user's name, if they provided it" },
+        notes: { type: "string", description: "Any additional information about the conversation that's worth recording to give context" }
+      },
+      required: ["email"],
+      additionalProperties: false
+    }
+  }
+};
+
+const record_unknown_question_json = {
+  type: "function",
+  function: {
+    name: "record_unknown_question",
+    description: "Always use this tool to record any question that couldn't be answered as you didn't know the answer",
+    parameters: {
+      type: "object",
+      properties: {
+        question: { type: "string", description: "The question that couldn't be answered" }
+      },
+      required: ["question"],
+      additionalProperties: false
+    }
+  }
+};
+
+const tools = [record_user_details_json, record_unknown_question_json];
+
+// Helper to handle push notifications
+async function pushNotification(text: string) {
+  const token = import.meta.env.PUSHOVER_TOKEN || process.env.PUSHOVER_TOKEN;
+  const user = import.meta.env.PUSHOVER_USER || process.env.PUSHOVER_USER;
+  
+  if (!token || !user) {
+    console.error('[Chat API] Missing PUSHOVER_TOKEN or PUSHOVER_USER');
+    return;
+  }
+
+  try {
+    const formData = new URLSearchParams();
+    formData.append('token', token);
+    formData.append('user', user);
+    formData.append('message', text);
+
+    await fetch('https://api.pushover.net/1/messages.json', {
+      method: 'POST',
+      body: formData
+    });
+  } catch (e) {
+    console.error('[Chat API] Error sending push notification:', e);
+  }
+}
+
+async function handleToolCall(toolCall: any) {
+  const toolName = toolCall.function.name;
+  let argumentsObj: any = {};
+  try {
+    argumentsObj = JSON.parse(toolCall.function.arguments);
+  } catch(e) {}
+
+  console.log(`[Chat API] Tool called: ${toolName}`);
+  
+  let result = {};
+  if (toolName === 'record_user_details') {
+    const { email, name = "Name not provided", notes = "not provided" } = argumentsObj;
+    await pushNotification(`Recording ${name} with email ${email} and notes ${notes}`);
+    result = { recorded: "ok" };
+  } else if (toolName === 'record_unknown_question') {
+    const { question } = argumentsObj;
+    await pushNotification(`Recording ${question}`);
+    result = { recorded: "ok" };
+  }
+
+  return {
+    role: "tool",
+    content: JSON.stringify(result),
+    tool_call_id: toolCall.id
+  };
+}
+
 export const POST: APIRoute = async ({ request }) => {
-  // Fast-fail if not configured
-  if (!import.meta.env.GROQ_API_KEY) {
-    console.error('[Chat API] Missing GROQ_API_KEY');
+  const apiKey = import.meta.env.OPENAI_API_KEY || process.env.OPENAI_API_KEY;
+  const model = import.meta.env.OPENAI_MODEL || process.env.OPENAI_MODEL || 'gpt-4o-mini';
+  if (!apiKey) {
+    console.error('[Chat API] Missing OPENAI_API_KEY');
     return err('CONFIG_ERROR', 'Chat service is not configured. Please contact the site administrator.', 503);
   }
 
-  // Parse body
+  const openai = new OpenAI({ apiKey });
+
   let body: any;
   try {
     body = await request.json();
@@ -42,43 +133,70 @@ export const POST: APIRoute = async ({ request }) => {
   }
 
   try {
-    const completion = await groq.chat.completions.create({
-      model: 'llama-3.3-70b-versatile',
-      messages,
-      temperature: 0.7,
-      max_tokens: 500,
-    });
+    let done = false;
+    let currentMessages = [...messages];
+    
+    // Inject CV and summary text if needed
+    for (const msg of currentMessages) {
+      if (msg.role === 'system' && typeof msg.content === 'string') {
+        let cvText = '';
+        let summaryText = '';
+        
+        try {
+          const cvPath = path.join(process.cwd(), 'src', 'assets', 'cv.md');
+          if (fs.existsSync(cvPath)) {
+            cvText = fs.readFileSync(cvPath, 'utf-8');
+          }
+        } catch (e) {
+          console.error('[Chat API] Error reading CV text:', e);
+        }
 
-    const content = completion.choices?.[0]?.message?.content;
-    if (!content) {
-      console.error('[Chat API] Invalid response from Groq API');
-      return err('INVALID_RESPONSE', 'Received invalid response from AI service', 500);
+        msg.content = msg.content
+          .replace('{{CV_CONTENT}}', cvText);
+      }
+
+      console.log(`[Chat API] Message: ${msg.role} - ${msg.content}`);
     }
 
-    return json({ message: content }, 200);
+    let finalContent = null;
+
+    while (!done) {
+      const completion = await openai.chat.completions.create({
+        model: 'gpt-4o-mini',
+        messages: currentMessages,
+        tools: tools as any
+      });
+      
+      const choice = completion.choices?.[0];
+      
+      if (!choice) {
+        throw new Error('Invalid response from OpenAI');
+      }
+
+      if (choice.finish_reason === 'tool_calls') {
+        const assistantMessage = choice.message;
+        currentMessages.push(assistantMessage);
+
+        const toolCalls = assistantMessage.tool_calls || [];
+        for (const toolCall of toolCalls) {
+          const toolResult = await handleToolCall(toolCall);
+          currentMessages.push(toolResult);
+        }
+      } else {
+        finalContent = choice.message?.content;
+        done = true;
+      }
+    }
+
+    if (!finalContent) {
+      return err('INVALID_RESPONSE', 'Received empty response from AI service', 500);
+    }
+
+    return json({ message: finalContent }, 200);
+
   } catch (error) {
     const message = error instanceof Error ? error.message : 'Unknown error';
-
-    // Groq-specific error
-    if (error instanceof Groq.APIError) {
-      return err(
-        'AI_SERVICE_ERROR',
-        import.meta.env.DEV ? `AI service error: ${message}` : 'The AI service is temporarily unavailable',
-        (error as any).status || 500
-      );
-    }
-
-    // Timeout
-    if (message.includes('timeout')) {
-      return err('TIMEOUT', 'Request timed out. Please try again.', 504);
-    }
-
-    // Generic
     console.error('[Chat API] Error:', message);
-    return err(
-      'INTERNAL_ERROR',
-      import.meta.env.DEV ? message : 'An unexpected error occurred. Please try again later.',
-      500
-    );
+    return err('INTERNAL_ERROR', import.meta.env.DEV ? message : 'An unexpected error occurred. Please try again later.', 500);
   }
 };
