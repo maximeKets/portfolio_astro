@@ -1,15 +1,9 @@
 import type { APIRoute } from 'astro';
+import { createClient } from '@supabase/supabase-js';
 
 const json = (data: unknown, status = 200) => new Response(JSON.stringify(data), { status, headers: { 'Content-Type': 'application/json' } });
 
 export const POST: APIRoute = async ({ request }) => {
-  const ADMIN_USERNAME = import.meta.env.ADMIN_USERNAME as string | undefined;
-  const ADMIN_PASSWORD = import.meta.env.ADMIN_PASSWORD as string | undefined;
-
-  if (!ADMIN_USERNAME || !ADMIN_PASSWORD) {
-    return json({ error: 'Admin credentials not configured' }, 503);
-  }
-
   let body: any;
   try {
     body = await request.json();
@@ -17,13 +11,35 @@ export const POST: APIRoute = async ({ request }) => {
     return json({ error: 'Invalid JSON' }, 400);
   }
 
-  const { username, password } = body || {};
+  const email = body?.username || body?.email; 
+  const password = body?.password;
 
-  if (username === ADMIN_USERNAME && password === ADMIN_PASSWORD) {
-    // Generate a simple session token (in production use JWT or secure sessions)
-    const token = Buffer.from(`${username}:${Date.now()}`).toString('base64');
-    return json({ success: true, token });
+  if (!email || !password) {
+    return json({ error: 'Email and password are required' }, 400);
   }
 
-  return json({ error: 'Invalid credentials' }, 401);
+  const SUPABASE_URL = import.meta.env.SUPABASE_URL as string | undefined;
+  const SUPABASE_ANON_KEY = import.meta.env.SUPABASE_ANON_KEY as string | undefined;
+
+  if (!SUPABASE_URL || !SUPABASE_ANON_KEY) {
+    return json({ error: 'Server misconfiguration: Supabase not setup' }, 503);
+  }
+
+  const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY, { 
+    auth: { persistSession: false } 
+  });
+
+  const { data, error } = await supabase.auth.signInWithPassword({
+    email,
+    password
+  });
+
+  if (error || !data.session) {
+    return json({ error: 'Invalid credentials' }, 401);
+  }
+
+  return json({ 
+    success: true, 
+    token: data.session.access_token 
+  });
 };
