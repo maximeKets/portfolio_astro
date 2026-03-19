@@ -3,14 +3,14 @@ import { atom } from 'nanostores';
 export type Language = 'en' | 'fr';
 
 // Initialiser avec la langue du navigateur si possible, sinon anglais
-export const languageStore = atom<Language>('en');
+export const languageStore = atom<Language>('fr');
 
 if (typeof window !== 'undefined') {
     const storedLang = localStorage.getItem('language') as Language;
     if (storedLang === 'en' || storedLang === 'fr') {
         languageStore.set(storedLang);
     } else {
-        const browserLang = navigator.language.startsWith('fr') ? 'fr' : 'en';
+        const browserLang = navigator.language.startsWith('en') ? 'en' : 'fr';
         languageStore.set(browserLang);
     }
 
@@ -92,6 +92,9 @@ export const translations = {
         'tour.contact.desc': 'Reach out directly via the built-in contact form (stored securely in Supabase).',
         'tour.contact.tip': 'You can also press C or find it in Spotlight.',
         'tour.contact.cta': 'Open Contact',
+        'tour.language.title': 'Language Switcher',
+        'tour.language.desc': 'Toggle between English and French instantly using the language button in the top menu.',
+        'tour.language.tip': 'Your preference is saved for your next visit.',
         'tour.shortcuts.title': 'Shortcuts',
         'tour.shortcuts.desc': 'Press ? at any time for a list of keyboard shortcuts and tips.',
         'tour.shortcuts.tip': 'Prefer the keyboard? Most features are just a keystroke away.',
@@ -337,6 +340,9 @@ export const translations = {
         'tour.contact.desc': 'Envoyez-moi un message directement via le formulaire de contact intégré (sécurisé avec Supabase).',
         'tour.contact.tip': 'Vous pouvez aussi appuyer sur la touche C ou le chercher dans Spotlight.',
         'tour.contact.cta': 'Ouvrir Contact',
+        'tour.language.title': 'Changer de langue',
+        'tour.language.desc': 'Basculez entre l\'anglais et le français à tout moment grâce au bouton dans la barre de menu.',
+        'tour.language.tip': 'Vos préférences sont sauvegardées pour votre prochaine visite.',
         'tour.shortcuts.title': 'Raccourcis',
         'tour.shortcuts.desc': 'Appuyez sur ? à tout moment pour afficher la liste des raccourcis clavier et astuces.',
         'tour.shortcuts.tip': 'Adepte du clavier ? La plupart des fonctionnalités sont accessibles du bout des doigts.',
