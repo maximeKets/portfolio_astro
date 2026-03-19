@@ -1,5 +1,6 @@
 import type { APIRoute } from 'astro';
 import { createClient } from '@supabase/supabase-js';
+import { pushNotification } from '../../lib/pushover';
 
 const json = (data: unknown, status = 200) => new Response(JSON.stringify(data), { status, headers: { 'Content-Type': 'application/json' } });
 const bad = (message: string, status = 400) => json({ message }, status);
@@ -48,6 +49,9 @@ export const POST: APIRoute = async ({ request }) => {
       console.error('[contact] supabase insert error', error);
       return bad('Failed to save message. Please try again later.', 502);
     }
+
+    // Call the push notification helper
+    await pushNotification(`✉️ Nouveau message de ${name} (${email}): ${message}`);
 
     return json({ ok: true });
   } catch (e: any) {

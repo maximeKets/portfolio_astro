@@ -1,5 +1,6 @@
 import type { APIRoute } from 'astro';
 import OpenAI from 'openai';
+import { pushNotification } from '../../lib/pushover';
 import fs from 'fs';
 import path from 'path';
 
@@ -58,30 +59,6 @@ const record_unknown_question_json = {
 
 const tools = [record_user_details_json, record_unknown_question_json];
 
-// Helper to handle push notifications
-async function pushNotification(text: string) {
-  const token = import.meta.env.PUSHOVER_TOKEN || process.env.PUSHOVER_TOKEN;
-  const user = import.meta.env.PUSHOVER_USER || process.env.PUSHOVER_USER;
-  
-  if (!token || !user) {
-    console.error('[Chat API] Missing PUSHOVER_TOKEN or PUSHOVER_USER');
-    return;
-  }
-
-  try {
-    const formData = new URLSearchParams();
-    formData.append('token', token);
-    formData.append('user', user);
-    formData.append('message', text);
-
-    await fetch('https://api.pushover.net/1/messages.json', {
-      method: 'POST',
-      body: formData
-    });
-  } catch (e) {
-    console.error('[Chat API] Error sending push notification:', e);
-  }
-}
 
 async function handleToolCall(toolCall: any) {
   const toolName = toolCall.function.name;
@@ -140,7 +117,6 @@ export const POST: APIRoute = async ({ request }) => {
     for (const msg of currentMessages) {
       if (msg.role === 'system' && typeof msg.content === 'string') {
         let cvText = '';
-        let summaryText = '';
         
         try {
           const cvPath = path.join(process.cwd(), 'src', 'assets', 'cv.md');
