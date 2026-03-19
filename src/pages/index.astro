@@ -1,5 +1,5 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Base from '../layouts/Base.astro';
 import LandingPage from '../components/LandingPage.astro';
 import { userConfig } from '../config';
 ---
@@ -11,7 +11,7 @@ import { userConfig } from '../config';
   - canonical: Your website URL
   - openGraph: Social media sharing metadata
 -->
-<Layout
+<Base
   title={userConfig.seo.title}
   description={userConfig.seo.description}
   canonical={userConfig.website}
@@ -23,4 +23,4 @@ import { userConfig } from '../config';
   }}
 >
   <LandingPage />
-</Layout>
+</Base>
