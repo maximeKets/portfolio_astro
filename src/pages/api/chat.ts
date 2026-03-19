@@ -112,7 +112,7 @@ async function handleToolCall(toolCall: any) {
 
 export const POST: APIRoute = async ({ request }) => {
   const apiKey = import.meta.env.OPENAI_API_KEY || process.env.OPENAI_API_KEY;
-  const model = import.meta.env.OPENAI_MODEL || process.env.OPENAI_MODEL || 'gpt-4o-mini';
+  const model = import.meta.env.OPENAI_MODEL || process.env.OPENAI_MODEL || 'gpt-5.4-nano-2026-03-17';
   if (!apiKey) {
     console.error('[Chat API] Missing OPENAI_API_KEY');
     return err('CONFIG_ERROR', 'Chat service is not configured. Please contact the site administrator.', 503);
@@ -154,15 +154,13 @@ export const POST: APIRoute = async ({ request }) => {
         msg.content = msg.content
           .replace('{{CV_CONTENT}}', cvText);
       }
-
-      console.log(`[Chat API] Message: ${msg.role} - ${msg.content}`);
     }
 
     let finalContent = null;
 
     while (!done) {
       const completion = await openai.chat.completions.create({
-        model: 'gpt-4o-mini',
+        model: model,
         messages: currentMessages,
         tools: tools as any
       });
