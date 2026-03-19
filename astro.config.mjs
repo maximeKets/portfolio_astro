@@ -31,7 +31,11 @@ export default defineConfig({
 
   // Deployment configuration
   output: 'server', // Server-side rendering - required for OpenAI API usage
-  adapter: vercel(), // Deploy to Vercel - optional
+  adapter: vercel({
+    webAnalytics: {
+      enabled: true,
+    },
+  }), // Deploy to Vercel - optional
   devToolbar: {
     enabled: false,
   },
