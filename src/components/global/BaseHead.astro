@@ -8,6 +8,8 @@ import macBackground2 from '../../assets/images/the-cliffs.webp';
 import macBackground3 from '../../assets/images/the-lake.webp';
 import logo from '../../assets/images/logo.webp';
 import { userConfig } from '../../config';
+import SpeedInsights from '@vercel/speed-insights/astro';
+
 
 const backgrounds = await Promise.all([
   getImage({ src: macBackground1, width: 3500 }),
@@ -110,3 +112,4 @@ const ogImageUrl = siteOrigin && backgrounds[0]?.src
     />
   ))
 }
+<SpeedInsights />
