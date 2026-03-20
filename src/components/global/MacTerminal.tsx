@@ -207,13 +207,13 @@ Reste toujours dans ton personnage de ${userConfig.name}, et utilise une syntaxe
           {chatHistory.messages.map((msg, index) => (
             <div key={index} className='mb-2'>
               {msg.role === 'user' ? (
-                <div className='flex items-start space-x-2'>
-                  <span className='text-green-400 font-bold'>{'>'}</span>
+                <div className='flex flex-col sm:flex-row items-start space-y-1 sm:space-y-0 sm:space-x-2'>
+                  <span className='text-green-400 font-bold shrink-0'>{'>'}</span>
                   <pre className='whitespace-pre-wrap'>{msg.content}</pre>
                 </div>
               ) : (
-                <div className='flex items-start space-x-2'>
-                  <span className='text-green-400 font-bold'>${userConfig.website}</span>
+                <div className='flex flex-col sm:flex-row items-start space-y-1 sm:space-y-0 sm:space-x-2'>
+                  <span className='text-green-400 font-bold shrink-0'>${userConfig.website}</span>
                   <div className='whitespace-pre-wrap text-gray-300 w-full'>
                     <ReactMarkdown
                       components={{
