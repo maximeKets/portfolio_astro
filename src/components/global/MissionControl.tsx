@@ -54,8 +54,8 @@ export default function MissionControl({ isOpen, onClose, activeApps, onAppClick
   };
 
   return (
-    <div className="fixed inset-0 z-[90]" role="dialog" aria-modal="true" aria-label="Mission Control">
-      <div className="absolute inset-0 bg-black/70 backdrop-blur-md" onClick={onClose} />
+    <div className="fixed inset-0 z-[90]" role="dialog" aria-modal="true" aria-label="Mission Control" onClick={onClose}>
+      <div className="absolute inset-0 bg-black/70 backdrop-blur-md" />
       <div className="relative h-full flex flex-col items-center justify-center p-8">
         <h2 className="text-white text-2xl font-semibold mb-8">{t('mission.title')}</h2>
         {activeWindows.length === 0 ? (
@@ -67,7 +67,10 @@ export default function MissionControl({ isOpen, onClose, activeApps, onAppClick
               return (
                 <button
                   key={app.id}
-                  onClick={() => handleAppClick(app)}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    handleAppClick(app);
+                  }}
                   className="group relative bg-gray-800/50 rounded-xl p-6 border border-white/10 hover:border-white/30 transition-all hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white/50"
                   aria-label={`Switch to ${app.name}`}
                 >

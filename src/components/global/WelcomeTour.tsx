@@ -141,20 +141,22 @@ export default function WelcomeTour({ open, onClose, actions }: WelcomeTourProps
             </div>
           </div>
 
-          <div className="mt-6 flex items-center justify-between">
-            <div className="flex items-center gap-1">
+          <div className="mt-6 flex flex-col sm:flex-row sm:items-center justify-between gap-6 sm:gap-0">
+            <div className="flex items-center gap-1.5 flex-wrap">
               {slides.map((s, i) => (
                 <span
                   key={s.id}
-                  className={`h-1.5 w-6 rounded-full ${i <= index ? 'bg-white/80' : 'bg-white/20'}`}
+                  className={`h-1.5 w-4 sm:w-6 rounded-full ${i <= index ? 'bg-white/80' : 'bg-white/20'}`}
                 />
               ))}
             </div>
-            <div className="flex items-center gap-2">
-              <button onClick={onClose} className="text-sm text-gray-400 hover:text-white">{t('tour.btn.skip')}</button>
+            <div className="flex items-center justify-end gap-3 w-full sm:w-auto">
+              <button onClick={onClose} className="text-sm text-gray-400 hover:text-white shrink-0">
+                {t('tour.btn.skip')}
+              </button>
               <button
                 onClick={handlePrimary}
-                className="px-4 py-2 rounded-lg bg-blue-600 hover:bg-blue-500 text-white text-sm"
+                className="px-4 py-2 rounded-lg bg-blue-600 hover:bg-blue-500 text-white text-sm whitespace-nowrap shrink-0"
               >
                 {slide.cta?.label ?? t('tour.btn.next')}
               </button>
