@@ -73,7 +73,7 @@ export default function Desktop({ initialBg, backgroundMap }: AppLayoutProps) {
     localStorage.setItem('lastBackground', currentBg);
   }, [initialBg, backgroundMap]);
 
-  // Spotlight keyboard shortcut (Cmd/Ctrl + K), help overlay (?), and Mission Control (Ctrl/Cmd+Up or F3)
+  // Spotlight keyboard shortcut (Cmd/Ctrl + K), help overlay (+), and Mission Control (Ctrl/Cmd+Up or F3)
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
       const isMac = navigator.platform.toUpperCase().includes('MAC');
@@ -81,7 +81,7 @@ export default function Desktop({ initialBg, backgroundMap }: AppLayoutProps) {
       if (cmdOrCtrl && (e.key === 'k' || e.key === 'K')) {
         e.preventDefault();
         setIsSpotlightOpen(true);
-      } else if (e.key === '?' || (e.key === '/' && e.shiftKey) || (cmdOrCtrl && (e.key === 'h' || e.key === 'H'))) {
+      } else if (e.key === '+' || (cmdOrCtrl && (e.key === 'h' || e.key === 'H'))) {
         e.preventDefault();
         setShowShortcuts((s) => !s);
       } else if ((cmdOrCtrl && e.key === 'ArrowUp') || e.key === 'F3' || (cmdOrCtrl && (e.key === 'm' || e.key === 'M'))) {
