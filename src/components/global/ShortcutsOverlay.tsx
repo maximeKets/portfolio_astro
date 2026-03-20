@@ -26,7 +26,7 @@ export default function ShortcutsOverlay({ open, onClose }: ShortcutsOverlayProp
           <li><kbd className="px-1.5 py-0.5 bg-white/10 rounded border border-white/10 mr-2">B</kbd>{t('shortcuts.shuffleWallpaper')}</li>
           <li><kbd className="px-1.5 py-0.5 bg-white/10 rounded border border-white/10 mr-2">X</kbd>{t('shortcuts.closeWindows')}</li>
           <li><kbd className="px-1.5 py-0.5 bg-white/10 rounded border border-white/10 mr-2">Ctrl/Cmd</kbd><kbd className="px-1.5 py-0.5 bg-white/10 rounded border border-white/10 mr-2">↑</kbd>or <kbd className="px-1.5 py-0.5 bg-white/10 rounded border border-white/10 mr-2">F3</kbd>{t('shortcuts.missionControl')}</li>
-          <li><kbd className="px-1.5 py-0.5 bg-white/10 rounded border border-white/10 mr-2">?</kbd>{t('shortcuts.showOverlay')}</li>
+          <li><kbd className="px-1.5 py-0.5 bg-white/10 rounded border border-white/10 mr-2">+</kbd>{t('shortcuts.showOverlay')}</li>
         </ul>
         <p className="text-xs text-gray-500 mt-4">{t('shortcuts.tip')}</p>
       </div>
