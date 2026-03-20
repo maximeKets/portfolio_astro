@@ -15,7 +15,7 @@ Ce projet a pour double objectif de :
 ## 📊 Gestion de Projet (Kanban / Agile)
 
 Ce dépôt démontre concrètement ma façon de gérer un projet technique :
-- **Transparence** : Utilisation d'un [GitHub Project](https://github.com/maximeKets/portfolio_astro/projects?query=is%3Aopen) pour le suivi des tâches (Kanban).
+- **Transparence** : Utilisation d'un [GitHub Project](https://github.com/users/maximeKets/projects/8)) pour le suivi des tâches (Kanban).
 - **Structuration** : Découpage en *Milestones* (jalons) et *Issues* qualifiées avec des étiquettes (Labels).
 - **Git Flow** : Les développements sont réalisés via des branches dédiées et fusionnés par le biais de *Pull Requests*.
 
